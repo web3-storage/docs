@@ -12,6 +12,17 @@ This repository contains code and content for the web3.storage website, an open-
 - If you're writing something new, read through the contribution guide for guidelines on types of content, grammar, formatting, and style.
 - For details on building the site locally and submitting pull requests, see the ["For site developers"](#for-site-developers) section below.
 
+## Hosting / Deployment
+
+We're using Fleek as the hosting and deployment platform.
+Auto deployments are enabled on the `main` branch and preview builds are generated when PRs are created merging to the `main` branch.
+
+### 🔗 Links:
+
+- Production (`main` branch): https://web3-storage-docs.on.fleek.co/
+- Preview builds: `https://<cid>.on.fleek.co` (example: https://bafybeibwksog6le7t6anr4zenlcg2qntrmfznx6e64goree7hmzfsxcnl4.on.fleek.co/)
+
+
 ## For site developers
 
 ### Build and run locally
