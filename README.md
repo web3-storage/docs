@@ -4,23 +4,17 @@
 [![](https://img.shields.io/badge/platform-VuePress-green.svg)](https://vuepress.vuejs.org/)
 [![](https://img.shields.io/badge/deployed%20on-Fleek-ff69b4.svg)](http://fleek.co/)
 
-This repository contains code and content for the web3.storage website, an open-source community education platform devoted to best practices, concept guides, tutorials, and how-tos.
+This repository contains code and content for docs.web3.storage, the documentation site for the Web3.Storage service. 
+
+🚧 This docs site is still under construction, but you can preview our pre-launch work on Fleek at: https://web3-storage-docs.on.fleek.co/
+
+_You can find the code for the main web3.storage website and the underlying API here: https://github.com/web3-storage/web3.storage_
 
 **Contributions are more than welcome!** As an open-source project, this site relies on people like you to suggest, create, and improve content. To get started ...
 
 - Check this repo's [issues page](https://github.com/web3-storage/docs/issues) to see what items are in need of help, including content request issues looking for writers.
 - If you're writing something new, read through the contribution guide for guidelines on types of content, grammar, formatting, and style.
 - For details on building the site locally and submitting pull requests, see the ["For site developers"](#for-site-developers) section below.
-
-## Hosting / Deployment
-
-We're using Fleek as the hosting and deployment platform.
-Auto deployments are enabled on the `main` branch and preview builds are generated when PRs are created merging to the `main` branch.
-
-### 🔗 Links:
-
-- Production (`main` branch): https://web3-storage-docs.on.fleek.co/
-- Preview builds: `https://<cid>.on.fleek.co` (example: https://bafybeibwksog6le7t6anr4zenlcg2qntrmfznx6e64goree7hmzfsxcnl4.on.fleek.co/)
 
 
 ## For site developers
@@ -58,10 +52,22 @@ To build a local copy, run the following:
 
 Once you're happy with your local changes, please make a PR **against the `main` branch**. Including detailed notes on your PR - particularly screenshots to depict any changes in UI - will help speed up approval and deployment.
 
-All PRs against `main` automatically generate Fleek previews to make it easier to "check your work". You can view your PR's preview by clicking `Details` in the `fleek/build` check at the bottom of your PR page:<br/>
+All PRs against `main` automatically generate Fleek previews to make it easier to check your work. You can view your PR's preview by clicking `Details` in the `fleek/build` check at the bottom of your PR page:<br/>
 ![image](https://user-images.githubusercontent.com/1507828/110034382-9dbb5b80-7cf7-11eb-89a4-7772970677d3.png)
 
+Your preview URL will look something like this: `https://<cid>.on.fleek.co` (example: https://bafybeibwksog6le7t6anr4zenlcg2qntrmfznx6e64goree7hmzfsxcnl4.on.fleek.co/)
+
 A reviewer will be by shortly to have a look!
+
+### Hosting / Deployment
+
+We're using Fleek as the hosting and deployment platform.
+Auto deployments are enabled on the `main` branch and preview builds are generated when PRs are created merging to the `main` branch.
+
+### 🔗 Links:
+
+- Production (`main` branch): https://web3-storage-docs.on.fleek.co/
+- Preview builds (see screenshot above): `https://<cid>.on.fleek.co` (example: https://bafybeibwksog6le7t6anr4zenlcg2qntrmfznx6e64goree7hmzfsxcnl4.on.fleek.co/) 
 
 ## Maintainers
 
