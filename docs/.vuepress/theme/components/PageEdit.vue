@@ -18,13 +18,6 @@
     >
       <span class="prefix">{{ lastUpdatedText }}:</span>
       <span class="time">{{ lastUpdated }}</span>
-      <a
-        href="https://github.com/web3-storage/docs/blob/main/docs/reference/nft-marketplaces.md"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        by NFT School contributors like you
-      </a>
     </div>
   </footer>
 </template>

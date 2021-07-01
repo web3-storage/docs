@@ -6,7 +6,7 @@
         <div>
           <div v-if="issueUrl" class="content-status-status">
             <p>
-              <a target="_blank" :href="issueUrl">Check the status</a> of this page on GitHub to see how it's coming along. Are you a technical writer who'd like to make the global NFT community better for everyone? <a target="_blank" :href="issueUrl">Help write this page!</a>
+              <a target="_blank" :href="issueUrl">Check the status</a> of this page on GitHub to see how it's coming along. Are you a technical writer who'd like to improve the docs for Web3.Storage? <a target="_blank" :href="issueUrl">Help write this page!</a>
             </p>
           </div>
           <div class="section content-status-vote">

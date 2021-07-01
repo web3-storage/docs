@@ -4,16 +4,15 @@
 [![](https://img.shields.io/badge/platform-VuePress-green.svg)](https://vuepress.vuejs.org/)
 [![](https://img.shields.io/badge/deployed%20on-Fleek-ff69b4.svg)](http://fleek.co/)
 
-This repository contains code and content for docs.web3.storage, the documentation site for the Web3.Storage service. 
+This repository contains code and content for docs.web3.storage, the documentation site for the Web3.Storage service.
 
 🚧 This docs site is still under construction, but you can preview our pre-launch work on Fleek at: https://web3-storage-docs.on.fleek.co/
 
 _You can find the code for the main web3.storage website and the underlying API here: https://github.com/web3-storage/web3.storage_
 
-**Contributions are more than welcome!** As an open-source project, this site relies on people like you to suggest, create, and improve content. To get started ...
-
+## For documentation authors:
 - Check this repo's [issues page](https://github.com/web3-storage/docs/issues) to see what items are in need of help, including content request issues looking for writers.
-- If you're writing something new, read through the contribution guide for guidelines on types of content, grammar, formatting, and style.
+- If you're writing something new, please read through the [contribution guide](CONTRIBUTING.md) for guidelines on types of content, grammar, formatting, and style.
 - For details on building the site locally and submitting pull requests, see the ["For site developers"](#for-site-developers) section below.
 
 
@@ -67,7 +66,7 @@ Auto deployments are enabled on the `main` branch and preview builds are generat
 ### 🔗 Links:
 
 - Production (`main` branch): https://web3-storage-docs.on.fleek.co/
-- Preview builds (see screenshot above): `https://<cid>.on.fleek.co` (example: https://bafybeibwksog6le7t6anr4zenlcg2qntrmfznx6e64goree7hmzfsxcnl4.on.fleek.co/) 
+- Preview builds (see screenshot above): `https://<cid>.on.fleek.co` (example: https://bafybeibwksog6le7t6anr4zenlcg2qntrmfznx6e64goree7hmzfsxcnl4.on.fleek.co/)
 
 ## Maintainers
 
