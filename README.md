@@ -26,7 +26,7 @@ To build a local copy, run the following:
    git clone https://github.com/web3-storage/docs.git
    ```
 
-1. Move into the `nft-website` folder and install the NPM dependencies:
+1. Move into the `docs` folder and install the NPM dependencies:
 
    ```bash
    cd docs

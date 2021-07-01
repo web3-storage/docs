@@ -1,6 +1,6 @@
 // .vuepress/config.js
 
-const DEPLOY_DOMAIN = 'https://nftschool.dev'
+const DEPLOY_DOMAIN = 'https://docs.web3.storage'
 const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const COUNTLY_KEY = process.env.COUNTLY_KEY || ''
 const pageSuffix = '/'
@@ -36,7 +36,7 @@ module.exports = {
       twitter: '@protocollabs'
     },
     keywords:
-      'NFT, non-fungible token, nonfungible token, Filecoin, IPFS, dweb, protocol, decentralized web, InterPlanetary File System, dapp, documentation, docs, tutorial, how-to, Protocol Labs',
+      'Filecoin, IPFS, dweb, protocol, decentralized web, InterPlanetary File System, dapp, documentation, docs, tutorial, how-to, Protocol Labs',
     // edit links
     domain: DEPLOY_DOMAIN,
     docsRepo: 'filecoin-storage/docs',
@@ -50,7 +50,7 @@ module.exports = {
     nextLinks: false,
     prevLinks: false,
     // ui/ux
-    logo: '/images/nftschool-logo.svg',
+    logo: '/images/web3-storage-logo.svg',
     locales: {
       '/': {
         label: 'English',
@@ -112,10 +112,10 @@ module.exports = {
         ]
       }
     },
-    algolia: {
-      apiKey: '13321c2a92ae47463cda952cb6d5f332',
-      indexName: 'nftschool'
-    },
+    // algolia: {
+    //   apiKey: '',
+    //   indexName: ''
+    // },
   },
   plugins: [
     [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
