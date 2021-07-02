@@ -1,9 +1,11 @@
-export default ({ router, isServer }) => {
+import countly from './utils/countly'
+
+export default ({ Vue, router, isServer, siteData }) => {
   if (!isServer) {
-    // track page view via Countly when route changes
+    countly.init(siteData.themeConfig.countly)
+
     router.afterEach((to) => {
-      if (!window.Countly) return
-      window.Countly.q.push(['track_pageview', to.path])
+      countly.trackPageView(to.path)
     })
   }
 }

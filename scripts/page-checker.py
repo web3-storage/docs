@@ -31,7 +31,7 @@ checkedLinks = ''
 for link in links:
     linkUrl = link['href'].split('#')[0]
     if ("http" in linkUrl and
-    "docs.filecoin.io" not in linkUrl and
+    "docs.web3.storage" not in linkUrl and
     "https://github.com/web3-storage/docs" not in linkUrl and
     (linkUrl + "|") not in checkedLinks):
         #print(linkUrl)

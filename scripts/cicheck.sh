@@ -115,10 +115,10 @@ echo "Here is the comment I'm sending to GitHub:"
 echo $COMMENT
 
 echo "Delete old bot comments:"
-OLDCOMMENTSJSON=$(curl -H "Authorization: token $GH_TOKEN"  -X GET https://api.github.com/repos/filecoin-storage/docs/issues/$PR_NUMBER/comments)
+OLDCOMMENTSJSON=$(curl -H "Authorization: token $GH_TOKEN"  -X GET https://api.github.com/repos/web3-storage/docs/issues/$PR_NUMBER/comments)
 OLDCOMMENTS=$(echo $OLDCOMMENTSJSON | jq ".[] | select(.user.id==$GH_USER_ID) | .id" --jsonargs)
 
-for i in $OLDCOMMENTS; do curl -i -H "Authorization: token $GH_TOKEN" -X DELETE https://api.github.com/repos/filecoin-storage/docs/issues/comments/$i; done
+for i in $OLDCOMMENTS; do curl -i -H "Authorization: token $GH_TOKEN" -X DELETE https://api.github.com/repos/web3-storage/docs/issues/comments/$i; done
 
 echo "Post the new bot comment!"
 JSONIFIED_COMMENT="$( jq -nc --arg str "$COMMENT" '{"body": $str}' )"
@@ -126,4 +126,4 @@ echo -e ">> Sending results in a comment on the Github pull request #$PR_NUMBER:
 curl -i -H "Authorization: token $GH_TOKEN" \
     -H "Content-Type: application/json" \
     -X POST -d "$JSONIFIED_COMMENT" \
-    https://api.github.com/repos/filecoin-storage/docs/issues/$PR_NUMBER/comments
+    https://api.github.com/repos/web3-storage/docs/issues/$PR_NUMBER/comments

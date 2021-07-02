@@ -3,6 +3,7 @@
 const DEPLOY_DOMAIN = 'https://docs.web3.storage'
 const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const COUNTLY_KEY = process.env.COUNTLY_KEY || ''
+const COUNTLY_URL = process.env.COUNTLY_URL || ''
 const pageSuffix = '/'
 
 module.exports = {
@@ -39,11 +40,11 @@ module.exports = {
       'Filecoin, IPFS, dweb, protocol, decentralized web, InterPlanetary File System, dapp, documentation, docs, tutorial, how-to, Protocol Labs',
     // edit links
     domain: DEPLOY_DOMAIN,
-    docsRepo: 'filecoin-storage/docs',
+    docsRepo: 'web3-storage/docs',
     docsDir: 'docs',
     docsBranch: 'main',
     feedbackWidget: {
-      docsRepoIssue: 'filecoin-storage/docs'
+      docsRepoIssue: 'web3-storage/docs'
     },
     editLinks: false,
     // page nav
@@ -112,6 +113,10 @@ module.exports = {
         ]
       }
     },
+    countly: {
+      key: COUNTLY_KEY,
+      url: COUNTLY_URL
+    },
     // algolia: {
     //   apiKey: '',
     //   indexName: ''
@@ -119,10 +124,6 @@ module.exports = {
   },
   plugins: [
     [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
-    [require('./plugins/vuepress-plugin-countly'), {
-      domain: DEPLOY_DOMAIN,
-      key: COUNTLY_KEY
-    }],
     [
       'vuepress-plugin-clean-urls',
       {

@@ -1,3 +1,4 @@
+import countly from 'countly-sdk-web'
 import debug from './debug'
 
 export const events = {
@@ -6,6 +7,23 @@ export const events = {
   FEEDBACK_GENERAL: 'feedbackGeneral',
   NOT_FOUND: 'notFound',
 }
+
+export function init ({ key, url }) {
+  countly.init({
+    app_key: key,
+    app_version: "1.0",
+    url,
+    debug: false
+  });
+  
+  countly.track_sessions();
+  countly.track_pageview();
+  countly.track_clicks();
+  countly.track_links();
+  countly.track_scrolls();
+  countly.track_errors();
+}
+
 
 /*
   Track an event to countly with the provided data
@@ -17,14 +35,22 @@ export function trackEvent (event, data = {}) {
     return
   }
 
-  window.Countly.q.push(['add_event', {
+  countly.add_event({
     key: event,
     segmentation: data
-  }])
+  })
 }
 
+/*
+  Track page view to countly. Default to window.location.pathname
+*/
+export function trackPageView (path) {
+  countly.track_pageview(path)
+}
 
 export default {
+  init,
   events,
-  trackEvent
+  trackEvent,
+  trackPageView,
 }
