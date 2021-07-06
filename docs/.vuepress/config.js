@@ -67,10 +67,10 @@ module.exports = {
         nav: require('./nav/en'),
         sidebar: [
           {
-            title: 'Quick start',
+            title: 'Quickstart',
             collapsable: false,
             children: [
-                '/quick-start/'
+                '/quickstart/'
             ]
           },
           {
