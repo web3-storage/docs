@@ -144,6 +144,7 @@ You can also get more information about the status of your data. See the [query 
 
 [quickstart-guide]: ../../quickstart/README.md
 [howto-retrieve]: ./retrieve.md
+[howto-query]: ./query.md
 
 <!-- links to the web3.storage site -->
 [site-tokens]: https://web3.storage/tokens/
