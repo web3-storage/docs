@@ -69,8 +69,17 @@ const files = [
 ]
 ```
 
+You can create a nested directory structure by adding files with path components separated by `/` characters:
+
+```js
+const files = [
+  new File(kittyImageBytes, '/images/cats/kitty.jpeg'),
+  new File(pugImageBytes, '/images/dogs/pug.jpeg'),
+]
+```
+
 ::: tip
-Try to give each file a unique file name! All the files in a `put` request will be bundled into one content archive, and linking to the files inside is much nicer if each file has a human-readable name.
+Try to give each file a unique file name! All the files in a `put` request will be bundled into one content archive, and linking to the files inside is much simpler if each file has a human-readable name.
 :::
 
 ## Uploading to Web3.Storage
