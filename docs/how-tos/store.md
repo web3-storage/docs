@@ -133,6 +133,15 @@ If you follow the link, you should see a page similar to this:
 
 To link directly to a file within the bundle, just add the file path after the CID portion of the link. For example: [dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/not-distributed.jpg](https://dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/not-distributed.jpg)
 
+Of course, if you have the [IPFS command line interface][ipfs-docs-cli-quickstart] installed, you can use it directly to fetch data wihtout going through a gateway:
+
+```bash
+# get the whole bundle and save to a directory:
+ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu
+
+# get a specific file out of the bundle:
+ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanonsense.jpg
+```
 
 
 <!-- internal links -->
@@ -152,3 +161,4 @@ To link directly to a file within the bundle, just add the file path after the C
 
 <!-- external links -->
 [ipfs-docs-cid]: https://docs.ipfs.io/concepts/content-addressing/
+[ipfs-docs-cli-quickstart]: https://docs.ipfs.io/how-to/command-line-quick-start/
