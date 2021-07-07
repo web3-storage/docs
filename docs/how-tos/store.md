@@ -5,9 +5,9 @@ description: Learn how to store your data on the decentralized web with Web3.Sto
 
 # Store
 
-TODO: intro paragraph
+Web3.Storage provides a simple interface for storing data, inspired by familiar web APIs like [`fetch`][mdn-fetch] and [`File`][mdn-file]. This how-to guide will show how to use the Web3.Storage client to make your data available on the decentralized IPFS network, with persistent long-term storage provided by Filecoin.
 
-This guide focuses on the [JavaScript client library][reference-js] , which is the simplest way to use Web3.Storage. If you're using another language, see the [HTTP API reference][reference-http] <!-- FIXME: link target doesn't exist yet --> for details on working with the underlying HTTP API.
+This guide focuses on the [JavaScript client library][reference-js] , which is the simplest way to use Web3.Storage. If you're using another language, see the [HTTP API reference][reference-http] for details on working with the underlying HTTP API.
 
 Uploading data requires an API token for a Web3.Storage account. If you've already signed up for a Web3.Storage account, head to the [API Tokens page][site-tokens] to create a new token, and copy it somewhere safe. If you haven't yet created an account, it's simple and free! Our [Quick Start guide][quickstart-guide] will walk you through getting signed up.
 
@@ -19,7 +19,7 @@ In your JavaScript project, add the `web3.storage` package to your dependencies:
 npm install web3.storage
 ```
 
-If you're running in a browser environment, you'll also need the `web3-file` package, which extends the [Web File API](https://developer.mozilla.org/en-US/docs/Web/API/File) to include file paths and other metadata required by the Web3.Storage API.
+If you're running in a browser environment, you'll also need the `web3-file` package, which extends the [Web File API][mdn-file] to include file paths and other metadata required by the Web3.Storage API.
 
 ```bash
 # only needed for browser runtimes, ignore if you're building for node.js
@@ -128,30 +128,11 @@ const onStoredChunk = chunkSize => console.log(`stored chunk of ${chunkSize} byt
 const cid = await client.put(files, { onStoredChunk })
 ```
 
-## Retrieving uploaded data
+## Next steps
 
-While you can definitely [retrieve data using the js client][howto-retrieve], you can also fetch uploaded data directly from IPFS using an HTTP gateway or native IPFS tooling.
+The `put` method returns an [IPFS Content Identifier][ipfs-docs-cid] that can be used to fetch the files from IPFS. See the [retrieval how-to][howto-retrieve] to learn how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line.
 
-The `cid` that's returned by the `put` method is an [IPFS Content ID][ipfs-docs-cid] string that identifies the whole bundle of files that were uploaded.
-
-You can view a listing of all the files in the bundle using an IPFS gateway by creating a gateway URL. For example, if your CID is `bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu`, you can make a URL for the gateway at `dweb.link`: [dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu](https://dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu).
-
-If you follow the link, you should see a page similar to this:
-
-![Screenshot of an IPFS gateway directory listing](./images/gateway-directory-listing.png)
-
-To link directly to a file within the bundle, just add the file path after the CID portion of the link. For example: [dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/not-distributed.jpg](https://dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/not-distributed.jpg)
-
-Of course, if you have the [IPFS command line interface][ipfs-docs-cli-quickstart] installed, you can use it directly to fetch data wihtout going through a gateway:
-
-```bash
-# get the whole bundle and save to a directory:
-ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu
-
-# get a specific file out of the bundle:
-ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanonsense.jpg
-```
-
+You can also get more information about the status of your data. See the [query how-to][howto-query] to learn how to get more details about your data, including the status of any Filecoin storage deals.
 
 <!-- internal links -->
 
@@ -162,7 +143,7 @@ ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanons
 [reference-http]: ../../reference/http.md
 
 [quickstart-guide]: ../../quickstart/README.md
-[howto-retrieve]: ../retrieve.md
+[howto-retrieve]: ./retrieve.md
 
 <!-- links to the web3.storage site -->
 [site-tokens]: https://web3.storage/tokens/
@@ -171,3 +152,5 @@ ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanons
 <!-- external links -->
 [ipfs-docs-cid]: https://docs.ipfs.io/concepts/content-addressing/
 [ipfs-docs-cli-quickstart]: https://docs.ipfs.io/how-to/command-line-quick-start/
+[mdn-fetch]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+[mdn-file]: https://developer.mozilla.org/en-US/docs/Web/API/File
