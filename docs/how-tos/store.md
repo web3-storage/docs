@@ -33,7 +33,7 @@ To create a `Web3Storage` client object, we need to pass an access token into th
 ```js
 const { Web3Storage } = require('web3.storage')
 const token = process.env.WEB3_STORAGE_TOKEN
-const storage = new Web3Storage({ token })
+const client = new Web3Storage({ token })
 ```
 
 In the example above, we read the token from an environment variable called `WEB3_STORAGE_TOKEN`, since baking credentials into source code is generally a bad idea. To help make environment variables easier to manage, consider using a package like [dotenv](https://www.npmjs.com/package/dotenv), which will read variables from a file called `.env` in your project's root directory. Just make sure not to check the `.env` file into source control!
