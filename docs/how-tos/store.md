@@ -79,7 +79,7 @@ const files = [
 ```
 
 ::: tip
-Try to give each file a unique file name! All the files in a `put` request will be bundled into one content archive, and linking to the files inside is much simpler if each file has a human-readable name.
+Try to give each file a unique file name! All the files in a `put` request will be bundled into one content archive, and linking to the files inside is much simpler if each file has a unique human-readable name.
 :::
 
 ## Uploading to Web3.Storage
