@@ -78,7 +78,7 @@ const files = [
 ]
 ```
 
-::: tip
+::: tip Unique file names
 Try to give each file a unique file name! All the files in a `put` request will be bundled into one content archive, and linking to the files inside is much simpler if each file has a unique human-readable name.
 :::
 
