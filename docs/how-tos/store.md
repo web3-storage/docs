@@ -78,7 +78,7 @@ const files = [
 ]
 ```
 
-::: tip
+::: tip Unique file names
 Try to give each file a unique file name! All the files in a `put` request will be bundled into one content archive, and linking to the files inside is much simpler if each file has a unique human-readable name.
 :::
 
@@ -132,7 +132,7 @@ const cid = await client.put(files, { onStoredChunk })
 
 The `put` method returns an [IPFS Content Identifier][ipfs-docs-cid] that can be used to fetch the files from IPFS. See the [retrieval page][howto-retrieve] to learn how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line.
 
-You can also get more information about the status of your data. See the [query how-to][howto-query] to learn how to get more details about your data, including the status of any Filecoin storage deals.
+You can also get more information about the status of your data. See the [query page][howto-query] to learn how to get more details about your data, including the status of any Filecoin storage deals.
 
 <!-- internal links -->
 
