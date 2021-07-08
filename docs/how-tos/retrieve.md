@@ -31,11 +31,15 @@ To link directly to a file within the bundle, just add the file path after the C
 
 If you have the [IPFS command line interface][ipfs-docs-cli-quickstart] installed, you can use it directly to fetch data without going through a gateway:
 
-```bash
-# get the whole bundle and save to a directory:
-ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu
+To get the whole bundle and save it to a directory, run:
 
-# get a specific file out of the bundle:
+```shell
+ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu
+```
+
+If you want to get a specific file out of the bundle, add the filename onto the end of the `ipfs get bafybie...` command:
+
+```shell
 ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanonsense.jpg
 ```
 
