@@ -9,9 +9,9 @@ All data stored using Web3.Storage is made available for retrieval via [IPFS](ht
 
 This guide will show several ways to retrieve your data from IPFS, either using [the Web3.Storage client](#using-the-web3-storage-client), via an [HTTP gateway](#using-an-ipfs-http-gateway), or with [the IPFS command line tools](#using-the-ipfs-command-line).
 
-<!-- 
 ## Using the Web3.Storage client
 
+<!--
 TODO: show how to use `client.get`
 -->
 
