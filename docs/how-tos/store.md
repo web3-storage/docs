@@ -130,7 +130,7 @@ const cid = await client.put(files, { onStoredChunk })
 
 ## Next steps
 
-The `put` method returns an [IPFS Content Identifier][ipfs-docs-cid] that can be used to fetch the files from IPFS. See the [retrieval how-to][howto-retrieve] to learn how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line.
+The `put` method returns an [IPFS Content Identifier][ipfs-docs-cid] that can be used to fetch the files from IPFS. See the [retrieval page][howto-retrieve] to learn how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line.
 
 You can also get more information about the status of your data. See the [query how-to][howto-query] to learn how to get more details about your data, including the status of any Filecoin storage deals.
 
