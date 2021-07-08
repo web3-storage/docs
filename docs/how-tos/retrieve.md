@@ -7,9 +7,11 @@ description: Learn how to retrieve data stored using Web3.Storage.
 
 TODO: intro paragraph
 
+<!-- 
 ## Using the Web3.Storage client
 
 TODO: show how to use `client.get`
+-->
 
 ## Using an IPFS HTTP gateway
 
