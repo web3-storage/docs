@@ -5,7 +5,7 @@ description: Learn how to store your data on the decentralized web with Web3.Sto
 
 # Store
 
-Web3.Storage provides a simple interface for storing data, inspired by familiar web APIs like [`fetch`][mdn-fetch] and [`File`][mdn-file]. This how-to guide will show how to use the Web3.Storage client to make your data available on the decentralized IPFS network, with persistent long-term storage provided by Filecoin.
+Web3.Storage provides a simple interface for storing data, inspired by familiar web APIs like [`fetch`][mdn-fetch] and [`File`][mdn-file]. This guide will show how to use the Web3.Storage client to make your data available on the decentralized IPFS network, with persistent long-term storage provided by Filecoin.
 
 This guide focuses on the [JavaScript client library][reference-js] , which is the simplest way to use Web3.Storage. If you're using another language, see the [HTTP API reference][reference-http] for details on working with the underlying HTTP API.
 
