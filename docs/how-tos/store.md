@@ -96,7 +96,7 @@ There are a few optional parameters to the `put` method that may come in handy d
 
 #### `name`
 
-The `name` parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable on the [file listing][site-files] on the Web3.Storage site.
+The `name` parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable within the [file listing][site-files] on the Web3.Storage site.
 
 ```js
 const cid = await client.put(files, { name: 'cat pics' })
