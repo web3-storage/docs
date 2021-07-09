@@ -104,10 +104,7 @@ module.exports = {
             title: 'Reference',
             collapsable: false,
             children: [
-              '/reference/authentication',
-              '/reference/get',
-              '/reference/list',
-              '/reference/put',
+              '/reference/client-library'
             ]
           }
         ]
