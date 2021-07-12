@@ -73,7 +73,7 @@ export default {
 }
 
 .page-edit {
-  font-family: 'VT323', monospace;
+  font-family: 'Space Grotesk', monospace;
 	font-size: 1.25rem;
   max-width: 100%;
   padding: 2rem 2rem 0 2rem;

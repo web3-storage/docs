@@ -1,35 +1,43 @@
-$primaryColor = #281857
-$secondaryColor = #fb0d41
-$tertiaryColor = #0dccf1
+$primaryColor = #0095E4 // blue
+$secondaryColor = #fb0d41 // yellow
+    $secondaryColorLight = #e7d44a
+    $secondaryColorLightest = #fffad3
+$tertiaryColor = #e44e07 // red
+    $tertiaryColorLight = #ff7b3d
+    $tertiaryColorLightest = #ffd7c3
+$quarternaryColor = #029439 // green
+    $quarternaryColorLight = #37b667
+    $quarternaryColorLightest = #dbf3e4
 $offWhiteColor = #f9ffff
+$offBlackColor = #1F1817
 
 
 // custom colors
-$mainBgColor = $primaryColor
-$layoutBgColor = #140d2e
+$mainBgColor = $secondaryColorLightest
+$layoutBgColor = $primaryColor
 $contentBgColor = $offWhiteColor
-$contentBgColorDark = #25272a
-$accentTextColor = #3f298f
-$sidebarTextColor = $secondaryColor
+$contentBgColorDark = $offWhiteColor
+$accentTextColor = $quarternaryColor
+$sidebarTextColor = $secondaryColorLightest
 $arrowBgColor = $accentColor // (for custom BackToTop component)
-$headingColor = $primaryColor
+$headingColor = $tertiaryColor
 $headingColorDark = $tertiaryColor
 $highlightColor = #ffffa0
 $highlightColorDark = #ffffa0
-$feedbackBgColor = lighten($tertiaryColor, 80%)
-$feedbackBgColorDark = darken($tertiaryColor, 80%)
+$feedbackBgColor = $tertiaryColorLightest
+$feedbackBgColorDark = $tertiaryColorLightest
 
 
 // color overrides + dark theme overrides (see theme.styl)
 // https://github.com/vuejs/vuepress/blob/master/packages/@vuepress/core/lib/client/style/config.styl
 $accentColor = $tertiaryColor
-$textColor = #123
-$textColorDark = $offWhiteColor
+$textColor = $offBlackColor
+$textColorDark = $offBlackColor
 $borderColor = $tertiaryColor
-$codeBgColor = $layoutBgColor
-$badgeTipColor = $accentColor
-$badgeWarningColor = darken(#ffe564, 35%)
-$badgeErrorColor = #da5961
-$linkColor = #612ea8
-$linkColorDark = lighten(#612ea8, 60%)
+$codeBgColor = $offBlackColor
+$badgeTipColor = $quarternaryColorLightest
+$badgeWarningColor = $secondaryColorLightest
+$badgeErrorColor = $tertiaryColorLightest
+$linkColor = $primaryColor
+$linkColorDark = $primaryColor
 $inputSearchBgColorDark = $contentBgColorDark
