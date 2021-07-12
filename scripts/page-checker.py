@@ -17,6 +17,16 @@ with open(htmlToTest, 'r') as content_file:
 soup = BeautifulSoup(content, 'html.parser')
 for codeBlock in soup.find_all("pre"):
     codeBlock.decompose()
+for heading in soup.find_all("h1"):
+    heading.decompose()
+for heading in soup.find_all("h2"):
+    heading.decompose()
+for heading in soup.find_all("h3"):
+    heading.decompose()
+for heading in soup.find_all("h4"):
+    heading.decompose()
+for heading in soup.find_all("h5"):
+    heading.decompose()
 foundDiv = soup.find_all('div', attrs={'class': 'theme-default-content'}, limit=1)
 pageText = foundDiv[0].get_text()
 
