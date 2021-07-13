@@ -51,7 +51,7 @@ module.exports = {
     nextLinks: false,
     prevLinks: false,
     // ui/ux
-    logo: '/images/web3-storage-logo.svg',
+    logo: '/images/web3-storage-logo.png',
     locales: {
       '/': {
         label: 'English',
