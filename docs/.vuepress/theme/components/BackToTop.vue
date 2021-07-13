@@ -70,7 +70,6 @@ export default {
   color: $arrowBgColor;
   z-index: 1;
   padding: 1rem;
-  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
 
   transition: color 0.3s;
 }

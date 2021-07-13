@@ -128,7 +128,7 @@ export default {
       margin-right 0.25rem
   .last-updated
     float right
-    font-size 0.9em
+    font-size 0.8em
     .prefix
       font-weight 500
       color lighten($textColor, 25%)
@@ -140,7 +140,6 @@ export default {
     .edit-link
       margin-bottom 0.5rem
     .last-updated
-      font-size 0.8em
       float none
       text-align left
 </style>

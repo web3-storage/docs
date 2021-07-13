@@ -26,7 +26,7 @@ body {
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .theme-container {
@@ -78,10 +78,15 @@ img[loading] {
 
 a {
 	color: $linkColor;
+	font-weight: bold;
 }
 
 code {
 	word-break: break-word;
+}
+
+.theme-default-content code {
+		background-color: $secondaryColorLightest;
 }
 
 svg.icon.outbound {
@@ -89,48 +94,23 @@ svg.icon.outbound {
 }
 
 a.header-anchor {
-	padding-right: 0;
-	margin-left: -0.5em;
+	font-weight: 300;
+}
+
+a.header-anchor:hover {
+	text-decoration: none !important;
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'VT323', monospace;
-	font-weight: 400;
+	font-family: 'Space Grotesk', monospace;
+	font-weight: 500;
 	color: $headingColor;
-}
-
-h1 {
-	font-size: 3rem;
-	padding-bottom: 0.5rem;
-	line-height: 2.5rem;
 }
 
 .theme-default-content:not(.custom) {
 	& > h1 {
 		padding-top: 2rem;
 	}
-}
-
-h2 {
-	font-size: 2rem;
-	line-height: 1.6rem;
-	border-bottom: 3px solid $tertiaryColor;
-    box-shadow:  2px 5px 0 -2px $secondaryColor;
-}
-
-h3 {
-	font-size: 1.75rem;
-	line-height: 1.75rem;
-}
-
-h4 {
-	font-size: 1.5rem;
-	line-height: 1.5rem;
-}
-
-h5 {
-	font-size: 1.35rem;
-	line-height: 1.1rem;
 }
 
 :root {
