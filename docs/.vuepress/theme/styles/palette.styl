@@ -1,5 +1,6 @@
 $primaryColor = #0095E4 // blue
-$secondaryColor = #fb0d41 // yellow
+$secondaryColor = #fde956 // yellow
+    $secondaryColorVariant = #fae870
     $secondaryColorLight = #e7d44a
     $secondaryColorLightest = #fffad3
 $tertiaryColor = #e44e07 // red
@@ -14,21 +15,21 @@ $offBlackColor = #1F1817
 
 // custom colors
 $mainBgColor = $secondaryColorLightest
-$layoutBgColor = $primaryColor
+$layoutBgColor = $secondaryColorVariant
 $contentBgColor = $offWhiteColor
 $contentBgColorDark = $offWhiteColor
 $accentTextColor = $quarternaryColor
-$sidebarTextColor = $secondaryColorLightest
+$sidebarTextColor = $offBlackColor
 $arrowBgColor = $accentColor // (for custom BackToTop component)
 $headingColor = $tertiaryColor
 $headingColorDark = $tertiaryColor
-$highlightColor = #ffffa0
-$highlightColorDark = #ffffa0
+$highlightColor = $secondaryColorLightest
+$highlightColorDark = $secondaryColorLightest
 $feedbackBgColor = $tertiaryColorLightest
 $feedbackBgColorDark = $tertiaryColorLightest
 
 
-// color overrides + dark theme overrides (see theme.styl)
+// color overrides + dark theme overrides (see theme.styl) - note dark theme colors are light ones for now
 // https://github.com/vuejs/vuepress/blob/master/packages/@vuepress/core/lib/client/style/config.styl
 $accentColor = $tertiaryColor
 $textColor = $offBlackColor

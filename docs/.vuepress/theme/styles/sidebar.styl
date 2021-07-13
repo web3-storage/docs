@@ -1,6 +1,5 @@
 ul > li > a.sidebar-link {
 	color: $sidebarTextColor;
-	font-weight: 500;
 }
 
 ul.sidebar-links > li > a {
@@ -9,17 +8,17 @@ ul.sidebar-links > li > a {
 
 .sidebar {
 	background-color: $layoutBgColor;
-	color: $secondaryColorLightest;
+	color: $primaryColor;
 
 	.sidebar-group:not(.collapsable) .sidebar-heading:not(.clickable) {
 		color: $tertiaryColorLight;
 	}
 
 	.sidebar-heading {
-		font-family: 'Space Grotesk', monospace;
+		font-family: 'Space Grotesk', sans-serif;
 		font-size: 1.6em;
+		font-weight: 500;
 		line-height: 1.4;
-		margin-top: 0.25em;
 	}
 
 	.sidebar-group .arrow {
@@ -35,6 +34,10 @@ ul.sidebar-links > li > a {
 		border-left: 3px solid $tertiaryColorLight;
 	} 
 
+	.sidebar-sub-headers a.sidebar-link.active {
+		border-left: none;
+	}
+
 	.sidebar-group.is-sub-group {
 		margin-bottom: 0.5rem;
 	}
@@ -45,10 +48,7 @@ ul.sidebar-links > li > a {
 
 	.sidebar-group.is-sub-group > .sidebar-heading:not(.clickable) {
 		opacity: 1;
-		font-weight: bold;
-		text-transform: uppercase;
 		font-size: 0.8rem;
-		letter-spacing: 0.05em;
 		line-height: 2em;
 	}
 
