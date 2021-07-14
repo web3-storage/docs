@@ -64,8 +64,9 @@ export default {
 
 <style lang="stylus" scoped>
 .page {
-  background-color: $w3storage-white;
+  background-color: $w3storage-blue-dark;
   padding-bottom: 2rem;
+  box-shadow: 20px $w3storage-red;
 }
 
 .content-footer {
