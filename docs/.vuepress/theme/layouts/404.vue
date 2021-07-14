@@ -52,6 +52,6 @@ export default {
 
 <style lang="stylus" scoped>
 .page-nosidebar {
-	background-color: $offWhiteColor;
+	background-color: $w3storage-white;
 }
 </style>

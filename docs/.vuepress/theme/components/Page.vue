@@ -64,7 +64,7 @@ export default {
 
 <style lang="stylus" scoped>
 .page {
-  background-color: $offWhiteColor;
+  background-color: $w3storage-white;
   padding-bottom: 2rem;
 }
 
