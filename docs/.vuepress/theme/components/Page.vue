@@ -66,7 +66,7 @@ export default {
 .page {
   background-color: $w3storage-blue-dark;
   padding-bottom: 2rem;
-  box-shadow: 20px $w3storage-red;
+  box-shadow: inset -16px 0 0 0 $w3storage-red;
 }
 
 .content-footer {
