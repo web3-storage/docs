@@ -1,44 +1,46 @@
-$primaryColor = #0095E4 // blue
-$secondaryColor = #fde956 // yellow
-    $secondaryColorVariant = #fae870
-    $secondaryColorLight = #e7d44a
-    $secondaryColorLightest = #fffad3
-$tertiaryColor = #e44e07 // red
-    $tertiaryColorLight = #ff7b3d
-    $tertiaryColorLightest = #ffd7c3
-$quarternaryColor = #029439 // green
-    $quarternaryColorLight = #37b667
-    $quarternaryColorLightest = #dbf3e4
-$offWhiteColor = #ffffff
-$offBlackColor = #1F1817
-
+$w3storage-yellow = #fde956
+$w3storage-yellow-dark = #e5ca02
+$w3storage-yellow-light = #fffae6
+$w3storage-red = #fc6553
+$w3storage-red-dark = #c94332 
+$w3storage-red-accent = #d7362e
+$w3storage-red-light = #fff5f4
+$w3storage-green = #37b667
+$w3storage-green-dark = #10853c
+$w3storage-green-light = #f0fcf4
+$w3storage-purple = #171691
+$w3storage-black = #1f1817
+$w3storage-blue-dark = #0b0a45
+$w3storage-blue-desaturated = #2d2d65
+$w3storage-blue-bright = #00a7ff
+$w3storage-white = #ffffff
 
 // custom colors
-$mainBgColor = $offWhiteColor
-$layoutBgColor = $offWhiteColor
-$contentBgColor = $offWhiteColor
-$contentBgColorDark = $offWhiteColor
-$accentTextColor = $quarternaryColor
-$sidebarTextColor = $offBlackColor
-$arrowBgColor = $primaryColor // (for custom BackToTop component)
-$headingColor = $tertiaryColor
-$headingColorDark = $tertiaryColor
-$highlightColor = $secondaryColorLightest
-$highlightColorDark = $secondaryColorLightest
-$feedbackBgColor = $secondaryColorLightest
-$feedbackBgColorDark = $secondaryColorLightest
+$mainBgColor = $w3storage-red-accent
+$layoutBgColor = $w3storage-red
+$contentBgColor = $w3storage-white
+$contentBgColorDark = $w3storage-white
+$accentTextColor = $w3storage-white
+$sidebarTextColor = $w3storage-white
+$arrowBgColor = $w3storage-blue-bright // (for custom BackToTop component)
+$headingColor = $w3storage-yellow
+$headingColorDark = $w3storage-red
+$highlightColor = $w3storage-yellow-light
+$highlightColorDark = $w3storage-yellow-light
+$feedbackBgColor = $w3storage-blue-desaturated
+$feedbackBgColorDark = w3storage-blue-desaturated
 
 
 // color overrides + dark theme overrides (see theme.styl) - note dark theme colors are light ones for now
 // https://github.com/vuejs/vuepress/blob/master/packages/@vuepress/core/lib/client/style/config.styl
-$accentColor = $tertiaryColor
-$textColor = $offBlackColor
-$textColorDark = $offBlackColor
-$borderColor = $tertiaryColorLight
-$codeBgColor = $offBlackColor
-$badgeTipColor = $quarternaryColorLightest
-$badgeWarningColor = $secondaryColorLightest
-$badgeErrorColor = $tertiaryColorLightest
-$linkColor = $primaryColor
-$linkColorDark = $primaryColor
+$accentColor = $w3storage-red
+$textColor = $w3storage-white
+$textColorDark = $w3storage-black
+$borderColor = $headingColor
+$codeBgColor = $w3storage-blue-desaturated
+$badgeTipColor = $w3storage-green
+$badgeWarningColor = $w3storage-yellow
+$badgeErrorColor = $w3storage-red
+$linkColor = $w3storage-blue-bright
+$linkColorDark = $w3storage-blue-bright
 $inputSearchBgColorDark = $contentBgColorDark

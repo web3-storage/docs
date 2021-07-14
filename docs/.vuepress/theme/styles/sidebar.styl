@@ -8,17 +8,18 @@ ul.sidebar-links > li > a {
 
 .sidebar {
 	background-color: $layoutBgColor;
-	color: $primaryColor;
+	color: $w3storage-black;
 
 	.sidebar-group:not(.collapsable) .sidebar-heading:not(.clickable) {
-		color: $offBlackColor;
+		color: $w3storage-purple;
+		font-weight: 600;
 	}
 
 	.sidebar-heading {
 		font-family: 'Space Grotesk', sans-serif;
-		font-size: 1.2em;
+		font-size: 1.4em;
 		font-weight: 500;
-		line-height: 1.1;
+		line-height: 1.3;
 	}
 
 	.sidebar-group .arrow {
@@ -30,8 +31,13 @@ ul.sidebar-links > li > a {
 	}
 
 	a.sidebar-link.active {
-		color: $primaryColor;
-		border-left: 4px solid $primaryColor;
+		color: $w3storage-white;
+		font-weight: bold;
+		border-left: 4px solid $w3storage-yellow;
+	} 
+
+	a.sidebar-link:hover {
+		color: $w3storage-white;
 	} 
 
 	.sidebar-sub-headers a.sidebar-link.active {
@@ -62,7 +68,7 @@ ul.sidebar-links > li > a {
 
 // sidebar scrollbar style
 .sidebar::-webkit-scrollbar {
-	width: 4px;
+	width: 6px;
 	position: fixed;
 	right: 0;
 }

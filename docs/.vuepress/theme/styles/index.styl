@@ -22,11 +22,15 @@ html {
 
 body {
 	background-color: transparent;
+	background-image: url('/images/background-schematics.svg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
     overflow-y: scroll;
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .theme-container {
@@ -86,7 +90,10 @@ code {
 }
 
 .theme-default-content code {
-		background-color: $secondaryColorLightest;
+	background-color: $w3storage-blue-desaturated;
+	color: $w3storage-yellow-light;
+	font-family: 'Space Mono', monospace;
+	font-size: 0.95em;
 }
 
 svg.icon.outbound {
@@ -94,6 +101,7 @@ svg.icon.outbound {
 }
 
 a.header-anchor {
+	color: $headingColor;
 	font-weight: 300;
 }
 
@@ -102,7 +110,7 @@ a.header-anchor:hover {
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'Space Grotesk', monospace;
+	font-family: 'Space Grotesk', sans-serif;
 	font-weight: 500;
 	color: $headingColor;
 }

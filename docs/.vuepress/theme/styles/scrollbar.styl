@@ -1,7 +1,7 @@
 scrollbar = @block {
     &::-webkit-scrollbar {
-        width: 4px;
-        height: 4px;
+        width: 6px;
+        height: 6px;
         position: fixed;
         right: 0;
     }
@@ -13,7 +13,7 @@ scrollbar = @block {
 
     &:hover::-webkit-scrollbar-thumb,
     &::-webkit-scrollbar-thumb:hover {
-        background-color: $tertiaryColor;
+        background-color: $w3storage-yellow;
     }
 
     // Firefox
@@ -25,7 +25,7 @@ scrollbar = @block {
     }
 
     &:hover {
-        scrollbar-color: $tertiaryColor transparent;
+        scrollbar-color: $w3storage-yellow transparent;
     }
 
 }
