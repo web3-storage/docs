@@ -8,17 +8,18 @@ ul.sidebar-links > li > a {
 
 .sidebar {
 	background-color: $layoutBgColor;
-	color: $w3storage-purple;
+	color: $w3storage-black;
 
 	.sidebar-group:not(.collapsable) .sidebar-heading:not(.clickable) {
-		color: $w3storage-black;
+		color: $w3storage-purple;
+		font-weight: 600;
 	}
 
 	.sidebar-heading {
 		font-family: 'Space Grotesk', sans-serif;
-		font-size: 1.2em;
+		font-size: 1.4em;
 		font-weight: 500;
-		line-height: 1.1;
+		line-height: 1.3;
 	}
 
 	.sidebar-group .arrow {
@@ -30,8 +31,9 @@ ul.sidebar-links > li > a {
 	}
 
 	a.sidebar-link.active {
-		color: $w3storage-purple;
-		border-left: 4px solid $w3storage-purple;
+		color: $w3storage-white;
+		font-weight: bold;
+		border-left: 4px solid $w3storage-yellow;
 	} 
 
 	.sidebar-sub-headers a.sidebar-link.active {
