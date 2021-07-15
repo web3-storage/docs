@@ -77,7 +77,9 @@ Calling the `files()` method will return your requested files as an `Array<Web3F
 
 The `Web3File` type extends [the generic JavaScript `File` type](https://developer.mozilla.org/en-US/docs/Web/API/File), adding a `string` property for the CID of the given file named `cid`, as shown in the example below. This will be different from the CID of the CAR that contains the file, which you specified when calling `get()`.
 
-> **Note**: In addition to the `files()` method, you can also use the `unixFsIterator()` method, which will return your requested files as a  `AsyncIterable<UnixFSEntry>` object, which is an iterable collection of [`UnixFSEntry`](https://github.com/ipfs/js-ipfs-unixfs/blob/master/packages/ipfs-unixfs-exporter/README.md#unixfsentry) objects. Each object represents a file that was uploaded in the CAR file with the supplied CID. However, in the vast majority of cases, you will want to use the `files()` method. The exception is when you are retrieving files in a Node.js context, and you have existing IPFS tooling that knows how to consume `UnixFSEntry` objects.
+:::tip Using UnixFSEntry
+In addition to the `files()` method, you can also use the `unixFsIterator()` method, which will return your requested files as a  `AsyncIterable<UnixFSEntry>` object, which is an iterable collection of [`UnixFSEntry`](https://github.com/ipfs/js-ipfs-unixfs/blob/master/packages/ipfs-unixfs-exporter/README.md#unixfsentry) objects. Each object represents a file that was uploaded in the CAR file with the supplied CID. However, in the vast majority of cases, you will want to use the `files()` method. The exception is when you are retrieving files in a Node.js context, and you have existing IPFS tooling that knows how to consume `UnixFSEntry` objects.
+:::
 
 ### Example
 
