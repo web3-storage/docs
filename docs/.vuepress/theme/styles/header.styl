@@ -23,7 +23,7 @@
 	}
 
 	.sidebar-button {
-		color: $w3storage-yellow;
+		color: $w3storage-blue-dark;
 		padding: 0.4rem;
 
 		.icon {
@@ -35,6 +35,29 @@
 
 header.navbar .links {
 	background-color: $layoutBgColor;
+}
+
+.theme-container .nav-links a {
+	color: $w3storage-blue-dark;
+	font-weight: 500;
+}
+
+.theme-container .nav-links a {
+	border-bottom: solid 1px transparent !important;
+	transition:
+		border-color 0.3s ease,
+		color 0.3s ease;
+}
+
+.theme-container .nav-item > a:hover, .theme-container .nav-item > a.router-link-active {
+	border-bottom-color: $w3storage-blue-dark !important;
+	color: $w3storage-blue-dark;
+}
+
+@media screen and (min-width: 719px) {
+	.theme-container .nav-links .nav-item {
+		margin-left: 3rem;
+	}
 }
 
 #algolia-search-input {

@@ -1,5 +1,6 @@
 // .vuepress/config.js
 
+const MAIN_DOMAIN = process.env.MAIN_DOMAIN || 'https://staging.web3.storage'
 const DEPLOY_DOMAIN = 'https://docs.web3.storage'
 const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const COUNTLY_KEY = process.env.COUNTLY_KEY || ''
@@ -40,6 +41,7 @@ module.exports = {
       'Filecoin, IPFS, dweb, protocol, decentralized web, InterPlanetary File System, dapp, documentation, docs, tutorial, how-to, Protocol Labs',
     // edit links
     domain: DEPLOY_DOMAIN,
+    mainDomain: MAIN_DOMAIN,
     docsRepo: 'web3-storage/docs',
     docsDir: 'docs',
     docsBranch: 'main',
@@ -65,7 +67,7 @@ module.exports = {
             buttonText: 'Refresh'
           }
         },
-        nav: require('./nav/en'),
+        nav: require('./nav/en')({ mainDomain: MAIN_DOMAIN }),
         sidebar: [
           {
             title: 'Quickstart',
