@@ -48,26 +48,9 @@ for (const file of files) {
 }
 ```
 
-#### `unixFsIterator`
-
-The [`unixFsIterator` method][reference-js-web3response-unixfsiterator] provides lower-level streaming access to the retrieved data than the `files` method, at the cost of being a bit more complicated to use. 
-
-`unixFsIterator` is useful in cases where you expect large responses or responses containing many files, as it does not buffer all files in memory before returning. Instead, the returned async iterator will `yield` an object for each entry.
-
-```js
-const res = await client.get(cid)
-for await (const entry of res.unixFsIterator()) {
-  console.log(`got unixfs file of type ${entry.type}. cid: ${entry.cid} path: ${entry.path}`)
-  // entry.content() returns another async iterator for the file contents, chunked into pieces
-  for await (const chunk of entry.content()) {
-    console.log(`got a chunk of ${chunk.size} bytes of data`)
-  }
-}
-```
-
-The iterator returns `UnixFS` objects, which are a representation of files and directory entries used by IPFS. If you use `unixFsIterator`, see the [js-ipfs-unixfs package][js-ipfs-unixfs-readme] for details on the structure and API of a `UnixFS` object.
-
-Note that not all `UnixFS` entries returned by the iterator represent files. If `entry.type == 'directory'`, the entry represents a directory and contains no data itself, just links to other entries.
+:::tip Using unixFs objects
+Another option is to use the array of `unixFs` objects provided by the `unixFsIterator()` method to iterate through the files. While in the vast majority of cases you will want to use the `files()` method outlined above, existing IPFS users may prefer interacting with `unixFs` objects if they have existing code or tooling that supports it. For more details, see the [Client Library reference](/reference/client-library.md).
+:::
 
 ## Using an IPFS HTTP gateway
 
@@ -114,5 +97,3 @@ ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanons
 [mdn-fetch]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 [mdn-file]: https://developer.mozilla.org/en-US/docs/Web/API/File
 [mdn-response]: https://developer.mozilla.org/en-US/docs/Web/API/Response
-
-[js-ipfs-unixfs-readme]: https://github.com/ipfs/js-ipfs-unixfs/blob/master/packages/ipfs-unixfs/README.md

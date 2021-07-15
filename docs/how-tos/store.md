@@ -90,44 +90,6 @@ Once you have a client object and an array of `File`s, uploading is simple:
 const cid = await client.put(files)
 ```
 
-### Upload options
-
-There are a few optional parameters to the `put` method that may come in handy depending on your use case.
-
-#### `name`
-
-The `name` parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable within the [file listing][site-files] on the Web3.Storage site.
-
-```js
-const cid = await client.put(files, { name: 'cat pics' })
-```
-
-#### `maxRetries`
-
-You can specify how many times `put` should attempt to retry in case of failure by passing in a `maxRetries` option:
-
-```js
-const cid = await client.put(files, { maxRetries: 3 })
-```
-
-#### `onRootCidReady`
-
-Because the data is formatted for IPFS and Filecoin on the client, the root CID for the data is generated before the data is uploaded to Web3.Storage. If you want to display the CID to the user before the upload is complete, pass in an `onRootCidReady` function that accepts a CID string:
-
-```js
-const onRootCidReady = rootCid => console.log('root cid:', rootCid)
-const cid = await client.put(files, { onRootCidReady })
-```
-
-#### `onStoredChunk`
-
-You can also display progress updates by passing in an `onStoredChunk` callback. This will be called after each chunk of data is uploaded, with the size of the chunk in bytes passed in as a parameter:
-
-```js
-const onStoredChunk = chunkSize => console.log(`stored chunk of ${chunkSize} bytes`)
-const cid = await client.put(files, { onStoredChunk })
-```
-
 ## Next steps
 
 The `put` method returns an [IPFS Content Identifier][ipfs-docs-cid] that can be used to fetch the files from IPFS. See the [retrieval page][howto-retrieve] to learn how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line.
