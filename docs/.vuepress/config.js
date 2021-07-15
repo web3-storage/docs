@@ -13,8 +13,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'web3.storage Documentation',
-      description: 'web3.storage Documentation'
+      title: 'Web3.Storage Documentation',
+      description: 'Web3.Storage Documentation'
     }
   },
   markdown: {
@@ -34,11 +34,11 @@ module.exports = {
   themeConfig: {
     defaultImage: '/images/social-card.png',
     author: {
-      name: 'web3.storage',
+      name: 'Web3.Storage',
       twitter: '@protocollabs'
     },
     keywords:
-      'Filecoin, IPFS, dweb, protocol, decentralized web, InterPlanetary File System, dapp, documentation, docs, tutorial, how-to, Protocol Labs',
+      'Filecoin, IPFS, web3, dweb, protocol, decentralized web, distributed web, NFT, InterPlanetary File System, dapp, documentation, docs, tutorial, how-to, Protocol Labs',
     // edit links
     domain: DEPLOY_DOMAIN,
     mainDomain: MAIN_DOMAIN,
