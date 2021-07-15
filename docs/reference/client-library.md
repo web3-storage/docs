@@ -30,6 +30,19 @@ Store files using the `put()` method.
 <clientObject>.put(file[], { options })
 ```
 
+### Example
+
+```javascript
+const fileInput = document.querySelector('input[type="file"]')
+
+// Pack files into a CAR and send to web3.storage
+const rootCid = await client.put(fileInput.files)
+```
+
+### Return value
+
+The method returns a string containing the CID of the uploaded CAR.
+
 ### Parameters
 
 Method parameters are supplied in positional order.
@@ -84,19 +97,6 @@ const onStoredChunk = chunkSize => console.log(`stored chunk of ${chunkSize} byt
 const cid = await client.put(files, { onStoredChunk })
 ```
 
-### Return value
-
-The method returns a string containing the CID of the uploaded CAR.
-
-### Example
-
-```javascript
-const fileInput = document.querySelector('input[type="file"]')
-
-// Pack files into a CAR and send to web3.storage
-const rootCid = await client.put(fileInput.files)
-```
-
 ## Retrieve Files
 
 Retrieve files using the `get()` method. You need the CID that references the CAR for your uploaded files that you obtained at upload time.
@@ -107,13 +107,15 @@ Retrieve files using the `get()` method. You need the CID that references the CA
 <clientObject>.get(<CID>)
 ```
 
-### Parameters
+### Example
 
-Parameters are supplied in positional order.
-
-| Number | Type | Description |
-| ------ | ---- | ----------- |
-| 1 | `string` | A string containing the CID of the CAR to be retrieved. |
+```javascript
+const res = await client.get(rootCid) // Web3Response
+const files = await res.files() // Web3File[]
+for (const file of files) {
+  console.log(`${file.cid} ${file.name} ${file.size}`)
+}
+```
 
 ### Return value
 
@@ -146,16 +148,13 @@ Note that not all `UnixFS` entries returned by the iterator represent files. If 
 
 For more details on `UnixFS` objects, see [the README file in the `UnixFS` GitHub repository](https://github.com/ipfs/js-ipfs-unixfs/blob/master/packages/ipfs-unixfs/README.md).
 
+### Parameters
 
-### Example
+Parameters are supplied in positional order.
 
-```javascript
-const res = await client.get(rootCid) // Web3Response
-const files = await res.files() // Web3File[]
-for (const file of files) {
-  console.log(`${file.cid} ${file.name} ${file.size}`)
-}
-```
+| Number | Type | Description |
+| ------ | ---- | ----------- |
+| 1 | `string` | A string containing the CID of the CAR to be retrieved. |
 
 ## Retrieve metadata
 
