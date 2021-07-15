@@ -5,15 +5,13 @@
         class="go-to-top"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 45 26"
+        viewBox="0 0 49.484 28.284"
         @click="scrollToTop"
     >
-        <path
-            d="M19.989 5.004l-5 .003.004 5 5-.003zM14.992 10.008l-5 .003.004 5 5-.003zM9.996 15.011l-5 .004.004 5 5-.004zM5 20.015l-5 .004.004 5 5-.004zM20.004 0l5 .004-.004 5L20 5zM25 5.004l5 .004-.004 5-5-.004zM29.996 10.008l5 .004-.004 5-5-.004z"
-        />
-        <path
-            d="M34.992 15.011l5 .004-.004 5-5-.004zM39.989 20.015l5 .004-.004 5-5-.004z"
-        />
+      <g data-v-591d7001="" transform="translate(-229 -126.358)">
+        <rect data-v-591d7001="" fill="currentColor" width="35" height="5" rx="2" transform="translate(229 151.107) rotate(-45)"></rect> 
+        <rect data-v-591d7001="" fill="currentColor" width="35" height="5" rx="2" transform="translate(274.949 154.642) rotate(-135)"></rect>
+      </g>
     </svg>
   </transition>
 </template>
