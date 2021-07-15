@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="illustration">
-          <img src="../assets/under-construction.svg" />
+          <img src="/images/background-schematics.svg" />
         </div>
       </div>
     </div>
