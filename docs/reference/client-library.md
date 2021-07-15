@@ -9,7 +9,7 @@ description: Integrate web3.storage into your code using a client library for yo
 
 To use the JavaScript client library for web3.storage, you must first [obtain an API key](../how-tos/regenerate-api-key.md).
 
-The client library will automatically pack your uploads into a content addressible archive (CAR) file for uploading to the web3.storage service, which stores data as blocks prefixed with the content ID (CID) derived from the hash of the data, in a file with a `.car` extension. You can then use the CID to retrieve the file.
+The client library will automatically pack your uploads into a content addressible archive (CAR) file for uploading to the Web3.Storage service, which stores data as blocks prefixed with the content ID (CID) derived from the hash of the data. You can then use the CID to retrieve the file.
 
 ## Constructor
 
