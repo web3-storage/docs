@@ -71,7 +71,7 @@ Parameters are supplied in positional order.
 
 ### Return value
 
-The method returns a `Web3Response` object, which extends the [Fetch API response object](https://developer.mozilla.org/en-US/docs/Web/API/Response) to add two iterator methods unique to the web3.storage client library: `files()` and `unixFsIterator()`.
+The method returns a `Web3Response` object, which extends the [Fetch API response object](https://developer.mozilla.org/en-US/docs/Web/API/Response) to add two iterator methods unique to the Web3.Storage client library: `files()` and `unixFsIterator()`.
 
 Calling the `files()` method will return your requested files as an `Array<Web3File>` object, which is an iterable collection of `Web3File` objects. Each object represents a file that was uploaded in the CAR file with the supplied CID.
 
