@@ -21,13 +21,6 @@ In your JavaScript project, add the `web3.storage` package to your dependencies:
 npm install web3.storage
 ```
 
-If you're running in a browser environment, you'll also need the `web3-file` package, which extends the [Web File API][mdn-file] to include file paths and other metadata required by the Web3.Storage API.
-
-```bash
-# only needed for browser runtimes, ignore if you're building for node.js
-npm install web3-file
-```
-
 ## Creating a client instance
 
 To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
@@ -42,27 +35,18 @@ In the example above, we read the token from an environment variable called `WEB
 
 ## Preparing files for upload
 
-The client's [`put` method][reference-js-put] accepts an array of `FileLike` objects, which is an interface based on the [Web File API](https://developer.mozilla.org/en-US/docs/Web/API/File) that also includes a file path property.
+The client's [`put` method][reference-js-put] accepts an array of `FileLike` objects, which is an interface based on the [Web File API](https://developer.mozilla.org/en-US/docs/Web/API/File).
 
-On Node, the `FileLike` implementation is provided by the `@web-std/file` package, which is pulled in automatically when you add `web3.storage` to your project's dependencies. When running in the browser, you should add the `web3-file` package to your dependencies as described above.
+When running in the browser, you can use the native `File` object provided by the browser runtime. 
 
-Import the `File` object that matches your runtime platform:
+On node.js, the `FileLike` implementation is provided by the `@web-std/file` package, which is pulled in automatically when you add `web3.storage` to your project's dependencies. To use it, you'll need to import it into your code: 
 
 ```js
-// for node.js:
+// for node.js only:
 const { File } = require('@web-std/file')
-
-// for browsers:
-const { File } = require('web3-file')
 ```
 
-If you're planning to support both runtimes, consider using a bundler like [webpack](https://webpack.js.org) or [rollup](https://rollupjs.org/guide/en/) that can selectively override imports based on the target platform. Then you can confine your platform-specific imports to one file, and the rest of your code can just do something like this:
-
-```js
-const { File } = require('./platform')
-```
-
-Once you've got a `File` object in scope, you can prepare your files for upload:
+Once you have a `File` constructor in scope, you can prepare your files for upload:
 
 ```js
 const files = [
@@ -78,6 +62,13 @@ const files = [
   new File(kittyImageBytes, '/images/cats/kitty.jpeg'),
   new File(pugImageBytes, '/images/dogs/pug.jpeg'),
 ]
+```
+
+In the browser, you can also use a [file input element][mdn-file-input] to allow the user to select files for upload, instead of creating `File` objects manually:
+
+```js
+const fileInput = document.querySelector('input[type="file"]')
+const files = fileInput.files
 ```
 
 ::: tip Unique file names
@@ -119,3 +110,4 @@ You can also get more information about the status of your data. See the [query 
 [ipfs-docs-cli-quickstart]: https://docs.ipfs.io/how-to/command-line-quick-start/
 [mdn-fetch]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 [mdn-file]: https://developer.mozilla.org/en-US/docs/Web/API/File
+[mdn-file-input]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
