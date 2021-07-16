@@ -83,6 +83,8 @@ Once you have a client object and an array of `File`s, uploading is simple:
 const cid = await client.put(files)
 ```
 
+If you'd like to associate a name with your upload or display progress information to the user, see the [client library reference][reference-js-put] for a description of the optional parameters.
+
 ## Next steps
 
 The `put` method returns an [IPFS Content Identifier][ipfs-docs-cid] that can be used to fetch the files from IPFS. See the [retrieval page][howto-retrieve] to learn how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line.
@@ -92,10 +94,9 @@ You can also get more information about the status of your data. See the [query 
 <!-- internal links -->
 
 <!-- FIXME: link targets for reference docs don't exist yet -->
-[reference-js]: ../../reference/javascript.md
-[reference-js-constructor]: ../../reference/javascript.md#constructor
-[reference-js-put]: ../../reference/javascript.md#put
-[reference-http]: ../../reference/http.md
+[reference-js]: ../../reference/client-library#javascript.md
+[reference-js-constructor]: ../../reference/client-library.md#constructor
+[reference-js-put]: ../../reference/client-library.md#store-files
 
 [quickstart-guide]: ../../quickstart/README.md
 [howto-retrieve]: ./retrieve.md
