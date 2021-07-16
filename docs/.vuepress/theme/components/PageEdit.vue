@@ -1,5 +1,5 @@
 <template>
-  <footer class="page-edit">
+  <div class="page-edit">
     <div
       v-if="editLink"
       class="edit-link"
@@ -19,7 +19,7 @@
       <span class="prefix">{{ lastUpdatedText }}:</span>
       <span class="time">{{ lastUpdated }}</span>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>
@@ -127,7 +127,7 @@ export default {
       color lighten($textColor, 25%)
       margin-right 0.25rem
   .last-updated
-    float right
+    float left
     font-size 0.8em
     .prefix
       font-weight 500

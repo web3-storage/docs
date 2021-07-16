@@ -21,7 +21,6 @@ export function init ({ key, url }) {
   countly.track_clicks();
   countly.track_links();
   countly.track_scrolls();
-  countly.track_errors();
 }
 
 
