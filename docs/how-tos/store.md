@@ -33,7 +33,7 @@ npm install web3-file
 To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
 
 ```js
-const { Web3Storage } = require('web3.storage')
+import { Web3Storage } from 'web3.storage'
 const token = process.env.WEB3_STORAGE_TOKEN
 const client = new Web3Storage({ token })
 ```
