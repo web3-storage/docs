@@ -7,13 +7,13 @@
     </component>
     <footer>
         <div class="footer--made-with">
-            Made with ❤️by
-            <a href="https://protocol.ai">Protocol Labs</a>
+            Made with&nbsp;&#128155;&nbsp;by
+            <a href="https://protocol.ai" target="_blank" rel="noopener noreferrer">Protocol Labs</a>
         </div>
         <div class="footer--links">
-            <a href="https://status.web3.storage" target="_blank" class="footer--links-item footer--links--status">Status</a>
-            <a :href="`${$site.themeConfig.mainDomain}/legal`" class="footer--links-item footer--links--terms">Terms of Service</a>
-            <a class="footer--links-item footer--links--help">Help</a>
+            <div><a href="https://status.web3.storage" target="_blank" rel="noopener noreferrer" class="footer--links-item footer--links--status">Status</a></div>
+            <div><a :href="`${$site.themeConfig.mainDomain}/legal`" class="footer--links-item footer--links--terms">Terms of Service</a></div>
+            <div><span class="footer--links--help-prefix">Need help?</span>&nbsp;<a href="https://github.com/web3-storage" target="_blank" rel="noopener noreferrer" class="footer--links-item footer--links--help">Open an issue</a></div>
         </div>
     </footer>
   </div>
@@ -47,7 +47,7 @@ footer {
 	@extend .mx-auto;
 	@extend .relative;
 
-    --link-hit-area: 0.75em;
+    --link-hit-area: 1.25em;
     --side-spacing: 2em;
     
     position: relative;
@@ -55,22 +55,22 @@ footer {
     overflow: hidden;
     
     background-color: $layoutBgColor;
-    color: $w3storage-blue-dark;
+    color: $w3storage-purple;
     
     display: flex;
-    padding: 2em 0;
+    padding: 1.25em 0;
 
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 
 footer a {
-    color: $w3storage-blue-dark;
+    color: $w3storage-purple;
     transition: color 0.3s;
     cursor: pointer;
 
     &:hover {
-        color: $w3storage-white;
+        color: $w3storage-yellow;
     }
 }
 
@@ -87,6 +87,7 @@ footer a {
 
 .footer--links {
   display: flex;
+  align-items: center;
   padding-right: var(--side-spacing);
   margin-right: calc(-1 * var(--link-hit-area));
 }
@@ -95,6 +96,36 @@ footer a {
     padding: 0 var(--link-hit-area);
 
     text-decoration none;
+}
+
+.footer--links--help-prefix {
+    padding-left: 0.5em;
+    padding-right: 0;
+}
+
+.footer--links--help {
+    padding-left: 0;
+    padding-right: 0.5em;
+}
+
+@media (max-width: $MQMobile) {
+	footer {
+		display: block;
+    text-align: center;
+	}
+  .footer--made-with {
+    padding-left: 0;
+    a {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .footer--links {
+    display: block;
+    margin-top: 0.5em;
+    margin-right: 0;
+    padding-right: 0;
+  }
 }
 
 </style>
