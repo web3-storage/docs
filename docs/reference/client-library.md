@@ -54,7 +54,7 @@ Method parameters are supplied in positional order.
 
 An `{options}` object is a JSON object that defines option parameters:
 
-```json
+```js
 {
   name: 'cat pics',
   maxRetries: 3,
