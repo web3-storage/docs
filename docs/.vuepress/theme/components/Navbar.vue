@@ -87,16 +87,16 @@ function css (el, property) {
 
 <style lang="stylus">
 $navbar-vertical-padding = 0.7rem
-$navbar-horizontal-padding = 1.5rem
+$navbar-horizontal-padding = 1.1rem
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
   a, span, img
     display inline-block
   .logo
-    height $navbarHeight - 1.4rem
-    min-width $navbarHeight - 1.4rem
-    margin-right 0.8rem
+    height $navbarHeight - 1.8rem
+    min-width $navbarHeight - 1.8rem
+    margin-right 0.4rem
     vertical-align top
   .site-name
     font-size 1.3rem
@@ -116,7 +116,7 @@ $navbar-horizontal-padding = 1.5rem
     .search-box
       flex: 0 0 auto
       vertical-align top
-      margin: 0 0 0 3rem
+      margin: 0 0 0 2rem
 @media (max-width: $MQMobile)
   .navbar
     padding-left 4rem

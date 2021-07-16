@@ -23,7 +23,7 @@
 	}
 
 	.sidebar-button {
-		color: $w3storage-blue-dark;
+		color: $w3storage-purple;
 		padding: 0.4rem;
 
 		.icon {
@@ -38,20 +38,13 @@ header.navbar .links {
 }
 
 .theme-container .nav-links a {
-	color: $w3storage-blue-dark;
+	color: $w3storage-purple;
 	font-weight: 600;
 }
 
-.theme-container .nav-links a {
-	border-bottom: solid 1px transparent !important;
-	transition:
-		border-color 0.3s ease,
-		color 0.3s ease;
-}
-
 .theme-container .nav-item > a:hover, .theme-container .nav-item > a.router-link-active {
-	border-bottom-color: $w3storage-blue-dark !important;
-	color: $w3storage-blue-dark;
+	color: $w3storage-yellow;
+	border-bottom: none !important;
 }
 
 @media screen and (min-width: 719px) {
@@ -63,6 +56,10 @@ header.navbar .links {
 #algolia-search-input {
 	border-radius: 0;
 	border: none;
+}
+
+.search-box input {
+	background-image: url('/images/search.svg') !important;
 }
 
 header.navbar .links input {
@@ -110,8 +107,7 @@ header.navbar .algolia-autocomplete {
 	header.navbar .links {
 		input {
 			width: 0;
-			background-color: transparent;
-			background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='31'%3E%3Cg stroke-width='2' stroke='%23171691' fill='none'%3E%3Cpath d='M11.29 11.71l-4-4'/%3E%3Ccircle cx='7' cy='5' r='4'/%3E%3C/g%3E%3C/svg%3E%0A") 0.7rem 0.7rem no-repeat;
+			background-color: $w3storage-purple;
 		}
 
 		.suggestions {
@@ -128,31 +124,26 @@ header.navbar .algolia-autocomplete {
 
 		input:focus {
 			width: 20em;
-			background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='31'%3E%3Cg stroke-width='2' stroke='%23ffffff' fill='none'%3E%3Cpath d='M11.29 11.71l-4-4'/%3E%3Ccircle cx='5' cy='5' r='4'/%3E%3C/g%3E%3C/svg%3E%0A") 0.7rem 0.7rem no-repeat;
-			background-color: $contentBgColor;
 		}
 	}
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $MQNarrow) {
 	header.navbar .links {
 		input {
 			margin-right: 0.4em;
-			background-color: transparent;
-			background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='31'%3E%3Cg stroke-width='2' stroke='%23171691' fill='none'%3E%3Cpath d='M11.29 11.71l-4-4'/%3E%3Ccircle cx='7' cy='5' r='4'/%3E%3C/g%3E%3C/svg%3E%0A") 0.6rem 0.5rem no-repeat;
+			background-color: $w3storage-purple;
 
 			// prevent zooming on iOS
 			box-sizing: border-box;
 			font-size: 1rem;
 
 			&:focus {
-				width: 87.5vw;
-				background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='31'%3E%3Cg stroke-width='2' stroke='%23ffffff' fill='none'%3E%3Cpath d='M11.29 11.71l-4-4'/%3E%3Ccircle cx='7' cy='5' r='4'/%3E%3C/g%3E%3C/svg%3E%0A") 0.6rem 0.5rem no-repeat;
-				background-color: $contentBgColor;
+				width: 17em;
 			}
 		}
 		.suggestions {
-			width: 87vw;
+			width: 18.6em;
 			border: 2px solid $w3storage-purple;
 			background-color: $layoutBgColor;
 			a {
@@ -165,6 +156,37 @@ header.navbar .algolia-autocomplete {
 			padding-bottom: 0.5em;
 			margin-top: 0;
 			margin-right: 5px;
+		}
+	}
+}
+
+@media (max-width: $MQMobile) {
+	header.navbar .links {
+		input {
+			margin-right: 0.4em;
+
+			// prevent zooming on iOS
+			box-sizing: border-box;
+			font-size: 1rem;
+
+			&:focus {
+				width: 87.5vw;
+			}
+		}
+		.suggestions {
+			width: 86.75vw;
+			border: 2px solid $w3storage-purple;
+			background-color: $layoutBgColor;
+			a {
+				color: $w3storage-purple;
+			}
+			a:hover {
+				color: $w3storage-yellow;
+			}
+			padding-top: 0.4em;
+			padding-bottom: 0.5em;
+			margin-top: 0;
+			margin-right: 6px;
 		}
 	}
 
