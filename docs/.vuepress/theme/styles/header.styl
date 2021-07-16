@@ -138,6 +138,8 @@ header.navbar .algolia-autocomplete {
 	header.navbar .links {
 		input {
 			margin-right: 0.4em;
+			background-color: transparent;
+			background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='31'%3E%3Cg stroke-width='2' stroke='%23171691' fill='none'%3E%3Cpath d='M11.29 11.71l-4-4'/%3E%3Ccircle cx='7' cy='5' r='4'/%3E%3C/g%3E%3C/svg%3E%0A") 0.6rem 0.5rem no-repeat;
 
 			// prevent zooming on iOS
 			box-sizing: border-box;
@@ -145,7 +147,24 @@ header.navbar .algolia-autocomplete {
 
 			&:focus {
 				width: 87.5vw;
+				background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='31'%3E%3Cg stroke-width='2' stroke='%23ffffff' fill='none'%3E%3Cpath d='M11.29 11.71l-4-4'/%3E%3Ccircle cx='7' cy='5' r='4'/%3E%3C/g%3E%3C/svg%3E%0A") 0.6rem 0.5rem no-repeat;
+				background-color: $contentBgColor;
 			}
+		}
+		.suggestions {
+			width: 87vw;
+			border: 2px solid $w3storage-purple;
+			background-color: $layoutBgColor;
+			a {
+				color: $w3storage-purple;
+			}
+			a:hover {
+				color: $w3storage-yellow;
+			}
+			padding-top: 0.4em;
+			padding-bottom: 0.5em;
+			margin-top: 0;
+			margin-right: 5px;
 		}
 	}
 
