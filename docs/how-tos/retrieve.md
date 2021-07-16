@@ -13,7 +13,7 @@ This guide will show several ways to retrieve your data from IPFS, either using 
 
 The Web3.Storage JavaScript client provides a `get` method that allows you to retrieve any IPFS content using its [Content Identifier (CID)][ipfs-docs-cid].
 
-First you'll need to create a Web3.Storage client using an API token. See the [Quickstart page][quickstart-guide] if you don't yet have an API token.
+First, you'll need to create a Web3.Storage client using an API token. See the [Quickstart page][quickstart-guide] if you don't yet have an API token.
 
 ```js
 const { Web3Storage } = require('web3.storage')
@@ -58,13 +58,13 @@ You can easily fetch any data stored using Web3.Storage using an HTTP gateway. B
 
 When you [store data using the Web3.Storage client][howto-store], the `put` method returns an [IPFS content identifier (CID)][ipfs-docs-cid] string. That CID points to an IPFS directory that contains all the files passed in to the `put` method.
 
-You can view a listing of all the files in the directory using an IPFS gateway by creating a gateway URL. For example, if your CID is `bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu`, you can make a URL for the gateway at `dweb.link`: [dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu](https://dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu).
+You can view a listing of all the files in the directory using an IPFS gateway by creating a gateway URL. For example, if your CID is `bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu`, you can make a URL for the gateway at `dweb.link`: [dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu](https://bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/).
 
 If you follow the link, you should see a page similar to this:
 
 ![Screenshot of an IPFS gateway directory listing](./images/gateway-directory-listing.png)
 
-To link directly to a file within the bundle, just add the file path after the CID portion of the link. For example: [dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/not-distributed.jpg](https://dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/not-distributed.jpg)
+To link directly to a file within the bundle, just add the file path after the CID portion of the link. For example: [dweb.link/ipfs/bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/not-distributed.jpg](https://bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/not-distributed.jpg)
 
 ## Using the IPFS command line
 

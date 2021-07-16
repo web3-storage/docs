@@ -15,11 +15,11 @@ The problem is, components of an address like `docs.web3.storage/concepts/conten
 
 ## CIDs: Location-independent, globally unique keys
 
-A content-addressed system such as Web3.storage is like our key-value-based DNS system, with one significant difference: You no longer get to choose the keys. Instead, the keys are derived directly from the file contents using an algorithm that will always generate the same key for the same content.
+A content-addressed system such as Web3.Storage is like our key-value-based DNS system, with one significant difference: You no longer get to choose the keys. Instead, the keys are derived directly from the file contents using an algorithm that will always generate the same key for the same content.
 
 As a result, we no longer need to coordinate among multiple writers to our store by splitting the key space into domains and locations on file systems. There's now one universal domain — the domain of all possible values. If multiple people add the same value, there's no collision in the key space. They just each get the same key back from the `put` method, and the availability/performance of retrievals on the network is increased. This gives our keys _location independence_.
 
-This type of key is called a Content Identifier (CID). Once you have the CID for a file on the Web3.storage network, you have all you need for the network to locate and return the file back to you. Here is a JavaScript example of a complete storage and retrieval round-trip using Web3.storage:
+This type of key is called a Content Identifier (CID). Once you have the CID for a file on the Web3.Storage network, you have all you need for the network to locate and return the file back to you. Here is a JavaScript example of a complete storage and retrieval round-trip using Web3.Storage:
 
 ```javascript
 // get uploaded files from a form
@@ -38,9 +38,9 @@ for (const file of files) {
 
 ## Under the hood
 
-Content addressing is the basis of the InterPlanetary File System, or [IPFS](https://ipfs.io), and IPFS is the system used under the hood by Web3.storage to locate files. When your data is stored on IPFS, users can fetch it from any IPFS node that has a copy, which can make data transfers more efficient and reduce the load on any single server. As each user fetches a piece of data, they keep a local copy around to help other users who might request it later.
+Content addressing is the basis of the InterPlanetary File System, or [IPFS](https://ipfs.io), and IPFS is the system used under the hood by Web3.Storage to locate files. When your data is stored on IPFS, users can fetch it from any IPFS node that has a copy, which can make data transfers more efficient and reduce the load on any single server. As each user fetches a piece of data, they keep a local copy around to help other users who might request it later.
 
-Web3.storage makes it easy to get your data onto IPFS, as well as providing long-term persistence backed by the decentralized [Filecoin](https://filecoin.io/) storage network, which incentivizes participants to provide storage space for files on the network. (For more details on that, see the [Decentralized Storage](decentralized-storage.md) topic. By combining these two technologies, Web3.storage makes it very simple to use a decentralized solution for storing, locating, and retrieving your files.
+Web3.Storage makes it easy to get your data onto IPFS, as well as providing long-term persistence backed by the decentralized [Filecoin](https://filecoin.io/) storage network, which incentivizes participants to provide storage space for files on the network. (For more details on that, see the [Decentralized Storage](decentralized-storage.md) topic.) By combining these two technologies, Web3.Storage makes it simple to use a decentralized solution for storing, locating, and retrieving your files.
 
 ## Summary
 
