@@ -50,7 +50,7 @@ Method parameters are supplied in positional order.
 | Number | Type | Description |
 | ------ | ---- | ----------- |
 | 1 | `file[]` | An iterable collection of [Files](https://developer.mozilla.org/en-US/docs/Web/API/File) to be packed into a CAR and uploaded. |
-| 2 | `{options}` | Optional. A JSON object whose properties define certain Web3.storage options and metadata about the files being uploaded. See below for more details |
+| 2 | `{options}` | Optional. A JSON object whose properties define certain Web3.storage options and metadata about the files being uploaded. See below for more details. |
 
 An `{options}` object is a JSON object that defines option parameters:
 
