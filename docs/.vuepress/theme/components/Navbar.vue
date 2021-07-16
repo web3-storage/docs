@@ -26,12 +26,12 @@
         'max-width': linksWrapMaxWidth + 'px'
       } : {}"
     >
+      <NavLinks class="can-hide" />
       <AlgoliaSearchBox
         v-if="isAlgoliaSearch"
         :options="algolia"
       />
       <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
-      <NavLinks class="can-hide" />
     </div>
   </header>
 </template>
@@ -116,6 +116,7 @@ $navbar-horizontal-padding = 1.5rem
     .search-box
       flex: 0 0 auto
       vertical-align top
+      margin: 0 0 0 3rem
 @media (max-width: $MQMobile)
   .navbar
     padding-left 4rem
