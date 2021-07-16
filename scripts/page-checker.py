@@ -27,6 +27,8 @@ for heading in soup.find_all("h4"):
     heading.decompose()
 for heading in soup.find_all("h5"):
     heading.decompose()
+for heading in soup.find_all("h6"):
+    heading.decompose()
 foundDiv = soup.find_all('div', attrs={'class': 'theme-default-content'}, limit=1)
 pageText = foundDiv[0].get_text()
 
