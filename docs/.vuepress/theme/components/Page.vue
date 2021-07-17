@@ -65,7 +65,7 @@ export default {
 <style lang="stylus" scoped>
 .page {
   padding-bottom: 2rem;
-  background-color: $w3storage-blue-dark;
+  background-color: $contentBgColor;
 }
 
 .content-footer {
@@ -85,7 +85,7 @@ export default {
 
 @media (min-width: $MQMobile) {
   .page {
-    box-shadow: inset -16px 0 0 0 $w3storage-red;
+    box-shadow: inset -16px 0 0 0 $layoutBgColor;
   }
   .content-footer {
     padding: 0 2.5rem;

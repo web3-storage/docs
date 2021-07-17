@@ -133,7 +133,7 @@ export default {
       font-weight 500
     .time
       font-weight 400
-      color darken($textColor, 40%)
+      color lighten($textColor, 50%)
 @media (max-width: $MQMobile)
   .page-edit
     .edit-link

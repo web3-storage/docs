@@ -4,7 +4,7 @@ $w3storage-yellow-light = #fffae6
 $w3storage-red = #fc6553
 $w3storage-red-dark = #c94332 
 $w3storage-red-accent = #d7362e
-$w3storage-red-light = #fff5f4
+$w3storage-red-light = #fff2ec
 $w3storage-green = #37b667
 $w3storage-green-dark = #10853c
 $w3storage-green-light = #f0fcf4
@@ -16,32 +16,35 @@ $w3storage-blue-bright = #00a7ff
 $w3storage-white = #ffffff
 
 // custom colors
-$mainBgColor = $w3storage-red-accent
+$mainBgColor = $w3storage-red-light
+$mainBgColorDark = $w3storage-red-accent
 $layoutBgColor = $w3storage-red
-$contentBgColor = $w3storage-blue-dark
+$contentBgColor = $w3storage-red-light
 $contentBgColorDark = $w3storage-blue-dark
 $accentTextColor = $w3storage-white
 $sidebarTextColor = $w3storage-white
 $arrowColor = $w3storage-blue-dark // (for custom BackToTop component)
 $arrowBgColor = $w3storage-red // (for custom BackToTop component)
-$headingColor = $w3storage-yellow
-$headingColorDark = $w3storage-red
-$highlightColor = $w3storage-yellow-light
-$highlightColorDark = $w3storage-yellow-light
-$feedbackBgColor = $w3storage-blue-desaturated
-$feedbackBgColorDark = w3storage-blue-desaturated
+$buttonColor = $w3storage-purple
+$buttonColorDark = $w3storage-blue-bright
+$headingColor = $w3storage-purple
+$headingColorDark = $w3storage-yellow
+$highlightColor = lighten($w3storage-yellow, 20$)
+$highlightColorDark = $w3storage-blue-desaturated
+$feedbackBgColor = $w3storage-white
+$feedbackBgColorDark = $w3storage-blue-desaturated
 
 
-// color overrides + dark theme overrides (see theme.styl) - note dark theme colors are light ones for now
+// color overrides + dark theme overrides (see theme.styl)
 // https://github.com/vuejs/vuepress/blob/master/packages/@vuepress/core/lib/client/style/config.styl
 $accentColor = $w3storage-red
-$textColor = $w3storage-white
+$textColor = $w3storage-purple
 $textColorDark = $w3storage-white
 $borderColor = $headingColor
 $codeBgColor = $w3storage-blue-desaturated
 $badgeTipColor = $w3storage-green
 $badgeWarningColor = $w3storage-yellow
 $badgeErrorColor = $w3storage-red
-$linkColor = $w3storage-blue-bright
+$linkColor = $w3storage-red
 $linkColorDark = $w3storage-blue-bright
-$inputSearchBgColorDark = $contentBgColorDark
+$inputSearchBgColorDark = $w3storage-purple

@@ -1,4 +1,11 @@
 @media (prefers-color-scheme: dark) {
+    html {
+        background-color: $mainBgColorDark !important;
+    }
+
+    body {
+        background-image: url('/images/background-schematics-dark.svg') !important;
+    }
     .theme-container {
     
         // Content
@@ -106,6 +113,10 @@
 	        color: $headingColorDark;
         }
 
+        h2 {
+            border-color: $headingColorDark;
+        }
+
         a {
             color: $linkColorDark;
         }
@@ -114,10 +125,61 @@
             color: $linkColorDark;
         }
 
+        .btn-primary {
+	        background-color: $buttonColorDark;
+        	&:hover {
+		        background-color: darken($buttonColorDark, 15%);
+	        }
+        }
+
+        .theme-default-content code {
+            background-color: $highlightColorDark;
+            color: $textColorDark;
+        }
+
+        // Alert panels
+        .theme-default-content {
+            .custom-block {
+                a {
+                    color: $linkColorDark;
+                }
+            }
+
+            .tip {
+                border: solid $w3storage-green;
+                border-width: 1px 1px 1px 6px;
+                background-color: transparent;
+                color: $w3storage-green;
+                .custom-block-title {
+                    color: $w3storage-green;
+                }
+            }
+
+            .warning {
+                border: solid $w3storage-yellow;
+                border-width: 1px 1px 1px 6px;
+                background-color: transparent;
+                color: $w3storage-yellow;
+                .custom-block-title {
+                    color: $w3storage-yellow;
+                }
+            }
+
+            .danger {
+                border: solid $w3storage-red;
+                border-width: 1px 1px 1px 6px;
+                background-color: transparent;
+                color: $w3storage-red;
+                .custom-block-title {
+                    color: $w3storage-red;
+                }
+            }
+        }
+
         // Custom
         .feedback.feedback {
             background-color: $feedbackBgColorDark;
-            border-color: $feedbackBgColorDark;
+            border-color: transparent;
 
             h3 {
                 color: $headingColorDark;

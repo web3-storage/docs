@@ -1,6 +1,5 @@
 .theme-default-content {
 	.custom-block {
-		color: $w3storage-black;
 		.custom-block-title {
 			font-family: 'Space Grotesk', sans-serif;
 			font-size: 1.15em;
@@ -11,32 +10,32 @@
 	}
 
 	.tip {
-		border: solid $w3storage-green;
-		border-width: 1px 1px 1px 6px;
-		background-color: transparent;
-		color: $w3storage-green;
+		border: solid $w3storage-green-dark;
+		border-width: 0 0 0 6px;
+		background-color: $w3storage-green-light;
+		color: $textColor;
 		.custom-block-title {
-			color: $w3storage-green;
+			color: $textColor;
 		}
 	}
 
 	.warning {
-		border: solid $w3storage-yellow;
-		border-width: 1px 1px 1px 6px;
-		background-color: transparent;
-		color: $w3storage-yellow;
+		border: solid $w3storage-yellow-dark;
+		border-width: 0 0 0 6px;
+		background-color: $w3storage-yellow-light;
+		color: $textColor;
 		.custom-block-title {
-			color: $w3storage-yellow;
+			color: $textColor;
 		}
 	}
 
 	.danger {
-		border: solid $w3storage-red;
-		border-width: 1px 1px 1px 6px;
-		background-color: transparent;
-		color: $w3storage-red;
+		border: solid $w3storage-red-dark;
+		border-width: 0 0 0 6px;
+		background-color: darken($w3storage-red-light, 5%);
+		color: $textColor;
 		.custom-block-title {
-			color: $w3storage-red;
+			color: $textColor;
 		}
 	}
 }

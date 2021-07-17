@@ -18,3 +18,15 @@ Here is a dummy callout box for the sake of testing visual styling. Move along, 
 :::danger
 Here is a dummy callout box for the sake of testing visual styling. Move along, [nothing to see](https://modernjetset.com) here.
 :::
+
+## This is an H2
+That was an H2
+
+### This is an H3
+That was an H3
+
+#### This is an H4
+That was an H4
+
+##### This is an H5
+That was an H5

@@ -91,8 +91,8 @@ code {
 }
 
 .theme-default-content code {
-	background-color: $w3storage-blue-desaturated;
-	color: $w3storage-yellow-light;
+	background-color: $highlightColor;
+	color: $textColor;
 	font-family: 'Space Mono', monospace;
 	font-size: 0.95em;
 }
@@ -114,6 +114,22 @@ h1, h2, h3, h4, h5 {
 	font-family: 'Space Grotesk', sans-serif;
 	font-weight: 500;
 	color: $headingColor;
+}
+
+h2 {
+	border-color: $headingColor;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+}
+
+h5 {
+	font-size: 1.15rem;
 }
 
 .theme-default-content:not(.custom) {
