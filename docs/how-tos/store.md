@@ -13,6 +13,12 @@ If you're using another language, see the [HTTP API reference][reference-http] f
 -->
 Uploading data requires an API token for a Web3.Storage account. If you've already signed up for a Web3.Storage account, head to the [API Tokens page][site-tokens] to create a new token, and copy it somewhere safe. If you haven't yet created an account, it's simple and free! Our [Quick Start guide][quickstart-guide] will walk you through getting signed up.
 
+
+::: danger
+All data uploaded to Web3.Storage is made publicly available to anyone who requests it using the correct CID. 
+Do not store any private or sensitive information in an unencrypted form using Web3.Storage!
+:::
+
 ## Installing the client
 
 In your JavaScript project, add the `web3.storage` package to your dependencies:
@@ -85,6 +91,10 @@ const cid = await client.put(files)
 
 If you'd like to associate a name with your upload or display progress information to the user, see the [client library reference][reference-js-put] for a description of the optional parameters.
 
+::: warning
+Deleting files from the Web3.Storage [Files page][site-files] will remove them from the file listing for your account, but some members of the [decentralized storage network][concepts-decentralized-storage] may retain copies of the data indefinitely. Do not use Web3.Storage for data that may need to be permanently deleted in the future.
+:::
+
 ## Next steps
 
 The `put` method returns an [IPFS Content Identifier][ipfs-docs-cid] that can be used to fetch the files from IPFS. See the [retrieval page][howto-retrieve] to learn how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line.
@@ -101,6 +111,7 @@ You can also get more information about the status of your data. See the [query 
 [quickstart-guide]: ../../quickstart/README.md
 [howto-retrieve]: ./retrieve.md
 [howto-query]: ./query.md
+[concepts-decentralized-storage]: ../../concepts/decentralized-storage.md
 
 <!-- links to the web3.storage site -->
 [site-tokens]: https://web3.storage/tokens/
