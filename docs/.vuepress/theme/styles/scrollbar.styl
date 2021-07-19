@@ -7,23 +7,13 @@ scrollbar = @block {
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: transparent;
-    }
-
-    &:hover::-webkit-scrollbar-thumb,
-    &::-webkit-scrollbar-thumb:hover {
         background-color: $w3storage-yellow;
     }
 
     // Firefox
     & {
-        scrollbar-color: transparent transparent;
         scrollbar-width: thin;
-    }
-
-    &:hover {
         scrollbar-color: $w3storage-yellow transparent;
     }
-
 }
 
