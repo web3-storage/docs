@@ -87,7 +87,7 @@ export default {
   color: $arrowColor;
   opacity: 0;
 
-  transform: translate(-100%, 200%);
+  transform: translate(-100%, 100%);
 
   transition:
     transform 0.2s,
