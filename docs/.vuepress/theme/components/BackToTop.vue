@@ -58,6 +58,7 @@ export default {
 <style lang='stylus' scoped>
 .back-to-top {
   position: sticky;
+  z-index: 5;
   opacity: 0.7;
   height: 0;
 
