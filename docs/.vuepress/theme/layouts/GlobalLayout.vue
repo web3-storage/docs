@@ -38,6 +38,12 @@ export default {
 <style lang="stylus" scoped>
 @import '../styles/index';
 
+#global-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .sidebar-bottom {
 	height: 5.6rem; // make room for footer
 }
@@ -47,20 +53,21 @@ footer {
 	@extend .mx-auto;
 	@extend .relative;
 
-    --link-hit-area: 1.25em;
-    --side-spacing: 2em;
-    
-    position: relative;
-    z-index 5;
-    overflow: hidden;
-    
-    background-color: $layoutBgColor;
-    color: $w3storage-purple;
-    
-    display: flex;
-    padding: 1.25em 0;
+  --link-hit-area: 1.25em;
+  --side-spacing: 2em;
+  
+  position: relative;
+  z-index 5;
+  overflow: hidden;
+  width: 100%;
+  
+  background-color: $layoutBgColor;
+  color: $w3storage-purple;
+  
+  display: flex;
+  padding: 1.25em 0;
 
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 
