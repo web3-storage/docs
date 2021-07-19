@@ -1,8 +1,9 @@
 <template>
-  <transition name="fade">
+  <div
+      class="back-to-top"
+      :class="{ show }"
+    >
     <svg
-        v-if="show"
-        class="back-to-top"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         @click="scrollToTop"
@@ -11,7 +12,7 @@
       <path d="M23.334 1.414l-21.92 21.92a2 2 0 000 2.829l.707.707a2 2 0 002.829 0L26.87 4.95a2 2 0 000-2.829l-.707-.707a2 2 0 00-2.829 0z" />
       <path d="M22.615 4.95l21.92 21.92a2 2 0 002.829 0l.707-.708a2 2 0 000-2.828L26.15 1.414a2 2 0 00-2.83 0l-.706.707a2 2 0 000 2.828z" />
     </svg>
-  </transition>
+  </div>
 </template>
 
 <script>
@@ -58,24 +59,12 @@ export default {
 .back-to-top {
   position: sticky;
   opacity: 0.7;
+  height: 0;
 
   cursor: pointer;
   align-self: flex-end;
-
-  --inner-size: 2.5rem;
-  --spacing: calc(var(--inner-size) * 0.25);
-  --size: calc(var(--inner-size) - var(--spacing) * 2);
-
   bottom: 2rem;
   right: 0;
-  transform: translateX(-100%);
-
-  height: var(--size);
-  width: var(--size);
-  padding: var(--spacing);
-
-  color: $arrowColor;
-  background-color: $arrowBgColor;
 
   transition: opacity 0.3s;
 }
@@ -84,17 +73,30 @@ export default {
   opacity: 1;
 }
 
+.back-to-top svg {
+  --inner-size: 2.5rem;
+  --spacing: calc(var(--inner-size) * 0.25);
+  --size: calc(var(--inner-size) - var(--spacing) * 2);
+
+  height: var(--size);
+  width: var(--size);
+  padding: var(--spacing);
+  
+  background-color: $arrowBgColor;
+  color: $arrowColor;
+
+  transform: translate(-100%, 200%);
+
+  transition: transform 0.2s;
+}
+
 @media (max-width: 959px) {
   .back-to-top {
     display: none;
   }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: transform 0.2s;
-}
-
-.fade-enter, .fade-leave-to {
-  transform: translateX(-100%) translateY(150%);
+.back-to-top.show svg {
+  transform: translate(-100%, -100%);
 }
 </style>
