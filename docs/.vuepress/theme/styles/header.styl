@@ -58,17 +58,15 @@ header.navbar .links {
 	border: none;
 }
 
-.search-box input {
-	background-image: url('/images/search.svg') !important;
-}
-
 header.navbar .links input {
 	font-family: inherit;
 	border-radius: 0;
 	border: 0;
-	color: $textColor;
-	background-color: $contentBgColor;
 	margin-top: 0.1em;
+
+	color: $accentTextColor;
+	background-color: $contentBgColor;
+	background-image: url('/images/search.svg') !important;
 }
 
 header.navbar .links ul {
@@ -79,7 +77,12 @@ header.navbar .links ul {
 		border-radius: 0;
 	}
 	.focused, li:active {
-		background-color: $layoutBgColor;
+		background-color: lighten($layoutBgColor, 10%);
+		
+		a {
+			width: 100%;
+			color: $highlightColor;
+		}
 	}
 	a {
 		color: $linkColor;
