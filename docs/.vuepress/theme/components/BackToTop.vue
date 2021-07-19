@@ -5,6 +5,7 @@
         class="back-to-top"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
+        @click="scrollToTop"
         viewBox="0 0 49 28"
     >
       <path d="M23.334 1.414l-21.92 21.92a2 2 0 000 2.829l.707.707a2 2 0 002.829 0L26.87 4.95a2 2 0 000-2.829l-.707-.707a2 2 0 00-2.829 0z" />
