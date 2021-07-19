@@ -84,10 +84,13 @@ export default {
   
   background-color: $arrowBgColor;
   color: $arrowColor;
+  opacity: 0;
 
   transform: translate(-100%, 200%);
 
-  transition: transform 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 
 @media (max-width: 959px) {
@@ -98,5 +101,6 @@ export default {
 
 .back-to-top.show svg {
   transform: translate(-100%, -100%);
+  opacity: 1;
 }
 </style>
