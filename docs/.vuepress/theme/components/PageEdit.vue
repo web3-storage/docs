@@ -129,11 +129,11 @@ export default {
   .last-updated
     float left
     font-size 0.8em
+    color lighten($textColor, 60%)
     .prefix
       font-weight 500
     .time
       font-weight 400
-      color lighten($textColor, 50%)
 @media (max-width: $MQMobile)
   .page-edit
     .edit-link
