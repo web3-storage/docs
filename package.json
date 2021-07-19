@@ -25,6 +25,7 @@
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-chunkload-redirect": "^1.0.3",
     "vuepress-plugin-clean-urls": "^1.1.2",
+    "vuepress-plugin-element-tabs": "^0.2.8",
     "vuepress-plugin-ipfs": "^1.0.2",
     "vuepress-plugin-robots": "^1.0.1",
     "vuepress-plugin-seo": "^0.1.4",

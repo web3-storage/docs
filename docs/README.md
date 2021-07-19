@@ -30,3 +30,14 @@ That was an H4
 
 ##### This is an H5
 That was an H5
+
+::::tabs
+
+::: tab First Tab
+Here's an example of using tabs to organize content.
+::: 
+
+::: tab Second Tab
+Another tab!
+:::
+::::
