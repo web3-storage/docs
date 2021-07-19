@@ -24,10 +24,14 @@
             background-color: $inputSearchBgColorDark;
 
             .suggestion a {
-                color: $headingColorDark;
+                color: $accentTextColor;
             }
-            .suggestion.focused a {
-                color: $accentColor;
+            .suggestion.focused {
+		        background-color: lighten($inputSearchBgColorDark, 10%);
+
+                a {
+                    color: $headingColorDark;
+                }
             }
             
         }
