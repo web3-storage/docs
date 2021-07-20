@@ -206,7 +206,7 @@ Parameters are supplied in positional order.
 
 ### Return value
 
-The `status()` method returns a `{Status}` object that contains the metadata for your object's storage deal on the Web3.Storage network. This object will have the following properties:
+The `status()` method returns a `{Status}` object that contains the metadata for your object's storage deal on the Web3.Storage network, with the following properties:
 
 #### `cid`
 
