@@ -15,8 +15,7 @@ Uploading data requires an API token for a Web3.Storage account. If you've alrea
 
 
 ::: danger
-All data uploaded to Web3.Storage is made publicly available to anyone who requests it using the correct CID. 
-Do not store any private or sensitive information in an unencrypted form using Web3.Storage!
+All data uploaded to Web3.Storage is made publicly available to anyone who requests it using the correct CID. Do not store any private or sensitive information in an unencrypted form using Web3.Storage!
 :::
 
 ## Installing the client
