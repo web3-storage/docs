@@ -56,7 +56,7 @@ An `{options}` object is a JSON object that defines option parameters:
 
 ```json
 {
-  name: 'cat pics',
+  name: "cat pics",
   maxRetries: 3,
   onRootCidReady: handlerFunction,
   onStoredChunk: handlerFunction
