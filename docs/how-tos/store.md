@@ -40,15 +40,14 @@ In the example above, we read the token from an environment variable called `WEB
 
 ## Preparing files for upload
 
-The client's [`put` method][reference-js-put] accepts an array of `FileLike` objects, which is an interface based on the [Web File API](https://developer.mozilla.org/en-US/docs/Web/API/File).
+The client's [`put` method][reference-js-put] accepts an array of [`File` objects](https://developer.mozilla.org/en-US/docs/Web/API/File).
 
 When running in the browser, you can use the native `File` object provided by the browser runtime. 
 
-On node.js, the `FileLike` implementation is provided by the `@web-std/file` package, which is pulled in automatically when you add `web3.storage` to your project's dependencies. To use it, you'll need to import it into your code: 
+On node.js, import `File` from the `web3.storage` package along with the `Web3Storage` object:
 
 ```js
-// for node.js only:
-const { File } = require('@web-std/file')
+import { File, Web3Storage } from 'web3.storage'
 ```
 
 Once you have a `File` constructor in scope, you can prepare your files for upload:
