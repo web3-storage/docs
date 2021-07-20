@@ -92,7 +92,7 @@ module.exports = {
               '/how-tos/store',
               '/how-tos/retrieve',
               '/how-tos/query',
-              '/how-tos/regenerate-api-key',
+              '/how-tos/regenerate-api-token',
             ]
           },
           {
