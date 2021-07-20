@@ -209,7 +209,8 @@ module.exports = {
     ],
     'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs',
-    'vuepress-plugin-element-tabs'
+    'vuepress-plugin-element-tabs',
+    ['vuepress-plugin-code-copy', { align: 'bottom', color: '#fff' }]
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
 }
