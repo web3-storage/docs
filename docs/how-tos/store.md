@@ -56,7 +56,7 @@ Once you have a `File` constructor in scope, you can prepare your files for uplo
 ```js
 const files = [
   new File(['contents-of-file-1'], 'plain-utf8.txt'),
-  new File(aBlobOrArrayBuffer, 'pic.jpeg')
+  new File([aBlobOrArrayBuffer], 'pic.jpeg')
 ]
 ```
 
