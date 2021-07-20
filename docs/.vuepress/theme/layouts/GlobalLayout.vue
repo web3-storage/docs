@@ -39,7 +39,6 @@
               </a>
             </div>
             <div>
-              <span class="footer--links--help-prefix">Need help?</span>&nbsp;
               <a
                 href="https://github.com/web3-storage"
                 target="_blank"
@@ -48,6 +47,17 @@
                 @click="trackClick"
               >
                 Open an issue
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://filecoinproject.slack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer--links-item footer--links--slack"
+                @click="trackClick"
+              >
+                Join us on Slack
               </a>
             </div>
         </div>
@@ -153,17 +163,7 @@ footer a {
     text-decoration none;
 }
 
-.footer--links--help-prefix {
-    padding-left: 0.5em;
-    padding-right: 0;
-}
-
-.footer--links--help {
-    padding-left: 0;
-    padding-right: 0.5em;
-}
-
-@media (max-width: $MQMobile) {
+@media (max-width: 780px) {
 	footer {
 		display: block;
     text-align: center;
