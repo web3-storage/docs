@@ -156,14 +156,50 @@ Parameters are supplied in positional order.
 | ------ | ---- | ----------- |
 | 1 | `string` | A string containing the CID of the CAR to be retrieved. |
 
-## Retrieve metadata
+## Check status
 
-Retrieve metadata about your file by using the `status()` method, supplying the CID of the file you are interested in.
+Retrieve metadata about your file by using the `status()` method, supplying the CID of the file you are interested in. This metadata includes the creation date and size, as well as details about how the network is storing your data. Using this information you can enumerate peers on the InterPlanetary File System (IPFS) network that are pinning the data, and Filecoin miners that have accepted deals to store the data.
 
 ### Usage
 
 ```javascript
 <clientObject>.status(<CID>)
+```
+
+### Example
+
+Here is an example of a call to the `status()` method:
+
+```javascript
+const info = await client.status(rootCid)
+console.log(`${info.cid} ${info.dagSize} ${info.created}`)
+```
+
+Here is an example response from the `status()` method:
+
+```json
+{
+  "cid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+  "created": "2021-07-14T19:27:14.934572Z",
+  "dagSize": 101,
+  "pins": [{
+    "peerId": "12D3KooWR1Js",
+    "peerName": "peerName",
+    "region": "peerRegion",
+    "status": "Pinned"
+  }],
+  "deals": [{
+    "dealId": 12345,
+    "miner": "f99",
+    "status": "Active",
+    "pieceCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+    "dataCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+    "dataModelSelector": "Links/0/Links",
+    "activation": "2021-07-14T19:27:14.934572Z",
+    "created": "2021-07-14T19:27:14.934572Z",
+    "updated": "2021-07-14T19:27:14.934572Z"
+  }]
+}
 ```
 
 ### Parameters
@@ -176,12 +212,48 @@ Parameters are supplied in positional order.
 
 ### Return value
 
-The `status()` method returns a `Metadata` object that contains the metadata for your object's storage deal on the Web3.Storage network.
+The `status()` method returns a `{Status}` object that contains the metadata for your object's storage deal on the Web3.Storage network. This object will have the following properties:
 
-TODO: As of this writing, the structure of the `Metadata` data type has not been finalized.
+#### `cid`
 
-### Example
+String. The CID for the data for which you are retrieving status information.
 
-```javascript
-const info = await client.status(rootCid) // Metadata
+#### `dagSize`
+
+Number. The total size, in bytes, of the [Merkle Directed Acyclic Graph (DAG)](https://docs.ipfs.io/concepts/merkle-dag/) containing the queried CID.
+
+#### `created`
+
+String. Creation date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+
+#### `pins`
+
+An array of `Pin` objects, each representing a specific [peer in the IPFS network,](https://docs.libp2p.io/concepts/peer-id/) with the following structure:
+
+```json
+Pin {
+  peerId: string, // Libp2p peer ID of the node pinning the data.
+  peerName: string, // Human readable name for the peer pinning the data.
+  region: string, // Approximate geographical region of the node pinning the data.
+  status: string, // Can be one of: 'Pinned' | 'Pinning' | 'PinQueued'
+  updated: string // Updated date in ISO 8601 format.
+}
+```
+
+#### `deals`
+
+An array of `Deal` objects, each representing a specific [storage deal on the Filecoin network,](https://docs.filecoin.io/about-filecoin/how-filecoin-works/#deals) for a specific [Piece](https://spec.filecoin.io/systems/filecoin_files/piece/) of data, with the following structure:
+
+```json
+Deal {
+  dealId: number, // On-chain ID of the deal.
+  miner: string, // Address of the miner storing this data.
+  status: string, // Can be one of: 'Queued' | 'Published' | 'Active'
+  pieceCid: string, // Piece CID of the data in the deal.
+  dataCid: string, // CID of the data aggregated in this deal.
+  dataModelSelector: string, // Selector for extracting data from the aggregated root.
+  activation: string, // Date when the deal will become active, in ISO 8601 format.
+  created: string, // Creation date, in ISO 8601 format.
+  updated: string // Updated date, in ISO 8601 format.
+}
 ```
