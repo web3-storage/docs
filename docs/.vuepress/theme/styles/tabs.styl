@@ -27,4 +27,10 @@
     .el-tabs__item:not(.is-disabled):hover {
         color: $linkColor;
     }
+
+    .el-tabs__item:focus.is-active.is-focus:not(:active) {
+      box-shadow: none !important;
+      border: 2px solid #ccc;
+      border-radius: 2px;
+    }
 }
