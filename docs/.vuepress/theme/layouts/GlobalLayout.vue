@@ -8,18 +8,56 @@
     <footer>
         <div class="footer--made-with">
             Made with&nbsp;&#128155;&nbsp;by
-            <a href="https://protocol.ai" target="_blank" rel="noopener noreferrer">Protocol Labs</a>
+            <a
+              href="https://protocol.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              @click="trackClick"
+            >
+              Protocol Labs
+            </a>
         </div>
         <div class="footer--links">
-            <div><a href="https://status.web3.storage" target="_blank" rel="noopener noreferrer" class="footer--links-item footer--links--status">Status</a></div>
-            <div><a :href="`${$site.themeConfig.mainDomain}/legal`" class="footer--links-item footer--links--terms">Terms of Service</a></div>
-            <div><span class="footer--links--help-prefix">Need help?</span>&nbsp;<a href="https://github.com/web3-storage" target="_blank" rel="noopener noreferrer" class="footer--links-item footer--links--help">Open an issue</a></div>
+            <div>
+              <a
+                href="https://status.web3.storage"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer--links-item footer--links--status"
+                @click="trackClick"
+              >
+                Status
+              </a>
+            </div>
+            <div>
+              <a
+                :href="`${$site.themeConfig.mainDomain}/legal`"
+                class="footer--links-item footer--links--terms"
+                @click="trackClick"
+              >
+                Terms of Service
+              </a>
+            </div>
+            <div>
+              <span class="footer--links--help-prefix">Need help?</span>&nbsp;
+              <a
+                href="https://github.com/web3-storage"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer--links-item footer--links--help"
+                @click="trackClick"
+              >
+                Open an issue
+              </a>
+            </div>
         </div>
     </footer>
   </div>
 </template>
 
 <script>
+import countly from '@theme/utils/countly'
+
 export default {
   computed: {
     layout () {
@@ -31,6 +69,16 @@ export default {
         return 'Layout'
       }
       return 'NotFound'
+    }
+  },
+  methods: {
+    trackClick ({ currentTarget: target }) {
+      countly.trackEvent(countly.events.LINK_CLICK_FOOTER, {
+        path: location.pathname,
+        href: target.href,
+        link: target.pathname + (target.pathname.endsWith('/') ? '' : '/') + target.hash,
+        text: target.innerText,
+      })
     }
   }
 }

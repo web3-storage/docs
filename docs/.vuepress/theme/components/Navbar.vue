@@ -5,6 +5,7 @@
     <a
       :href="$site.themeConfig.mainDomain"
       class="home-link"
+      @click="onHomeLinkClick"
     >
       <img
         v-if="$site.themeConfig.logo"
@@ -37,10 +38,13 @@
 </template>
 
 <script>
+import countly from '@theme/utils/countly'
+
 import AlgoliaSearchBox from '@parent-theme/components/AlgoliaSearchBox'
 import SearchBox from '@SearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
+
 export default {
   name: 'Navbar',
   components: {
@@ -75,6 +79,14 @@ export default {
     }
     handleLinksWrapWidth()
     window.addEventListener('resize', handleLinksWrapWidth, false)
+  },
+  methods: {
+    onHomeLinkClick ({ currentTarget }) {
+      countly.trackEvent(countly.events.LINK_CLICK_HOME_LOGO, {
+        path: this.$route.path,
+        href: currentTarget.href,
+      })
+    }
   }
 }
 function css (el, property) {
