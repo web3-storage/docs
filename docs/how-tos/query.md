@@ -102,9 +102,7 @@ For more details about the response, including the format of the `pins` and `dea
 [howto-retrieve]: ./retrieve.md
 [reference-js-client]: ../../reference/client-library.md#javascript
 [reference-js-constructor]: ../../reference/client-library.md#constructor
-
-<!-- TODO: update anchor once status reference docs are merged -->
-[reference-js-status]: ../../reference/client-library.md#fixme-anchor-doesnt-exist-yet
+[reference-js-status]: ../../reference/client-library.md#check-status
 
 
 [ipfs-docs-merkle-dag]: https://docs.ipfs.io/concepts/merkle-dag/
