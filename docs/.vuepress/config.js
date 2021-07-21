@@ -101,7 +101,14 @@ module.exports = {
             children: [
               '/reference/client-library'
             ]
-          }
+          },
+          {
+            title: 'Community',
+            collapsable: false,
+            children: [
+                '/community/contact-us'
+            ]
+          },
         ]
       }
     },
