@@ -106,7 +106,7 @@ module.exports = {
             title: 'Community',
             collapsable: false,
             children: [
-                '/community/contact-us'
+                '/community/help-and-support'
             ]
           },
         ]

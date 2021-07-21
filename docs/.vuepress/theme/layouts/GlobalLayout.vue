@@ -20,7 +20,7 @@
         <div class="footer--links">
             <div>
               <a
-                href="https://status.web3.storage"
+                href="https://web3-storage.statuspage.io/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer--links-item footer--links--status"
@@ -49,7 +49,7 @@
             </div>
             <div>
               <a
-                href="/community/contact-us/"
+                href="/community/help-and-support/#questions-and-community-discussion"
                 class="footer--links-item footer--links--slack"
                 @click="trackClick"
               >
