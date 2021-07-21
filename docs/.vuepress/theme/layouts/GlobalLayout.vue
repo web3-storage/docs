@@ -31,7 +31,7 @@
             </div>
             <div>
               <a
-                :href="`${$site.themeConfig.mainDomain}/legal`"
+                :href="`${$site.themeConfig.mainDomain}/terms`"
                 class="footer--links-item footer--links--terms"
                 @click="trackClick"
               >
@@ -40,7 +40,7 @@
             </div>
             <div>
               <a
-                href="https://github.com/web3-storage"
+                href="https://github.com/web3-storage/web3.storage/issues/new/choose"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer--links-item footer--links--help"
@@ -51,7 +51,7 @@
             </div>
             <div>
               <a
-                href="https://filecoinproject.slack.com"
+                href="/community/contact-us/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer--links-item footer--links--slack"
@@ -113,15 +113,15 @@ footer {
 
   --link-hit-area: 1.25em;
   --side-spacing: 2em;
-  
+
   position: relative;
   z-index 5;
   overflow: hidden;
   width: 100%;
-  
+
   background-color: $layoutBgColor;
   color: $w3storage-purple;
-  
+
   display: flex;
   padding: 1.25em 0;
 
