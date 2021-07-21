@@ -5,15 +5,15 @@ description: Learn how to get details about files uploaded to Web3.Storage
 
 # Query
 
-When you [store files with Web3.Storage][howto-store], you receive a Content Identifier (CID) that allows you to [retrieve it again][howto-retrieve]. The CID can also be used to query the service for details about how the data is stored on the [decentralized storage networks][concepts-decentralized-storage] that Web3.Storage uses under the hood.
+When you [store a file][howto-store] with Web3.Storage you receive a content identifier (CID) that you can use to [retrieve the file][howto-retrieve]. The CID can also be used to query the service for details about _how_ the data is stored on the [decentralized storage networks][concepts-decentralized-storage] that Web3.Storage uses under the hood.
 
-This guide will show how to use the [JavaScript client library][reference-js-client] to get information about content that's been uploaded to Web3.Storage.
+This guide will show how to use the [JavaScript client library][reference-js-client] to get information about content on Web3.Storage.
 
 ## Installing the client
 
 In your JavaScript project, add the `web3.storage` package to your dependencies:
 
-```bash
+```shell
 npm install web3.storage
 ```
 
@@ -21,19 +21,21 @@ npm install web3.storage
 
 To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
 
-```js
+```javascript
 import { Web3Storage } from 'web3.storage'
 const token = process.env.WEB3_STORAGE_TOKEN
 const client = new Web3Storage({ token })
 ```
 
-If you don't yet have an access token, head to the [Quickstart guide][quickstart]
+:::tip Get an API token
+If you don't yet have an access token, head to the [Quickstart guide to get one →][quickstart]
+:::
 
 ## Querying for status information
 
 The client object's `status` method accepts a CID string and returns a JSON object with information about the upload.
 
-```js
+```javascript
 // replace with your own CID to see info about your uploads!
 const cid = 'bafybeifljln6rmvrdqu7xopiwk2bykwa25onxnvjsmlp3xdiii3opgg2gq'
 const status = await client.status(cid)
@@ -86,11 +88,11 @@ The `cid` field contains the same CID that was passed into the `status` method, 
 
 The `created` field contains an [ISO-8601 datetime string][iso-8601] indicating when the content was first uploaded to Web3.Storage.
 
-The `dagSize` field contains the size in bytes of the [Directed Acyclic Graph (DAG)][ipfs-docs-merkle-dag] that contains all of the uploaded content. Note that this is the size of the data that is transferred over the network to Web3.Storage during upload, and it may be slightly larger or smaller than the total size of the files on disk.
+The `dagSize` field contains the size in bytes of the [Directed Acyclic Graph (DAG)][ipfs-docs-merkle-dag] that contains all of the uploaded content. This is the size of the data that is transferred over the network to Web3.Storage during upload, and is slightly larger than the total size of the files on disk.
 
-The `pins` field contains an array of objects describing the IPFS nodes that have ["pinned"][ipfs-docs-pinning] the data, making it available for fast retrieval using the IPFS network.
+The `pins` field contains an array of objects describing the IPFS nodes that have [pinned][ipfs-docs-pinning] the data, making it available for fast retrieval using the IPFS network.
 
-Finally, the `deals` field contains an array of objects describing the Filecoin storage providers that have made [storage deals][fil-docs-deals] committing them to store the data for an extended period of time.
+Finally, the `deals` field contains an array of objects describing the Filecoin storage providers that have made [storage deals][fil-docs-deals]. These storage providers have now committed to storing the data for a period of time.
 
 For more details about the response, including the format of the `pins` and `deals` objects, see the [client library reference][reference-js-status].
 
