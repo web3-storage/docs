@@ -33,11 +33,11 @@ That was an H5
 
 ::::tabs
 
-::: tab First Tab
+::: tab "First Tab"
 Here's an example of using tabs to organize content.
 ::: 
 
-::: tab Second Tab
+::: tab "Second Tab"
 Another tab!
 :::
 ::::
