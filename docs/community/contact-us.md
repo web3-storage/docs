@@ -8,7 +8,7 @@ description: Get help with Web3.Storage
 If you're having trouble with the Web3.Storage service, we're here to help.
 
 **Have a question?**
-Join us in on in the **#web3-storage** channel on [Slack](https://filecoin.io/slack)!
+Join us in the **#web3-storage** channel on [Slack](https://filecoin.io/slack)!
 
 **Found a bug or have a feature request?**
 [File an issue!](https://github.com/web3-storage/web3.storage/issues/new/choose)
