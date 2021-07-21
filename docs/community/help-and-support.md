@@ -3,7 +3,7 @@ title: Help & support
 description: Get help with Web3.Storage
 ---
 
-# Contact Us
+# Help & support
 
 If you're having trouble with the Web3.Storage service, or just want to get help and support from the global Web3 developer community, here's where to start.
 
