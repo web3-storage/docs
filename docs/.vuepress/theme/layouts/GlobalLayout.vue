@@ -41,8 +41,6 @@
             <div>
               <a
                 href="https://github.com/web3-storage/web3.storage/issues/new/choose"
-                target="_blank"
-                rel="noopener noreferrer"
                 class="footer--links-item footer--links--help"
                 @click="trackClick"
               >
@@ -52,8 +50,6 @@
             <div>
               <a
                 href="/community/contact-us/"
-                target="_blank"
-                rel="noopener noreferrer"
                 class="footer--links-item footer--links--slack"
                 @click="trackClick"
               >

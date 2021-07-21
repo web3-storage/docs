@@ -1,18 +1,18 @@
 ---
-title: Contact Us
+title: Help & support
 description: Get help with Web3.Storage
 ---
 
 # Contact Us
 
-If you're having trouble with the Web3.Storage service, we're here to help.
+If you're having trouble with the Web3.Storage service, or just want to get help and support from the global Web3 developer community, here's where to start.
 
-**Have a question?**
+## Questions and community discussion
 Join us in the **#web3-storage** channel on [Slack!](https://filecoin.io/slack)
 
-**Found a bug or have a feature request?**
+## Bug reports or feature requests
 [File an issue!](https://github.com/web3-storage/web3.storage/issues/new/choose)
 
-**Need more storage?**
-[Shoot us a note.](mailto:web3storage@protocol.ai)
+## Request more storage space
+Need more storage? [Shoot us a note.](mailto:web3storage@protocol.ai)
 _**TODO**: Get mailto link from Joao that'll fill in the right address & subject line etc._
