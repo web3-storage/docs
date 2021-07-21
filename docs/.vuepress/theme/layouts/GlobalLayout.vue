@@ -40,7 +40,7 @@
             </div>
             <div>
               <a
-                href="https://github.com/web3-storage/web3.storage/issues/new/choose"
+                :href="`${$site.themeConfig.domain}/community/help-and-support/#bug-reports-or-feature-requests`"
                 class="footer--links-item footer--links--help"
                 @click="trackClick"
               >
@@ -49,7 +49,7 @@
             </div>
             <div>
               <a
-                href="/community/help-and-support/#questions-and-community-discussion"
+                :href="`${$site.themeConfig.domain}/community/help-and-support/#questions-and-community-discussion`"
                 class="footer--links-item footer--links--slack"
                 @click="trackClick"
               >
