@@ -1,19 +1,23 @@
 ---
-title: Welcome to Web3.Storage
+title: Welcome
 description: "Web3.Storage lets you store stuff on the decentralize internet without having to mess around or learn complex stuff."
 ---
 
-# Welcome to Web3.Storage
+# Better data storage
 
-Web3.Storage lets you store stuff on the decentralize internet without having to mess around or learn complex stuff.
+Most data on the internet is stored with one of the large data storage companies. While companies like Amazon, Google, and Microsoft make is fairly easy for developer to store their application data, their services come with a whole host of terms and restrictions about what data can be stored, when it can be access, and who actually _owns_ that data! Not to mention, these services can be incredibly expensive, and cause developers to rack up huge bills without even knowing!
+
+So instead of paying for restrictive and expensive data storage sevices, developers can store their data with _decentralized_ storage services. However, for the most part, these decentralizsed storage services are difficult to manage, and make data storage significantly more complicated. Most decentralized storage services need you to compile your data into a specific format, find a storage provider to host your data, buy some cryptocurrency to pay the storage provider, and _then_ send your data across the internet. This is where Web3.Storage comes in!
+
+All you need to use Web3.Storage is an API token and some data. Web3.Storage hides the complicated and obstructive parts of data-storage so that you, the developer, can get on with building what you want! Take a look at the [quickstart guide below to get started ↓](#quickstart)
 
 ## Quickstart
 
-Get up and running quickly by following these simple steps!
+Get up and running quickly by following these simple steps! We're going to sign up to Web3.Storage, get an API token, create a script to upload a file, and then view that file in the browser.
 
 ### Create an account
 
-You need an account to get an API key and manage your stored data. You can sign up using your email address, or GitHub Sign up is free:
+You need an account to get an API token and manage your stored data. You can sign up **for free** using your email address or GitHub.
 
 #### Use your email
 
@@ -22,33 +26,33 @@ You need an account to get an API key and manage your stored data. You can sign 
 1. Verify your email address by clicking the **Log in** button in your email inbox.
 1. You're all set!
 
-Next up, [getting an API key ↓](#get-an-api-key)
+Next up, [getting an API token ↓](#get-an-api-key)
 
 #### Use GitHub
 
 1. Click **GitHub** on the Login screen
 1. Authorize web3-storage when asked by GitHub.
 
-![GitHub asking to authorize the Web3.Storage projet to a user account](./images/github-authorization-process.png)
+    ![GitHub asking to authorize the Web3.Storage projet to a user account](./images/github-authorization-process.png)
 
 1. You're all set!
 
-Next up, [getting an API key ↓](#get-an-api-key)
+Next up, [getting an API token ↓](#get-an-api-key)
 
-### Get an API key
+### Get an API token
 
-Now that you've got your account set up, you can create an API key. You'll need an API key to interact with Web3.Storage using the JavaScript client library:
+Next, let's create an API token. You'll need an API token to interact with Web3.Storage using the JavaScript client library:
 
 1. Go to the [tokens page](https://web3.storage/tokens) by clicking **API Tokens** → **New Token**.
 1. Enter a descriptive name for this token:
 
-    ![Web3.Storage API key creation screen.](./images/name-an-api-key.png)
+    ![Web3.Storage API token creation screen.](./images/name-an-api-key.png)
 
 1. Click **Create**.
-1. Make a note of the **Key**. Click **Copy** to copy the API key to your clipboard.
+1. Make a note of the **Key**. Click **Copy** to copy the API token to your clipboard.
 
-    :::warning Keep your API key private
-    Do not share your API key with anyone else. This key is specific to your account.
+    :::warning Keep your API token private
+    Do not share your API token with anyone else. This key is specific to your account.
     :::
 
 Next up, [uploading a file to Web3.Storage ↓](#upload-a-file)
