@@ -9,7 +9,7 @@ Most data on the internet is stored with one of the large data storage companies
 
 So instead of paying for restrictive and expensive data storage sevices, developers can store their data with _decentralized_ storage services. However, for the most part, these decentralizsed storage services are difficult to manage, and make data storage significantly more complicated. Most decentralized storage services need you to compile your data into a specific format, find a storage provider to host your data, buy some cryptocurrency to pay the storage provider, and _then_ send your data across the internet. This is where Web3.Storage comes in!
 
-All you need to use Web3.Storage is an API token and some data. Web3.Storage hides the complicated and obstructive parts of data-storage so that you, the developer, can get on with building what you want! Take a look at the [quickstart guide below to get started Γåô](#quickstart)
+All you need to use Web3.Storage is an API token and some data. Web3.Storage hides the complicated and obstructive parts of data-storage so that you, the developer, can get on with building what you want! Take a look at the [quickstart guide below to get started ↓](#quickstart)
 
 ## Quickstart
 
@@ -45,7 +45,7 @@ You need an account to get an API token and manage your stored data. You can sig
 :::
 ::::
 
-Next up, [getting an API token Γåô](#get-an-api-key)
+Next up, [getting an API token ↓](#get-an-api-key)
 
 ### Get an API token
 
@@ -60,7 +60,7 @@ Next, let's create an API token. You'll need an API token to interact with Web3.
 Do not share your API token with anyone else. This key is specific to your account.
 :::
 
-Next up, [uploading a file to Web3.Storage Γåô](#upload-a-file)
+Next up, [uploading a file to Web3.Storage ↓](#upload-a-file)
 
 ### Grab Web3.Storage client project
 
@@ -105,7 +105,7 @@ Next up, [uploading a file to Web3.Storage Γåô](#upload-a-file)
 
 Make a note of the CID `bafyb...`. You'll need it in the next section.
 
-Next up, we'll look at how to [get and view your data from Web3.Storage Γåô](#get-your-file)
+Next up, we'll look at how to [get and view your data from Web3.Storage ↓](#get-your-file)
 
 ### Get your file
 
