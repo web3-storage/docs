@@ -45,7 +45,7 @@ You need an account to get an API token and manage your stored data. You can sig
 :::
 ::::
 
-Next up, [getting an API token ↓](#get-an-api-key)
+Next up, [getting an API token ↓](#get-an-api-token)
 
 ### Get an API token
 
@@ -60,9 +60,9 @@ Next, let's create an API token. You'll need an API token to interact with Web3.
 Do not share your API token with anyone else. This key is specific to your account.
 :::
 
-Next up, [uploading a file to Web3.Storage ↓](#upload-a-file)
+Next up, [uploading a file to Web3.Storage ↓](#create-the-upload-script)
 
-### Grab Web3.Storage client project
+### Create the upload script
 
 1. Create a folder for your Quickstart project and move into it:
 
