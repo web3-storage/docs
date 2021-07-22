@@ -15,6 +15,14 @@ All you need to use Web3.Storage is an API token and some data. Web3.Storage hid
 
 Get up and running quickly by following these simple steps! We're going to sign up to Web3.Storage, get an API token, create a script to upload a file, and then view that file in the browser.
 
+:::tip Prerequisites
+All you need to complete this quickstart is:
+
+- Node version 14 or higher
+- NPM version 7 or higher
+- A file you want to upload to Web3.Storage
+:::
+
 ### Create an account
 
 You need an account to get an API token and manage your stored data. You can sign up **for free** using your email address or GitHub.
@@ -110,6 +118,10 @@ Next up, we'll look at how to [get and view your data from Web3.Storage ↓](#ge
 ### Get your file
 
 Getting your files from Web3.Storage is super easy! You can use the browser if you'd like to see your file immediately, or you can download your file using Curl.
+
+::: danger
+All data uploaded to Web3.Storage is made publicly available to anyone who requests it using the correct CID. Do not store any private or sensitive information in an unencrypted form using Web3.Storage!
+:::
 
 ::::tabs
 
