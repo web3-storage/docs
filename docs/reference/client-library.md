@@ -152,7 +152,7 @@ Parameters are supplied in positional order.
 
 ## Check status
 
-Retrieve metadata about your file by using the `status()` method, supplying the CID of the file you are interested in. This metadata includes the creation date and size, as well as details about how the network is storing your data. Using this information you can enumerate peers on the InterPlanetary File System (IPFS) network that are pinning the data, and Filecoin storage providers that have accepted deals to store the data.
+Retrieve metadata about your file by using the `status()` method, supplying the CID of the file you are interested in. This metadata includes the creation date and size, as well as details about how the network is storing your data. Using this information, you can identify peers on the InterPlanetary File System (IPFS) network that are pinning the data, and Filecoin storage providers that have accepted deals to store the data.
 
 ### Usage
 
