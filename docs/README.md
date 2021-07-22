@@ -3,7 +3,7 @@ title: Welcome
 description: "Web3.Storage lets you decentralizse your data storage without all the complexities of the d-web."
 ---
 
-# Better storage. <br>Better transfers. <br>Better internet.
+# Better storage; better transfers; better internet
 
 Most data on the internet is stored with one of the large data storage companies. While companies like Amazon, Google, and Microsoft make is fairly easy for developer to store their application data, their services come with a whole host of terms and restrictions about what data can be stored, when it can be access, and who actually _owns_ that data! Not to mention, these services can be incredibly expensive, and cause developers to rack up huge bills without even knowing!
 
@@ -85,13 +85,13 @@ Next up, [uploading a file to Web3.Storage Γåô](#upload-a-file)
     npm install
     ```
 
-1. Run the script by calling `node put-files.js` and supplying your token using the `--token` option and the path of the file you want to upload:
+1. Run the script by calling `node put-files.js` and supplying your token using the `--token` option and the path and name of the file you want to upload:
 
     ```shell
-    node put-files.js --token<YOUR_TOKEN> filename
+    node put-files.js --token<YOUR_TOKEN> ~/filename
     ```
 
-Your command should look something like this:
+    Your command should look something like this:
 
     ```shell
     node put-files.js --token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGZFYTRhODlFNUVhRjY5YWI4QUZlZUU3MUE5OTgwQjFGQ2REZGQzNzIiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2MjY5Njk3OTY1NTQsIm5hbWUiOiJib25maXJlIn0.0S9Ua2FWEAZSwaemy92N7bW8ancRUtu4XtLS3Gy1ouA ~/hello.txt
