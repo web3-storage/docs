@@ -53,9 +53,6 @@ Next, let's create an API token. You'll need an API token to interact with Web3.
 
 1. Go to the [tokens page](https://web3.storage/tokens) by clicking **API Tokens** → **New Token**.
 1. Enter a descriptive name for this token:
-
-    ![Web3.Storage API token creation screen.](./images/name-an-api-key.png)
-
 1. Click **Create**.
 1. Make a note of the **Key**. Click **Copy** to copy the API token to your clipboard.
 
