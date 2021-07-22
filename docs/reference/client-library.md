@@ -113,7 +113,9 @@ for (const file of files) {
 
 ### Return value
 
-The method returns a `Web3Response` object, which extends the [Fetch API response object](https://developer.mozilla.org/en-US/docs/Web/API/Response) to add two iterator methods unique to the Web3.Storage client library: `files()` and `unixFsIterator()`.
+Returns `undefined` if there are no matches for the given CID.
+
+If found, the method returns a `Web3Response` object, which extends the [Fetch API response object](https://developer.mozilla.org/en-US/docs/Web/API/Response) to add two iterator methods unique to the Web3.Storage client library: `files()` and `unixFsIterator()`.
 
 #### Using File objects
 
@@ -206,7 +208,9 @@ Parameters are supplied in positional order.
 
 ### Return value
 
-The `status()` method returns a `{Status}` object that contains the metadata for your object's storage deal on the Web3.Storage network, with the following properties:
+Returns `undefined` if there are no matches for the given CID.
+
+If found, the `status()` method returns a `{Status}` object that contains the metadata for your object's storage deal on the Web3.Storage network, with the following properties:
 
 #### `cid`
 
