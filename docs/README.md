@@ -19,6 +19,9 @@ Get up and running quickly by following these simple steps! We're going to sign 
 
 You need an account to get an API token and manage your stored data. You can sign up **for free** using your email address or GitHub.
 
+::::tabs
+:::tab Email
+
 #### Use your email
 
 1. Go to [web3.storage/login](https://web3.storage/login)
@@ -26,7 +29,9 @@ You need an account to get an API token and manage your stored data. You can sig
 1. Verify your email address by clicking the **Log in** button in your email inbox.
 1. You're all set!
 
-Next up, [getting an API token ↓](#get-an-api-key)
+:::
+
+:::tab GitHub
 
 #### Use GitHub
 
@@ -36,6 +41,9 @@ Next up, [getting an API token ↓](#get-an-api-key)
     ![GitHub asking to authorize the Web3.Storage projet to a user account](./images/github-authorization-process.png)
 
 1. You're all set!
+
+:::
+::::
 
 Next up, [getting an API token ↓](#get-an-api-key)
 
