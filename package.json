@@ -21,16 +21,17 @@
     "markdown-it-video": "^0.6.3",
     "prettier": "^2.2.1",
     "stylus-supremacy": "^2.15.0",
+    "vue-tabs-component": "^1.5.0",
     "vuepress": "^1.8.2",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-chunkload-redirect": "^1.0.3",
     "vuepress-plugin-clean-urls": "^1.1.2",
     "vuepress-plugin-code-copy": "^1.0.6",
-    "vuepress-plugin-element-tabs": "^0.2.8",
     "vuepress-plugin-ipfs": "^1.0.2",
     "vuepress-plugin-robots": "^1.0.1",
     "vuepress-plugin-seo": "^0.1.4",
-    "vuepress-plugin-sitemap": "^2.3.1"
+    "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-plugin-tabs": "^0.3.0"
   },
   "prettier": {
     "arrowParens": "avoid",

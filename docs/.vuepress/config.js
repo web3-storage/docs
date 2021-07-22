@@ -74,7 +74,6 @@ module.exports = {
             title: 'Concepts',
             collapsable: false,
             children: [
-                '/concepts/',
                 '/concepts/content-addressing',
                 '/concepts/decentralized-storage',
             ]
@@ -203,7 +202,7 @@ module.exports = {
     ],
     'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs',
-    'vuepress-plugin-element-tabs',
+    'vuepress-plugin-tabs',
     ['vuepress-plugin-code-copy', { align: 'bottom', color: '#fff' }]
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']

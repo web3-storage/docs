@@ -35,7 +35,7 @@ Store files using the `put()` method.
 ```javascript
 const fileInput = document.querySelector('input[type="file"]')
 
-// Pack files into a CAR and send to web3.storage
+// Pack files into a CAR and send to Web3.Storage
 const rootCid = await client.put(fileInput.files)
 ```
 
@@ -50,13 +50,13 @@ Method parameters are supplied in positional order.
 | Number | Type | Description |
 | ------ | ---- | ----------- |
 | 1 | `file[]` | An iterable collection of [Files](https://developer.mozilla.org/en-US/docs/Web/API/File) to be packed into a CAR and uploaded. |
-| 2 | `{options}` | Optional. A JSON object whose properties define certain Web3.storage options and metadata about the files being uploaded. See below for more details. |
+| 2 | `{options}` | Optional. A JSON object whose properties define certain Web3.Storage options and metadata about the files being uploaded. See below for more details. |
 
 An `{options}` object is a JSON object that defines option parameters:
 
-```js
+```json
 {
-  name: 'cat pics',
+  name: "cat pics",
   maxRetries: 3,
   onRootCidReady: handlerFunction,
   onStoredChunk: handlerFunction
@@ -176,7 +176,7 @@ Parameters are supplied in positional order.
 
 ### Return value
 
-The `status()` method returns a `Metadata` object that contains the metadata for your object's storage deal on the web3.storage network.
+The `status()` method returns a `Metadata` object that contains the metadata for your object's storage deal on the Web3.Storage network.
 
 TODO: As of this writing, the structure of the `Metadata` data type has not been finalized.
 

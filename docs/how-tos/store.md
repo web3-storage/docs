@@ -101,7 +101,6 @@ You can also get more information about the status of your data. See the [query 
 
 <!-- internal links -->
 
-<!-- FIXME: link targets for reference docs don't exist yet -->
 [reference-js]: ../../reference/client-library#javascript.md
 [reference-js-constructor]: ../../reference/client-library.md#constructor
 [reference-js-put]: ../../reference/client-library.md#store-files
