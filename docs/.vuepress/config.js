@@ -68,7 +68,7 @@ module.exports = {
           }
         },
         nav: [
-          { text: 'Documentation', link: '/' }
+          { text: 'Docs', link: '/' }
         ],
         sidebar: [
           {
