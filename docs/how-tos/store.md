@@ -7,11 +7,11 @@ description: Learn how to store your data on the decentralized web with Web3.Sto
 
 Web3.Storage provides a simple interface for storing data, inspired by familiar web APIs like [`fetch`][mdn-fetch] and [`File`][mdn-file]. This guide will show how to use the Web3.Storage client to make your data available on the decentralized IPFS network, with persistent long-term storage provided by Filecoin.
 
-This guide focuses on the [JavaScript client library][reference-js], which is the simplest way to use Web3.Storage. 
+This guide focuses on the [JavaScript client library][reference-js], which is the simplest way to use Web3.Storage.
 <!-- TODO: bring this back once the HTTP reference exists
 If you're using another language, see the [HTTP API reference][reference-http] for details on working with the underlying HTTP API.
 -->
-Uploading data requires an API token for a Web3.Storage account. If you've already signed up for a Web3.Storage account, head to the [API Tokens page][site-tokens] to create a new token, and copy it somewhere safe. If you haven't yet created an account, it's simple and free! Our [Quick Start guide][quickstart-guide] will walk you through getting signed up.
+Uploading data requires an API token for a Web3.Storage account. If you've already signed up for a Web3.Storage account, head to the [Profile page][site-profile] to create a new token, and copy it somewhere safe. If you haven't yet created an account, it's simple and free! Our [Quick Start guide][quickstart-guide] will walk you through getting signed up.
 
 
 ::: danger
@@ -42,7 +42,7 @@ In the example above, we read the token from an environment variable called `WEB
 
 The client's [`put` method][reference-js-put] accepts an array of [`File` objects](https://developer.mozilla.org/en-US/docs/Web/API/File).
 
-When running in the browser, you can use the native `File` object provided by the browser runtime. 
+When running in the browser, you can use the native `File` object provided by the browser runtime.
 
 On node.js, import `File` from the `web3.storage` package along with the `Web3Storage` object:
 
@@ -111,7 +111,7 @@ You can also get more information about the status of your data. See the [query 
 [concepts-decentralized-storage]: ../../concepts/decentralized-storage.md
 
 <!-- links to the web3.storage site -->
-[site-tokens]: https://web3.storage/tokens/
+[site-profile]: https://web3.storage/profile/
 [site-files]: https://web3.storage/files/
 
 <!-- external links -->

@@ -7,59 +7,45 @@
     </component>
     <footer>
         <div class="footer--made-with">
-            Made with&nbsp;&#128155;&nbsp;by
+            {{ $themeLocaleConfig.footer.madeBy.sentence }}
             <a
-              href="https://protocol.ai"
+              :href="$themeLocaleConfig.footer.madeBy.link"
               target="_blank"
               rel="noopener noreferrer"
               @click="trackClick"
             >
-              Protocol Labs
+              {{ $themeLocaleConfig.footer.madeBy.text }}
             </a>
         </div>
         <div class="footer--links">
-            <div>
-              <a
-                href="https://status.web3.storage"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer--links-item footer--links--status"
-                @click="trackClick"
-              >
-                Status
-              </a>
-            </div>
-            <div>
-              <a
-                :href="`${$site.themeConfig.mainDomain}/legal`"
-                class="footer--links-item footer--links--terms"
-                @click="trackClick"
-              >
-                Terms of Service
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://github.com/web3-storage"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer--links-item footer--links--help"
-                @click="trackClick"
-              >
-                Open an issue
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://filecoinproject.slack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer--links-item footer--links--slack"
-                @click="trackClick"
-              >
-                Join us on Slack
-              </a>
-            </div>
+          <div v-for="item in $themeLocaleConfig.footer.nav" :key="item.link">
+            <a
+              v-if="item.link.startsWith($site.themeConfig.mainDomain)"
+              :href="item.link"
+              class="footer--links-item footer--links--status"
+              @click="trackClick"
+            >
+              {{ item.text }}
+            </a>
+            <RouterLink
+              v-else-if="item.link.startsWith('/')"
+              :to="item.link"
+              class="footer--links-item footer--links--status"
+              @click="trackClick"
+            >
+              {{ item.text }}
+            </RouterLink>
+            <a
+              v-else
+              :href="item.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer--links-item footer--links--status"
+              @click="trackClick"
+            >
+              {{ item.text }}
+            </a>
+          </div>
         </div>
     </footer>
   </div>
@@ -113,15 +99,15 @@ footer {
 
   --link-hit-area: 1.25em;
   --side-spacing: 2em;
-  
+
   position: relative;
   z-index 5;
   overflow: hidden;
   width: 100%;
-  
+
   background-color: $layoutBgColor;
   color: $w3storage-purple;
-  
+
   display: flex;
   padding: 1.25em 0;
 

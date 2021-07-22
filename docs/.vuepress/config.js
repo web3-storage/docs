@@ -67,7 +67,9 @@ module.exports = {
             buttonText: 'Refresh'
           }
         },
-        nav: require('./nav/en')({ mainDomain: MAIN_DOMAIN }),
+        nav: [
+          { text: 'Docs', link: '/' }
+        ],
         sidebar: [
             '/',
           {
@@ -94,8 +96,28 @@ module.exports = {
             children: [
               '/reference/client-library'
             ]
-          }
-        ]
+          },
+          {
+            title: 'Community',
+            collapsable: false,
+            children: [
+                '/community/help-and-support'
+            ]
+          },
+        ],
+        footer: {
+          madeBy: {
+            sentence: 'Made with 💛 by',
+            text: 'Protocol Labs',
+            link: 'https://protocol.ai'
+          },
+          nav:[
+            { text: 'Status', link: `https://web3-storage.statuspage.io/` },
+            { text: 'Terms of Service', link: `${MAIN_DOMAIN}/terms/` },
+            { text: 'Open an issue', link: `/community/help-and-support/#bug-reports-or-feature-requests` },
+            { text: 'Join us on Slack', link: `/community/help-and-support/#questions-and-community-discussion` },
+          ]
+        }
       }
     },
     countly: {
