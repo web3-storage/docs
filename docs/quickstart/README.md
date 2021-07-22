@@ -9,25 +9,25 @@ The decentralized web is complicated, but it doesn't have to be! In this quick s
 
 ## Create an account
 
-You need an account to get an API key and manage your stored data. Sign up is free:
+You need an account to get an API token and manage your stored data. Sign up is free:
 
 1. Go to [web3.storage/sign-up](https://web3.storage/sign-up)
 1. Enter your information.
 1. Verify your email address by clicking the **Verify email** link in your email inbox.
 1. You're all set!
 
-Next up, [getting an API key ↓](#get-an-api-key)
+Next up, [getting an API token ↓](#get-an-api-token)
 
-## Get an API key
+## Get an API token
 
-Now that you've got your account set up, you can create an API key. You'll need an API key to interact with Web3.Storage using the JavaScript client library:
+Now that you've got your account set up, you can create an API token. You'll need an API token to interact with Web3.Storage using the JavaScript client library:
 
 1. Head to [web3.storage/sign-in](https://web3.storage/sign-in) and sign in.
-1. Click **Create API key**.
-1. Note down your API key.
+1. Click **Create API token**.
+1. Note down your API token.
 
 :::warning
-Do not share your API with anyone else. This key is specific to your account.
+Do not share your API token with anyone else. This token is specific to your account.
 :::
 
 Next up, [uploading a file to Web3.Storage ↓](#upload-a-file)
@@ -36,22 +36,22 @@ Next up, [uploading a file to Web3.Storage ↓](#upload-a-file)
 
 Uploading a file to Web3.Storage using the JavaScript client library is pretty simple:
 
-1. Authorize your session by using your API key:
+1. Authorize your session by using your API token:
 
     ```javascript
-    console.log("API key.");
+    console.log("API token.");
     ```
 
 1. Bundle your file into an object:
 
     ```javascript
-    console.log("API key.");
+    console.log("API token.");
     ```
 
 1. Send your data to Web3.Storage:
 
     ```javascript
-    console.log("API key.");
+    console.log("API token.");
     ```
 
 Next up, we'll look at how to [get and view your data from Web3.Storage ↓](#view-file)
@@ -69,28 +69,28 @@ Next, take a look at how to [download your file using the JavaScript client libr
 
 ### JavaScript client library
 
-1. Authorize your session by using your API key:
+1. Authorize your session by using your API token:
 
     ```javascript
-    console.log("API key.");
+    console.log("API token.");
     ```
 
 1. Create a request object, including the CID of the file you want to download:
 
     ```javascript
-    console.log("API key.");
+    console.log("API token.");
     ```
 
 1. Send your request to Web3.Storage:
 
     ```javascript
-    console.log("API key.");
+    console.log("API token.");
     ```
 
 1. Web3.Storage will send your a `return` object with your data:
 
     ```javascript
-    console.log("API key.");
+    console.log("API token.");
     ```
 
 1. That's it!

@@ -180,6 +180,35 @@
             }
         }
 
+        // Tab groups
+        .el-tabs.el-tabs--top.el-tabs--border-card {
+            background: $feedbackBgColorDark;
+            border-color: transparent;
+
+            .el-tabs__content {
+                background-color: $feedbackBgColorDark;
+            }
+
+            .el-tabs__header {
+                font-family: 'Space Grotesk', sans-serif;
+                background-color: $w3storage-purple;
+                border-color: transparent;
+            }
+
+            .el-tabs__item {
+                color: $headingColorDark;
+            }
+            .el-tabs__item.is-active {
+                color: $headingColorDark;
+                background-color: $feedbackBgColorDark;
+                border-left-color: transparent;
+                border-right-color: transparent;
+            }
+            .el-tabs__item:not(.is-disabled):hover {
+                color: $linkColorDark;
+            }
+        }
+
         // Custom
         .feedback.feedback {
             background-color: $feedbackBgColorDark;

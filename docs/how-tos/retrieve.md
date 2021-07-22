@@ -16,7 +16,7 @@ The Web3.Storage JavaScript client provides a `get` method that allows you to re
 First, you'll need to create a Web3.Storage client using an API token. See the [Quickstart page][quickstart-guide] if you don't yet have an API token.
 
 ```js
-const { Web3Storage } = require('web3.storage')
+import { Web3Storage } from 'web3.storage'
 const token = process.env.WEB3_STORAGE_TOKEN
 const client = new Web3Storage({ token })
 ```
