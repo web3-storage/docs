@@ -55,7 +55,7 @@ Method parameters are supplied in positional order.
 | 1 | `file[]` | An iterable collection of [Files](https://developer.mozilla.org/en-US/docs/Web/API/File) to be packed into a CAR and uploaded. |
 | 2 | `{options}` | Optional. An object whose properties define certain Web3.Storage options and metadata about the files being uploaded. See below for more details. |
 
-An `{options}` object defines option parameters for your `put()` operation:
+An `{options}` object has the following properties that can be used as parameters for your `put()` operation:
 
 #### `name`
 
