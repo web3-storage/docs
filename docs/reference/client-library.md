@@ -35,8 +35,11 @@ Store files using the `put()` method.
 ```javascript
 const fileInput = document.querySelector('input[type="file"]')
 
-// Pack files into a CAR and send to Web3.Storage
-const rootCid = await client.put(fileInput.files)
+// Pack files into a CAR and send to web3.storage
+const rootCid = await client.put(fileInput.files, {
+  name: 'cat pics',
+  maxRetries: 3
+})
 ```
 
 ### Return value
@@ -52,20 +55,11 @@ Method parameters are supplied in positional order.
 | 1 | `file[]` | An iterable collection of [Files](https://developer.mozilla.org/en-US/docs/Web/API/File) to be packed into a CAR and uploaded. |
 | 2 | `{options}` | Optional. An object whose properties define certain Web3.Storage options and metadata about the files being uploaded. See below for more details. |
 
-An `{options}` object is a JSON object that defines option parameters:
-
-```json
-{
-  name: "cat pics",
-  maxRetries: 3,
-  onRootCidReady: handlerFunction,
-  onStoredChunk: handlerFunction
-}
-```
+An `{options}` object defines option parameters for your `put()` operation:
 
 #### `name`
 
-The `name` parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable within the file listing on the Web3.Storage site.
+String. The `name` parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable within the file listing on the Web3.Storage site.
 
 ```js
 const cid = await client.put(files, { name: 'cat pics' })
@@ -73,7 +67,7 @@ const cid = await client.put(files, { name: 'cat pics' })
 
 #### `maxRetries`
 
-You can specify how many times `put` should attempt to retry in case of failure by passing in a `maxRetries` option:
+Number. You can specify how many times `put` should attempt to retry in case of failure by passing in a `maxRetries` option:
 
 ```js
 const cid = await client.put(files, { maxRetries: 3 })
@@ -81,7 +75,7 @@ const cid = await client.put(files, { maxRetries: 3 })
 
 #### `onRootCidReady`
 
-Because the data is formatted for IPFS and Filecoin on the client, the root CID for the data is generated before the data is uploaded to Web3.Storage. If you want to display the CID to the user before the upload is complete, pass in an `onRootCidReady` function that accepts a CID string:
+Function. Because the data is formatted for IPFS and Filecoin on the client, the root CID for the data is generated before the data is uploaded to Web3.Storage. If you want to display the CID to the user before the upload is complete, pass in an `onRootCidReady` function that accepts a CID string:
 
 ```js
 const onRootCidReady = rootCid => console.log('root cid:', rootCid)
@@ -90,7 +84,7 @@ const cid = await client.put(files, { onRootCidReady })
 
 #### `onStoredChunk`
 
-You can also display progress updates by passing in an `onStoredChunk` callback. This is called after each chunk of data is uploaded, with the size of the chunk in bytes passed in as a parameter:
+Function. You can also display progress updates by passing in an `onStoredChunk` callback. This is called after each chunk of data is uploaded, with the size of the chunk in bytes passed in as a parameter:
 
 ```js
 const onStoredChunk = chunkSize => console.log(`stored chunk of ${chunkSize} bytes`)
@@ -144,7 +138,7 @@ for await (const entry of res.unixFsIterator()) {
 }
 ```
 
-Note that not all `UnixFS` entries returned by the iterator represent files. If `entry.type == 'directory'`, the entry represents a directory and contains no data itself, just links to other entries.
+Note that not all `UnixFS` entries returned by the iterator represent files. If `entry.type == 'directory'`, the entry represents a directory and contains no data itself, it just links to other entries.
 
 For more details on `UnixFS` objects, see [the README file in the `UnixFS` GitHub repository](https://github.com/ipfs/js-ipfs-unixfs/blob/master/packages/ipfs-unixfs/README.md).
 
