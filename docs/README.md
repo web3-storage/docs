@@ -51,7 +51,7 @@ Next up, [getting an API token ↓](#get-an-api-key)
 
 Next, let's create an API token. You'll need an API token to interact with Web3.Storage using the JavaScript client library:
 
-1. Go to your [Profile page](https://web3.storage/profile) by clicking **API Tokens** → **New Token**.
+1. Go to your [Profile page](https://web3.storage/profile) and click **API Tokens** → **New Token**.
 1. Enter a descriptive name for this token:
 1. Click **Create**.
 1. Make a note of the **Key**. Click **Copy** to copy the API token to your clipboard.
