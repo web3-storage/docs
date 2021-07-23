@@ -85,10 +85,10 @@ module.exports = {
             title: 'How-tos',
             collapsable: false,
             children: [
-              '/how-tos/store',
-              '/how-tos/retrieve',
-              '/how-tos/query',
-              '/how-tos/regenerate-api-token',
+              ['/how-tos/store', 'Store'],
+              ['/how-tos/retrieve', 'Retrieve'],
+              ['/how-tos/query', 'Query'],
+              ['/how-tos/regenerate-api-token', 'Regenerate API token'],
             ]
           },
           {

@@ -3,7 +3,7 @@ title: Query
 description: Learn how to get details about files uploaded to Web3.Storage
 ---
 
-# Query
+# How to query Web3.Storage
 
 When you [store a file][howto-store] with Web3.Storage you receive a content identifier (CID) that you can use to [retrieve the file][howto-retrieve]. The CID can also be used to query the service for details about _how_ the data is stored on the [decentralized storage networks][concepts-decentralized-storage] that Web3.Storage uses under the hood.
 
