@@ -1,6 +1,6 @@
 ---
 title: Decentralized storage
-description: Lorem ipsum
+description: Learn about decentralized storage works and how it's key to Web3.Storage.
 ---
 
 # Decentralized storage in brief

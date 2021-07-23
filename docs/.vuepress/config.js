@@ -77,18 +77,18 @@ module.exports = {
             title: 'Concepts',
             collapsable: false,
             children: [
-                ['/concepts/content-addressing', 'Content addressing'],
-                ['/concepts/decentralized-storage', 'Decentralized storage']
+                '/concepts/content-addressing',
+                '/concepts/decentralized-storage'
             ]
           },
           {
             title: 'How-tos',
             collapsable: false,
             children: [
-              ['/how-tos/store', 'Store'],
-              ['/how-tos/retrieve', 'Retrieve'],
-              ['/how-tos/query', 'Query'],
-              ['/how-tos/regenerate-api-token', 'Regenerate API token'],
+              '/how-tos/store',
+              '/how-tos/retrieve',
+              '/how-tos/query',
+              '/how-tos/regenerate-api-token'
             ]
           },
           {
@@ -102,7 +102,7 @@ module.exports = {
             title: 'Community',
             collapsable: false,
             children: [
-                ['/community/help-and-support', 'Help & support']
+                '/community/help-and-support'
             ]
           },
         ],

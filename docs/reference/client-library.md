@@ -1,6 +1,6 @@
 ---
 title: JavaScript client library
-description: Integrate Web3.Storage into your code using a client library for your programming language.
+description: Integrate Web3.Storage into your code using the JavaScript client library.
 ---
 
 # JavaScript client library reference

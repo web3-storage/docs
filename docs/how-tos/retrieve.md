@@ -1,6 +1,6 @@
 ---
 title: Retrieve
-description: Learn how to retrieve data stored using Web3.Storage.
+description: Learn how to retrieve data stored using Web3.Storage in this quick how-to guide.
 ---
 
 # How to retrieve data from Web3.Storage

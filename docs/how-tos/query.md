@@ -1,6 +1,6 @@
 ---
 title: Query
-description: Learn how to get details about files uploaded to Web3.Storage
+description: Learn how to query Web3.Storage in this quick how-to guide.
 ---
 
 # How to query Web3.Storage
