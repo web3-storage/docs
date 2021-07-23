@@ -54,3 +54,5 @@ Using content addressing for locating files rather than the legacy web's method 
 ## Learn more
 
 Want a deep dive into content addressing, how it works, and why it's important? Check out [ProtoSchool](https://proto.school/content-addressing/) for an in-depth look at content addressing on the decentralized web, plus a wealth of other interactive tutorials on DWeb concepts, protocols, and tools.
+
+Want a technical explanation of how IPFS CIDs work in particular? Have a look at the [official IPFS docs](https://docs.ipfs.io/concepts/content-addressing/).
