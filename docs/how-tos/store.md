@@ -81,7 +81,7 @@ async function storeFiles(path) {
 }
 ```
 
-If you expect to be loading a lot of large files, you may be better served by the [`filesFromPath` helper](https://github.com/web3-storage/files-from-path#filesfrompath), which will reduce memory pressure by `yield`-ing `File` objects one-by-one as they're loaded from disk instead of loading everything into memory.
+If you expect to be loading a lot of large files, you may be better served by the [`filesFromPath` helper](https://github.com/web3-storage/files-from-path#filesfrompath), which will reduce memory pressure by `yield`-ing `File` objects one-by-one as they're loaded from disk instead of loading everything into memory. You can then issue multiple `put` requests to send each file to Web3.Storage.
 
 In the browser, you can also use a [file input element][mdn-file-input] to allow the user to select files for upload, instead of creating `File` objects manually:
 
