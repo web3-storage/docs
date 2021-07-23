@@ -1,14 +1,25 @@
+.theme-default-content pre, .theme-default-content pre[class*="language-"].code-copy-added {
+	position: static;
+	overflow-y: hidden;
+	padding: 1.5em 1.5em 1.9em 1.5em;
+}
+
 .code-copy {
-	position: absolute;
-	right: 0;
-	bottom: 0px;
+	position: static;
+	height: 0;
 
 	svg {
-		height: 16px;
-		width: 16px;
+		height: 1em;
+		width: 1em;
+		padding: 0.5em;
+		right: 0.5em;
+		bottom: 0.2em !important;
+
+		transition: opacity 300ms ease;
 	}
 
 	span {
-		right: 35px;
+		right: 3em;
+		bottom: 0.8em !important;
 	}
 }
