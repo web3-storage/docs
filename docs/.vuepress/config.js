@@ -68,6 +68,7 @@ module.exports = {
           }
         },
         nav: [
+          { text: 'About', link: `${MAIN_DOMAIN}/about/` },
           { text: 'Docs', link: '/' }
         ],
         sidebar: [
