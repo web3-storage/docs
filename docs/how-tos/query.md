@@ -84,11 +84,11 @@ If the given CID is valid and has been uploaded to Web3.Storage, the `status` me
 }
 ```
 
-The `cid` field contains the same CID that was passed into the `status` method, so that you don't have to keep track of which response goes with which request.
+The `cid` field contains the same CID that was passed into the `status` method so that you don't have to keep track of which response goes with which request.
 
 The `created` field contains an [ISO-8601 datetime string][iso-8601] indicating when the content was first uploaded to Web3.Storage.
 
-The `dagSize` field contains the size in bytes of the [Directed Acyclic Graph (DAG)][ipfs-docs-merkle-dag] that contains all of the uploaded content. This is the size of the data that is transferred over the network to Web3.Storage during upload, and is slightly larger than the total size of the files on disk.
+The `dagSize` field contains the size in bytes of the [Directed Acyclic Graph (DAG)][ipfs-docs-merkle-dag] that contains all the uploaded content. This is the size of the data that is transferred over the network to Web3.Storage during upload, and is slightly larger than the total size of the files on disk.
 
 The `pins` field contains an array of objects describing the IPFS nodes that have [pinned][ipfs-docs-pinning] the data, making it available for fast retrieval using the IPFS network.
 
