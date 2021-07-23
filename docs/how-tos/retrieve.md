@@ -14,7 +14,7 @@ All data stored using Web3.Storage is made available for retrieval via [IPFS](ht
 
 ## Using the Web3.Storage JS client
 
-The Web3.Storage JavaScript client provides a `get` method that allows you to retrieve any IPFS content using that content's [Content Identifier (CID)][ipfs-docs-cid].
+The Web3.Storage JavaScript client provides a `get` method that allows you to retrieve any IPFS content using that content's [content identifier (CID)][ipfs-docs-cid].
 
 First, you'll need to create a Web3.Storage client using your API token. Getting an API token requires a Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart-guide] to get up and running in just a few minutes.
 
