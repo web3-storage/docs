@@ -5,7 +5,7 @@ description: Lorem ipsum
 
 # Decentralized storage
 
-_Decentralized storage_ is a technique for storing data which uses a distributed, networked system with many participants to provide storage capacity, rather than traditional servers. This model inherently builds in redundancy that provides resilience against failure and interference, as well as enhanced performance due to the localized nature of the distributed storage providers.
+_Decentralized storage_ is a technique for storing data which uses a distributed network with many participants providing storage capacity, rather than traditional servers. This model inherently builds in redundancy that provides resilience against failure and attacks, as well as enhanced performance due to the localized nature of the distributed storage providers.
 
 ## Content persistence
 
