@@ -81,7 +81,7 @@ Now that you have your new API token, it's time to use a simple script to [uploa
 
 ## Create the upload script
 
-You can use the Web3.Storage site to upload files, but it's also quick and easy to create and run a simple upload script — making it especially convenient to add large numbers of files. This script contains logic to upload a file to Web3.Storage and get a [_content identifier_ (CID)](/concepts/content-addressing) back in return.
+You can use the Web3.Storage site to upload files, but it's also quick and easy to create and run a simple upload script — making it especially convenient to add large numbers of files. This script contains logic to upload a file to Web3.Storage and get a [_content identifier_ (CID)](/concepts/content-addressing.md) back in return.
 
 ::: danger CAUTION
 All data uploaded to Web3.Storage is available to anyone who requests it using the correct CID. Do not store any private or sensitive information in an unencrypted form using Web3.Storage.
@@ -138,7 +138,7 @@ Next up, we'll go over two methods for you to [retrieve your data from Web3.Stor
 
 ## Get your file
 
-You've already done the most difficult work in this guide — getting your files from Web3.Storage is simple. You have two easy options for retrieving your data: Use your browser and an [IPFS gateway](/how-tos/retrieve/#using-an-ipfs-http-gateway) to view your file like any other web content, or download it directly using the command line and `curl`.
+You've already done the most difficult work in this guide — getting your files from Web3.Storage is simple. You have two easy options for retrieving your data: Use your browser and an [IPFS gateway](/how-tos/retrieve.md#using-an-ipfs-http-gateway) to view your file like any other web content, or download it directly using the command line and `curl`.
 
 ::::tabs
 
@@ -173,7 +173,7 @@ You've already done the most difficult work in this guide — getting your files
 ## Next steps
 
 Congratulations! You've just covered the basics of Web3.Storage. To learn more, take a look at these useful resources:
-- For a deep dive into storing files, visit the [Store how-to guide.](how-tos/store)
-- To learn more about the details of getting files, have a look at the [Retrieve how-to guide.](how-tos/retrieve)
-- Visit the [reference API section](/reference/client-library) for more details on what else you can do with the Web3.Storage service and how to integrate it into your own projects.
+- For a deep dive into storing files, visit the [Store how-to guide.](/how-tos/store.md)
+- To learn more about the details of getting files, have a look at the [Retrieve how-to guide.](/how-tos/retrieve.md)
+- Visit the [reference API section](/reference/client-library.md) for more details on what else you can do with the Web3.Storage service and how to integrate it into your own projects.
 
