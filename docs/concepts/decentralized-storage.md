@@ -38,7 +38,7 @@ const rootCid = await client.put(fileInput.files, {
 })
 const info = await client.status(rootCid)
 console.log(`${info.cid} ${info.dagSize} ${info.created}`)
-for (const deal of ${info.deals}) {
+for (const deal of info.deals) {
   console.log(`${deal.id} -- ${deal.status}`)
 }
 ```
