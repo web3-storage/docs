@@ -9,27 +9,26 @@ ul.sidebar-links > li > a {
 .sidebar {
 	background-color: $layoutBgColor;
 	color: $w3storage-purple;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 1.3em;
+	line-height: 1.3;
 
 	transition: transform 0.3s ease;
+
+	ul {
+		line-height: 1;
+	}
 
 	.sidebar-links {
 		position: relative;
 	}
 
 	.nav-links {
-	border-color: $w3storage-red-light !important;
+		border-color: $w3storage-red-light !important;
 	}
-
 
 	.sidebar-group:not(.collapsable) .sidebar-heading:not(.clickable) {
 		color: $w3storage-purple;
-	}
-
-	.sidebar-heading {
-		font-family: 'Space Grotesk', sans-serif;
-		font-size: 1.4em;
-		font-weight: 500;
-		line-height: 1.3;
 	}
 
 	.sidebar-group .arrow {
@@ -40,15 +39,30 @@ ul.sidebar-links > li > a {
 		margin-bottom: 0.2rem;
 	}
 
+	.sidebar-heading {
+		font-weight: 500;
+		padding: 0rem 1.5rem 0rem 1.25rem;
+	}
+
 	a.sidebar-link.active {
 		color: $w3storage-yellow;
-		font-weight: bold;
+		font-weight: 500;
 		border-left: 4px solid $w3storage-yellow;
 	} 
+
+	& > ul.sidebar-links > li > a.sidebar-link {
+		font-weight: 500;
+	}
 
 	a.sidebar-link:hover {
 		color: $w3storage-yellow;
 	} 
+
+	.sidebar-links .sidebar-group-items a, .sidebar-sub-header a {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 0.8em;
+		font-weight: 400;
+	}
 
 	.sidebar-sub-headers a.sidebar-link.active {
 		border-left: none;
