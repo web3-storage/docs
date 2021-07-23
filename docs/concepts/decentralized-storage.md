@@ -51,7 +51,7 @@ for (const deal of info.deals) {
 
 ## Summary
 
-The traditional location-addressed, centrally stored web is vulnerable to interference, exploitation, and loss. By decentralizing both the way we specify a resource we are interested in with content addressing, and the way we obtain storage capacity with Filecoin, we have a complete solution for locating, storing, and obtaining data that is resilient against these vulnerabilities, and rewards network participants.
+Traditional, location-addressed, centrally stored networks are vulnerable to interference, exploitation, and loss. By decentralizing the way we specify a resource we want with content addressing and the way we obtain storage capacity with Filecoin, we have a complete solution for locating, storing, and obtaining data that is resilient against these vulnerabilities, and rewards network participants.
 
 Web3.Storage combines both the content addressing capabilities of IPFS and the proving algorithms and storage deal marketplace of Filecoin to achieve this complete solution, wrapping the power of these two systems into simple methods such as [`put()`](../how-tos/store.md), [`get()`](../how-tos/retrieve.md), and [`status()`](../how-tos/query.md).
 
