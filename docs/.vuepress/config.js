@@ -82,7 +82,7 @@ module.exports = {
             ]
           },
           {
-            title: 'How tos',
+            title: 'How-tos',
             collapsable: false,
             children: [
               '/how-tos/store',
