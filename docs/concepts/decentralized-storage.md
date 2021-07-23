@@ -25,7 +25,7 @@ In addition to this proof system, the Filecoin network also relies on game-theor
 
 ## Put in practice: Storing and monitoring with Web3.Storage
 
-When a file is [uploaded to Web3.Storage with the `put()` method](../how-tos/store.md), a CID is returned, providing the content address for your file on the network, provided by IPFS. Then, the file is put into a queue for geographically distributed storage providers on the Filecoin network who have been chosen for performance and availability. These providers bid on the right to store those files and agree to a storage deal.
+When a file is [uploaded to Web3.Storage with the `put()` method](../how-tos/store.md), a CID is returned. The file is then put into a queue for geographically distributed storage providers on the Filecoin network who have been chosen for performance and availability. These providers bid on the right to store those files and agree to a storage deal.
 
 You can monitor this activity for your files by [calling `status()` and providing your CID](../how-tos/query.md). This will return a list of deals that have been made at the time of query.
 
