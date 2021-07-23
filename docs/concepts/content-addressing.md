@@ -15,7 +15,7 @@ The problem is, components of an address like `docs.web3.storage/concepts/conten
 
 ## CIDs: Location-independent, globally unique keys
 
-However, thanks to content addressing, link rot may become a thing of the past. A content-addressed system such as Web3.Storage is like our key-value-based DNS system, with one significant difference: You no longer get to choose the keys. Instead, the keys are derived directly from the file contents using an algorithm that will always generate the same key for the same content.
+However, thanks to content addressing, link rot may become a thing of the past. A content-addressed system such as Web3.Storage is like our key-value-based DNS, with one significant difference: You no longer get to choose the keys. Instead, the keys are derived directly from the file contents using an algorithm that will always generate the same key for the same content.
 
 As a result, we no longer need to coordinate among multiple writers to our store by splitting the key space into domains and locations on file systems. There's now one universal domain: the domain of all possible values. If multiple people add the same value, there's no collision in the key space. They just each get the same key back from the `put` method, with one additional benefit: The availability and performance of retrievals on the network is increased. This gives our keys _location independence_. There's one other important result: Each individual key is a unique signature for the data itself, ensuring _verifiability_ that the key matches the content and the content hasn't been altered.
 
@@ -46,7 +46,7 @@ In addition to Web3.Storage making it easy to get your data onto the content-add
 
 ## Summary
 
-Using content addressing for locating files rather than the legacy web's method of location-dependent addressing addresses several critical weaknesses of the legacy web:
+Using content addressing for locating files rather than the legacy web's method of location-dependent addressing responds to several critical weaknesses of the legacy web:
 
 - Content addressing solves for the problem behind link rot — the mutability of location-dependent storage systems — by using a hashing algorithm to generate a unique CID for each file that can be used as the lookup key for a file rather than a URL. 
 - In addition to making sure files don't get lost if they're moved, content addressing also ensures that users intending to retrieve a specific version of a file will be guaranteed to retrieve that version for as long as it exists anywhere on the network.

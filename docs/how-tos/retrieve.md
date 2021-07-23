@@ -5,7 +5,7 @@ description: Learn how to retrieve data stored using Web3.Storage in this quick 
 
 # How to retrieve data from Web3.Storage
 
-In this how-to guide, **you'll learn several different methods for retrieving data from Web3.Storage.**
+In this how-to guide, **you'll learn several methods for retrieving data from Web3.Storage.**
 
 All data stored using Web3.Storage is made available for retrieval via [IPFS](https://ipfs.io), the InterPlanetary File System. IPFS is a distributed, peer-to-peer network for storing and sharing [content-addressed data][concepts-content-addressing]. This guide shows you several ways to retrieve your data from IPFS:
 - Using [the Web3.Storage JavaScript client](#using-the-web3-storage-js-client).
@@ -61,7 +61,7 @@ You can easily fetch any data stored using Web3.Storage using an IPFS HTTP gatew
 
 When you [store data using the Web3.Storage client][howto-store], the `put` method returns an [IPFS content identifier (CID)][ipfs-docs-cid] string. That CID points to an IPFS directory that contains all the files you passed in using the `put` method.
 
-You can use an IPFS gateway to view a list of all the files in that directory from your browser. To do this, simply create a gateway URL. For example, if your CID is `bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu`, you can make a URL for the `dweb.link` gateway as follows: [bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link](https://bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/). Follow that link, and you'll see a page similar to this:
+You can use an IPFS gateway to view a list of all the files in that directory from your browser. To do so, simply create a gateway URL. For example, if your CID is `bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu`, you can make a URL for the `dweb.link` gateway as follows: [bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link](https://bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/). Follow that link, and you'll see a page similar to this:
 
 ![Screenshot of an IPFS gateway directory listing](./images/gateway-directory-listing.png)
 
