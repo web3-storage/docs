@@ -32,13 +32,15 @@ You can monitor this activity for your files by [calling `status()` and providin
 ```javascript
 const fileInput = document.querySelector('input[type="file"]')
 
-// Pack files into a CAR and send to web3.storage
 const rootCid = await client.put(fileInput.files, {
-  name: 'cat pics',
+  name: 'my files',
   maxRetries: 3
 })
 const info = await client.status(rootCid)
 console.log(`${info.cid} ${info.dagSize} ${info.created}`)
+for (const deal of ${info.deals}) {
+  console.log(`${deal.id} -- ${deal.status}`)
+}
 ```
 
 ## Summary
