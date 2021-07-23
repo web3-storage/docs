@@ -7,6 +7,7 @@
     .tabs-component-panels {
         background-color: $feedbackBgColor;
         border: none;
+        padding: 1em 1.2em;
     }
 
     .tabs-component-panels > section[id] {
@@ -14,6 +15,11 @@
     }
 
     .tabs-component-tabs {
+        border: 0;
+        align-items: stretch;
+        display: flex;
+        justify-content: flex-start;
+        
         font-family: 'Space Grotesk', sans-serif;
         background-color: darken($contentBgColor, 5%);
         border-bottom: 1px solid $accentColor;
