@@ -77,8 +77,8 @@ module.exports = {
             title: 'Concepts',
             collapsable: false,
             children: [
-                '/concepts/content-addressing',
-                '/concepts/decentralized-storage',
+                ['/concepts/content-addressing', 'Content addressing'],
+                ['/concepts/decentralized-storage', 'Decentralized storage']
             ]
           },
           {

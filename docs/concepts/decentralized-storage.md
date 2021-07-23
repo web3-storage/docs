@@ -3,7 +3,7 @@ title: Decentralized storage
 description: Lorem ipsum
 ---
 
-# Decentralized storage
+# Decentralized storage in brief
 
 _Decentralized storage_ is a technique for storing data which uses a distributed network with many participants providing storage capacity, rather than traditional servers. This model inherently builds in redundancy that provides resilience against failure and attacks, as well as enhanced performance due to the localized nature of the distributed storage providers.
 
@@ -61,6 +61,6 @@ Traditional, location-addressed, centrally stored networks are vulnerable to int
 
 Web3.Storage combines both the content addressing capabilities of IPFS and the proving algorithms and storage deal marketplace of Filecoin to achieve this complete solution, wrapping the power of these two systems into simple methods such as [`put()`](../how-tos/store.md), [`get()`](../how-tos/retrieve.md), and [`status()`](../how-tos/query.md).
 
-## More resources
+## Learn more
 
-For more information on decentralized storage, see [the ProtoSchool lesson on Filecoin](https://proto.school/verifying-storage-on-filecoin/).
+Want a deep dive into decentralized storage, how it works, and why it's important? Check out [ProtoSchool](https://proto.school/verifying-storage-on-filecoin/) for an in-depth look at verifying storage on Filecoin, plus a wealth of other interactive tutorials on DWeb concepts, protocols, and tools.
