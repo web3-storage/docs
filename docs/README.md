@@ -72,6 +72,10 @@ Next up, [uploading a file to Web3.Storage ↓](#create-the-upload-script)
 
 ### Create the upload script
 
+::: danger
+All data uploaded to Web3.Storage is made publicly available to anyone who requests it using the correct CID. Do not store any private or sensitive information in an unencrypted form using Web3.Storage!
+:::
+
 1. Create a folder for your Quickstart project and move into it:
 
     ```shell
@@ -118,10 +122,6 @@ Next up, we'll look at how to [get and view your data from Web3.Storage ↓](#ge
 ### Get your file
 
 Getting your files from Web3.Storage is super easy! You can use the browser if you'd like to see your file immediately, or you can download your file using Curl.
-
-::: danger
-All data uploaded to Web3.Storage is made publicly available to anyone who requests it using the correct CID. Do not store any private or sensitive information in an unencrypted form using Web3.Storage!
-:::
 
 ::::tabs
 
