@@ -101,14 +101,14 @@ You can also get more information about the status of your data. See the [query 
 
 <!-- internal links -->
 
-[reference-js]: ../../reference/client-library#javascript.md
-[reference-js-constructor]: ../../reference/client-library.md#constructor
-[reference-js-put]: ../../reference/client-library.md#store-files
+[reference-js]: ../reference/client-library#javascript.md
+[reference-js-constructor]: ../reference/client-library.md#constructor
+[reference-js-put]: ../reference/client-library.md#store-files
 
-[quickstart-guide]: ../../quickstart/README.md
+[quickstart-guide]: ../quickstart/README.md
 [howto-retrieve]: ./retrieve.md
 [howto-query]: ./query.md
-[concepts-decentralized-storage]: ../../concepts/decentralized-storage.md
+[concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 
 <!-- links to the web3.storage site -->
 [site-profile]: https://web3.storage/profile/

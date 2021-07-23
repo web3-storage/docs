@@ -96,13 +96,13 @@ Finally, the `deals` field contains an array of objects describing the Filecoin 
 
 For more details about the response, including the format of the `pins` and `deals` objects, see the [client library reference][reference-js-status].
 
-[quickstart]: ../../quickstart/README.md
-[concepts-decentralized-storage]: ../../concepts/decentralized-storage.md
+[quickstart]: ../README.md
+[concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 [howto-store]: ./store.md
 [howto-retrieve]: ./retrieve.md
-[reference-js-client]: ../../reference/client-library.md#javascript
-[reference-js-constructor]: ../../reference/client-library.md#constructor
-[reference-js-status]: ../../reference/client-library.md#check-status
+[reference-js-client]: ../reference/client-library.md#javascript
+[reference-js-constructor]: ../reference/client-library.md#constructor
+[reference-js-status]: ../reference/client-library.md#check-status
 
 
 [ipfs-docs-merkle-dag]: https://docs.ipfs.io/concepts/merkle-dag/
