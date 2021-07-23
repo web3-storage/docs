@@ -11,7 +11,7 @@ Most data on the internet is stored with one of the large data storage companies
 
 So instead of paying for restrictive and expensive data storage sevices, developers can store their data with _decentralized_ storage services. However, for the most part, these decentralizsed storage services are difficult to manage, and make data storage significantly more complicated. Most decentralized storage services need you to compile your data into a specific format, find a storage provider to host your data, buy some cryptocurrency to pay the storage provider, and _then_ send your data across the internet. This is where Web3.Storage comes in!
 
-## Quickstart
+<h2>Quickstart</h2>
 
 Get up and running quickly by following these simple steps! We're going to sign up to Web3.Storage, get an API token, create a script to upload a file, and then view that file in the browser.
 
@@ -29,14 +29,14 @@ node --version && npm --version
 
 :::
 
-### Create an account
+## Create an account
 
 You need an account to get an API token and manage your stored data. You can sign up **for free** using your email address or GitHub.
 
 ::::tabs
 :::tab Email
 
-#### Use your email
+### Use your email
 
 1. Go to [web3.storage/login](https://web3.storage/login)
 1. Enter your email address.
@@ -47,7 +47,7 @@ You need an account to get an API token and manage your stored data. You can sig
 
 :::tab GitHub
 
-#### Use GitHub
+### Use GitHub
 
 1. Click **GitHub** on the Login screen
 1. **Authorize** Web3.Storage when asked by GitHub.
@@ -58,7 +58,7 @@ You need an account to get an API token and manage your stored data. You can sig
 
 Next up, [getting an API token ↓](#get-an-api-token)
 
-### Get an API token
+## Get an API token
 
 Now it's time to create an API token. The API token allows you to interact with Web3.Storage without using the main website.
 
@@ -73,7 +73,7 @@ Do not share your API token with anyone else. This key is specific to your accou
 
 Next up, [uploading a file to Web3.Storage ↓](#create-the-upload-script)
 
-### Create the upload script
+## Create the upload script
 
 Next up, you need to create the script that we'll eventually run! This script contains logic to upload a file to Web3.Storage and get a CID back.
 
@@ -102,7 +102,9 @@ All data uploaded to Web3.Storage is made publicly available to anyone who reque
     npm install
     ```
 
-### Run the script
+Next, we'll [run the script to upload a file ↓](#run-the-script)
+
+## Run the script
 
 Now that you've got the script ready to go, you just need to run it using `node` in your terminal window.
 
@@ -128,7 +130,7 @@ Now that you've got the script ready to go, you just need to run it using `node`
 
 Next up, we'll look at how to [get and view your data from Web3.Storage ↓](#get-your-file)
 
-### Get your file
+## Get your file
 
 Getting your files from Web3.Storage is super easy! You can use the browser if you'd like to see your file immediately, or you can download your file using Curl.
 
