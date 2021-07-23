@@ -9,7 +9,13 @@ _Decentralized storage_ is a technique for storing data which uses a distributed
 
 ## Content persistence
 
-Broadly speaking, today's web browsing operates through what is known as _location addressing_. Location addressing retrieves online information from specific locations on the web ─ i.e. from behind URLs. However, this has downsides. Location addressing is _centralized_, which means that whoever controls that location controls the content, and that one location can change the content, take it away, or just fail to provide service one day. This means location-based addresses are vulnerable to interference, exploitation, and loss.
+Broadly speaking, today's web browsing operates through what is known as _location addressing_. Location addressing retrieves online information from specific locations on the web ─ i.e. from behind URLs. 
+
+```
+https://example.com/page-one.html
+```
+
+However, this has downsides. Location addressing is _centralized_, meaning whoever controls that location controls the content. The controller can change the content, completely replace it, or just take it away. This means location-based addresses are vulnerable to attacks, exploitation, and loss.
 
 To decentralize this system, one part of the problem is to implement a new kind of addressing solution, called [_content addressing_](./content-addressing.md). Content addressing is the technique of granting each piece of data a content identifier (CID), which is a token derived directly from the file contents using an algorithm that will always generate the same key for the same content.
 
