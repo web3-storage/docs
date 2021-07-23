@@ -29,7 +29,7 @@ Filecoin's storage verification system solves a previously intractable problem f
 
 In addition to this proof system, the Filecoin network also relies on game-theoretic incentives to discourage malicious or negligent activity. All Filecoin storage providers must provide collateral in the form of FIL when agreeing to a storage deal to become providers. Any storage provider that fails Proof-of-Spacetime checks is penalized, loses a portion of their collateral, and is eventually prevented from offering storage to clients again.
 
-## Put in practice: Storing and monitoring with Web3.Storage
+## Storing and monitoring with Web3.Storage
 
 When a file is [uploaded to Web3.Storage with the `put()` method](../how-tos/store.md), a CID is returned. The file is then put into a queue for geographically distributed storage providers on the Filecoin network who have been chosen for performance and availability. These providers bid on the right to store those files and agree to a storage deal.
 
