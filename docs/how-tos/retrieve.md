@@ -84,7 +84,7 @@ If you want to get a specific file out of the bundle, add its name onto the end 
 ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanonsense.jpg
 ```
 
-## Using the command-line 
+## Using curl or Powershell 
 
 Sometimes you may need to just download a specific file to your computer using the command-line. Unix-based operating systems, like Linux and macOS, can use Curl. Windows users can use Powershells
 
