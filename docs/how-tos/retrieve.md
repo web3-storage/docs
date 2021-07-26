@@ -154,7 +154,7 @@ Sometimes you may need to just download a specific file to your computer using t
     | Variable | Replace with | Example |
     | --- | --- | --- |
     | `<YOUR CID>` | The CID of the file you want to download. | `bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq` |
-    | `<FILE NAME>` | The _name_ of the file that you originally uploaded to Web3.Strorage | `example.txt` |
+    | `<FILE NAME>` | The _name_ of the file that you originally uploaded to Web3.Storage. | `example.txt` |
     | `<USERNAME>` | The username you use to log into Windows with. | `Laika` |
     | `<OUTPUT FILE>` | The path and filename that you want Powershell to save the file to. This can be different to `<FILE NAME>`. | `Desktop/output-file.txt` |
 
