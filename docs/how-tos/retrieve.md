@@ -30,10 +30,9 @@ Once you have a client, you can call `client.get`, passing in a CID string:
 
 ```js
 const cid = 'bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu'
-try {
-  const res = await client.get(cid)
-} catch (err) {
-  console.error(`failed to get ${cid}: `, err)
+const res = await client.get(cid)
+if (!res.ok) {
+  throw new Error(`failed to get ${cid}`)
 }
 ```
 
