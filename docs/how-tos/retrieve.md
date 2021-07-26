@@ -86,7 +86,7 @@ ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanons
 
 ## Using curl or Powershell 
 
-Sometimes you may need to just download a specific file to your computer using the command-line. Unix-based operating systems, like Linux and macOS, can use Curl. Windows users can use Powershells
+Sometimes you may need to just download a specific file to your computer using the command line. Unix-based operating systems, like Linux and macOS, can use curl. Windows users can use Powershell.
 
 ::::tabs
 
