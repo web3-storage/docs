@@ -11,7 +11,7 @@ All data stored using Web3.Storage is made available for retrieval via [IPFS](ht
 - Using [the Web3.Storage JavaScript client](#using-the-web3-storage-js-client).
 - Via an [HTTP gateway](#using-an-ipfs-http-gateway).
 - In your terminal using [the IPFS command-line tools](#using-the-ipfs-command-line).
-- In your terminal using [curl or Powershell](#using-curl-or-powershell)
+- In your terminal using [curl or Powershell](#using-curl-or-powershell).
 
 ## Using the Web3.Storage JS client
 
@@ -164,6 +164,7 @@ Sometimes you may need to just download a specific file to your computer using t
     Invoke-WebRequest -Uri "https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt" -OutFile "C:\Users\Laika\Desktop\output-file.txt"
     ```
 :::
+::::
 
 ## Next steps
 
