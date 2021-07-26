@@ -67,14 +67,13 @@ Now that you're signed up and logged in, it's time to [get your API token. ↓](
 
 It only takes a few moments to get an API token from Web3.Storage. This token enables you to interact with the Web3.Storage service without using the main website, enabling you to incorporate files stored using Web3.Storage directly into your applications and services.
 
-1. Go to your [Web3.Storage profile page](https://web3.storage/profile) and select **API Tokens** → **New Token**.
-1. Enter a descriptive name for your API token so it's easier to remember later.
-1. Click **Create**.
-1. Make a note of the **Key** somewhere secure where you know you won't lose it.
-1. Click **Copy** to copy your new API token to your clipboard.
+1. Click **Profile** to go to your [Web3.Storage profile page](https://web3.storage/profile).
+1. Click **Create an API token**.
+1. Enter a descriptive name for your API token and click **Create**.
+1. Make a note of the **Token** field somewhere secure where you know you won't lose it. You can click **Copy** to copy your new API token to your clipboard.
 
-:::warning IMPORTANT
-**Keep your API token private!** Do not share your API token with anyone else. This key is specific to your account.
+:::warning Keep your API token private 
+Do not share your API token with anyone else. This key is specific to your account.
 :::
 
 Now that you have your new API token, it's time to use a simple script to [upload a file to Web3.Storage. ↓](#create-the-upload-script)
@@ -83,7 +82,7 @@ Now that you have your new API token, it's time to use a simple script to [uploa
 
 You can use the Web3.Storage site to upload files, but it's also quick and easy to create and run a simple upload script — making it especially convenient to add large numbers of files. This script contains logic to upload a file to Web3.Storage and get a [_content identifier_ (CID)](/concepts/content-addressing.md) back in return.
 
-::: danger CAUTION
+:::danger CAUTION
 All data uploaded to Web3.Storage is available to anyone who requests it using the correct CID. Do not store any private or sensitive information in an unencrypted form using Web3.Storage.
 :::
 
@@ -108,6 +107,17 @@ All data uploaded to Web3.Storage is available to anyone who requests it using t
     npm install
     ```
 
+    This step may take a few moments. Once it's done, the command should output something like this:
+
+    ```shell output
+    added 224 packages, and audited 225 packages in 14s
+
+    40 packages are looking for funding
+     run `npm fund` for details
+
+    found 0 vulnerabilities
+    ```
+
 Your script is good to go! Next, we'll [run the script to upload a file. ↓](#run-the-script)
 
 ## Run the script
@@ -117,7 +127,7 @@ Now that you've got your script ready to go, you just need to run it in your ter
 1. Run the script by calling `node put-files.js`, using `--token` to supply your API token and specifying the path and name of the file you want to upload. Here's how that looks in template form:
 
     ```shell
-    node put-files.js --token<YOUR_TOKEN> ~/filename
+    node put-files.js --token=<YOUR_TOKEN> ~/filename
     ```
 
     Once you've filled in your details, your command should look something like this:
@@ -128,47 +138,27 @@ Now that you've got your script ready to go, you just need to run it in your ter
 
 1. The command will output a CID:
 
-    ```shell
+    ```shell output
     Content added with CID: bafybeig7sgl52pc6ihypxhk2yy7gcllu4flxgfwygp7klb5xdjdrm7onse
     ```
 
-**Make a note of the CID, which looks like `bafyb...`.** You'll need it in order to get your file.
+1. **Make a note of the CID, which looks like `bafyb...`.** You'll need it in order to get your file.
 
 Next up, we'll go over two methods for you to [retrieve your data from Web3.Storage ↓](#get-your-file)
 
 ## Get your file
 
-You've already done the most difficult work in this guide — getting your files from Web3.Storage is simple. You have two easy options for retrieving your data: Use your browser and an [IPFS gateway](/how-tos/retrieve.md#using-an-ipfs-http-gateway) to view your file like any other web content, or download it directly using the command line and `curl`.
-
-::::tabs
-
-:::tab Browser
+You've already done the most difficult work in this guide — getting your files from Web3.Storage is simple.
 
 1. Go to `https://dweb.link/ipfs/YOUR_CID`, replacing `YOUR_CID` with the CID you noted in the last step.
-1. View your file in your browser!
+1. You should see a link to your file that you uploaded. If you uploaded a folder, you'll see a list of all the files within that folder.
+1. Click on a file to view it in your browser!
 
-:::
+### Finding your files again
 
-:::tab Curl
+If you ever need to find your files again, and you've forgotten the CID, head over to the [Files section](https://web3.storage/files/) in Web3.Storage:
 
-1. Open a terminal window.
-1. Use `curl` to download your file from `ipfs.dweb.link`. Here's how that looks in template form:
-
-    ```shell
-    curl https://<YOUR_CID>.ipfs.dweb.link/
-    ```
-
-    Replace `<YOUR CID>` with the CID you got from the `put-files.js` script. Your command should look something like this:
-
-    ```shell
-    curl https://bafkreievfjy5oqcpwj7464wt6gvkjfbd6jr2w7a6wnhzde2yslrmhfoc4e.ipfs.dweb.link/ -o ~/output-file
-    ```
-
-1. You now have a file called `output-file` in your home `~` folder!
-
-:::
-
-::::
+![A listing of files in Web3.Storage](./images/files-listing.png)
 
 ## Next steps
 
