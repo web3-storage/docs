@@ -11,6 +11,7 @@ All data stored using Web3.Storage is made available for retrieval via [IPFS](ht
 - Using [the Web3.Storage JavaScript client](#using-the-web3-storage-js-client).
 - Via an [HTTP gateway](#using-an-ipfs-http-gateway).
 - In your terminal using [the IPFS command-line tools](#using-the-ipfs-command-line).
+- Using [Curl](#using-curl)
 
 ## Using the Web3.Storage JS client
 
@@ -82,6 +83,88 @@ If you want to get a specific file out of the bundle, add its name onto the end 
 ```shell
 ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanonsense.jpg
 ```
+
+## Using the command-line 
+
+Sometimes you may need to just download a specific file to your computer using the command-line. Unix-based operating systems, like Linux and macOS, can use Curl. Windows users can use Powershells
+
+::::tabs
+
+:::tab Linux
+
+1. Open a terminal window.
+1. Use `curl` to download your file:
+
+    ```shell
+    curl https://<YOUR CID>.ipfs.dweb.link/<FILE NAME> -o ~/<OUTPUT FILE>
+    ```
+
+    Replace `<YOUR CID>`, `<FILE NAME>`, and `<OUT FILE>` with their respective values.
+
+    | Variable | Replace with | Example |
+    | --- | --- | --- |
+    | `<YOUR CID>` | The CID of the file you want to download. | `bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq` |
+    | `<FILE NAME>` | The _name_ of the file that you originally uploaded to Web3.Strorage | `example.txt` |
+    | `<OUTPUT FILE>` | The path and filename that you want Powershell to save the file to. This can be different to `<FILE NAME>`. | `Desktop/output-file.txt` |
+
+    Your complete command should look something like this:
+
+    ```shell
+    curl https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt -o ~/output-file.txt 
+    ```
+
+:::
+
+:::tab macOS 
+
+1. Open a terminal window.
+1. Use `curl` to download your file:
+
+    ```shell
+    curl https://<YOUR CID>.ipfs.dweb.link/<FILE NAME> -o ~/<OUTPUT FILE>
+    ```
+
+    Replace `<YOUR CID>`, `<FILE NAME>`, and `<OUT FILE>` with their respective values.
+
+    | Variable | Replace with | Example |
+    | --- | --- | --- |
+    | `<YOUR CID>` | The CID of the file you want to download. | `bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq` |
+    | `<FILE NAME>` | The _name_ of the file that you originally uploaded to Web3.Strorage | `example.txt` |
+    | `<OUTPUT FILE>` | The path and filename that you want Powershell to save the file to. This can be different to `<FILE NAME>`. | `Desktop/output-file.txt` |
+
+    Your complete command should look something like this:
+
+    ```shell
+    curl https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt -o ~/output-file.txt 
+    ```
+
+:::
+
+:::tab Windows
+
+1. Open a Powershell window.
+1. Use `Invoke-WebRequest` to download your file:
+
+    ```powershell
+     Invoke-WebRequest -Uri "https://<YOUR_CID>.ipfs.dweb.link/<FILE NAME>" -OutFile "C:\Users\<USERNAME>\<OUTPUT FILE>
+    ```
+
+    Replace `<YOUR CID>`, `<FILE NAME>`, `<USERNAME>`, and `<OUTPUT FILE>` with their respective values.
+
+    | Variable | Replace with | Example |
+    | --- | --- | --- |
+    | `<YOUR CID>` | The CID of the file you want to download. | `bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq` |
+    | `<FILE NAME>` | The _name_ of the file that you originally uploaded to Web3.Strorage | `example.txt` |
+    | `<USERNAME>` | The username you use to log into Windows with. | `Laika` |
+    | `<OUTPUT FILE>` | The path and filename that you want Powershell to save the file to. This can be different to `<FILE NAME>`. | `Desktop/output-file.txt` |
+
+    Your complete command should look something like this:
+
+    ```powershell
+    Invoke-WebRequest -Uri "https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt" -OutFile "C:\Users\Laika\Desktop\output-file.txt"
+    ```
+
+:::
 
 ## Next steps
 
