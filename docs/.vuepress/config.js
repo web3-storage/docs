@@ -74,14 +74,6 @@ module.exports = {
         sidebar: [
             '/',
           {
-            title: 'Concepts',
-            collapsable: false,
-            children: [
-                '/concepts/content-addressing',
-                '/concepts/decentralized-storage'
-            ]
-          },
-          {
             title: 'How-tos',
             collapsable: false,
             children: [
@@ -89,6 +81,14 @@ module.exports = {
               '/how-tos/retrieve',
               '/how-tos/query',
               '/how-tos/regenerate-api-token'
+            ]
+          },
+          {
+            title: 'Concepts',
+            collapsable: false,
+            children: [
+                '/concepts/content-addressing',
+                '/concepts/decentralized-storage'
             ]
           },
           {
