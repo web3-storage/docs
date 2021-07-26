@@ -163,7 +163,6 @@ Sometimes you may need to just download a specific file to your computer using t
     ```powershell
     Invoke-WebRequest -Uri "https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt" -OutFile "C:\Users\Laika\Desktop\output-file.txt"
     ```
-
 :::
 
 ## Next steps
