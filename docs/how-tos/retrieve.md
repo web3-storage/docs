@@ -124,7 +124,7 @@ Sometimes you may need to just download a specific file to your computer using t
     curl https://<YOUR CID>.ipfs.dweb.link/<FILE NAME> -o ~/<OUTPUT FILE>
     ```
 
-    Replace `<YOUR CID>`, `<FILE NAME>`, and `<OUT FILE>` with their respective values.
+    Replace `<YOUR CID>`, `<FILE NAME>`, and `<OUTPUT FILE>` with their respective values.
 
     | Variable | Replace with | Example |
     | --- | --- | --- |
