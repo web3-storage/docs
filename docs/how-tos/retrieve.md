@@ -11,7 +11,7 @@ All data stored using Web3.Storage is made available for retrieval via [IPFS](ht
 - Using [the Web3.Storage JavaScript client](#using-the-web3-storage-js-client).
 - Via an [HTTP gateway](#using-an-ipfs-http-gateway).
 - In your terminal using [the IPFS command-line tools](#using-the-ipfs-command-line).
-- Using [Curl](#using-curl)
+- In your terminal using [curl or Powershell](#using-curl-or-powershell)
 
 ## Using the Web3.Storage JS client
 
