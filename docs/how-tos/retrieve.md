@@ -8,7 +8,7 @@ description: Learn how to retrieve data stored using Web3.Storage in this quick 
 In this how-to guide, **you'll learn several methods for retrieving data from Web3.Storage.**
 
 All data stored using Web3.Storage is made available for retrieval via [IPFS](https://ipfs.io), the InterPlanetary File System. IPFS is a distributed, peer-to-peer network for storing and sharing [content-addressed data][concepts-content-addressing]. This guide shows you several ways to retrieve your data from IPFS:
-- In your browser via an [HTTP gateway](#using-an-ipfs-http-gateway).
+- In your browser using an [HTTP gateway](#using-an-ipfs-http-gateway).
 - Programmatically using the [Web3.Storage JavaScript client](#using-the-web3-storage-js-client).
 - In your terminal using the [IPFS command-line tools](#using-the-ipfs-command-line).
 - In your terminal using [curl or Powershell](#using-curl-or-powershell).
