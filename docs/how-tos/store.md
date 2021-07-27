@@ -30,67 +30,58 @@ npm install web3.storage
 
 ## Creating a client instance
 
-To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
+First import the `Web3Storage` constructor from the `web3.storage` package:
 
-```javascript
-import { Web3Storage } from 'web3.storage'
-const token = process.env.WEB3_STORAGE_TOKEN
-const client = new Web3Storage({ token })
-```
+<<<@/code-snippets/how-to/store/index.js#import-client
 
-In the example above, we read the token from an environment variable called `WEB3_STORAGE_TOKEN`, since baking credentials into source code is generally a bad idea. To help make environment variables easier to manage, consider using a package like [dotenv](https://www.npmjs.com/package/dotenv), which will read variables from a file called `.env` in your project's root directory. Just make sure not to check the `.env` file into source control!
+To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor].
+
+Generally speaking, it's best to read credentials like access tokens from an environment variable or configuration file that's kept outside of source control. 
+
+Here's an example of a helper function that will read in a token from the `WEB3STORAGE_TOKEN` environment variable:
+
+<<<@/code-snippets/how-to/store/index.js#getAccessToken
+
+Now it's easy to create a new client object:
+
+<<<@/code-snippets/how-to/store/index.js#makeStorageClient
 
 ## Preparing files for upload
 
 The Web3.Storage client's [`put` method][reference-js-put] accepts an array of [`File` objects](https://developer.mozilla.org/en-US/docs/Web/API/File).
 
-When running in the browser, you can use the native `File` object provided by the browser runtime.
+There are a few different ways of creating `File` objects available, depending on your platform.
 
-On Node.js, import `File` from the `web3.storage` package along with the `Web3Storage` object:
+:::: tabs
 
-```javascript
-import { File, Web3Storage } from 'web3.storage'
-```
+::: tab Browser
 
-Once you have a `File` constructor in scope, you can prepare your files for upload:
+In the browser, you can use a [file input element][mdn-file-input] to allow the user to select files for upload:
 
-```javascript
-const files = [
-  new File(['contents-of-file-1'], 'plain-utf8.txt'),
-  new File([aBlobOrArrayBuffer], 'pic.jpeg')
-]
-```
+<<<@/code-snippets/how-to/store/platform-browser.js#getFiles
 
-You can also create a nested directory structure by adding files with path components separated by `/` characters:
+You can also manually create `File` objects using the native `File` constructor provided by the browser runtime:
 
-```javascript
-const files = [
-  new File(kittyImageBytes, '/images/cats/kitty.jpeg'),
-  new File(pugImageBytes, '/images/dogs/pug.jpeg'),
-]
-```
+<<<@/code-snippets/how-to/store/platform-browser.js#makeFileObjects
+
+:::
+
+::: tab Node.js
 
 In Node.js, the `web3.storage` package exports some helpful utility functions from the [`files-from-path` module](https://www.npmjs.com/package/files-from-path) that allow you to easily read `File` objects from the local file system. The `getFilesFromPath` helper asynchronously returns an array of `File`s that you can use directly with the `put` client method:
 
-```javascript
-import { getFilesFromPath, Web3Storage } from 'web3.storage'
-const token = 'your-api-token'
-const client = new Web3Storage( { token })
-
-async function storeFiles(path) {
-  const files = await getFilesFromPath(path)
-  const cid = await client.put(files)
-}
-```
+<<<@/code-snippets/how-to/store/platform-node.js#getFiles
 
 If you expect to be loading a lot of large files, you may be better served by the [`filesFromPath` helper](https://github.com/web3-storage/files-from-path#filesfrompath). It reduces memory pressure by `yield`ing `File` objects one by one as they're loaded from disk, instead of loading everything into memory. You can then issue multiple `put` requests to send each file to Web3.Storage.
 
-In the browser, you can also use a [file input element][mdn-file-input] to allow the user to select files for upload, instead of creating `File` objects manually:
+You can also manually create `File` objects by importing a Node.js implementation of `File` from the `web3.storage` package:
 
-```javascript
-const fileInput = document.querySelector('input[type="file"]')
-const files = fileInput.files
-```
+<<<@/code-snippets/how-to/store/platform-node.js#makeFileObjects
+
+:::
+
+::::
+
 
 ::: tip 
 **When uploading multiple files, try to give each file a unique name.** All the files in a `put` request will be bundled into one content archive, and linking to the files inside is much easier if each file has a unique, human-readable name.
@@ -98,11 +89,9 @@ const files = fileInput.files
 
 ## Uploading to Web3.Storage
 
-Once you have a client object and an array of `File`s, uploading is simple:
+Once you have an array of `File`s, uploading is simple:
 
-```javascript
-const cid = await client.put(files)
-```
+<<<@/code-snippets/how-to/store/index.js#storeFiles
 
 ::: warning IMPORTANT
 Deleting files from the Web3.Storage site's [Files page][site-files] will remove them from the file listing for your account, but that doesn't prevent nodes on the [decentralized storage network][concepts-decentralized-storage] from retaining copies of the data indefinitely. Do not use Web3.Storage for data that may need to be permanently deleted in the future.
