@@ -5,13 +5,15 @@ description: Learn how to store your data on the decentralized web with Web3.Sto
 
 # How to store data using Web3.Storage
 
-In this how-to guide, **you'll learn how to store data using the Web3.Storage client**. This includes making your data available on the decentralized [IPFS](https:://ipfs.io) network with persistent long-term storage provided by [Filecoin](https://filecoin.io).
+In this how-to guide, **you'll learn how to store data programmatically for your development projects using the Web3.Storage JavaScript client**. This includes making your data available on the decentralized [IPFS](https:://ipfs.io) network with persistent long-term storage provided by [Filecoin](https://filecoin.io).
 
-Web3.Storage provides a simple interface for storing data using syntax inspired by familiar web APIs such as [`fetch`][mdn-fetch] and [`File`][mdn-file]. This guide focuses on the [JavaScript client library][reference-js], which is the simplest way to use Web3.Storage.
+**If you just want to quickly store a few files using Web3.Storage rather than include upload functionality in an app or service you're building**, you may want to skip this guide for now and simply use the [Files page][site-files] on the Web3.Storage site.
+
+For developers, Web3.Storage provides a simple interface for storing data using syntax inspired by familiar web APIs such as [`fetch`][mdn-fetch] and [`File`][mdn-file]. This guide focuses on the [JavaScript client library][reference-js], which is the simplest way to use Web3.Storage programmatically. 
 <!-- TODO: bring this back once the HTTP reference exists
 If you're using another language, see the [HTTP API reference][reference-http] for details on working with the underlying HTTP API.
 -->
-Uploading data to Web3.Storage requires an API token, which in turn requires a Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart-guide] to get up and running in just a few minutes.
+Uploading data to Web3.Storage using the JavaScript client library requires an API token, which in turn requires a Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart-guide] to get up and running in just a few minutes.
 
 
 ::: danger CAUTION
@@ -105,7 +107,7 @@ const cid = await client.put(files)
 If you'd like to associate a name with your upload or display progress information to the user, see the [client library reference][reference-js-put] for a description of the optional parameters.
 
 ::: warning IMPORTANT
-Deleting files from the Web3.Storage [Files page][site-files] will remove them from the file listing for your account, but that doesn't prevent nodes on the [decentralized storage network][concepts-decentralized-storage] from retaining copies of the data indefinitely. Do not use Web3.Storage for data that may need to be permanently deleted in the future.
+Deleting files from the Web3.Storage site's [Files page][site-files] will remove them from the file listing for your account, but that doesn't prevent nodes on the [decentralized storage network][concepts-decentralized-storage] from retaining copies of the data indefinitely. Do not use Web3.Storage for data that may need to be permanently deleted in the future.
 :::
 
 ## Next steps
