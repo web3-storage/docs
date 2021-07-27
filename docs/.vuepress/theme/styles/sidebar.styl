@@ -7,6 +7,10 @@ ul.sidebar-links > li > a {
 }
 
 .sidebar {
+	position: sticky;
+	height: calc(100vh - 2.5rem);
+	bottom: unset;
+	
 	background-color: $layoutBgColor;
 	color: $w3storage-purple;
 	font-family: 'Space Grotesk', sans-serif;
@@ -115,5 +119,7 @@ ul.sidebar-links > li > a {
 @media (max-width: $MQMobile) {
 	.sidebar {
 		width: 80vw;
+		top: 3.6rem;
+		padding-top: 1rem;
 	}
 }

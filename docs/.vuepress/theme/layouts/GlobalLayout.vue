@@ -1,53 +1,58 @@
 <template>
   <div id="global-layout">
+    <div class="banner--nft-storage">
+      Looking to store NFTs? Check out <a href="https://nft.storage">NFT.Storage</a>!
+    </div>
     <component :is="layout">
         <template #sidebar-bottom>
             <div class="sidebar-bottom"></div>
         </template>
+        <template #page-bottom>
+          <footer>
+            <div class="footer--made-with">
+                {{ $themeLocaleConfig.footer.madeBy.sentence }}
+                <a
+                  :href="$themeLocaleConfig.footer.madeBy.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  @click="trackClick"
+                >
+                  {{ $themeLocaleConfig.footer.madeBy.text }}
+                </a>
+            </div>
+            <div class="footer--links">
+              <div v-for="item in $themeLocaleConfig.footer.nav" :key="item.link">
+                <a
+                  v-if="item.link.startsWith($site.themeConfig.mainDomain)"
+                  :href="item.link"
+                  class="footer--links-item footer--links--status"
+                  @click="trackClick"
+                >
+                  {{ item.text }}
+                </a>
+                <RouterLink
+                  v-else-if="item.link.startsWith('/')"
+                  :to="item.link"
+                  class="footer--links-item footer--links--status"
+                  @click="trackClick"
+                >
+                  {{ item.text }}
+                </RouterLink>
+                <a
+                  v-else
+                  :href="item.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer--links-item footer--links--status"
+                  @click="trackClick"
+                >
+                  {{ item.text }}
+                </a>
+              </div>
+            </div>
+          </footer>
+        </template>
     </component>
-    <footer>
-        <div class="footer--made-with">
-            {{ $themeLocaleConfig.footer.madeBy.sentence }}
-            <a
-              :href="$themeLocaleConfig.footer.madeBy.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              @click="trackClick"
-            >
-              {{ $themeLocaleConfig.footer.madeBy.text }}
-            </a>
-        </div>
-        <div class="footer--links">
-          <div v-for="item in $themeLocaleConfig.footer.nav" :key="item.link">
-            <a
-              v-if="item.link.startsWith($site.themeConfig.mainDomain)"
-              :href="item.link"
-              class="footer--links-item footer--links--status"
-              @click="trackClick"
-            >
-              {{ item.text }}
-            </a>
-            <RouterLink
-              v-else-if="item.link.startsWith('/')"
-              :to="item.link"
-              class="footer--links-item footer--links--status"
-              @click="trackClick"
-            >
-              {{ item.text }}
-            </RouterLink>
-            <a
-              v-else
-              :href="item.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer--links-item footer--links--status"
-              @click="trackClick"
-            >
-              {{ item.text }}
-            </a>
-          </div>
-        </div>
-    </footer>
   </div>
 </template>
 
@@ -88,6 +93,37 @@ export default {
   min-height: 100%;
 }
 
+.banner--nft-storage {
+  @extend .max-w-screen-xl;
+  @extend .mx-auto;
+  @extend .relative;
+
+  background-color: $w3storage-purple;
+  padding: .25rem 0;
+  height: auto;
+  width: 100%;
+
+  line-height: 2.2em;
+  color: $accentTextColor;
+  font-weight: 600;
+  font-size: .9375rem;
+  letter-spacing: .02em;
+  text-align: center;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: inherit;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .banner--nft-storage {
+    line-height: 1.4;
+    padding: .6rem 0;
+  }
+}
+
 .sidebar-bottom {
 	height: 5.6rem; // make room for footer
 }
@@ -99,19 +135,34 @@ footer {
 
   --link-hit-area: 1.25em;
   --side-spacing: 2em;
+  --sidebar-width: 20rem;
 
   position: relative;
-  z-index 5;
+  z-index: 10;
   overflow: hidden;
-  width: 100%;
+  width: calc(100% + var(--sidebar-width));
 
   background-color: $layoutBgColor;
   color: $w3storage-purple;
 
   display: flex;
   padding: 1.25em 0;
+  margin-top: 2rem;
+  margin-left: calc(-1 * var(--sidebar-width));
 
   font-size: 0.9rem;
+}
+
+@media (max-width: $MQNarrow) {
+  footer {
+    --sidebar-width: 16.5rem;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  footer {
+    --sidebar-width: 0rem;
+  }
 }
 
 
