@@ -42,3 +42,11 @@ If you no longer need a particular Web3.Storage API token — for example, you'v
 :::danger Deleting a token is permanent 
 Remember that if you delete an API token, it's removed permanently and cannot be restored. Delete a token only if you're sure you won't need it again.
 :::
+
+## Next steps
+
+Now that you have an API token, you can store and retrieve data from your apps and services, as well as from the command line. If you haven't yet explored in depth how to store data using Web3.Storage, check out the [storage how-to guide](./store.md) for a deep dive on how to upload files using the [JavaScript client library](../reference/client-library.md).
+
+To learn in greater detail how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line, see the [how-to guide on retrieval](./retrieve.md).
+
+You can also use the JavaScript client library to get more information about the status of your data. See the [query how-to guide](./query.md) to learn how to get more details about your data, including the status of any Filecoin storage deals.
