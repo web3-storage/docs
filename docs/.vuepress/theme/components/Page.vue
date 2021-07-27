@@ -64,8 +64,10 @@ export default {
 
 <style lang="stylus" scoped>
 .page {
-  padding-bottom: 2rem;
   background-color: $contentBgColor;
+
+  top: 3.6rem;
+  margin-top: calc(-1 * (100vh - 2.5rem));
 }
 
 .content-footer {
