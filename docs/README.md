@@ -145,7 +145,7 @@ Now that you've got your script ready to go, you just need to run it in your ter
 1. **Make a note of the CID, which looks like `bafyb...`.** You'll need it in order to get your file.
 
 :::tip Get the status of your upload
-It's possible to get the status of your file upload by using the `status()` method within the JavaScript client library. Checkout the [Query how-to section for more information →](./how-tos/query/)
+It's possible to get the status of your file upload by using the `status()` method within the JavaScript client library. Check out the [Query how-to guide](./how-tos/query.md) for more information.
 :::
 
 Next up, we'll go over two methods for you to [retrieve your data from Web3.Storage ↓](#get-your-file)
@@ -170,4 +170,3 @@ Congratulations! You've just covered the basics of Web3.Storage. To learn more, 
 - For a deep dive into storing files, visit the [Store how-to guide.](/how-tos/store.md)
 - To learn more about the details of getting files, have a look at the [Retrieve how-to guide.](/how-tos/retrieve.md)
 - Visit the [reference API section](/reference/client-library.md) for more details on what else you can do with the Web3.Storage service and how to integrate it into your own projects.
-
