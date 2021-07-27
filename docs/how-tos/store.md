@@ -102,11 +102,42 @@ Once you have a client object and an array of `File`s, uploading is simple:
 const cid = await client.put(files)
 ```
 
-If you'd like to associate a name with your upload or display progress information to the user, see the [client library reference][reference-js-put] for a description of the optional parameters.
-
 ::: warning IMPORTANT
 Deleting files from the Web3.Storage [Files page][site-files] will remove them from the file listing for your account, but that doesn't prevent nodes on the [decentralized storage network][concepts-decentralized-storage] from retaining copies of the data indefinitely. Do not use Web3.Storage for data that may need to be permanently deleted in the future.
 :::
+
+### Showing progress to the user
+
+The `put` method has some options that can be passed in to get progress on the upload as it happens in the background. There are two callback parameters you can use: `onRootCidReady`, and `onChunkStored`.
+
+The `onRootCidReady` callback is invoked as soon as the client has calculated the content identifier (CID) that identifies the data being uploaded. Because this calculation happens locally on the client, the callback is invoked before the upload begins.
+
+As each chunk of data is uploaded, the `onChunkStored` callback gets invoked with the size of the chunk in bytes passed in as a parameter.
+
+Here's a simple example of using the callbacks to print the progress of an upload to the console:
+
+```javascript
+async function storeWithProgress(files) {  
+  // show the root cid as soon as it's ready
+  const onRootCidReady = cid => {
+    console.log('uploading files with cid:', cid)
+  }
+
+  // when each chunk is stored, update the percentage complete and display
+  const totalSize = files.map(f => f.size).reduce((a, b) => a + b, 0)
+  let uploaded = 0
+
+  const onChunkStored = size => {
+    uploaded += size
+    const pct = totalSize / uploaded
+    console.log(`Uploading... ${pct.toFixed(2)}% complete`)
+  }
+
+  // assume that getClient returns a Web3.Storage client instance
+  const client = getClient()
+  return client.put(files, { onRootCidReady, onChunkStored })
+}
+```
 
 ## Next steps
 
