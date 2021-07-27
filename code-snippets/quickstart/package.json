@@ -11,6 +11,6 @@
         "minimist": "^1.2.5",
         "web3.storage": "file://../../../web3.storage/packages/client"
     },
-    "author": "Vasco Santos",
+    "author": "YOUR NAME",
     "license": "(Apache-2.0 AND MIT)"
 }
