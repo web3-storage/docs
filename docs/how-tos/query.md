@@ -23,11 +23,7 @@ npm install web3.storage
 
 To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
 
-```javascript
-import { Web3Storage } from 'web3.storage'
-const token = process.env.WEB3_STORAGE_TOKEN
-const client = new Web3Storage({ token })
-```
+<<<@/code-snippets/how-to/index.js#makeStorageClient
 
 :::tip
 Don't have an access token? Get your Web3.Storage API token in just a few minutes using the instructions in the [quickstart guide.][quickstart]
@@ -37,15 +33,7 @@ Don't have an access token? Get your Web3.Storage API token in just a few minute
 
 The client object's `status` method accepts a CID string and returns a JSON object with information about the upload. Here's how to include it in your project:
 
-```javascript
-// replace with your own CID to see info about your uploads!
-const cid = 'bafybeifljln6rmvrdqu7xopiwk2bykwa25onxnvjsmlp3xdiii3opgg2gq'
-const status = await client.status(cid)
-console.log(status)
-if (status) {
-  // your code to do something fun with the status info here
-}
-```
+<<<@/code-snippets/how-to/index.js#query-status
 
 ::: warning IMPORTANT 
 **Remember to check the return value!** If you ask for the status of a CID that Web3.Storage doesn't know about, the `status` method will return `undefined` instead of a status object. Make sure to check that a return value exists before trying to use it, as we're doing above with the `if (status)` conditional statement.

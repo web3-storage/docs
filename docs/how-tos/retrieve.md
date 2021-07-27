@@ -35,23 +35,14 @@ The Web3.Storage JavaScript client provides a `get` method that allows you to re
 
 First, you'll need to create a Web3.Storage client using your API token. Getting an API token requires a Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart-guide] to get up and running in just a few minutes.
 
-Use the following commands to create a Web3.Storage client:
+Use the following code to create a Web3.Storage client:
 
-```js
-import { Web3Storage } from 'web3.storage'
-const token = process.env.WEB3_STORAGE_TOKEN
-const client = new Web3Storage({ token })
-```
+<<<@/code-snippets/how-to/index.js#makeStorageClient
 
 Once you have a client, you can call `client.get`, passing in a CID string:
 
-```js
-const cid = 'bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu'
-const res = await client.get(cid)
-if (!res.ok) {
-  throw new Error(`failed to get ${cid}`)
-}
-```
+<<<@/code-snippets/how-to/index.js#retrieve-basics
+
 
 ### The `Web3Response` object
 
@@ -59,13 +50,9 @@ The `get` method returns a `Web3Response` object. This object extends the [`Resp
 
 The [`files` method][reference-js-web3response-files] returns an array of `Web3File` objects, which represent all files contained in the content archive identified by the given CID. A `Web3File` is just like a regular Web [`File` object][mdn-file], with the addition of `path` and `cid` properties. These contain the relative path of the file within the archive and the CID of the file, respectively.
 
-```js
-const res = await client.get(cid)
-const files = await res.files()
-for (const file of files) {
-  console.log(`${file.cid} -- ${file.path} -- ${file.size}`)
-}
-```
+Here's the example from above, now with the code to unpack and inspect the files in the response:
+
+<<<@/code-snippets/how-to/index.js#retrieve-unpack-files
 
 :::tip
 Another option is to use the array of `unixFs` objects provided by the `unixFsIterator()` method to iterate through your files. While in the vast majority of cases you'll want to use the `files()` method outlined above, existing IPFS users may prefer interacting with `unixFs` objects if they have existing code or tooling that supports it. For more details, see the [JavaScript client library reference](/reference/client-library.md).
@@ -184,6 +171,7 @@ You can also use the client library to get more information about the status of 
 
 [reference-js-web3response-files]: ../reference/client-library.md#return-value-2
 [reference-js-web3response-unixfsiterator]: ../reference/client-library.md#return-value-2
+[reference-js-constructor]: ../reference/client-library.md#constructor
 
 <!-- external links -->
 [ipfs-docs-cid]: https://docs.ipfs.io/concepts/content-addressing/
