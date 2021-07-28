@@ -27,6 +27,31 @@ async function storeFiles(files) {
 }
 //#endregion storeFiles
 
+//#region storeWithProgress
+async function storeWithProgress(files) {  
+  // show the root cid as soon as it's ready
+  const onRootCidReady = cid => {
+    console.log('uploading files with cid:', cid)
+  }
+
+  // when each chunk is stored, update the percentage complete and display
+  const totalSize = files.map(f => f.size).reduce((a, b) => a + b, 0)
+  let uploaded = 0
+
+  const onChunkStored = size => {
+    uploaded += size
+    const pct = totalSize / uploaded
+    console.log(`Uploading... ${pct.toFixed(2)}% complete`)
+  }
+
+  // makeStorageClient returns an authorized Web3.Storage client instance
+  const client = makeStorageClient()
+
+  // client.put will invoke our callbacks during the upload
+  // and return the root cid when the upload completes
+  return client.put(files, { onRootCidReady, onChunkStored })
+}
+//#endregion storeWithProgress
 
 //#region retrieve-basics
 async function retrieve(cid) {

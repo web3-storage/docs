@@ -95,28 +95,7 @@ As each chunk of data is uploaded, the `onChunkStored` callback gets invoked wit
 
 Here's a simple example of using the callbacks to print the progress of an upload to the console:
 
-```javascript
-async function storeWithProgress(files) {  
-  // show the root cid as soon as it's ready
-  const onRootCidReady = cid => {
-    console.log('uploading files with cid:', cid)
-  }
-
-  // when each chunk is stored, update the percentage complete and display
-  const totalSize = files.map(f => f.size).reduce((a, b) => a + b, 0)
-  let uploaded = 0
-
-  const onChunkStored = size => {
-    uploaded += size
-    const pct = totalSize / uploaded
-    console.log(`Uploading... ${pct.toFixed(2)}% complete`)
-  }
-
-  // assume that getClient returns a Web3.Storage client instance
-  const client = getClient()
-  return client.put(files, { onRootCidReady, onChunkStored })
-}
-```
+<<<@/code-snippets/how-to/index.js#storeWithProgress
 
 ## Next steps
 
