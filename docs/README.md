@@ -11,7 +11,7 @@ description: "Learn how to use Web3.Storage to decentralize your data storage wi
 
 One solution to this problem is using _decentralized storage_ instead of big, corporate platforms to store data for apps and services. However, decentralized storage can be difficult to manage and add extra time and effort to an already crowded developer workflow — for example, most decentralized storage services need you to compile your data into a specific format, find a storage provider to host your data, buy some cryptocurrency to pay the storage provider, and then send your data across the internet. **This is where Web3.Storage comes in.**
 
-With Web3.Storage, you get all the benefits of decentralized storage technologies with the frictionless experience you expect in a modern dev workflow. **All you need to use Web3.Storage is an API token and your data.** Under the hood, Web3.Storage is backed by the provable storage of [Filecoin](https://filecoin.io) and makes data accessible to your users over the public [IPFS](https://ipfs.io) network — but when it comes down to building your next application, service, or website, all you need to know is that Web3.Storage makes building on decentralized technologies simple.
+With Web3.Storage, you get all the benefits of decentralized storage technologies with the frictionless experience you expect in a modern dev workflow. **All you need to use Web3.Storage is an API token and your data.** Under the hood, Web3.Storage is backed by the provable storage of [Filecoin](https://filecoin.io) and makes data accessible to your users over the public [IPFS](https://ipfs.io) network — but when it comes down to building your next application, service, or website, all you need to know is that Web3.Storage makes building on decentralized technologies simple. **And best of all, Web3.Storage is free.**
 
 ## Quickstart
 
@@ -68,7 +68,7 @@ Now that you're signed up and logged in, it's time to [get your API token. ↓](
 
 ## Get an API token
 
-It only takes a few moments to get an API token from Web3.Storage. This token enables you to interact with the Web3.Storage service without using the main website, enabling you to incorporate files stored using Web3.Storage directly into your applications and services.
+It only takes a few moments to get a free API token from Web3.Storage. This token enables you to interact with the Web3.Storage service without using the main website, enabling you to incorporate files stored using Web3.Storage directly into your applications and services.
 
 1. Click **Profile** to go to your [Web3.Storage profile page](https://web3.storage/profile).
 1. Click **Create an API token**.

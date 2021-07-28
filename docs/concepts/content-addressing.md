@@ -5,7 +5,7 @@ description: A conceptual overview of content-based addressing for storing and l
 
 # Content addressing in brief
 
-Web3.Storage's decentralized file storage relies on _content addressing_ to find, reference, and retrieve your files on the network. Content addressing is a technique for organizing and locating data in a system in which **the key used to locate content is derived from the content itself, rather than its location.** While you don't need to understand content addressing to be able to incorporate Web3.Storage in your apps and services, if you're curious about what's going on under the hood, read on.
+Web3.Storage's free, decentralized file storage relies on _content addressing_ to find, reference, and retrieve your files on the network. Content addressing is a technique for organizing and locating data in a system in which **the key used to locate content is derived from the content itself, rather than its location.** While you don't need to understand content addressing to be able to incorporate Web3.Storage in your apps and services, if you're curious about what's going on under the hood, read on.
 
 ## The basic problem
 
@@ -38,7 +38,7 @@ for (const file of files) {
 
 ## Web3.Storage CIDs under the hood
 
-Web3.Storage uses CIDs to make its decentralized file storage work, with help from [IPFS](https://ipfs.io) and [Filecoin](https://filecoin.io/) for locating files and making sure they're always available. 
+Web3.Storage uses CIDs to make its free, decentralized file storage work, with help from [IPFS](https://ipfs.io) and [Filecoin](https://filecoin.io/) for locating files and making sure they're always available. 
 
 Content addressing is the basis of the peer-to-peer hypermedia protocol IPFS (the InterPlanetary File System), which Web3.Storage uses to locate files. When Web3.Storage stores your data on IPFS, it can be retrieved from any IPFS node that has a copy of that data. This can make data transfers more efficient and reduce the load on any single node. As each user fetches a piece of data, they keep a local copy around to help other users who might request it later.
 

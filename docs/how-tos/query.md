@@ -9,7 +9,7 @@ In this how-to guide, you'll learn how to **query Web3.Storage for information a
 
 When you [store a file][howto-store] with Web3.Storage, you receive a [content identifier (CID)][ipfs-docs-cid] that you can use to [retrieve the file][howto-retrieve]. However, this CID can also be used to query the service for more details about _how_ the data is stored on the [decentralized storage networks][concepts-decentralized-storage] that Web3.Storage uses under the hood. 
 
-This guide will show you how to use Web3.Storage's [JavaScript client library][reference-js-client] to get information about content stored on the network. To follow along, you'll need the API token from your Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart] to get up and running in just a few minutes.
+This guide will show you how to use Web3.Storage's [JavaScript client library][reference-js-client] to get information about content stored on the network. To follow along, you'll need the API token from your Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart] to get up and running in just a few minutes for free.
 
 ## Installing the client
 

@@ -5,7 +5,7 @@ description: Learn about decentralized storage works and how it's key to Web3.St
 
 # Decentralized storage in brief
 
-Web3.Storage relies on _decentralized storage_ to store your files on the network. **Decentralized storage is a technique for storing data that, instead of traditional servers, uses a distributed network with many participants providing storage capacity.** This model inherently builds in redundancy that provides resilience against failure and attacks, as well as enhanced performance due to the geographical localization offered by a large network of distributed storage providers. While you don't need to understand decentralized storage to be able to incorporate Web3.Storage in your apps and services, if you're curious about what's going on under the hood, read on.
+Web3.Storage relies on _decentralized storage_ to store your files for free on the network. **Decentralized storage is a technique for storing data that, instead of traditional servers, uses a distributed network with many participants providing storage capacity.** This model inherently builds in redundancy that provides resilience against failure and attacks, as well as enhanced performance due to the geographical localization offered by a large network of distributed storage providers. While you don't need to understand decentralized storage to be able to incorporate Web3.Storage in your apps and services, if you're curious about what's going on under the hood, read on.
 
 ## Content persistence
 
@@ -65,7 +65,7 @@ The legacy approach of using location addressing to reference files on the web h
 
 By pairing IPFS content addressing (to decentralize how resources are specified) with Filecoin (to decentralize how storage capacity is obtained), it becomes possible to create a complete solution for locating, storing, and obtaining data — one that is not only resilient against these vulnerabilities, but also rewarding for network participants.
 
-**Web3.Storage combines the content addressing capabilities of IPFS and the proving algorithms and storage deal marketplace of Filecoin in order to achieve this complete solution**, wrapping the power of these two systems into an easy-to-use service with simple, familiar methods such as [`put()`](../how-tos/store.md), [`get()`](../how-tos/retrieve.md), and [`status()`](../how-tos/query.md).
+**Web3.Storage combines the content addressing capabilities of IPFS and the proving algorithms and storage deal marketplace of Filecoin in order to achieve this complete solution**, wrapping the power of these two systems into an easy-to-use service with simple, familiar methods such as [`put()`](../how-tos/store.md), [`get()`](../how-tos/retrieve.md), and [`status()`](../how-tos/query.md). **Even better, Web3.Storage is free to use and integrate into your apps and services.**
 
 ## Learn more
 
