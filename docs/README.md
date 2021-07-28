@@ -95,7 +95,7 @@ All data uploaded to Web3.Storage is available to anyone who requests it using t
 
 1. Create a file called `put-files.js` and paste in the following code:
 
-    <<< @/code-snippets/quickstart/put-files-staging.js
+    <<< @/code-snippets/quickstart/put-files.js
 
 1. Create another file called `package.json` and paste in the following code:
 
