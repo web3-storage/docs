@@ -5,7 +5,7 @@ description: Integrate Web3.Storage into your code using the JavaScript client l
 
 # JavaScript client library reference
 
-To use the JavaScript client library for Web3.Storage, you must first [obtain an API token](../how-tos/regenerate-api-token.md).
+To use the JavaScript client library for Web3.Storage, you must first [obtain an API token](../how-tos/generate-api-token.md).
 
 The client library automatically packs your uploads into a content addressible archive (CAR) for uploading to the Web3.Storage service, which [stores](#store-files) data as blocks prefixed with the [_content identifier_ (CID)](../concepts/content-addressing.md#cids-location-independent-globally-unique-keys) derived from a cryptographic hash of the data. You can then use a file's CID to [retrieve](#retrieve-files) it.
 

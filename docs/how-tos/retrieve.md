@@ -8,10 +8,26 @@ description: Learn how to retrieve data stored using Web3.Storage in this quick 
 In this how-to guide, **you'll learn several methods for retrieving data from Web3.Storage.**
 
 All data stored using Web3.Storage is made available for retrieval via [IPFS](https://ipfs.io), the InterPlanetary File System. IPFS is a distributed, peer-to-peer network for storing and sharing [content-addressed data][concepts-content-addressing]. This guide shows you several ways to retrieve your data from IPFS:
-- Using [the Web3.Storage JavaScript client](#using-the-web3-storage-js-client).
-- Via an [HTTP gateway](#using-an-ipfs-http-gateway).
-- In your terminal using [the IPFS command-line tools](#using-the-ipfs-command-line).
+- In your browser using an [HTTP gateway](#using-an-ipfs-http-gateway).
+- Programmatically using the [Web3.Storage JavaScript client](#using-the-web3-storage-js-client).
+- In your terminal using the [IPFS command-line tools](#using-the-ipfs-command-line).
 - In your terminal using [curl or Powershell](#using-curl-or-powershell).
+
+## Using an IPFS HTTP gateway
+
+You can easily fetch any data stored using Web3.Storage using an IPFS HTTP gateway. Because IPFS is a peer-to-peer, decentralized network, you can use any public HTTP gateway to fetch your data. In this guide, we'll use the gateway at `dweb.link`, but you can see more worldwide gateways on the [IPFS Public Gateway Checker](https://ipfs.github.io/public-gateway-checker/).
+
+When you [store data using the Web3.Storage client][howto-store], the `put` method returns an [IPFS content identifier (CID)][ipfs-docs-cid] string. That CID points to an IPFS directory that contains all the files you passed in using the `put` method.
+
+You can use an IPFS gateway to view a list of all the files in that directory from your browser. To do so, simply create a gateway URL. For example, if your CID is `bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu`, you can make a URL for the `dweb.link` gateway as follows: [bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link](https://bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/). Follow that link, and you'll see a page similar to this:
+
+![Screenshot of an IPFS gateway directory listing](./images/gateway-directory-listing.png)
+
+If you want to link directly to a file within that directory, just add the file path after the CID portion of the link. For example: [bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/not-distributed.jpg](https://bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/not-distributed.jpg) could be used as a shareable link for your new favorite wallpaper.
+
+::: tip
+Your [Files page](https://web3.storage/files/) on Web3.Storage includes IPFS gateway links to all the content you've uploaded, so if you're looking to link to one of your own files, you don't even have to create a gateway URL.
+:::
 
 ## Using the Web3.Storage JS client
 
@@ -54,18 +70,6 @@ for (const file of files) {
 :::tip
 Another option is to use the array of `unixFs` objects provided by the `unixFsIterator()` method to iterate through your files. While in the vast majority of cases you'll want to use the `files()` method outlined above, existing IPFS users may prefer interacting with `unixFs` objects if they have existing code or tooling that supports it. For more details, see the [JavaScript client library reference](/reference/client-library.md).
 :::
-
-## Using an IPFS HTTP gateway
-
-You can easily fetch any data stored using Web3.Storage using an IPFS HTTP gateway. Because IPFS is a peer-to-peer, decentralized network, you can use any public HTTP gateway to fetch your data. In this guide, we'll use the gateway at `dweb.link`, but you can see more worldwide gateways on the [IPFS Public Gateway Checker](https://ipfs.github.io/public-gateway-checker/).
-
-When you [store data using the Web3.Storage client][howto-store], the `put` method returns an [IPFS content identifier (CID)][ipfs-docs-cid] string. That CID points to an IPFS directory that contains all the files you passed in using the `put` method.
-
-You can use an IPFS gateway to view a list of all the files in that directory from your browser. To do so, simply create a gateway URL. For example, if your CID is `bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu`, you can make a URL for the `dweb.link` gateway as follows: [bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link](https://bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/). Follow that link, and you'll see a page similar to this:
-
-![Screenshot of an IPFS gateway directory listing](./images/gateway-directory-listing.png)
-
-If you want to link directly to a file within that directory, just add the file path after the CID portion of the link. For example: [bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/not-distributed.jpg](https://bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu.ipfs.dweb.link/not-distributed.jpg) could be used as a shareable link for your new favorite wallpaper.
 
 ## Using the IPFS command line
 

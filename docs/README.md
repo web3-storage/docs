@@ -124,10 +124,10 @@ Your script is good to go! Next, we'll [run the script to upload a file. ↓](#r
 
 Now that you've got your script ready to go, you just need to run it in your terminal window using `node`.
 
-1. Run the script by calling `node put-files.js`, using `--token` to supply your API token and specifying the path and name of the file you want to upload. Here's how that looks in template form:
+1. Run the script by calling `node put-files.js`, using `--token` to supply your API token and specifying the path and name of the file you want to upload. If you'd like to upload more than one file at a time, simply specify their paths/names one after the other in a single command. Here's how that looks in template form:
 
     ```shell
-    node put-files.js --token=<YOUR_TOKEN> ~/filename
+    node put-files.js --token=<YOUR_TOKEN> ~/filename1 ~/filename2 ~/filenameN
     ```
 
     Once you've filled in your details, your command should look something like this:
@@ -151,8 +151,8 @@ Next up, we'll go over two methods for you to [retrieve your data from Web3.Stor
 You've already done the most difficult work in this guide — getting your files from Web3.Storage is simple.
 
 1. Go to `https://dweb.link/ipfs/YOUR_CID`, replacing `YOUR_CID` with the CID you noted in the last step.
-1. You should see a link to your file that you uploaded. If you uploaded a folder, you'll see a list of all the files within that folder.
-1. Click on a file to view it in your browser!
+1. You should see a link to your file. If you uploaded multiple files at once, you'll see a list of all the files you uploaded.
+1. Click on a file's link to view it in your browser!
 
 ### Finding your files again
 
