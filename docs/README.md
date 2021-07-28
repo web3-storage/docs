@@ -25,17 +25,16 @@ With Web3.Storage, you get all the benefits of decentralized storage technologie
 - Work with the API methods in the [JavaScript client library](/reference/client-library.md) using the JS runtime of your choice.
 - Upload and retrieve files directly from your [Files page](https://web3.storage/files/) on the Web3.Storage website.
 
-#### Prerequisites
-It's likely that you already have what you need to complete this guide, but start by double-checking that you have the following installed:
+:::danger PREREQUISITES
 
-- Node version 14 or higher.
-- NPM version 7 or higher.
+You'll need **Node version 14** or higher and **NPM version 7** or higher to complete this guide. Check your local versions like this:
 
 ```shell
 node --version && npm --version
 > v16.4.2
 > 7.18.1
 ```
+:::
 
 ## Create an account
 
