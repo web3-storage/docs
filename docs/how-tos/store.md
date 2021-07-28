@@ -126,7 +126,6 @@ You can also get more information about the status of your data. See the [query 
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 
 <!-- links to the web3.storage site -->
-[site-profile]: https://web3.storage/profile/
 [site-files]: https://web3.storage/files/
 
 <!-- external links -->
