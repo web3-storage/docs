@@ -21,17 +21,20 @@ With Web3.Storage, you get all the benefits of decentralized storage technologie
 1. [Creating and running a simple script](#create-the-upload-script) to upload a file.
 4. [Getting your uploaded file](#get-your-file) using your browser or curl.
 
-#### Prerequisites
-It's likely that you already have what you need to complete this guide, but start by double-checking that you have the following installed:
+**This guide uses Node.js since it's the fastest way to get started using the Web3.Storage JavaScript client programmatically**, but don't worry if Node isn't your favorite runtime environment — or if you'd rather not do any coding at all. You can also use Web3.Storage in the following ways:
+- Work with the API methods in the [JavaScript client library](/reference/client-library.md) using the JS runtime of your choice.
+- Upload and retrieve files directly from your [Files page](https://web3.storage/files/) on the Web3.Storage website.
 
-- Node version 14 or higher.
-- NPM version 7 or higher.
+:::danger PREREQUISITES
+
+You'll need **Node version 14** or higher and **NPM version 7** or higher to complete this guide. Check your local versions like this:
 
 ```shell
 node --version && npm --version
 > v16.4.2
 > 7.18.1
 ```
+:::
 
 ## Create an account
 
@@ -95,7 +98,7 @@ All data uploaded to Web3.Storage is available to anyone who requests it using t
 
 1. Create a file called `put-files.js` and paste in the following code:
 
-    <<< @/code-snippets/quickstart/put-files-staging.js
+    <<< @/code-snippets/quickstart/put-files.js
 
 1. Create another file called `package.json` and paste in the following code:
 
@@ -144,6 +147,10 @@ Now that you've got your script ready to go, you just need to run it in your ter
 
 1. **Make a note of the CID, which looks like `bafyb...`.** You'll need it in order to get your file.
 
+:::tip Get the status of your upload
+It's possible to get a variety of details about your upload, including its CID, upload date, size on the network, and info on IPFS pinning and Filecoin storage deals, by using the `status()` method within the JavaScript client library. Check out the [Query how-to guide](./how-tos/query.md#querying-for-status-information) for more information.
+:::
+
 Next up, we'll go over two methods for you to [retrieve your data from Web3.Storage ↓](#get-your-file)
 
 ## Get your file
@@ -166,4 +173,3 @@ Congratulations! You've just covered the basics of Web3.Storage. To learn more, 
 - For a deep dive into storing files, visit the [Store how-to guide.](/how-tos/store.md)
 - To learn more about the details of getting files, have a look at the [Retrieve how-to guide.](/how-tos/retrieve.md)
 - Visit the [reference API section](/reference/client-library.md) for more details on what else you can do with the Web3.Storage service and how to integrate it into your own projects.
-

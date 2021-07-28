@@ -4,9 +4,8 @@
 [![](https://img.shields.io/badge/platform-VuePress-green.svg)](https://vuepress.vuejs.org/)
 [![](https://img.shields.io/badge/deployed%20on-Fleek-ff69b4.svg)](http://fleek.co/)
 
-🚧 Under construction 
 
-This repository contains code and content for https://docs.web3.storage, the documentation site for the Web3.Storage service.
+This repository contains code and content for https://docs.web3.storage, the documentation site for the [Web3.Storage](https://web3.storage/) service.
 
 _You can find the code for the main web3.storage website and the underlying API here: https://github.com/web3-storage/web3.storage_
 
