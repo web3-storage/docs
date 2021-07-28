@@ -21,6 +21,10 @@ With Web3.Storage, you get all the benefits of decentralized storage technologie
 1. [Creating and running a simple script](#create-the-upload-script) to upload a file.
 4. [Getting your uploaded file](#get-your-file) using your browser or curl.
 
+**This guide uses Node.js since it's the fastest way to get started using the Web3.Storage JavaScript client programmatically**, but don't worry if Node isn't your favorite runtime environment — or if you'd rather not do any coding at all. You can also use Web3.Storage in the following ways:
+- Work with the API methods in the [JavaScript client library](/reference/client-library.md) using the JS runtime of your choice.
+- Upload and retrieve files directly from your [Files page](https://web3.storage/files/) on the Web3.Storage website.
+
 #### Prerequisites
 It's likely that you already have what you need to complete this guide, but start by double-checking that you have the following installed:
 
