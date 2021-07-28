@@ -15,7 +15,7 @@ async function main () {
       console.error('Please supply the path to a file or directory')
     }
 
-    const storage = new Web3Storage({ token, endpoint: 'https://api-staging.web3.storage' })
+    const storage = new Web3Storage({ token })
 
     for (const path of args._) {
       const files = await getFilesFromPath(path)

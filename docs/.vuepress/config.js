@@ -1,6 +1,6 @@
 // .vuepress/config.js
 
-const MAIN_DOMAIN = process.env.MAIN_DOMAIN || 'https://staging.web3.storage'
+const MAIN_DOMAIN = process.env.MAIN_DOMAIN || 'https://web3.storage'
 const DEPLOY_DOMAIN = 'https://docs.web3.storage'
 const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const COUNTLY_KEY = process.env.COUNTLY_KEY || ''
