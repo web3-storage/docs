@@ -145,7 +145,7 @@ Now that you've got your script ready to go, you just need to run it in your ter
 1. **Make a note of the CID, which looks like `bafyb...`.** You'll need it in order to get your file.
 
 :::tip Get the status of your upload
-It's possible to get the status of your file upload by using the `status()` method within the JavaScript client library. Check out the [Query how-to guide](./how-tos/query.md) for more information.
+It's possible to get a variety of details about your upload, including its CID, upload date, size on the network, and info on IPFS pinning and Filecoin storage deals, by using the `status()` method within the JavaScript client library. Check out the [Query how-to guide](./how-tos/query.md#querying-for-status-information) for more information.
 :::
 
 Next up, we'll go over two methods for you to [retrieve your data from Web3.Storage ↓](#get-your-file)
