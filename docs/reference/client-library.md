@@ -11,13 +11,13 @@ The client library automatically packs your uploads into a content addressible a
 
 ## Constructor
 
-The constructor for Web3.Storage is simple; all you need is your `apiKey` token value.
+The constructor for Web3.Storage is simple; all you need is your API token.
 
 ```javascript
 import { Web3Storage } from 'web3.storage'
 
 // Construct with token and endpoint
-const client = new Web3Storage({ token: apiKey })
+const client = new Web3Storage({ token: apiToken })
 ```
 
 ## Store files
