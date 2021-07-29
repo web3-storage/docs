@@ -86,7 +86,7 @@ What do all those fields mean? Here's a summary:
 For more details about the fields in this JSON response, including the format of the `pins` and `deals` objects, see the [JavaScript client library reference][reference-js-status].
 
 :::tip
-If you're looking for info on files you've uploaded, you can also use the **Files** page on [web3.storage](https://web3.storage) to see the values for some of the more commonly-used attributes returned by `query()`, namely `created`, `cid`, `dagSize`, and the `status` and `deals` objects of `pins`.
+If you're looking for info on files you've uploaded, you can also use the [Files page](https://web3.storage/files) on Web3.Storage to see the values for some of the more commonly-used attributes returned by `query()`, namely `created`, `cid`, `dagSize`, and the `status` and `deals` objects of `pins`.
 
 :::
 

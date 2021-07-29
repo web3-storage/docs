@@ -55,7 +55,7 @@ Here's the example from above, now with the code to unpack and inspect the files
 <<<@/code-snippets/how-to/index.js#retrieve-unpack-files
 
 :::tip
-Another option is to use the array of `unixFs` objects provided by the `unixFsIterator()` method to iterate through your files. While in the vast majority of cases you'll want to use the `files()` method outlined above, existing IPFS users may prefer interacting with `unixFs` objects if they have existing code or tooling that supports it. For more details, see the [JavaScript client library reference](/reference/client-library.md).
+Another option is to use the array of `unixFs` objects provided by the `unixFsIterator()` method to iterate through your files. While in the vast majority of cases you'll want to use the `files()` method outlined above, existing IPFS users may prefer interacting with `unixFs` objects if they have existing code or tooling that supports it. For more details, see the [JavaScript client library reference][reference-js].
 :::
 
 ## Using the IPFS command line
@@ -164,13 +164,13 @@ You can also use the client library to get more information about the status of 
 
 <!-- internal links -->
 [reference-js]: ../reference/client-library.md
-[quickstart-guide]: ../quickstart/README.md
+[quickstart-guide]: ../README.md#quickstart
 [concepts-content-addressing]: ../concepts/content-addressing.md
 [howto-store]: ./store.md
 [howto-query]: ./query.md
 
-[reference-js-web3response-files]: ../reference/client-library.md#return-value-2
-[reference-js-web3response-unixfsiterator]: ../reference/client-library.md#return-value-2
+[reference-js-web3response-files]: ../reference/client-library.md#retrieve-files
+[reference-js-web3response-unixfsiterator]: ../reference/client-library.md#retrieve-files
 [reference-js-constructor]: ../reference/client-library.md#constructor
 
 <!-- external links -->
