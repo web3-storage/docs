@@ -114,7 +114,7 @@ module.exports = {
           },
           nav:[
             { text: 'Status', link: `https://web3-storage.statuspage.io/` },
-            { text: 'Terms of service', link: `${MAIN_DOMAIN}/terms/` },
+            { text: 'Terms of service', link: `${MAIN_DOMAIN}/about/#terms-of-service` },
             { text: 'Open an issue', link: `/community/help-and-support/#bug-reports-or-feature-requests` },
             { text: 'Contact us', link: `/community/help-and-support` },
           ]
