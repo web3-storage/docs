@@ -19,5 +19,6 @@ function makeFileObjects() {
     new File(['contents-of-file-1'], 'plain-utf8.txt'),
     new File([buffer], 'hello.json')
   ]
+  return files
 }
 //#endregion makeFileObjects
