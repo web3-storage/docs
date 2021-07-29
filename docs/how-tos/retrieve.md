@@ -48,7 +48,7 @@ Once you have a client, you can call `client.get`, passing in a CID string:
 
 The `get` method returns a `Web3Response` object. This object extends the [`Response` object][mdn-response] from the Web [Fetch API][mdn-fetch] with two methods that provide access to the retrieved IPFS data: `files` and `unixFsIterator()`.
 
-The [`files` method][reference-js-web3response-files] returns an array of `Web3File` objects, which represent all files contained in the content archive identified by the given CID. A `Web3File` is just like a regular Web [`File` object][mdn-file], with the addition of `path` and `cid` properties. These contain the relative path of the file within the archive and the CID of the file, respectively.
+The [`files` method][reference-js-web3response] returns an array of `Web3File` objects, which represent all files contained in the content archive identified by the given CID. A `Web3File` is just like a regular Web [`File` object][mdn-file], with the addition of `path` and `cid` properties. These contain the relative path of the file within the archive and the CID of the file, respectively.
 
 Here's the example from above, now with the code to unpack and inspect the files in the response:
 
@@ -169,7 +169,7 @@ You can also use the client library to get more information about the status of 
 [howto-store]: ./store.md
 [howto-query]: ./query.md
 
-[reference-js-web3response-files]: ../reference/client-library.md#return-value-2
+[reference-js-web3response]: ../reference/client-library.md#return-value-2
 [reference-js-constructor]: ../reference/client-library.md#constructor
 
 <!-- external links -->
