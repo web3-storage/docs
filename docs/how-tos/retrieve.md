@@ -74,7 +74,7 @@ If you want to get a specific file out of the bundle, add its name onto the end 
 ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanonsense.jpg
 ```
 
-## Using curl or Powershell 
+## Using curl or Powershell
 
 Sometimes you may need to just download a specific file to your computer using the command line. Unix-based operating systems, like Linux and macOS, can use curl. Windows users can use Powershell.
 
@@ -100,12 +100,12 @@ Sometimes you may need to just download a specific file to your computer using t
     Your complete command should look something like this:
 
     ```shell
-    curl https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt -o ~/output-file.txt 
+    curl https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt -o ~/output-file.txt
     ```
 
 :::
 
-:::tab macOS 
+:::tab macOS
 
 1. Open a terminal window.
 1. Use `curl` to download your file:
@@ -125,7 +125,7 @@ Sometimes you may need to just download a specific file to your computer using t
     Your complete command should look something like this:
 
     ```shell
-    curl https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt -o ~/output-file.txt 
+    curl https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt -o ~/output-file.txt
     ```
 
 :::
@@ -169,8 +169,7 @@ You can also use the client library to get more information about the status of 
 [howto-store]: ./store.md
 [howto-query]: ./query.md
 
-[reference-js-web3response-files]: ../reference/client-library.md#retrieve-files
-[reference-js-web3response-unixfsiterator]: ../reference/client-library.md#retrieve-files
+[reference-js-web3response-files]: ../reference/client-library.md#return-value-2
 [reference-js-constructor]: ../reference/client-library.md#constructor
 
 <!-- external links -->
