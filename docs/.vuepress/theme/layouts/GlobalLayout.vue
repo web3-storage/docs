@@ -167,7 +167,7 @@ footer {
 
 
 footer a {
-    color: $w3storage-purple;
+    color: $textColor;
     transition: color 0.3s;
     cursor: pointer;
 
