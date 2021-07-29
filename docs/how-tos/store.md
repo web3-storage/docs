@@ -48,7 +48,7 @@ In the browser, you can use a [file input element][mdn-file-input] to allow the 
 
 <<<@/code-snippets/how-to/platform-browser.js#getFiles
 
-You can also manually create `File` objects using the native `File` constructor provided by the browser runtime:
+You can also manually create `File` objects using the native `File` constructor provided by the browser runtime. This is useful when you want to store data created by your application, instead of files from the user's computer.
 
 <<<@/code-snippets/how-to/platform-browser.js#makeFileObjects
 
@@ -62,7 +62,7 @@ In Node.js, the `web3.storage` package exports some helpful utility functions fr
 
 If you expect to be loading a lot of large files, you may be better served by the [`filesFromPath` helper](https://github.com/web3-storage/files-from-path#filesfrompath). It reduces memory pressure by `yield`ing `File` objects one by one as they're loaded from disk, instead of loading everything into memory. You can then issue multiple `put` requests to send each file to Web3.Storage.
 
-You can also manually create `File` objects by importing a Node.js implementation of `File` from the `web3.storage` package:
+You can also manually create `File` objects by importing a Node.js implementation of `File` from the `web3.storage` package. This is useful when you want to store data created by your application, instead of files from the user's computer.
 
 <<<@/code-snippets/how-to/platform-node.js#makeFileObjects
 
