@@ -1,19 +1,24 @@
 ---
 title: List
-description: Learn how to list the files you've uploaded to Web3.Storage
+description: Learn how to list the files you've uploaded to Web3.Storage in this quick how-to guide.
 ---
 
 # How to list files uploaded to Web3.Storage
+In this how-to guide, you'll learn about the different ways that you can **list the files that you've uploaded to Web3.Storage.**
+Once you've [stored some files][howto-store] using Web3.Storage, you'll want to see a list of what you've uplodaded. There are two ways you can do this:
+- Using the 
 
-Once you've [stored some files][howto-store] using Web3.Storage, you can see a list of everything you've uploaded on the [Files page on the Web3.Storage website][site-files].
+## Using the Web3.Storage website
+
+You can see a list of everything you've uploaded to Web3.Storage on the [Files page][site-files] on the Web3.Storage website. If you don't need to work with this list programmatically, using the website may be a simpler choice.
 
 ![A screenshot of the file listing available at https://web3.storage/files when logged in to your account](../images/files-listing.png)
 
-The [Files page][site-files] provides a convenient overview of your stored data, with links to view your files using an [IPFS gateway][ipfs-docs-gateway] and information about how the data is being stored on the [decentralized storage networks][concepts-decentralized-storage] that Web3.Storage uses under the hood.
+This [Files page][site-files] provides a convenient overview of your stored data, including links to view your files in your browser via an [IPFS gateway][ipfs-docs-gateway] and information about how the data is being stored on the [decentralized storage networks][concepts-decentralized-storage] that Web3.Storage uses under the hood.
+## Using the Web3.Storage client
+To easily integrate Web3.Storage programmatically in your apps or services, you can also access a listing of your uploads from your code using the Web3.Storage client. In the example below, this guide walks through how to use the [JavaScript client library][reference-js-client] to fetch a complete listing of all the data you've uploaded using Web3.Storage.
 
-You can also access a listing of your uploads from your application code using the Web3.Storage client. This guide will show you how to use the [JavaScript client library][reference-js-client] to fetch a complete listing of all the data you've uploaded using Web3.Storage.
-
-## Installing the client
+### Installing the client
 
 In your JavaScript project, add the `web3.storage` package to your dependencies:
 
@@ -21,17 +26,17 @@ In your JavaScript project, add the `web3.storage` package to your dependencies:
 npm install web3.storage
 ```
 
-## Creating a client instance
+### Creating a client instance
 
 To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
 
 <<<@/code-snippets/how-to/index.js#makeStorageClient
 
 :::tip
-You can use any access token associated with your account, not just the one you used to upload your files! See the [Generate API token page][howto-gen-token] for more about token management.
+You can use any API token associated with your account, not just the one you originally used to upload your files! See the [Generate API token page][howto-gen-token] for more about token management.
 :::
 
-## Listing your uploads
+### Listing your uploads
 
 The `Web3Storage` client object's `list` method returns an [async iterable][js-async-iterable-explainer] that can be used with the [`for await` syntax][mdn-for-await-of] to read information about each upload as soon as it's received over the network.
 
@@ -54,15 +59,17 @@ What do all those fields mean? Here's a summary:
 - `pins` contains an array of objects describing the IPFS nodes that have [pinned][ipfs-docs-pinning] the data, making it available for fast retrieval using the IPFS network.
 - `deals` contains an array of objects describing the Filecoin storage providers that have made [storage deals][fil-docs-deals]. These storage providers have committed to storing the data for an agreed period of time.
 
-::: tip "Want more details about storage?"
+::: tip Want more details about storage?
 The `Upload` objects returned by the `list` method include some basic status information about how the data is stored on IPFS and Filecoin. For more details, including the identity of the storage providers hosting your data, you can [query an upload's status][howto-query] using the the `cid`.
 :::
 
-### Listing a subset of uploads
+#### Listing a subset of uploads
 
-By default the `list` method returns information about all uploads made using your Web3.Storage account. You can optionally restrict the listing to contain entries that were uploaded before a given timestamp, and you can also limit the total number of returned entries.
+By default. the `list` method returns information about all uploads made using your Web3.Storage account. You can optionally restrict the listing in two ways:
+-  Only contain entries that were uploaded before a given timestamp.
+- Limit the total number of returned entries.
 
-Here's an example of fetching the first ten uploads made on the previous day:
+Here's an example of fetching the first 10 uploads made on the previous day:
 
 <<<@/code-snippets/how-to/index.js#listWithLimits
 
@@ -72,7 +79,7 @@ Here's an example of fetching the first ten uploads made on the previous day:
 [howto-gen-token]: ./generate-api-token.md
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 [reference-js-client]: ../../reference/client-library.md
-
+[reference-js-constructor]: ../reference/client-library.md#constructor
 [site-files]: https://web3.storage/files
 
 [ipfs-docs-gateway]: https://docs.ipfs.io/concepts/ipfs-gateway/
