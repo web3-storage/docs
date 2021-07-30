@@ -96,3 +96,33 @@ async function checkStatus(cid) {
 // replace with your own CID to see info about your uploads!
 checkStatus('bafybeifljln6rmvrdqu7xopiwk2bykwa25onxnvjsmlp3xdiii3opgg2gq')
 //#endregion query-status
+
+
+//#region listUploads
+async function listUploads() {
+  const client = makeStorageClient()
+  for await (const upload of client.list()) {
+    console.log(`${upload.name} - cid: ${upload.cid} - size: ${upload.dagSize}`)
+  }
+}
+//#endregion listUploads
+
+//#region listWithLimits
+async function listWithLimits() {
+  const client = makeStorageClient()
+
+  // get today's date and subtract 1 day
+  const d = new Date()
+  d.setDate(d.getDate() - 1)
+
+  // the list method's before parameter accepts an ISO formatted string
+  const before = d.toISOString()
+
+  // limit to ten results
+  const maxResults = 10
+
+  for await (const upload of client.list({ before, maxResults })) {
+    console.log(upload)
+  }
+}
+//#endregion listWithLimits
