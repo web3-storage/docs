@@ -305,4 +305,74 @@ Deal {
 ```
 :::
 
+## List uploads
 
+List previous uploads with the `list()` method.
+
+### Usage
+
+```javascript
+<clientObject>.list({before, maxResults})
+```
+
+### Examples
+
+:::: tabs
+::: tab Call
+
+```javascript
+// Return the names of 10 uploads
+const uploads = []
+for await (const item of client.list({ maxResults: 10 })) {
+    uploads.push(item.name)
+}
+```
+
+:::
+
+::: tab Response
+
+Here is an example response from the `list()` method:
+
+```json
+{
+  "name": "cat pics",
+  "cid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+  "created": "2021-07-14T19:27:14.934572Z",
+  "dagSize": 101,
+  "pins": [{
+    "peerId": "12D3KooWR1Js",
+    "peerName": "peerName",
+    "region": "peerRegion",
+    "status": "Pinned"
+  }],
+  "deals": [{
+    "dealId": 12345,
+    "miner": "f99",
+    "status": "Active",
+    "pieceCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+    "dataCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+    "dataModelSelector": "Links/0/Links",
+    "activation": "2021-07-14T19:27:14.934572Z",
+    "created": "2021-07-14T19:27:14.934572Z",
+    "updated": "2021-07-14T19:27:14.934572Z"
+  }]
+}
+```
+:::
+
+### Return value
+
+The return value for `list()` is the same as the return value for `status()` but with one extra propery: a string field called `name` that corresponds to the value given passed to the `name` parameter in the original call to `put()`. See the **Response** tab in the **Examples** section for an illustration.
+
+### Parameters
+
+The `list()` method accepts an `{options}` object with the following properties:
+
+::: details before
+_String_. Specifies a date, in ISO 8601 format. Ensures that the call to `list()` will not return any results newer than the given date.
+:::
+
+::: details maxResults
+_Number_. Specifies the maximum number of uploads to return when calling `list()`.
+:::
