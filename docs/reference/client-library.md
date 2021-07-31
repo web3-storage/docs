@@ -360,10 +360,7 @@ Here is an example response from the `list()` method:
 }
 ```
 :::
-
-### Return value
-
-The return value for `list()` is the same as the return value for `status()` but with one extra propery: a string field called `name` that corresponds to the value given passed to the `name` parameter in the original call to `put()`. See the **Response** tab in the **Examples** section for an illustration.
+::::
 
 ### Parameters
 
@@ -376,3 +373,7 @@ _String_. Specifies a date, in ISO 8601 format. Ensures that the call to `list()
 ::: details maxResults
 _Number_. Specifies the maximum number of uploads to return when calling `list()`.
 :::
+
+### Return value
+
+The return value for `list()` is the same as the return value for `status()` but with one extra propery: a string field called `name` that corresponds to the value given passed to the `name` parameter in the original call to `put()`. See the **Response** tab in the **Examples** section for an illustration.
