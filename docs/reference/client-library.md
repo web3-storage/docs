@@ -95,6 +95,48 @@ const cid = await client.put(files, { maxRetries: 3 })
 ```
 :::
 
+::: details wrapWithDirectory
+
+_Boolean._ The `wrapWithDirectory` parameter controls whether the files will be wrapped in an IPFS directory when added to Web3.Storage. With the default value of `true`, all files provided to the `put` method will be wrapped in an IPFS directory listing. 
+
+For example, when adding a file called `hello.txt` using the default behavior, the root CID returned by the `put` method identifies a directory containing a file named `hello.txt`, rather than the `hello.txt` file itself, which is accessible at `<rootCID>/hello.txt`.
+
+If you are adding a directory full of files using the `put` method, you may want to override the default behavior to avoid an extra level of nesting in your IPFS path. For example, if you have a `files` directory like this:
+
+```
+files
+├── hello.txt
+└── stuff
+    └── things.md
+```
+
+Using the default behavior, the `put` method would return a CID for a directory containing a `files` subdirectory, like this:
+
+```
+bafybeigw6rik2dlxlfx354ofycpjzljon7zagjofcb35csrsdujf3zbfca/
+└── files
+    ├── hello.txt
+    └── stuff
+        └── things.md
+```
+
+However, if you do this instead:
+
+```javascript
+const cid = await client.put(files, { wrapWithDirectory: false })
+```
+
+The _contents_ of the `files` directory will be at the top level, instead of the `files` directory itself:
+
+```
+bafybeiebez7epbidb7f6fcurnd5ukpokrpq5wkrsuakynukpxxo4y4ewvi/
+├── hello.txt
+└── stuff
+    └── things.md
+```
+
+:::
+
 ::: details onRootCidReady
 
 _Function._ Because the data is formatted for IPFS and Filecoin on the client, the root CID for the data is generated before the data is uploaded to Web3.Storage. If you want to display the CID to the user before the upload is complete, pass in an `onRootCidReady` function that accepts a CID string:
