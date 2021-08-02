@@ -38,7 +38,7 @@ You can use any API token associated with your account, not just the one you ori
 
 ### Listing your uploads
 
-The `Web3Storage` client object's `list` method returns an [async iterable][js-async-iterable-explainer] that can be used with the [`for await` syntax][mdn-for-await-of] to read information about each upload as soon as it's received over the network.
+The `Web3Storage` client object's [`list` method][reference-js-list] returns an [async iterable][js-async-iterable-explainer] that can be used with the [`for await` syntax][mdn-for-await-of] to read information about each upload as soon as it's received over the network.
 
 Here's an example that logs details about each upload to the console:
 
@@ -65,8 +65,8 @@ The `Upload` objects returned by the `list` method include some basic status inf
 
 #### Listing a subset of uploads
 
-By default. the `list` method returns information about all uploads made using your Web3.Storage account. You can optionally restrict the listing in two ways:
--  Only contain entries that were uploaded before a given timestamp.
+By default, the [`list` method][reference-js-list] returns information about all uploads made using your Web3.Storage account. You can optionally restrict the listing in two ways:
+- Only contain entries that were uploaded before a given timestamp.
 - Limit the total number of returned entries.
 
 Here's an example of fetching the first 10 uploads made on the previous day:
@@ -80,6 +80,7 @@ Here's an example of fetching the first 10 uploads made on the previous day:
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 [reference-js-client]: ../../reference/client-library.md
 [reference-js-constructor]: ../reference/client-library.md#constructor
+[reference-js-list]: ../reference/client-library.md#list-uploads
 [site-files]: https://web3.storage/files
 
 [ipfs-docs-gateway]: https://docs.ipfs.io/concepts/ipfs-gateway/
