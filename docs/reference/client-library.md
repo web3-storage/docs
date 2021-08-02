@@ -273,7 +273,7 @@ _String._ The `created` property gives the creation date in [ISO 8601](https://e
 ::: tip
 The `created` date returned by a call to `status()` is the date and time that the CID was first seen on the network. The date given by a call to `list()` is the date and time of a particular upload via a call to `put()`. These can differ if multiple users upload the same file(s).
 :::
-:::
+
 
 ::: details pins
 
@@ -319,14 +319,15 @@ List previous uploads with the `list()` method.
 <clientObject>.list({before, maxResults})
 ```
 
-### Examples
+### Example
 
+The following example stores return values from a call to `list()` into a JavaScript array:
 
 ```javascript
 // Return the names of 10 uploads
-const uploads = []
+const uploadNames = []
 for await (const item of client.list({ maxResults: 10 })) {
-    uploads.push(item.name)
+    uploadNames.push(item.name)
 }
 ```
 
