@@ -46,8 +46,6 @@ Here's an example that logs details about each upload to the console:
 
 Each `Upload` object will look something like this:
 
-<!-- TODO: replace with example that includes deal status -->
-
 <<<@/code-snippets/how-to/example-listing-upload.json
 
 What do all those fields mean? Here's a summary:
