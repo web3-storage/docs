@@ -227,7 +227,7 @@ Here's an example response from the `status()` method:
   }],
   "deals": [{
     "dealId": 12345,
-    "miner": "f99",
+    "storageProvider": "f099",
     "status": "Active",
     "pieceCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
     "dataCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
@@ -297,7 +297,7 @@ _Array._ The `deals` property is an array of `Deal` objects. Each `Deal` object 
 ```json
 Deal {
   dealId: number, // On-chain ID of the deal.
-  miner: string, // Address of the miner storing this data.
+  storageProvider: string, // Address of the storage provider storing this data.
   status: string, // Can be one of: 'Queued' | 'Published' | 'Active'
   pieceCid: string, // Piece CID of the data in the deal.
   dataCid: string, // CID of the data aggregated in this deal.
@@ -361,7 +361,7 @@ The return value for `list()` is an `AsyncIterable` object, containing objects w
   }],
   "deals": [{
     "dealId": 12345,
-    "miner": "f99",
+    "storageProvider": "f099",
     "status": "Active",
     "pieceCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
     "dataCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
