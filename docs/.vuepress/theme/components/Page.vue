@@ -68,6 +68,7 @@ export default {
 
   top: 3.6rem;
   margin-top: calc(-1 * (100vh - 2.5rem));
+  min-height: calc(100vh - 2.5rem);
 }
 
 .content-footer {
