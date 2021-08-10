@@ -80,7 +80,8 @@ module.exports = {
               '/how-tos/store',
               '/how-tos/retrieve',
               '/how-tos/query',
-              '/how-tos/generate-api-token'
+              '/how-tos/generate-api-token',
+              '/how-tos/troubleshooting'
             ]
           },
           {
