@@ -90,7 +90,7 @@ export default {
 #global-layout {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 104%;
 }
 
 .banner--nft-storage {

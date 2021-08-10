@@ -35,6 +35,12 @@ The Web3.Storage JavaScript client provides a `get` method that allows you to re
 
 First, you'll need to create a Web3.Storage client using your API token. Getting an API token is free, but you'll need a free Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart-guide] to get up and running in just a few minutes.
 
+First you'll need to add the `web3.storage` package to your project's dependencies:
+
+```shell
+npm install web3.storage
+```
+
 Use the following code to create a Web3.Storage client:
 
 <<<@/code-snippets/how-to/index.js#makeStorageClient

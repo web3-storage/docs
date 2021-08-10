@@ -76,7 +76,7 @@ Method parameters are supplied in positional order.
 | 1 | `file[]` | An iterable collection of [Files](https://developer.mozilla.org/en-US/docs/Web/API/File) to be packed into a CAR and uploaded. |
 | 2 | `{options}` | _Optional._ An object whose properties define certain Web3.Storage options and metadata about the files being uploaded. See below for more details. |
 
-An `{options}` object has the following properties that can be used as parameters for your `put()` operation:
+An `{options}` object has the following properties that can be used as parameters when calling `put()`:
 
 ::: details name
 _String._ The `name` parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable within the file listing on the Web3.Storage site.
@@ -93,6 +93,48 @@ _Number._ You can specify how many times `put` should attempt to retry in case o
 ```js
 const cid = await client.put(files, { maxRetries: 3 })
 ```
+:::
+
+::: details wrapWithDirectory
+
+_Boolean._ The `wrapWithDirectory` parameter controls whether the files will be wrapped in an IPFS directory when added to Web3.Storage. With the default value of `true`, all files provided to the `put` method will be wrapped in an IPFS directory listing. 
+
+For example, when adding a file called `hello.txt` using the default behavior, the root CID returned by the `put` method identifies a directory containing a file named `hello.txt`, rather than the `hello.txt` file itself, which is accessible at `<rootCID>/hello.txt`.
+
+If you are adding a directory full of files using the `put` method, you may want to override the default behavior to avoid an extra level of nesting in your IPFS path. For example, if you have a `files` directory like this:
+
+```
+files
+├── hello.txt
+└── stuff
+    └── things.md
+```
+
+Using the default behavior, the `put` method would return a CID for a directory containing a `files` subdirectory, like this:
+
+```
+bafybeigw6rik2dlxlfx354ofycpjzljon7zagjofcb35csrsdujf3zbfca/
+└── files
+    ├── hello.txt
+    └── stuff
+        └── things.md
+```
+
+However, if you do this instead:
+
+```javascript
+const cid = await client.put(files, { wrapWithDirectory: false })
+```
+
+The _contents_ of the `files` directory will be at the top level, instead of the `files` directory itself:
+
+```
+bafybeiebez7epbidb7f6fcurnd5ukpokrpq5wkrsuakynukpxxo4y4ewvi/
+├── hello.txt
+└── stuff
+    └── things.md
+```
+
 :::
 
 ::: details onRootCidReady
@@ -227,7 +269,7 @@ Here's an example response from the `status()` method:
   }],
   "deals": [{
     "dealId": 12345,
-    "miner": "f99",
+    "storageProvider": "f099",
     "status": "Active",
     "pieceCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
     "dataCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
@@ -269,7 +311,11 @@ _Number._ The `dagSize` property is the total size, in bytes, of the [Merkle Dir
 ::: details created
 
 _String._ The `created` property gives the creation date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+
+::: tip
+The `created` date returned by a call to `status()` is the date and time that the CID was first seen on the network. The date given by a call to `list()` is the date and time of a particular upload via a call to `put()`. These can differ if multiple users upload the same file(s).
 :::
+
 
 ::: details pins
 
@@ -293,7 +339,7 @@ _Array._ The `deals` property is an array of `Deal` objects. Each `Deal` object 
 ```json
 Deal {
   dealId: number, // On-chain ID of the deal.
-  miner: string, // Address of the miner storing this data.
+  storageProvider: string, // Address of the storage provider storing this data.
   status: string, // Can be one of: 'Queued' | 'Published' | 'Active'
   pieceCid: string, // Piece CID of the data in the deal.
   dataCid: string, // CID of the data aggregated in this deal.
@@ -305,4 +351,70 @@ Deal {
 ```
 :::
 
+## List uploads
 
+List previous uploads with the `list()` method.
+
+### Usage
+
+```javascript
+<clientObject>.list({before, maxResults})
+```
+
+### Example
+
+The following example stores return values from a call to `list()` into a JavaScript array:
+
+```javascript
+// Return the names of 10 uploads
+const uploadNames = []
+for await (const item of client.list({ maxResults: 10 })) {
+    uploadNames.push(item.name)
+}
+```
+
+### Parameters
+
+The `list()` method accepts an `{options}` object with the following properties:
+
+::: details before
+_String_. Specifies a date, in ISO 8601 format. Ensures that the call to `list()` will not return any results newer than the given date.
+:::
+
+::: details maxResults
+_Number_. Specifies the maximum number of uploads to return when calling `list()`.
+:::
+
+### Return value
+
+The return value for `list()` is an `AsyncIterable` object, containing objects whose data structure is the same as the return value for `status()` but with one extra propery: a string field called `name` that corresponds to the value given passed to the `name` parameter in the original call to `put()`. This means that iterating through results from your call to `list()` yields objects with the below example structure.
+
+```json
+{
+  "name": "cat pics",
+  "cid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+  "created": "2021-07-14T19:27:14.934572Z",
+  "dagSize": 101,
+  "pins": [{
+    "peerId": "12D3KooWR1Js",
+    "peerName": "peerName",
+    "region": "peerRegion",
+    "status": "Pinned"
+  }],
+  "deals": [{
+    "dealId": 12345,
+    "storageProvider": "f099",
+    "status": "Active",
+    "pieceCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+    "dataCid": "bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e",
+    "dataModelSelector": "Links/0/Links",
+    "activation": "2021-07-14T19:27:14.934572Z",
+    "created": "2021-07-14T19:27:14.934572Z",
+    "updated": "2021-07-14T19:27:14.934572Z"
+  }]
+}
+```
+
+::: tip
+The `created` date on these objects are the date and time that the user uploaded via `put()`. The `created` date given by a call to `status()` is the date and time that the CID was first seen on the network. These can differ if multiple users uploaded the same file(s).
+:::
