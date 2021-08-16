@@ -26,7 +26,7 @@ paths:
 
         You can also upload a Content Addressed Archive (CAR) file, by setting the request body as a single CAR Blob/File object and providing the request header `Content-Type: application/car`.
 
-        Providing a CAR file allows you to pre-compute the root CID for 1 or more files, ensures that the Web3.Storage will store and provide your assets with the same CID.
+        Providing a CAR file allows you to pre-compute the root CID for 1 or more files, and ensures that Web3.Storage will store and provide your assets with the same CID.
       operationId: store-multipart
       requestBody:
         required: true
