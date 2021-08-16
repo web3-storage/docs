@@ -9,6 +9,14 @@ To use the JavaScript client library for Web3.Storage, you must first [obtain a 
 
 The client library automatically packs your uploads into a content addressible archive (CAR) for uploading to the Web3.Storage service, which [stores](#store-files) data as blocks prefixed with the [_content identifier_ (CID)](../concepts/content-addressing.md#cids-location-independent-globally-unique-keys) derived from a cryptographic hash of the data. You can then use a file's CID to [retrieve](#retrieve-files) it.
 
+:::warning Minimum requirements
+While we recommend that you install the latest _stable_ version of the following software, you must have _at least_:
+
+- [NPM](https://www.npmjs.com/) `7.0.0`
+- [Node.js](https://nodejs.org/en/) `14.0.0`
+- [Webpack](https://webpack.js.org/) `5.0.0`
+:::
+
 ## Constructor
 
 The constructor for Web3.Storage is simple; all you need is your API token.
