@@ -87,11 +87,11 @@ Deleting files from the Web3.Storage site's [Files page][site-files] will remove
 
 ### Showing progress to the user
 
-The `put` method has some options that can be passed in to get progress on the upload as it happens in the background. There are two callback parameters you can use: `onRootCidReady`, and `onChunkStored`.
+The `put` method has some options that can be passed in to get progress on the upload as it happens in the background. There are two callback parameters you can use: `onRootCidReady`, and `onStoredChunk`.
 
 The `onRootCidReady` callback is invoked as soon as the client has calculated the content identifier (CID) that identifies the data being uploaded. Because this calculation happens locally on the client, the callback is invoked before the upload begins.
 
-As each chunk of data is uploaded, the `onChunkStored` callback gets invoked with the size of the chunk in bytes passed in as a parameter.
+As each chunk of data is uploaded, the `onStoredChunk` callback gets invoked with the size of the chunk in bytes passed in as a parameter.
 
 Here's a simple example of using the callbacks to print the progress of an upload to the console:
 
