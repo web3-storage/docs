@@ -183,7 +183,7 @@ paths:
     get:
       tags:
         - Web3.Storage HTTP API
-      summary: Retrieve information about about a CAR
+      summary: Retrieve information about a CAR
       description: Retrieve metadata about a CAR file by using `/car/{cid}`, supplying the CID of the CAR file you are interested in. This metadata includes the creation date and file size, as well as details about how the network is storing your data. Using this information, you can identify peers on the [IPFS (InterPlanetary File System)](https://ipfs.io) network that are pinning the data, and [Filecoin](https://filecoin.io) storage providers that have accepted deals to store the data.
       operationId: car-cid
       parameters:

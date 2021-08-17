@@ -9,15 +9,60 @@
          margin: 0;
          padding: 0;
          }
+         a:not(.nav-link) {
+            color: #fc6553 !important;
+         }
+         a:hover:not(.nav-link) {
+            text-decoration: underline !important;
+         }
+         h1, h2, h3, h4, h5 {
+            font-family: Space Grotesk, sans-serif !important;
+            font-weight: 500 !important;
+         }
+         h1 {
+            font-size: 2.4em !important;
+            margin: 0 !important;
+         }
+         h2 {
+            color: #171691 !important;
+            margin: 0 !important;
+         }
+         label {
+            font-family: Space Grotesk, sans-serif !important;
+            font-size: 1.2em !important;
+            font-weight: 500 !important;
+         }
+         p {
+            color: #171691 !important;
+         }
+         li:not(.tab-success, .tab-error) {
+            color: #171691 !important;
+         }
+         pre {
+            background-color: #0b0a45 !important;
+         }
+         .active {
+               background-color: #fff2ec !important;
+         }
          .navbar {
-           padding: 5px;
+           padding: 9px;
            padding-left: 15px;
            background-color: #fc6553;
-           width: 100%;
+         }
+         .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: calc((100% + 130px) * 0.6);
+         }
+         @media (max-width: 1200px) {
+            .navbar-content {
+               max-width: none;
+               margin-right: 1em;
+            }
          }
          .navbar .logo {
-            height: 2.4rem;
-            min-width: 2.4rem;
+            height: 2.3rem;
             vertical-align: top;
             margin: 0;
             padding: 2px 3px 0px 0;
@@ -37,10 +82,57 @@
             background-size: contain;
          }
          .navbar a {
-           text-decoration: none !important;
+            color: #171691;
+            text-decoration: none;
          }
          .navbar .logoText {
-           margin-top:5px !important;
+           margin-top:7px;
+           height: 1.85rem;
+         }
+         .navbar .nav-links {
+            display: flex;
+            font-family: Open Sans,sans-serif;
+            font-size: 0.95em;
+            font-weight: 600;
+         }
+         @media (max-width: 480px) {
+            .navbar .nav-links {
+               display:none;
+            }
+         }
+         .navbar .nav-link {
+            margin-left: 3rem;
+         }
+         .nav-link:hover {
+               color:#fde956;
+            }
+         .scrollbar-container {
+            padding-top: 1em;
+         }
+         .redoc-wrap {
+            background-color: #fff2ec;
+         }
+         .react-tabs__tab-panel {
+            background-color: #0b0a45 !important;
+         }
+         .react-tabs__tab-list li {
+            background-color: #0b0a45 !important;
+            border-color: #0b0a45 !important;
+         }
+         li.react-tabs__tab--selected {
+            background-color: #fff2ec !important;
+         }
+         .delete {
+            background-color: #c94332 !important;
+         }
+         .get {
+            background-color: #10853c !important;
+         }
+         .head {
+            background-color: #4824ab !important;
+         }
+         .post {
+            background-color: #00a7ff !important;
          }
       </style>
       <meta charset="utf-8">
@@ -61,10 +153,28 @@
    <body>
       <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
       <div class="navbar">
-        <a href="/">
-          <img src="/images/w3storage-logo.svg" alt="Web3.Storage Documentation" class="logo">
-          <img src="/images/w3storage-logo-text.svg" alt="Web3.Storage Documentation" class="logo logoText">
-        </a>
+         <div class="navbar-content">
+            <div>
+               <a href="/">
+                  <img src="/images/w3storage-logo.svg" alt="Web3.Storage Documentation" class="logo">
+                  <img src="/images/w3storage-logo-text.svg" alt="Web3.Storage Documentation" class="logo logoText">
+               </a>
+            </div>
+            <div class="links">
+               <nav class="nav-links">
+                  <div class="nav-item">
+                     <a href="https://web3.storage/about/" class="nav-link">
+                     About
+                     </a>
+                  </div>
+                  <div class="nav-item">
+                     <a href="/" class="nav-link">
+                     Docs
+                     </a>
+                  </div>
+               </nav> 
+            </div>
+         </div>
       </div>
       <redoc id="ReDocMe" style="background-color: white"/>
       <!-- Config options documented: https://github.com/Redocly/redoc -->
