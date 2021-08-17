@@ -105,7 +105,7 @@ const cid = await client.put(files, { maxRetries: 3 })
 
 ::: details wrapWithDirectory
 
-_Boolean._ The `wrapWithDirectory` parameter controls whether the files will be wrapped in an IPFS directory when added to Web3.Storage. With the default value of `true`, all files provided to the `put` method will be wrapped in an IPFS directory listing. 
+_Boolean._ The `wrapWithDirectory` parameter controls whether the files will be wrapped in an IPFS directory when added to Web3.Storage. With the default value of `true`, all files provided to the `put` method will be wrapped in an IPFS directory listing.
 
 For example, when adding a file called `hello.txt` using the default behavior, the root CID returned by the `put` method identifies a directory containing a file named `hello.txt`, rather than the `hello.txt` file itself, which is accessible at `<rootCID>/hello.txt`.
 
@@ -425,4 +425,87 @@ The return value for `list()` is an `AsyncIterable` object, containing objects w
 
 ::: tip
 The `created` date on these objects are the date and time that the user uploaded via `put()`. The `created` date given by a call to `status()` is the date and time that the CID was first seen on the network. These can differ if multiple users uploaded the same file(s).
+:::
+
+## Store CAR files
+
+Store [a CAR file](https://github.com/ipld/js-car) using the `putCar()` method.
+
+### Usage
+
+```javascript
+<clientObject>.putCar(car, { options })
+```
+
+### Examples
+
+```javascript
+import fs from 'fs'
+import { Readable } from 'stream'
+import { CarReader, CarWriter } from '@ipld/car'
+import * as raw from 'multiformats/codecs/raw'
+import { CID } from 'multiformats/cid'
+import { sha256 } from 'multiformats/hashes/sha2'
+
+async function getCar() {
+  const bytes = new TextEncoder().encode('random meaningless bytes')
+  const hash = await sha256.digest(raw.encode(bytes))
+  const cid = CID.create(1, raw.code, hash)
+  // create the writer and set the header with a single root
+  const { writer, out } = await CarWriter.create([cid])
+  Readable.from(out).pipe(fs.createWriteStream('example.car'))
+  // store a new block, creates a new file entry in the CAR archive
+  await writer.put({ cid, bytes })
+  await writer.close()
+  const inStream = fs.createReadStream('example.car')
+  // read and parse the entire stream in one go, this will cache the contents of
+  // the car in memory so is not suitable for large files.
+  const reader = await CarReader.fromIterable(inStream)
+  return reader
+}
+
+const car = await getCar()
+const cid = await client.putCar(car)
+```
+
+### Return value
+
+The method returns a string containing the CID of the uploaded CAR.
+
+### Parameters
+
+Method parameters are supplied in positional order.
+
+| Number | Type | Description |
+| ------ | ---- | ----------- |
+| 1 | `car` | The CAR file to be uploaded. |
+| 2 | `{options}` | _Optional._ An object whose properties define certain Web3.Storage options and metadata about the files being uploaded. See below for more details. |
+
+An `{options}` object has the following properties that can be used as parameters when calling `putCar()`:
+
+::: details name
+_String._ The `name` parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable within the file listing on the Web3.Storage site.
+
+```js
+const cid = await client.putCar(files, { name: 'cat pics' })
+```
+:::
+
+::: details maxRetries
+
+_Number._ You can specify how many times `putCar` should attempt to retry in case of failure by passing in a `maxRetries` option. The default value is `5`.
+
+```js
+const cid = await client.putCar(files, { maxRetries: 3 })
+```
+:::
+
+::: details onStoredChunk
+
+_Function._ You can also display progress updates by passing in an `onStoredChunk` callback. This is called after each chunk of data is uploaded, with the size of the chunk in bytes passed in as a parameter. By default, data is split into chunks of around 10MB.
+
+```js
+const onStoredChunk = chunkSize => console.log(`stored chunk of ${chunkSize} bytes`)
+const cid = await client.putCar(car, { onStoredChunk })
+```
 :::
