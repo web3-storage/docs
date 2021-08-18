@@ -77,7 +77,7 @@ For more usage information, run `ipfs-car --help`.
 
 ### go-ipfs
 
-[`go-ipfs`](https://docs.ipfs.io/install/command-line/) is the reference IPFS implementation of the IPFS protocol. Among many other features, `go-ipfs` supports exporting any IPFS object graph into a CAR file and importing data from CAR files into your local IPFS repository.
+[`go-ipfs`](https://docs.ipfs.io/install/command-line/) is the reference implementation of the IPFS protocol. Among many other features, `go-ipfs` supports exporting any IPFS object graph into a CAR file and importing data from CAR files into your local IPFS repository.
 
 The [`ipfs dag export`][ipfs-docs-dag-export] command will fetch an IPFS object graph by its Content ID (CID), writing a stream of CAR data to standard output.
 
