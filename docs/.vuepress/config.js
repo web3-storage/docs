@@ -81,6 +81,7 @@ module.exports = {
               '/how-tos/retrieve',
               '/how-tos/query',
               '/how-tos/list',
+              '/how-tos/work-with-car-files',
               '/how-tos/generate-api-token',
               '/how-tos/troubleshooting'
             ]
