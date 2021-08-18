@@ -512,9 +512,21 @@ const cid = await client.putCar(car, { onStoredChunk })
 
 ::: details decoders
 
-_BlockDecoder<any, any>[]._ Used to specify additional IPLD block decoders which interpret the data in the CAR file  and split it into multiple chunks. Note these are only required if the CAR file was not encoded using the default encoders: `dag-pb`, `dag-cbor` and `raw`.
+[_BlockDecoder_](https://github.com/multiformats/js-multiformats#ipld-codecs-multicodec). Used to specify additional IPLD block decoders which interpret the data in the CAR file  and split it into multiple chunks. Note these are only required if the CAR file was not encoded using the default encoders: `dag-pb`, `dag-cbor` and `raw`.
 
 ```js
+import * as assert from 'uvu/assert'
+import randomBytes from 'randombytes'
+import { Web3Storage } from 'web3.storage'
+import { File } from '../src/platform.js'
+import { pack } from 'ipfs-car/pack'
+import { CarReader, CarWriter } from '@ipld/car'
+import { CID } from 'multiformats/cid'
+import { encode } from 'multiformats/block'
+import * as json from '@ipld/dag-json'
+import { sha256 } from 'multiformats/hashes/sha2'
+import type { BlockDecoder } from 'multiformats/codecs/interface'
+
 const client = new Web3Storage({ token, endpoint })
 const block = await encode({ value: { hello: 'world' }, codec: json, hasher: sha256 })
 const { writer, out } = CarWriter.create([block.cid])
