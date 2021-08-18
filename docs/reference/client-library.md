@@ -509,3 +509,21 @@ const onStoredChunk = chunkSize => console.log(`stored chunk of ${chunkSize} byt
 const cid = await client.putCar(car, { onStoredChunk })
 ```
 :::
+
+::: details decoders
+
+_BlockDecoder<any, any>[]._ Used to specify additional IPLD block decoders which interpret the data in the CAR file  and split it into multiple chunks. Note these are only required if the CAR file was not encoded using the default encoders: `dag-pb`, `dag-cbor` and `raw`.
+
+```js
+const client = new Web3Storage({ token, endpoint })
+const block = await encode({ value: { hello: 'world' }, codec: json, hasher: sha256 })
+const { writer, out } = CarWriter.create([block.cid])
+writer.put(block)
+writer.close()
+const reader = await CarReader.fromIterable(out)
+const cid = await client.putCar(reader, {
+  name: 'putCar test',
+  decoders: [json]
+})
+```
+:::
