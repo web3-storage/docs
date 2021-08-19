@@ -160,15 +160,22 @@ Here's an example of a `dag-json` object:
 
 The `image` field uses the special "link type" to reference another IPLD object. The link is just a regular JSON object with a single key named `/`, whose value is a Content Identifier.
 
-Other codecs include [`dag-cbor`](https://ipld.io/docs/codecs/known/dag-cbor/), which uses the [Concise Binary Object Representation](https://cbor.io) to more efficiently encode data, especially binary data which must be Base64-encoded when using `dag-json`.
+Although `dag-json` is familiar and easy to use, we recommend using the similar [`dag-cbor` codec](https://ipld.io/docs/codecs/known/dag-cbor/) instead. `dag-cbor` uses the [Concise Binary Object Representation](https://cbor.io) to more efficiently encode data, especially binary data which must be Base64-encoded when using `dag-json`.
+
+### Enabling IPLD codecs in the client library
+
+By default, the client's [`putCar` method][reference-client-putCar] will accept data encoded using the `dag-pb`, `dag-cbor`, or `raw` codecs. If you want to use another codec like `dag-json`, you must include the codec in the `decoders` option to `putCar`.
+
+See the [`putCar` parameter reference][reference-client-putCar-params] for more details and an example that uses `dag-json`.
 
 ::: warning Gateway support
-Although Web3.Storage supports storing CAR files with `dag-json` and `dag-cbor` content, the IPFS HTTP gateway does not currently "speak" these formats and is not able to provide such data over HTTP. Please follow [this issue](https://github.com/ipfs/go-ipfs/issues/8234) to track the development of this feature.
+Although Web3.Storage supports storing CAR files with `dag-cbor` content by default and can accept other codecs with the `decoders` option, the IPFS HTTP gateway does not currently "speak" these formats and is not able to provide such data over HTTP. Please follow [this issue](https://github.com/ipfs/go-ipfs/issues/8234) to track the development of this feature.
 :::
 
 [concepts-content-addressing]: ../concepts/content-addressing.md
 [reference-client-library]: ../reference/client-library.md
 [reference-client-putCar]: ../reference/client-library.md#store-car-files
+[reference-client-putCar-params]: ../reference/client-library.md#parameters-5
 [reference-http-api]: https://docs.web3.storage/reference/http-api
 
 [github-ipfs-car]: https://github.com/web3-storage/ipfs-car
