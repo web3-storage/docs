@@ -164,41 +164,7 @@ Although `dag-json` is familiar and easy to use, we recommend using the similar 
 
 Here's a small example of encoding some `dag-cbor` data into a CAR that can be uploaded to Web3.Storage:
 
-```javascript
-import { Web3Storage } from 'web3.storage'
-import { CarReader, CarWriter } from '@ipld/car'
-import { encode } from 'multiformats/block'
-import * as cbor from '@ipld/dag-cbor'
-import { sha256 } from 'multiformats/hashes/sha2'
-
-const testObject = {
-  name: 'Have you seen this dog?',
-  description: 'I have now...',
-  image: CID.parse('bafybeihkqv2ukwgpgzkwsuz7whmvneztvxglkljbs3zosewgku2cfluvba')
-}
-
-async function storeDagCBOR(value = testObject) {
-  // encode the value into an IPLD block, using the cbor codec and sha256 hash function
-  const block = await encode({ value, codec: cbor, hasher: sha256 })
-
-  // create a new CarWriter, with the encoded block as the root
-  const { writer, out } = CarWriter.create([block.cid])
-
-  // add the block to the CAR and close it
-  writer.put(block)
-  writer.close()
-
-  // create a new CarReader we can hand to Web3.Storage.putCar
-  const reader = await CarReader.fromIterable(out)
-
-  // upload to Web3.Storage using putCar
-  const client = new Web3Storage({ token })
-  const cid = await client.putCar(reader)
-  console.log('stored dag-cbor data! CID:', cid)
-}
-```
-
-
+<<<@/code-snippets/how-to/dag-cbor.js
 
 ### Enabling IPLD codecs in the client library
 
