@@ -162,6 +162,43 @@ The `image` field uses the special "link type" to reference another IPLD object.
 
 Although `dag-json` is familiar and easy to use, we recommend using the similar [`dag-cbor` codec](https://ipld.io/docs/codecs/known/dag-cbor/) instead. `dag-cbor` uses the [Concise Binary Object Representation](https://cbor.io) to more efficiently encode data, especially binary data which must be Base64-encoded when using `dag-json`.
 
+Here's a small example of encoding some `dag-cbor` data into a CAR that can be uploaded to Web3.Storage:
+
+```javascript
+import { Web3Storage } from 'web3.storage'
+import { CarReader, CarWriter } from '@ipld/car'
+import { encode } from 'multiformats/block'
+import * as cbor from '@ipld/dag-cbor'
+import { sha256 } from 'multiformats/hashes/sha2'
+
+const testObject = {
+  name: 'Have you seen this dog?',
+  description: 'I have now...',
+  image: CID.parse('bafybeihkqv2ukwgpgzkwsuz7whmvneztvxglkljbs3zosewgku2cfluvba')
+}
+
+async function storeDagCBOR(value = testObject) {
+  // encode the value into an IPLD block, using the cbor codec and sha256 hash function
+  const block = await encode({ value, codec: cbor, hasher: sha256 })
+
+  // create a new CarWriter, with the encoded block as the root
+  const { writer, out } = CarWriter.create([block.cid])
+
+  // add the block to the CAR and close it
+  writer.put(block)
+  writer.close()
+
+  // create a new CarReader we can hand to Web3.Storage.putCar
+  const reader = await CarReader.fromIterable(out)
+
+  // upload to Web3.Storage using putCar
+  const client = new Web3Storage({ token })
+  const cid = await client.putCar(reader
+}
+```
+
+
+
 ### Enabling IPLD codecs in the client library
 
 By default, the client's [`putCar` method][reference-client-putCar] will accept data encoded using the `dag-pb`, `dag-cbor`, or `raw` codecs. If you want to use another codec like `dag-json`, you must include the codec in the `decoders` option to `putCar`.
