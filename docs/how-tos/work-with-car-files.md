@@ -138,7 +138,11 @@ The `CarReader` type shown above will read the entire contents of the CAR into m
 
 ### Go
 
-<!-- TODO: link to go-car and provide simple example -->
+The [`go-car` module](https://github.com/ipld/go-car) provides the main Golang implementation of the CAR specification. We recommend using the `v2` module version, which supports the latest version of the CAR spec.
+
+See the [API reference documentation](https://pkg.go.dev/github.com/ipld/go-car/v2) for more information.
+
+<!-- TODO: find / write simple go-car example -->
 
 ## Advanced IPLD formats
 
