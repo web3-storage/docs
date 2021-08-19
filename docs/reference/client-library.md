@@ -515,27 +515,34 @@ const cid = await client.putCar(car, { onStoredChunk })
 [_BlockDecoder_](https://github.com/multiformats/js-multiformats#ipld-codecs-multicodec). Used to specify additional IPLD block decoders which interpret the data in the CAR file  and split it into multiple chunks. Note these are only required if the CAR file was not encoded using the default encoders: `dag-pb`, `dag-cbor` and `raw`.
 
 ```js
-import * as assert from 'uvu/assert'
-import randomBytes from 'randombytes'
 import { Web3Storage } from 'web3.storage'
-import { File } from '../src/platform.js'
-import { pack } from 'ipfs-car/pack'
 import { CarReader, CarWriter } from '@ipld/car'
-import { CID } from 'multiformats/cid'
 import { encode } from 'multiformats/block'
 import * as json from '@ipld/dag-json'
 import { sha256 } from 'multiformats/hashes/sha2'
-import type { BlockDecoder } from 'multiformats/codecs/interface'
 
-const client = new Web3Storage({ token, endpoint })
-const block = await encode({ value: { hello: 'world' }, codec: json, hasher: sha256 })
-const { writer, out } = CarWriter.create([block.cid])
-writer.put(block)
-writer.close()
-const reader = await CarReader.fromIterable(out)
-const cid = await client.putCar(reader, {
-  name: 'putCar test',
-  decoders: [json]
-})
+async function storeDagJSON(jsonObject = { hello: 'world' }) {
+  // encode the json object into an IPLD block
+  const block = await encode({ value: jsonObject, codec: json, hasher: sha256 })
+
+  // create a new CarWriter, with the encoded block as the root
+  const { writer, out } = CarWriter.create([block.cid])
+
+  // add the block to the CAR and close it
+  writer.put(block)
+  writer.close()
+
+  // create a new CarReader we can hand to Web3.Storage.putCar
+  const reader = await CarReader.fromIterable(out)
+
+  // upload to Web3.Storage using putCar
+  const client = new Web3Storage({ token })
+  const cid = await client.putCar(reader, {
+    name: 'putCar using dag-json',
+
+    // include the dag-json codec in the decoders field
+    decoders: [json]
+  })
+}
 ```
 :::
