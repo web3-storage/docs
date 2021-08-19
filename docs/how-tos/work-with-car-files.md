@@ -3,7 +3,7 @@ title: Work with Content Archives
 description: Learn how to work with Content Archives of IPLD data.
 ---
 
-# Working with CAR files
+# Working with Content Archives
 
 When you upload files to Web3.Storage using the [client library][reference-client-library], your data is converted into a graph of data structures, which are then packed into a format called a Content Archive (CAR) before being sent to the Web3.Storage service. 
 
@@ -11,7 +11,7 @@ For most use cases, you never need to know about this process, as the conversion
 
 This how-to guide will explain [the basics of Content Archives](#what-is-a-content-archive) and [how they're used by the Web3.Storage API](#car-files-and-web3-storage).
 
-We'll also see several methods of creating and manipulating Content Archives using [command line tools](#command-line-tools) and an overview of the  [libraries](#libraries-for-application-developers) you can use in your application's code.
+We'll also see several methods of creating and manipulating Content Archives using [command line tools](#command-line-tools) and an overview of the [libraries](#libraries-for-application-developers) you can use in your application's code.
 
 ## What is a Content Archive?
 
@@ -102,8 +102,39 @@ ipfs dag import path/to/input.car
 
 ### JavaScript
 
-<!-- TODO: link to js-car and provide simple example -->
+There are two JavaScript packages available for manipulating CARs inside your application.
 
+#### ipfs-car
+
+The `ipfs-car` package includes library functions for packing and unpacking files into CARs, using the IPFS UnixFs data model. The library includes the same functionality as the `ipfs-car` command line utility [described above](#ipfs-car).
+
+See the [ipfs-car README](https://github.com/web3-storage/ipfs-car#api) for API documentation and usage examples.
+
+#### @ipld/car
+
+The [`@ipld/car` package](https://github.com/ipld/js-car) contains the main JavaScript implementation of the CAR specification and is used by `ipfs-car` under the hood. If you want to store non-file data using [advanced IPLD formats](#advanced-ipld-formats), you should use `@ipld/car` directly.
+
+`@ipld/car` also provides the `CarReader` interface used by the Web3.Storage client's [`putCar` method][reference-client-putCar].
+
+Here's a simple example of loading a CAR file from a Node.js stream and storing it with Web3.Storage:
+
+```javascript
+import { createReadStream } from 'fs'
+import { CarReader } from '@ipld/car'
+
+async function storeCarFile(filename) {
+  const inStream = createReadStream(filename)
+  const car = await CarReader.fromIterable(inStream)
+  
+  const client = makeStorageClient()
+  const cid = await client.putCar(car)
+  console.log('Stored CAR file! CID:', cid)
+}
+```
+
+`CarReader.fromIterable` accepts any iterable of `Uint8Array` data, including Node.js streams. If you have all your CAR data in a single `Uint8Array` already, you can use [`CarReader.fromBytes`](https://github.com/ipld/js-car#CarReader__fromBytes) instead.
+
+The `CarReader` type shown above will read the entire contents of the CAR into memory, which may cause issues with large files. On Node.js, you can use [`CarIndexedReader`](https://github.com/ipld/js-car#carindexedreader), which reads CAR data from disk directly and uses less memory than `CarReader`.
 
 ### Go
 
@@ -133,6 +164,7 @@ Although Web3.Storage supports storing CAR files with `dag-json` and `dag-cbor` 
 
 [concepts-content-addressing]: ../concepts/content-addressing.md
 [reference-client-library]: ../reference/client-library.md
+[reference-client-putCar]: ../reference/client-library.md#store-car-files
 [reference-http-api]: https://docs.web3.storage/reference/http-api
 
 [github-ipfs-car]: https://github.com/web3-storage/ipfs-car
