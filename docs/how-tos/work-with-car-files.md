@@ -193,7 +193,8 @@ async function storeDagCBOR(value = testObject) {
 
   // upload to Web3.Storage using putCar
   const client = new Web3Storage({ token })
-  const cid = await client.putCar(reader
+  const cid = await client.putCar(reader)
+  console.log('stored dag-cbor data! CID:', cid)
 }
 ```
 
