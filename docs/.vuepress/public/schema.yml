@@ -153,7 +153,8 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
         - Web3.Storage HTTP API
       summary: Retrieve a CAR
       description: Retrieve an [IPFS DAG](https://docs.ipfs.io/concepts/merkle-dag/) (Directed Acyclic Graph) packaged in a CAR file by using `/car/{cid}`, supplying the CID of the data you are interested in.
-      operationId: car-cid
+      operationId: get-car-cid
+      security: []
       parameters:
         - name: cid
           in: path
