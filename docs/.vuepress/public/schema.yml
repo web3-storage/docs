@@ -64,7 +64,7 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
         Note this endpoint returns all uploads for the account not just the API key in use.
 
         The information returned includes the creation date and file size, as well as details about how the network is storing your data. Using this information, you can identify peers on the [IPFS (InterPlanetary File System)](https://ipfs.io) network that are pinning the data, and [Filecoin](https://filecoin.io) storage providers that have accepted deals to store the data.
-      operationId: list
+      operationId: get-user-uploads
       parameters:
         - $ref: '#/components/parameters/before'
         - $ref: '#/components/parameters/limit'
