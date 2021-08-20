@@ -89,7 +89,8 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
         - Web3.Storage HTTP API
       summary: Retrieve information about an upload
       description: Retrieve metadata about a specific file by using `/status/{cid}`, supplying the CID of the file you are interested in. This metadata includes the creation date and file size, as well as details about how the network is storing your data. Using this information, you can identify peers on the [IPFS (InterPlanetary File System)](https://ipfs.io) network that are pinning the data, and [Filecoin](https://filecoin.io) storage providers that have accepted deals to store the data.
-      operationId: status
+      operationId: get-status-cid
+      security: []
       parameters:
         - name: cid
           in: path
