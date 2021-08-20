@@ -208,15 +208,6 @@ components:
           default: 132614
         created:
           $ref: '#/components/schemas/Date'
-        type:
-          type: string
-          enum: [directory, image/jpeg, application/json, other mime types]
-          example: image/jpeg
-          description: MIME type of the upload file or 'directory' when uploading multiple files.
-        scope:
-          description: Name of the JWT token used to create the upload.
-          type: string
-          default: default
         pin:
           $ref: '#/components/schemas/Pin'
         files:
