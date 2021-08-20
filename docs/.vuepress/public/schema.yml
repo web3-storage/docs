@@ -404,15 +404,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/upload'
-    GetResponse:
-      type: object
-      properties:
-        ok:
-          type: boolean
-          default: true
-        value:
-          type: object
-          $ref: '#/components/schemas/upload'
     CheckResponse:
       type: object
       properties:
