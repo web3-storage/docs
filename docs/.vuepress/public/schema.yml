@@ -189,10 +189,6 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
           description: OK
         '400':
           $ref: '#/components/responses/badRequest'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
         '5XX':
           $ref: '#/components/responses/internalServerError'
 
