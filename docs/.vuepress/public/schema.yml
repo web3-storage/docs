@@ -197,7 +197,7 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
 
 components:
   schemas:
-    upload:
+    Status:
       type: object
       properties:
         cid:
