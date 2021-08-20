@@ -108,41 +108,6 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
           $ref: '#/components/responses/badRequest'
         '5XX':
           $ref: '#/components/responses/internalServerError'
-  /user/uploads/{cid}:
-    delete:
-      tags:
-        - Web3.Storage HTTP API
-      summary: Stop storing the specified content
-      description: |
-        Stop storing content on Web3.Storage by using `/user/uploads/{cid}`, supplying the CID of the file you wish to stop storing. This has the following effects:
-        - Unpins the item from Web3.Storage's underlying IPFS pinning service.
-        - Ceases renewals for expired Filecoin deals involving the CID.
-
-        ⚠️ **IMPORTANT! While this stops storing the content, it does NOT guarantee removal of the content from the network.** More specifically:
-        - It does not terminate any established Filecoin deal.
-        - It does not remove the content from other IPFS nodes in the network that already cached or pinned the CID.
-
-        **The content will remain available if another user has stored the CID with Web3.Storage**.
-      operationId: delete
-      parameters:
-        - name: cid
-          in: path
-          required: true
-          schema:
-            $ref: '#/components/schemas/CID'
-      responses:
-        '200':
-          description: OK
-          content:
-            'application/json':
-              schema:
-                $ref: '#/components/schemas/DeleteResponse'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '5XX':
-          $ref: '#/components/responses/internalServerError'
   /car:
     post:
       tags:
