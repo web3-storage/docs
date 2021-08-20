@@ -174,6 +174,8 @@ If you ever need to find your files again, and you've forgotten the CID, head ov
 ## Next steps
 
 Congratulations! You've just covered the basics of Web3.Storage. To learn more, take a look at these useful resources:
+
+- Checkout some [example projects in the Web3.Storage GitHub repo](https://github.com/web3-storage/web3.storage/tree/main/packages/client/examples)
 - For a deep dive into storing files, visit the [Store how-to guide.](/how-tos/store.md)
 - To learn more about the details of getting files, have a look at the [Retrieve how-to guide.](/how-tos/retrieve.md)
 - Visit the [reference API section](/reference/client-library.md) for more details on what else you can do with the Web3.Storage service and how to integrate it into your own projects.
