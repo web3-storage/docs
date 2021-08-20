@@ -178,7 +178,8 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
       summary: Retrieve HTTP headers regarding a CAR
       description: |
         This method is useful for doing a dry run of a call to `/car/{cid}`. Because it only returns HTTP header information, it is far more lightweight and can be used to get only the metadata about the given CAR file without retrieving a whole payload in the body of the HTTP response.
-      operationId: head-car
+      operationId: head-car-cid
+      security: []
       parameters:
         - name: cid
           in: path
