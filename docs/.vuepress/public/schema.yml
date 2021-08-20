@@ -274,10 +274,9 @@ components:
     PinStatus:
       type: string
       enum:
-        - queued
-        - pinning
-        - pinned
-        - failed
+        - PinQueued
+        - Pinning
+        - Pinned
     Pin:
       type: object
       properties:
