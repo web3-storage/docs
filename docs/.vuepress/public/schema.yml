@@ -208,8 +208,10 @@ components:
           default: 132614
         created:
           $ref: '#/components/schemas/Date'
-        pin:
-          $ref: '#/components/schemas/Pin'
+        pins:
+          type: array
+          items:
+            $ref: '#/components/schemas/Pin'
         files:
           $ref: '#/components/schemas/Files'
         deals:
