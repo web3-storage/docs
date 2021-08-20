@@ -25,7 +25,7 @@ paths:
         - a single file, with a single blob/file object as the body
         - multiple files, as `FormData` with `Content-Disposition` headers for each part to specify filenames and the request header `Content-Type: multipart/form-data`
 Requests to this endpoint have a maximum payload size of 100MB. To upload larger files, see the documentation for the `/car` endpoint.
-      operationId: store-multipart
+      operationId: post-upload
       requestBody:
         required: true
         content:
