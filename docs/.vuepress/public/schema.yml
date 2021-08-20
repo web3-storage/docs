@@ -219,57 +219,49 @@ components:
     Deal:
       type: object
       properties:
-        batchRootCid:
-          type: string
-          example: bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u
-        lastChange:
-          type: string
-          example: '2021-03-18T11:46:50.000Z'
-          description: 'This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: YYYY-MM-DDTHH:MM:SSZ.'
-        miner:
-          description: Miner ID
-          type: string
-          example: f05678
-        network:
-          description: Filecoin network for this Deal
-          type: string
-          enum:
-            - nerpanet
-            - mainnet
-        pieceCid:
-          description: Piece CID string
-          type: string
-          example: bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u
-        status:
-          description: Deal status
-          type: string
-          enum:
-            - queued
-            - proposing
-            - accepted
-            - failed
-            - active
-            - published
-            - terminated
-        statusText:
-          type: string
-          example: miner rejected my data
-          description: Deal status description.
-        chainDealID:
+        dealId:
+          description: On-chain ID of the deal.
           type: number
           example: 138
-          description: Identifier for the deal stored on chain.
-        dealActivation:
+        storageProvider:
+          description: Address of the provider storing this data.
+          type: string
+          example: f05678
+        status:
+          description: Current deal status.
+          type: string
+          enum:
+            - Queued
+            - Published
+            - Active
+        pieceCid:
+          description: 'Filecoin [Piece CID](https://spec.filecoin.io/systems/filecoin_files/piece/) of the data in the deal.'
+          type: string
+          example: bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u
+        dataCid:
+          description: CID of the data aggregated in this deal.
+          type: string
+          example: bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u
+        dataModelSelector:
+          description: Selector for extracting stored data from the aggregated data root.
+          type: string
+          example: 'Links/100/Hash/Links/0/Hash/Links/0/Hash'
+        activation:
+          description: 'Date when the deal will become active in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.'
           type: string
           example: '2021-03-18T11:46:50.000Z'
-          description: 'This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: YYYY-MM-DDTHH:MM:SSZ.'
-        dealExpiration:
+        created:
+          description: 'Creation date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.'
           type: string
           example: '2021-03-18T11:46:50.000Z'
-          description: 'This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: YYYY-MM-DDTHH:MM:SSZ.'
+        updated:
+          description: 'Updated date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.'
+          type: string
+          example: '2021-03-18T11:46:50.000Z'
       required:
         - status
-        - lastChange
+        - created
+        - updated
     Date:
       type: string
       format: date-time
