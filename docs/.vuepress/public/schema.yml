@@ -216,38 +216,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Deal'
-    Links:
-      type: object
-      properties:
-        ipfs:
-          type: string
-          example: ipfs://bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u
-        http:
-          type: string
-          example: http://bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u.ipfs.dweb.link
-        file:
-          type: array
-          items:
-            type: object
-            properties:
-              ipfs:
-                type: string
-                example: ipfs://bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u/image.jpg
-              http:
-                type: string
-                example: http://bafkreidivzimqfqtoqxkrpge6bjyhlvxqs3rhe73owtmdulaxr5do5in7u.ipfs.dweb.link/image.jpg
-    Files:
-      description: Files in the directory (only if this upload is a directory).
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            type: string
-            example: logo.jpg
-          type:
-            type: string
-            example: image/jpeg
     Deal:
       type: object
       properties:
