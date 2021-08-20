@@ -457,18 +457,12 @@ components:
     ForbiddenErrorResponse:
       type: object
       properties:
-        ok:
-          type: boolean
-          default: false
-        error:
-          type: object
-          properties:
-            name:
-              type: string
-              default: HTTP Error
-            message:
-              type: string
-              enum: [Token is not valid, Session expired]
+        name:
+          type: string
+          default: HTTP Error
+        message:
+          type: string
+          enum: [Token is not valid, Session expired]
 
   securitySchemes:
     bearerAuth:
