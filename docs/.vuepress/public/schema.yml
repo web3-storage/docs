@@ -19,7 +19,7 @@ paths:
         - Web3.Storage HTTP API
       summary: Upload and store one or more files
       description: |
-        Store a file using Web3.Storage. You can upload either a single file or multiple files in a directory.
+        Store files using Web3.Storage. You can upload either a single file or multiple files.
 
         Send the POST request with one of the following:
         - a single file, with a single blob/file object as the body
