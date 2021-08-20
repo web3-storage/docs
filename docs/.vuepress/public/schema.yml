@@ -280,20 +280,22 @@ components:
     Pin:
       type: object
       properties:
-        cid:
-          $ref: '#/components/schemas/CID'
-        name:
+        peerId:
+          description: Libp2p peer ID of the node pinning the data.
           type: string
-          example: pin name
-        meta:
-          type: object
+          example: 12D3KooWMbibcXHwkSjgV7VZ8TMfDKi6pZvmi97P83ZwHm9LEsvV
+        peerName:
+          description: Human readable name for the peer pinning the data.
+          type: string
+          example: web3-storage-dc13
+        region:
+          description: Approximate geographical region of the node pinning the data.
+          type: string
+          example: US-DC
         status:
           $ref: '#/components/schemas/PinStatus'
-        created:
+        updated:
           $ref: '#/components/schemas/Date'
-        size:
-          type: number
-          example: 132614
     UploadResponse:
       type: object
       properties:
