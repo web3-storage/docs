@@ -349,23 +349,6 @@ components:
       properties:
         cid:
           $ref: '#/components/schemas/CID'
-    CheckResponse:
-      type: object
-      properties:
-        ok:
-          type: boolean
-          default: true
-        value:
-          type: object
-          properties:
-            cid:
-              $ref: '#/components/schemas/CID'
-            pin:
-              $ref: '#/components/schemas/Pin'
-            deals:
-              type: array
-              items:
-                $ref: '#/components/schemas/Deal'
     ErrorResponse:
       type: object
       properties:
