@@ -24,8 +24,7 @@ paths:
         Send the POST request with one of the following:
         - a single file, with a single blob/file object as the body
         - multiple files, as `FormData` with `Content-Disposition` headers for each part to specify filenames and the request header `Content-Type: multipart/form-data`
-
-        You can also upload a Content Addressed aRchive ([CAR](https://ipld.io/specs/transport/car/)) file by setting the request body as a single CAR blob/file object and providing the request header `Content-Type: application/car`. Providing a CAR file allows you to pre-compute the root CID for one or more files, and ensures that Web3.Storage will store and provide your assets with the same CID.
+Requests to this endpoint have a maximum payload size of 100MB. To upload larger files, see the documentation for the `/car` endpoint.
       operationId: store-multipart
       requestBody:
         required: true
