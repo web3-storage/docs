@@ -203,7 +203,7 @@ components:
         cid:
           $ref: '#/components/schemas/CID'
         dagSize:
-          description: Size in bytes of the upload data.
+          description: Total size of the DAG in bytes.
           type: number
           default: 132614
         created:
