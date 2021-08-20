@@ -212,8 +212,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Pin'
-        files:
-          $ref: '#/components/schemas/Files'
         deals:
           type: array
           items:
