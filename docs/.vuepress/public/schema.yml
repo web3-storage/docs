@@ -150,8 +150,9 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
       summary: Upload a CAR
       description: |
         Upload a [CAR](https://ipld.io/specs/transport/car/) (Content Addressable aRchive) file and store the [IPFS DAG](https://docs.ipfs.io/concepts/merkle-dag/)
-        (Directed Acyclic Graph) it contains. This supports partial DAGs, so multiple
-        CAR files with the same root but with different sub-trees can be sent. 
+        (Directed Acyclic Graph) it contains.
+
+        Requests to this endpoint have a maximum payload size of 100MB but partial DAGs are supported, so multiple CAR files with the same root but with different sub-trees can be sent. This enables uploading of files that are bigger than the maximum payload size.
         
         Note that only one CAR can be uploaded at a time, and only CAR files are accepted. This is in contrast to [`/upload`](#operation/store-multipart), which can upload multiple files at once and accepts both CAR files and files from the client.
       operationId: store-car
