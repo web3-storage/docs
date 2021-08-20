@@ -76,6 +76,8 @@ paths:
             'application/json':
               schema:
                 $ref: '#/components/schemas/ListResponse'
+        '400':
+          $ref: '#/components/responses/badRequest'
         '401':
           $ref: '#/components/responses/unauthorized'
         '403':
