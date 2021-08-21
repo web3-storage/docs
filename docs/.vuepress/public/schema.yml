@@ -122,7 +122,7 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
         Requests to this endpoint have a maximum payload size of 100MB but partial DAGs are supported, so multiple CAR files with the same root but with different sub-trees can be sent. This enables uploading of files that are bigger than the maximum payload size.
         
         Note that only one CAR can be uploaded at a time, and only CAR files are accepted. This is in contrast to [`/upload`](#operation/post-upload), which can upload multiple files at once and accepts both CAR files and files from the client.
-      operationId: post-car-cid
+      operationId: post-car
       requestBody:
         required: true
         content:
