@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>HTTP API | Web3.Storage Documentation</title>
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+         body {
+         margin: 0;
+         padding: 0;
+         }
+         a:not(.nav-link) {
+            color: #fc6553 !important;
+         }
+         a:hover:not(.nav-link) {
+            text-decoration: underline !important;
+         }
+         h1, h2, h3, h4, h5 {
+            font-family: Space Grotesk, sans-serif !important;
+            font-weight: 500 !important;
+         }
+         h1 {
+            font-size: 2.4em !important;
+            margin: 0 !important;
+         }
+         h2 {
+            color: #171691 !important;
+            margin: 0 !important;
+         }
+         label {
+            font-family: Space Grotesk, sans-serif !important;
+            font-size: 1.2em !important;
+            font-weight: 500 !important;
+         }
+         p {
+            color: #171691 !important;
+         }
+         li:not(.tab-success, .tab-error) {
+            color: #171691 !important;
+         }
+         pre {
+            background-color: #0b0a45 !important;
+         }
+         .active {
+               background-color: #fff2ec !important;
+         }
+         .navbar {
+           padding: 9px;
+           padding-left: 15px;
+           background-color: #fc6553;
+         }
+         .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: calc((100% + 130px) * 0.6);
+         }
+         @media (max-width: 1200px) {
+            .navbar-content {
+               max-width: none;
+               margin-right: 1em;
+            }
+         }
+         .navbar .logo {
+            height: 2.3rem;
+            vertical-align: top;
+            margin: 0;
+            padding: 2px 3px 0px 0;
+            display: inline-block;
+         }
+         .navbar .site-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #171691;
+            position: relative;
+            letter-spacing: -0.05rem;
+            background: url(/images/w3storage-logo-text.svg) no-repeat;
+            background-position: 0 6px;
+            text-indent: -99999px;
+            min-width: 220px;
+            min-height: 50px;
+            background-size: contain;
+         }
+         .navbar a {
+            color: #171691;
+            text-decoration: none;
+         }
+         .navbar .logoText {
+           margin-top:7px;
+           height: 1.85rem;
+         }
+         .navbar .nav-links {
+            display: flex;
+            font-family: Open Sans,sans-serif;
+            font-size: 0.95em;
+            font-weight: 600;
+         }
+         @media (max-width: 480px) {
+            .navbar .nav-links {
+               display:none;
+            }
+         }
+         .navbar .nav-link {
+            margin-left: 3rem;
+         }
+         .nav-link:hover {
+               color:#fde956;
+            }
+         .scrollbar-container {
+            padding-top: 1em;
+         }
+         .redoc-wrap {
+            background-color: #fff2ec;
+         }
+         .react-tabs__tab-panel {
+            background-color: #0b0a45 !important;
+         }
+         .react-tabs__tab-list li {
+            background-color: #0b0a45 !important;
+            border-color: #0b0a45 !important;
+         }
+         li.react-tabs__tab--selected {
+            background-color: #fff2ec !important;
+         }
+         .delete {
+            background-color: #c94332 !important;
+         }
+         .get {
+            background-color: #10853c !important;
+         }
+         .head {
+            background-color: #4824ab !important;
+         }
+         .post {
+            background-color: #00a7ff !important;
+         }
+      </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title></title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="manifest" href="/manifest.json">
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3a0839">
+      <link rel="shortcut icon" href="/favicon.ico">
+      <meta name="msapplication-TileColor" content="#3a0839">
+      <meta name="msapplication-config" content="/browserconfig.xml">
+      <meta name="theme-color" content="#5bbad5">
+   </head>
+   <body>
+      <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+      <div class="navbar">
+         <div class="navbar-content">
+            <div>
+               <a href="/">
+                  <img src="/images/w3storage-logo.svg" alt="Web3.Storage Documentation" class="logo">
+                  <img src="/images/w3storage-logo-text.svg" alt="Web3.Storage Documentation" class="logo logoText">
+               </a>
+            </div>
+            <div class="links">
+               <nav class="nav-links">
+                  <div class="nav-item">
+                     <a href="https://web3.storage/about/" class="nav-link">
+                     About
+                     </a>
+                  </div>
+                  <div class="nav-item">
+                     <a href="/" class="nav-link">
+                     Docs
+                     </a>
+                  </div>
+               </nav> 
+            </div>
+         </div>
+      </div>
+      <redoc id="ReDocMe" style="background-color: white"/>
+      <!-- Config options documented: https://github.com/Redocly/redoc -->
+      <script language="JavaScript">
+         Redoc.init('schema.yml', {
+           expandResponses: "200",
+           pathInMiddlePanel: true,
+           disableSearch: true,
+           expandSingleSchemaField: "Web3.Storage"
+         }, document.getElementById('ReDocMe'))
+      </script>
+   </body>
+   </body>
+</html>

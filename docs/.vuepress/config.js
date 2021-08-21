@@ -97,6 +97,7 @@ module.exports = {
             title: 'Reference',
             collapsable: false,
             children: [
+              ['https://docs.web3.storage/http-api.html','HTTP API reference'],
               '/reference/client-library'
             ]
           },
