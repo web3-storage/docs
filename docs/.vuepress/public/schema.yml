@@ -103,9 +103,7 @@ Requests to this endpoint have a maximum payload size of 100MB. To upload larger
           content:
             'application/json':
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Status'
+                $ref: '#/components/schemas/Status'
         '400':
           $ref: '#/components/responses/badRequest'
         '5XX':
