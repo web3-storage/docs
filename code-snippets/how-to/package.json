@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/web3-storage/docs#readme",
   "dependencies": {
-    "web3.storage": "^3.0.0"
+    "@ipld/dag-json": "^8.0.0",
+    "web3.storage": "^3.3.0"
   }
 }

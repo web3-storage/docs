@@ -97,6 +97,34 @@ Here's a simple example of using the callbacks to print the progress of an uploa
 
 <<<@/code-snippets/how-to/index.js#storeWithProgress
 
+## Storing IPFS Content Archives
+
+So far we've focused on using the `put` method, which accepts regular files and packs them into an IPFS Content Archive (CAR) file before uploading to Web3.Storage. If you're already using IPFS in your application, or if you want more control over the [IPLD](https://ipld.io) graph used to structure your data, you can construct your own CAR files and upload them directly.
+
+See [Working with CAR files][howto-car-files] for more information about Content Archives, including how to create and manipulate them with code or command-line tools.
+
+Once you have a Content Archive, you can use the [`putCar` client method][reference-js-put-car] to upload it to Web3.Storage.
+
+The `putCar` method accepts a `CarReader`, which is a type defined by the [`@ipld/car`][github-js-car] package.
+
+You can create a `CarReader` from a `Uint8Array` using the `fromBytes` static method:
+
+```js
+import { CarReader } from '@ipld/car'
+
+// assume loadCarData returns the contents of a CAR file as a Uint8Array
+const carBytes = await loadCarData()
+const reader = await CarReader.fromBytes(carBytes)
+
+const client = makeStorageClient()
+const cid = await client.putCar(reader)
+console.log('Uploaded CAR file to Web3.Storage! CID:', cid)
+```
+
+See the [`putCar` reference documentation][reference-js-put-car] for more information about `putCar`, including optional parameters. 
+
+The [Working with CAR files][howto-car-files] guide has more information about the `@ipld/car` package, including how to implement the `loadCarData` function and other ways to construct a `CarReader`.
+
 ## Next steps
 
 The `put` method returns an IPFS [content identifier (CID)][ipfs-docs-cid] that can be used to fetch your files over IPFS. To learn how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line, see the [how-to guide on retrieval][howto-retrieve].
@@ -108,10 +136,12 @@ You can also get more information about the status of your data. See the [query 
 [reference-js]: ../reference/client-library.md
 [reference-js-constructor]: ../reference/client-library.md#constructor
 [reference-js-put]: ../reference/client-library.md#store-files
+[reference-js-put-car]: ../reference/client-library.md#store-car-files
 
 [quickstart-guide]: ../README.md#quickstart
 [howto-retrieve]: ./retrieve.md
 [howto-query]: ./query.md
+[howto-car-files]: ./working-with-car-files.md
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 
 <!-- links to the web3.storage site -->
@@ -123,3 +153,4 @@ You can also get more information about the status of your data. See the [query 
 [mdn-fetch]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 [mdn-file]: https://developer.mozilla.org/en-US/docs/Web/API/File
 [mdn-file-input]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
+[github-js-car]: https://github.com/ipld/js-car
