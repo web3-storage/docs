@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/web3-storage/docs.git"
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/web3-storage/docs#readme",
   "dependencies": {
     "@ipld/dag-json": "^8.0.0",
+    "ipfs-unixfs-importer": "^8.0.1",
     "web3.storage": "^3.3.0"
   }
 }
