@@ -11,6 +11,22 @@ To demonstrate how to use the Web3.Storage JavaScript library to build an applic
 
 You can [play with the app in your browser][example-demo], since it has been uploaded to Web3.Storage and is available using any IPFS HTTP gateway. All you need is an [API token][howto-token] for Web3.Storage.
 
+If you want to run locally, you just need git and a recent version of Node.js. Here's how to start a hot-reloading development server that will update the app as you play with the source code:
+
+```shell
+# Clone the repository.
+git clone https://github.com/web3-storage/example-image-gallery
+cd example-image-gallery
+
+# Install dependencies. This may take a few minutes.
+npm install
+
+# Run the app in development mode.
+npm run dev
+```
+
+Leave the last command running, and open your browser to the URL printed in your terminal, which is usually `http://localhost:3000`.
+
 This guide will walk through some of the code in the example app, focusing on the parts that interact with Web3.Storage.
 
 To see the full code, head to the [web3-storage/example-image-gallery repository on GitHub][github-example-repo]. All the code we'll look at in this guide is contained in [src/js/storage.js][github-storage.js], which handles the interactions with Web3.Storage.
