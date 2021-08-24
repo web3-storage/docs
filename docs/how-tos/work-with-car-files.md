@@ -242,7 +242,7 @@ ipfs dag get bafyreieq6bftbe3o46lrdbzj6vrvyee4njfschajxgmpxwbqex3czifhry/contact
 
 Our final example is a little more complex. We're going to store a file in the same UnixFS format that IPFS uses, and link to it from a CBOR object.
 
-First we'll encode a file into UnixFS format. Normally this is done by the client library, but we want to get the CID of the file object to use for our link before we send the file off to Web3.Storage, so we'll construct the UnixFS object ourselves.
+First, we'll encode a file into UnixFS format. Normally, this is done by the client library, but we want to get the CID of the file object to use for our link before we send the file off to Web3.Storage, so we'll construct the UnixFS object ourselves.
 
 Here's a helper function to make a UnixFS file and encode it to an IPLD block:
 
@@ -281,7 +281,7 @@ ipfs dag get bafyreid7hvce4pzcy56s4hwu7xrt3dnnzzfvilzfwsadvf6q4eqild6ndy/file
 "Some plain text, encoded to UTF-8"
 ```
 
-Notice that the file content is wrapped in quotes, because `dag get` is interpreting the content as a JSON string.
+Notice that the file content is wrapped in quotes because `dag get` is interpreting the content as a JSON string.
 
 To avoid this, or to fetch binary files, you can use `ipfs get` to download the file:
 
@@ -297,12 +297,12 @@ Saving file(s) to file
 
 Note that the IPFS HTTP gateway currently does not support rendering CBOR data, so the root object is not directly viewable via the gateway. See the note about gateway support below for more information.
 
-However, the gateway *is* able to traverse the IPLD links inside our CBOR object, so you can link to the file by path and the gateway will resolve the linked file. For example:
+However, the gateway *can* traverse the IPLD links inside our CBOR object, so you can link to the file by path and the gateway will resolve the linked file. For example:
 
 [https://bafyreid7hvce4pzcy56s4hwu7xrt3dnnzzfvilzfwsadvf6q4eqild6ndy.ipfs.dweb.link/file](https://bafyreid7hvce4pzcy56s4hwu7xrt3dnnzzfvilzfwsadvf6q4eqild6ndy.ipfs.dweb.link/file).
 
 ::: warning Gateway support
-Although Web3.Storage supports storing CAR files with `dag-cbor` content by default and can accept other codecs with the `decoders` option, the IPFS HTTP gateway does not currently "speak" these formats and is not able to provide such data over HTTP. Please follow [this issue](https://github.com/ipfs/go-ipfs/issues/8234) to track the development of this feature.
+Although Web3.Storage supports storing CAR files with `dag-cbor` content by default and can accept other codecs with the `decoders` option, the IPFS HTTP gateway does not currently "speak" these formats and will not return such data over HTTP. Please follow [this issue](https://github.com/ipfs/go-ipfs/issues/8234) to track the development of this feature.
 :::
 
 ### Enabling IPLD codecs in the client library
