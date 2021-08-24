@@ -73,6 +73,10 @@ The `getImageMetadata` function simply requests the `metadata.json` file from an
 <<<@/code-snippets/external/example-image-gallery/src/js/storage.js#getImageMetadata
 :::
 
+::: warning State management at scale
+Listing all the uploads and filtering out the ones we don't want works for a simple example like this, but this approach will degrade in performance once a lot of data has been uploaded. A real application should use a database or other state management solution instead.
+:::
+
 ## Conclusion
 
 [howto-token]: ../how-tos/generate-api-token.md
