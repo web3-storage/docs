@@ -9,7 +9,7 @@ To demonstrate how to use the Web3.Storage JavaScript library to build an applic
 
 <!-- TODO: app screenshot / gif -->
 
-You can [play with the app in your browser][example-demo], since it has been uploaded to Web3.Storage and is available using any IPFS IPFS HTTP gateway. All you need is an [API token][howto-token].
+You can [play with the app in your browser][example-demo], since it has been uploaded to Web3.Storage and is available using any IPFS HTTP gateway. All you need is an [API token][howto-token] for Web3.Storage.
 
 This guide will walk through some of the code in the example app, focusing on the parts that interact with Web3.Storage.
 
@@ -43,9 +43,13 @@ Note that the `storeImage` function uses a few utility functions that aren't inc
 
 ## Viewing images
 
+To build the image gallery UI, we use the Web3.Storage client's [`list` method][reference-js-list] to get metadata about each upload, filtering out any that don't have our `ImageGallery` name prefix.
+
 ::: details listImageMetadata()
 <<<@/code-snippets/external/example-image-gallery/src/js/storage.js#listImageMetadata
 :::
+
+For each matching upload, we call `getImageMetadata` to fetch the `metadata.json` file that was stored along with each image. The contents of `metadata.json` are returned along with an IPFS gateway URL to the image file, which can be used to display the images in the UI.
 
 ::: details getImageMetadata(cid)
 <<<@/code-snippets/external/example-image-gallery/src/js/storage.js#getImageMetadata
