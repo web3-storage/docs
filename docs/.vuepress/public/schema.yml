@@ -197,7 +197,48 @@ paths:
           $ref: '#/components/responses/forbidden'
         '5XX':
           $ref: '#/components/responses/internalServerError'
+  /user/uploads/{cid}:
+    delete:
+      tags:
+        - Web3.Storage HTTP API
+      summary: Remove uploaded content from your account
+      description: |
+        Removes the content identified by `cid` from your Web3.Storage account. 
+        This will remove the entry for the upload from your file listing page and the upload listing API. 
+        It will also reduce the storage usage associated with your account by the size of the removed content.
 
+        __⚠️ This does not remove the content from the network. ⚠️__
+
+        Removing an upload from your account does not remove content from the distributed storage networks used by Web3.Storage. 
+        
+        - Removal does not terminate any established Filecoin deal.
+        - Removing an upload does not remove the content from other IPFS nodes in the network that have already cached or pinned the CID.
+
+        Note that the content will also remain available if another user has stored the CID with Web3.Storage. 
+        If no other users have uploaded the removed CID, the Web3.Storage service _may_ do the following at any time:
+        - Unpin the content from IPFS clusters and pinning services used by Web3.Storage.
+        - Cease renewals for expired Filecoin deals involving the CID.
+
+      operationId: delete
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/CID'
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/DeleteResponse'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '5XX':
+          $ref: '#/components/responses/internalServerError'
 
 
 
@@ -308,6 +349,11 @@ components:
       properties:
         cid:
           $ref: '#/components/schemas/CID'
+    DeleteResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
     ErrorResponse:
       type: object
       properties:
