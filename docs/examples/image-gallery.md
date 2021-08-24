@@ -35,7 +35,7 @@ To see the full code, head to the [web3-storage/example-image-gallery repository
 
 When you first start the app, it will check your browser's local storage for a saved API token for Web3.Storage. If it doesn't find one, the app will redirect to `/settings.html`, which displays a form to paste in a token.
 
-Before saving the token, we call a `validateToken` function that tries to call [`Web3Storage.list`][reference-js-list]. This will throw an authorization error if the token is invalid, causing `validateToken` to return `false`. If `validateToken` returns `true`, we save the token to local storage and prompt the user to upload an image.
+Before saving the token, we call a `validateToken` function that tries to create a new Web3.Storage client and call the [`list` method][reference-js-list]. This will throw an authorization error if the token is invalid, causing `validateToken` to return `false`. If `validateToken` returns `true`, we save the token to local storage and prompt the user to upload an image.
 
 ::: details validateToken(token)
 <<<@/code-snippets/external/example-image-gallery/src/js/storage.js#validateToken
@@ -66,6 +66,8 @@ To build the image gallery UI, we use the Web3.Storage client's [`list` method][
 :::
 
 For each matching upload, we call `getImageMetadata` to fetch the `metadata.json` file that was stored along with each image. The contents of `metadata.json` are returned along with an IPFS gateway URL to the image file, which can be used to display the images in the UI.
+
+The `getImageMetadata` function simply requests the `metadata.json` file from an IPFS HTTP gateway and parses the JSON content.
 
 ::: details getImageMetadata(cid)
 <<<@/code-snippets/external/example-image-gallery/src/js/storage.js#getImageMetadata
