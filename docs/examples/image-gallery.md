@@ -13,20 +13,51 @@ You can [play with the app in your browser][example-demo], since it has been upl
 
 This guide will walk through some of the code in the example app, focusing on the parts that interact with Web3.Storage.
 
-To see the full code, head to the [web3-storage/example-image-gallery repository on GitHub][github-example-repo]. All the code we'll look at in this guide is contained in [`src/js/storage.js`][github-storage.js], which handles the interactions with Web3.Storage.
+To see the full code, head to the [web3-storage/example-image-gallery repository on GitHub][github-example-repo]. All the code we'll look at in this guide is contained in [src/js/storage.js][github-storage.js], which handles the interactions with Web3.Storage.
+
+## Token management
+
+When you first start the app, it will check your browser's local storage for a saved API token for Web3.Storage. If it doesn't find one, the app will redirect to `/settings.html`, which displays a form to paste in a token.
+
+Before saving the token, we call a `validateToken` function that tries to call [`Web3Storage.list`][reference-js-list]. This will throw an authorization error if the token is invalid, causing `validateToken` to return `false`. If `validateToken` returns `true`, we save the token to local storage and prompt the user to upload an image.
+
+::: details validateToken(token)
+<<<@/code-snippets/external/example-image-gallery/src/js/storage.js#validateToken
+:::
+
+::: warning Keep it safe, and keep it secret!
+Your API token gives access to your Web3.Storage account, so you shouldn't include a token directly into your front-end source code. This example has the user paste in their own token, which allows the app to run completely from the browser without hard-coding any tokens into the source code.. Alternatively, you could run a small backend service that manages the token and proxies calls from your users to Web3.Storage.
+:::
 
 ## Image upload
 
+To upload images, we use the [`put` method][reference-js-put] to store a `File` object containing image data. We also store a small `metadata.json` file alongside each image, containing a user-provided caption and the filename of the original image file.
 
+To identify our files for display in the image gallery, we use the `name` parameter to tag our uploads with the prefix `ImageGallery`. Later we'll filter out uploads that don't have the prefix when we're building the image gallery view.
+
+::: details storeImage(imageFile, caption)
+<<<@/code-snippets/external/example-image-gallery/src/js/storage.js#storeImage
+:::
+
+Note that the `storeImage` function uses a few utility functions that aren't included in this walkthrough. To see the details of the `jsonFile`, `getSavedToken`, `showMessage`, `showLink`, and `makeGatewayURL` functions, see [src/js/helpers.js][github-helpers.js]
 
 ## Viewing images
 
-## Token management
+::: details listImageMetadata()
+<<<@/code-snippets/external/example-image-gallery/src/js/storage.js#listImageMetadata
+:::
+
+::: details getImageMetadata(cid)
+<<<@/code-snippets/external/example-image-gallery/src/js/storage.js#getImageMetadata
+:::
 
 ## Conclusion
 
 [howto-token]: ../how-tos/generate-api-token.md
+[reference-js-put]: ../reference/client-library/#store-files
+[reference-js-list]: ../reference/client-library/#list-uploads
 
 [github-example-repo]: https://github.com/web3-storage/example-image-gallery
 [github-storage.js]: https://github.com/web3-storage/example-image-gallery/blob/main/src/js/storage.js
+[github-helpers.js]: https://github.com/web3-storage/example-image-gallery/blob/main/src/js/helpers.js
 [example-demo]: https://bafybeih6g2mhnqmn437qvkglrksdzida3gbx37lgicoips2xw6vdqca3ay.ipfs.dweb.link
