@@ -205,7 +205,6 @@ paths:
       description: |
         Removes the content identified by `cid` from your Web3.Storage account. 
         This will remove the entry for the upload from your file listing page and the upload listing API. 
-        It will also reduce the storage usage associated with your account by the size of the removed content.
 
         __⚠️ This does not remove the content from the network. ⚠️__
 
