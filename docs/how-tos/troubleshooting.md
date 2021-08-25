@@ -14,3 +14,10 @@ We recommend using Webpack 5 with your projects. However, some popular tools lik
 ```javascript
 import { Web3Storage } from 'web3.storage/dist/bundle.esm.min.js'
 ```
+
+## The status information for my content doesn't include any Filecoin deals
+
+Content uploaded to Web3.Storage is persisted to Filecoin in batches, and newly uploaded content may take up to 48 hours to be stored on Filecoin. If more than 48 hours have elapsed since upload, and a [status request][howto-query] for your content returns no `deals` information, please [contact us][contact-us] so that we can investigate.
+
+[howto-query]: ./query.md
+[contact-us]: ../community/help-and-support.md

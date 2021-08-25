@@ -42,38 +42,71 @@ The client object's `status` method accepts a CID string and returns a JSON obje
 If the given CID is valid and has been uploaded to Web3.Storage, the `status` method will return an object that looks similar to this:
 
 
-<!-- TODO: replace with an example that has a populated deals field (once that's live) -->
-
 ```json
 {
-  "cid": "bafybeifljln6rmvrdqu7xopiwk2bykwa25onxnvjsmlp3xdiii3opgg2gq",
-  "created": "2021-07-20T09:43:47.756391Z",
-  "dagSize": 15291,
+  "cid": "bafybeiepdjmu7bkau2sv5hag4m76jyt747d4do6kenhedpvd24kcc2zq7u",
+  "created": "2021-08-24T21:35:31.988241Z",
+  "dagSize": 15393,
   "pins": [
     {
       "status": "Pinned",
-      "updated": "2021-07-20T14:11:28.418725Z",
+      "updated": "2021-08-24T21:39:40.586057Z",
       "peerId": "12D3KooWMbibcXHwkSjgV7VZ8TMfDKi6pZvmi97P83ZwHm9LEsvV",
-      "peerName": "12D3KooWMbibcXHwkSjgV7VZ8TMfDKi6pZvmi97P83ZwHm9LEsvV",
-      "region": null
+      "peerName": "web3-storage-dc13",
+      "region": "US-DC"
     },
     {
       "status": "Pinned",
-      "updated": "2021-07-20T14:11:29.308487Z",
+      "updated": "2021-08-24T21:39:40.586057Z",
       "peerId": "12D3KooWF6uxxqZf4sXpQEbNE4BfbVJWAKWrFSKamxmWm4E9vyzd",
-      "peerName": "12D3KooWF6uxxqZf4sXpQEbNE4BfbVJWAKWrFSKamxmWm4E9vyzd",
-      "region": null
+      "peerName": "web3-storage-am6",
+      "region": "NL"
     },
     {
       "status": "Pinned",
-      "updated": "2021-07-20T14:11:30.135495Z",
-      "peerId": "12D3KooWFe387JFDpgNEVCP5ARut7gRkX7YuJCXMStpkq714ziK6",
-      "peerName": "12D3KooWFe387JFDpgNEVCP5ARut7gRkX7YuJCXMStpkq714ziK6",
-      "region": null
+      "updated": "2021-08-24T21:39:40.586057Z",
+      "peerId": "12D3KooWLWFUri36dmTkki6o9PwfQNwGb2gsHuKD5FdcwzCXYnwc",
+      "peerName": "web3-storage-am6-2",
+      "region": "NL"
     }
   ],
-  "deals": []
+  "deals": [
+    {
+      "dealId": 2332952,
+      "storageProvider": "f022142",
+      "status": "Active",
+      "pieceCid": "baga6ea4seaqo6jfxitxwcgcemdcqnmnqan7p7u4l76k3orjqjdo5lengpiorcia",
+      "dataCid": "bafybeie2bpl25wxuif2r6zlsq4l77h2jbldscr2yn3jz7iy4pqdd725fau",
+      "dataModelSelector": "Links/47/Hash/Links/15/Hash/Links/0/Hash",
+      "activation": "2021-08-25T13:00:30Z",
+      "created": "2021-08-25T00:17:10.392875Z",
+      "updated": "2021-08-25T07:57:26.999531Z"
+    },
+    {
+      "dealId": 2333120,
+      "storageProvider": "f022352",
+      "status": "Active",
+      "pieceCid": "baga6ea4seaqo6jfxitxwcgcemdcqnmnqan7p7u4l76k3orjqjdo5lengpiorcia",
+      "dataCid": "bafybeie2bpl25wxuif2r6zlsq4l77h2jbldscr2yn3jz7iy4pqdd725fau",
+      "dataModelSelector": "Links/47/Hash/Links/15/Hash/Links/0/Hash",
+      "activation": "2021-08-25T14:50:30Z",
+      "created": "2021-08-25T01:00:28.410557Z",
+      "updated": "2021-08-25T07:57:26.307022Z"
+    },
+    {
+      "dealId": 2333678,
+      "storageProvider": "f01278",
+      "status": "Published",
+      "pieceCid": "baga6ea4seaqo6jfxitxwcgcemdcqnmnqan7p7u4l76k3orjqjdo5lengpiorcia",
+      "dataCid": "bafybeie2bpl25wxuif2r6zlsq4l77h2jbldscr2yn3jz7iy4pqdd725fau",
+      "dataModelSelector": "Links/47/Hash/Links/15/Hash/Links/0/Hash",
+      "activation": "2021-08-26T23:37:30Z",
+      "created": "2021-08-25T03:02:14.998793Z",
+      "updated": "2021-08-25T07:57:26.639659Z"
+    }
+  ]
 }
+
 ```
 What do all those fields mean? Here's a summary:
 
@@ -81,13 +114,12 @@ What do all those fields mean? Here's a summary:
 - `created` contains an [ISO-8601 datetime string][iso-8601] indicating when the content was first uploaded to Web3.Storage.
 - `dagSize` contains the size in bytes of the [Directed Acyclic Graph (DAG)][ipfs-docs-merkle-dag] that contains all the uploaded content. This is the size of the data that is transferred over the network to Web3.Storage during upload, and is slightly larger than the total size of the files on disk.
 - `pins` contains an array of objects describing the IPFS nodes that have [pinned][ipfs-docs-pinning] the data, making it available for fast retrieval using the IPFS network.
-- `deals` contains an array of objects describing the Filecoin storage providers that have made [storage deals][fil-docs-deals]. These storage providers have committed to storing the data for an agreed period of time.
+- `deals` contains an array of objects describing the Filecoin storage providers that have made [storage deals][fil-docs-deals]. These storage providers have committed to storing the data for an agreed period of time. Note that it may take up to 48 hours after uploading data to Web3.Storage before Filecoin deals are activated.
 
 For more details about the fields in this JSON response, including the format of the `pins` and `deals` objects, see the [JavaScript client library reference][reference-js-status].
 
 :::tip
 If you're looking for info on files you've uploaded, you can also use the [Files page](https://web3.storage/files) on Web3.Storage to see the values for some of the more commonly-used attributes returned by `query()`, namely `created`, `cid`, `dagSize`, and the `status` and `deals` objects of `pins`.
-
 :::
 
 ## Next steps
