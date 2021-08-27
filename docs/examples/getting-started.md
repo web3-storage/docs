@@ -7,7 +7,7 @@ description: Learn Web3.Storage by example with sample applications and starter 
 
 The [Web3.Storage GitHub repository][github-main-repo] contains some example projects to help you get started with the Web3.Storage JavaScript client library. The examples are stored in the [`packages/client/examples` directory][github-examples-dir] and include code for Node.js and several browser toolchains.  Each example directory has a `README.md` explaining how to install dependencies and run the code.
 
-Here's a quick look at how to run the Node.js example:
+Here's a brief look at how to run the Node.js example:
 
 1. First, clone the Web3.Storage GitHub repo:
 
@@ -15,7 +15,7 @@ Here's a quick look at how to run the Node.js example:
     git clone https://github.com/web3-storage/web3.storage
     ```
 
-1. Move into the NodeJS example folder and install it's dependencies using NPM:
+1. Move into the NodeJS example folder and install the dependencies using NPM:
 
     ```shell
     cd web3.storage/packages/client/examples/node.js 
@@ -39,7 +39,7 @@ Here's a quick look at how to run the Node.js example:
 
 1. That's it!
 
-Running the script is easy, but to really learn how things work you should take a look at the script itself! Open it up in a text editor and play around with the functions. One of the best ways to learn how something works is by breaking it! 
+Running the script is easy, but to really learn how things work, you should take a look at the script itself! Open it up in a text editor and play around with the functions. One of the best ways to learn how something works is by breaking it.
 
 [github-main-repo]: https://github.com/web3-storage/web3.storage
 [github-examples-dir]: https://github.com/web3-storage/web3.storage/tree/main/packages/client/examples
