@@ -99,7 +99,8 @@ module.exports = {
             collapsable: false,
             children: [
               ['https://docs.web3.storage/http-api.html','HTTP API reference'],
-              '/reference/client-library'
+              '/reference/client-library',
+              '/reference/js-utilities',
             ]
           },
           {
