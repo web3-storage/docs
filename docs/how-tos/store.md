@@ -141,7 +141,7 @@ You can also get more information about the status of your data. See the [query 
 [quickstart-guide]: ../README.md#quickstart
 [howto-retrieve]: ./retrieve.md
 [howto-query]: ./query.md
-[howto-car-files]: ./working-with-car-files.md
+[howto-car-files]: ./work-with-car-files.md
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 
 <!-- links to the web3.storage site -->
