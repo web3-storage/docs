@@ -51,7 +51,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           status: ${{ job.status }}
           url: ${{ steps.ipfs.outputs.url }}
-          description: "Build preview ready!"
+          description: "Build preview ready! [${{ github.sha }}]"
           name: "Build preview"
   
   # Publish to the prod domain if it's a change on main 🚀
