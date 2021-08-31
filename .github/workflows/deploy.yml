@@ -28,8 +28,7 @@ jobs:
       - uses: bahmutov/npm-install@v1
       - run: npm run docs:build
         env:
-          SPEEDCURVE_ID: ${{ secrets.SPEEDCURVE_ID }}
-          COUNTLY_URL: ${{ secrets.COUNTLY_URL }}
+          COUNTLY_URL: https://countly.protocol.ai
           COUNTLY_KEY: ${{ secrets.COUNTLY_KEY }}
 
       # Add the site to web3.storage, output the cid as `steps.ipfs.outputs.cid`
@@ -41,17 +40,19 @@ jobs:
           web3_token: ${{ secrets.WEB3_TOKEN }}
           web3_api: https://api-staging.web3.storage
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       
       - run: echo ${{ steps.ipfs.outputs.url }}
   
   # Publish to the prod domain if it's a change on main 🚀
-  deploy:
-    name: Deploy https://docs.web3.storage
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: npx dnslink-cloudflare --record docs --domain web3.storage --link /ipfs/${{ needs.build.outputs.cid }}
-        env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+  # TODO: enable deploy once Fleek is deactivated
+
+  # deploy:
+  #   name: Deploy https://docs.web3.storage
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: npx dnslink-cloudflare --record docs --domain web3.storage --link /ipfs/${{ needs.build.outputs.cid }}
+  #       env:
+  #         CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
