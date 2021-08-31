@@ -45,13 +45,16 @@ jobs:
       
       - run: echo ${{ steps.ipfs.outputs.url }}
 
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Update status
         uses: ouzi-dev/commit-status-updater@v1.1.0
         with:
           token: ${{ secrets.GH_TOKEN }}
           status: ${{ job.status }}
           url: ${{ steps.ipfs.outputs.url }}
-          description: "Build preview ready! [${{ github.sha }}]"
+          description: "Build preview ready! [${{ steps.vars.outputs.sha_short }}]"
           name: "Build preview"
   
   # Publish to the prod domain if it's a change on main 🚀
