@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       cid: ${{ steps.ipfs.outputs.cid }}
+      preview_url: ${{ steps.ipfs.outputs.url }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -43,6 +44,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       
       - run: echo ${{ steps.ipfs.outputs.url }}
+
+      - name: Update status
+        uses: pbrandone/create-status-action@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          state: success
+          description: Build preview ready!
+          url: ${{ steps.ipfs.outputs.url }}
   
   # Publish to the prod domain if it's a change on main 🚀
   # TODO: enable deploy once Fleek is deactivated
