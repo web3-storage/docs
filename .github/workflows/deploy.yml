@@ -47,7 +47,8 @@ jobs:
 
       - name: Set outputs
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+        run: echo "::set-output name=sha_short::$(echo ${{ github.sha }} | cut -c-7)"
+
       - name: Update status
         uses: ouzi-dev/commit-status-updater@v1.1.0
         with:
