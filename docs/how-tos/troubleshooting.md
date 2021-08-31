@@ -14,3 +14,13 @@ We recommend using Webpack 5 with your projects. However, some popular tools lik
 ```javascript
 import { Web3Storage } from 'web3.storage/dist/bundle.esm.min.js'
 ```
+
+## Generate the same CID using Go-IPFS
+
+The CID returned from Web3.Storage might be diffenent from the default CID returned when using `ipfs add` with Go-IPFS. If you want Go-IPFS to generate the _same_ CID as Web3.Storage, run:
+
+```shell
+ipfs add -r --cid-version 1 --raw-leaves -s size-1048576 -w ~/FILE_TO_USE.txt
+```
+
+
