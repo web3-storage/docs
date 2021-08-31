@@ -46,7 +46,7 @@ jobs:
       - run: echo ${{ steps.ipfs.outputs.url }}
 
       - name: Update status
-        uses: pbrandone/create-status-action@v1
+        uses: pdrbrnd/create-status-action@v1
         with:
           token: ${{ secrets.GH_TOKEN }}
           state: success
