@@ -71,7 +71,7 @@ Here's an example of fetching the first 10 uploads made on the previous day:
 <<<@/code-snippets/how-to/index.js#listWithLimits
 
 [howto-store]: ./store.md
-[howto-retrieve]: ./retrive.md
+[howto-retrieve]: ./retrieve.md
 [howto-query]: ./query.md
 [howto-gen-token]: ./generate-api-token.md
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
