@@ -95,6 +95,14 @@ module.exports = {
             ]
           },
           {
+            title: 'Examples',
+            collapsable: false,
+            children: [
+              '/examples/getting-started',
+              '/examples/image-gallery',
+            ]
+          },
+          {
             title: 'Reference',
             collapsable: false,
             children: [
