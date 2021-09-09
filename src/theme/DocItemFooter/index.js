@@ -30,16 +30,18 @@ function EditMetaRow({
   formattedLastUpdatedAt,
 }) {
   return (
-    <div className="row">
+    <div >
       <div className="col">{editUrl && <EditThisPage editUrl={editUrl} />}</div>
 
-      <div className={clsx('col', styles.lastUpdated)}>
+      <div className={clsx(styles.lastUpdated)}>
         {(lastUpdatedAt || lastUpdatedBy) && (
+          <div>
           <LastUpdated
             lastUpdatedAt={lastUpdatedAt}
             formattedLastUpdatedAt={formattedLastUpdatedAt}
             lastUpdatedBy={lastUpdatedBy}
           />
+          </div>
         )}
       </div>
     </div>

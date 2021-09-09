@@ -13,17 +13,18 @@ const SUGGEST_CONTENT_URL = 'https://github.com/web3-storage/docs/issues/new?ass
 export default function EditThisPage({editUrl}) {
   return (
     <>
-      <a href={editUrl} target="_blank" rel="noreferrer noopener">
-        <Translate
-          id="theme.common.editThisPage"
-          description="The link label to edit the current page">
-          Edit this page
-        </Translate>
-      </a> 
-      {' on GitHub or '}
-      <a href={ISSUE_URL} target="_blank" rel="noreferrer noopener">open an issue</a>
-      {' for it'}
-
+      <div style={{whiteSpace: 'nowrap'}}>
+        <a href={editUrl} target="_blank" rel="noreferrer noopener">
+          <Translate
+            id="theme.common.editThisPage"
+            description="The link label to edit the current page">
+            Edit this page
+          </Translate>
+        </a> 
+        {' on GitHub or '}
+        <a href={ISSUE_URL} target="_blank" rel="noreferrer noopener">open an issue</a>
+        {' for it'}
+      </div>
       <div>
         <a href={SUGGEST_CONTENT_URL} target="_blank" rel="noreferrer noopener">
           Suggest new content
