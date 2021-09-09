@@ -6,6 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "npm run submodules && docusaurus start --port 3030",
     "build": "npm run submodules && docusaurus build",
+    "docs:build": "npm run build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
