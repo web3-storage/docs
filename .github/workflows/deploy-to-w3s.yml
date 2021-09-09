@@ -1,0 +1,68 @@
+name: Website
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'code-snippets/**'
+      - '.github/workflows/deploy-to-w3s.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'code-snippets/**'
+      - '.github/workflows/deploy-to-w3s.yml'
+jobs:
+  build:
+    name: Build & Add to IPFS
+    runs-on: ubuntu-latest
+    outputs:
+      cid: ${{ steps.ipfs.outputs.cid }}
+      preview_url: ${{ steps.ipfs.outputs.url }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - uses: bahmutov/npm-install@v1
+      - run: npm run docs:build
+        env:
+          COUNTLY_URL: https://countly.protocol.ai
+          COUNTLY_KEY: ${{ secrets.COUNTLY_KEY }}
+
+      # Add the site to web3.storage, output the cid as `steps.ipfs.outputs.cid`
+      - name: Add to web3.storage
+        uses: web3-storage/add-to-web3@v1
+        id: ipfs
+        with:
+          path_to_add: build
+          web3_token: ${{ secrets.WEB3_TOKEN }}
+          web3_api: https://api-staging.web3.storage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      
+      - run: echo ${{ steps.ipfs.outputs.url }}
+
+      - name: Update status
+        uses: ouzi-dev/commit-status-updater@v1.1.0
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          status: ${{ job.status }}
+          url: ${{ steps.ipfs.outputs.url }}
+          description: "Build preview ready!"
+          name: "Build preview"
+  
+  # Publish to the prod domain if it's a change on main 🚀
+  # TODO: enable deploy once Fleek is deactivated
+
+  # deploy:
+  #   name: Deploy https://docs.web3.storage
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: npx dnslink-cloudflare --record docs --domain web3.storage --link /ipfs/${{ needs.build.outputs.cid }}
+  #       env:
+  #         CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
