@@ -111,4 +111,14 @@ module.exports = {
       }
     }],
   ],
+  plugins: [
+    ['@docusaurus/plugin-client-redirects', {
+      redirects: [
+        {
+          from: '/http-api.html',
+          to: '/http-api/',
+        }
+      ]
+    }]
+  ]
 };
