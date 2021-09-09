@@ -1,7 +1,7 @@
 @import '../../css/vars.css';
 
 .feedback {
-  background-color: white;
+  background-color: var(--feedback-background-color);
   border: 1px solid var(--w3storage-red);
   padding: 2em;
 }

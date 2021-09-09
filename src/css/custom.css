@@ -29,34 +29,33 @@ body {
 }
 
 .docs-wrapper {
-  color: var(--w3storage-purple)
+  color: var(--ifm-color-content);
 }
 
 .menu {
-  background-color: var(--w3storage-red);
+  background-color: var(--sidebar-background-color);
 }
 
 .menu__link, .menu__link:not([href]):hover  {
-  color: var(--w3storage-purple);
+  color: var(--nav-link-color);
 }
 
 .menu__link:hover {
-  color: var(--w3storage-yellow);
+  color: var(--nav-link-hover-color);
 }
 
 .menu__link--active {
-  color: var(--w3storage-yellow);
-  /* border-left: 4px solid var(--w3storage-yellow); */
+  color: var(--nav-link-active-color);
 }
 
 .navbar a, .footer a {
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: normal;
-  color: var(--w3storage-purple);
+  color: var(--nav-link-color);
 }
 
 .navbar a:hover, .footer a:hover {
-  color: var(--w3storage-yellow);
+  color: var(--nav-link-hover-color);
   text-decoration: none;
 }
 
@@ -80,7 +79,7 @@ body {
 }
 
 .footer {
-  background-color: var(--w3storage-red);
+  background-color: var(--ifm-background-surface-color);
 }
 
 ul.footer__items {
@@ -89,44 +88,8 @@ ul.footer__items {
   justify-content: space-evenly;
 }
 
-/* ================================================================================
-   Dark Mode
-   ================================================================================ */
-
-html[data-theme='dark'] {
-  --ifm-background-color: #0b0a45;;
-  --ifm-background-surface-color: var(--w3storage-red-dark)
-}
-
-
-/* html[data-theme='dark'] body {
-  color: #fff;
-} */
-
-html[data-theme='dark'] .docs-wrapper {
-  color: #ddd;
-}
-
-html[data-theme='dark'] h1, html[data-theme='dark'] h2, html[data-theme='dark'] h3, html[data-theme='dark'] h4 {
-  color: var(--w3storage-yellow);
-}
-
-html[data-theme='dark'] .menu, html[data-theme='dark'] .footer {
-  background-color: var(--w3storage-red-dark);
-  color: var(--w3storage-red-light)
-}
-
-html[data-theme='dark'] .menu__link, html[data-theme='dark'] .menu__link:not([href]):hover  {
-  color: var(--w3storage-blue-dark);
-}
-
-html[data-theme='dark'] .menu__link--active {
-  color: var(--w3storage-yellow);
-  /* border-left: 4px solid var(--w3storage-yellow); */
-}
-
-html[data-theme='dark'] .navbar a, html[data-theme='dark'] .footer a {
-  color: var(--w3storage-blue-dark);
+h1, h2, h3, h4, h5 {
+  color: var(--heading-color);
 }
 
 h1 {
