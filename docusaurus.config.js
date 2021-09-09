@@ -16,8 +16,8 @@ module.exports = {
   projectName: 'web3.storage',
   themeConfig: {
     colorMode: {
-      // respectPrefersColorScheme: true,
-      // disableSwitch: true,
+      respectPrefersColorScheme: true,
+      disableSwitch: true,
     },
     navbar: {
       title: 'Web3.Storage',
