@@ -83,8 +83,8 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsible: false,
-          // Please change this to your repo.
-          editUrl: 'https://github.com/web3-storage/web3.storage/edit/main/packages/docs/',
+          editUrl: 'https://github.com/web3-storage/docs/edit/main/',
+          showLastUpdateTime: true,
           routeBasePath: '/',
           remarkPlugins: [
             require('remark-docusaurus-tabs'),
