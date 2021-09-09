@@ -77,7 +77,7 @@ fi
 echo "Run npm install"
 npm install
 echo "Run docs build"
-BUILDRESULT=$(npm run docs:build 2>&1)
+BUILDRESULT=$(npm run build 2>&1)
 
 if [[ $? -eq 0 ]]; then
   echo "Docusaurus build was successful!"
