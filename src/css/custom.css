@@ -4,6 +4,7 @@
  * work well for content-centric websites.
  */
 @import './vars.css';
+@import './fonts.css';
 
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
@@ -17,7 +18,8 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 body {
-  @apply antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   /* background-color: var(--w3storage-background); */
   font-family: "Open Sans", sans-serif;
@@ -48,7 +50,8 @@ body {
 }
 
 .navbar a, .footer a {
-  @apply space-grotesk;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: normal;
   color: var(--w3storage-purple);
 }
 
@@ -126,65 +129,7 @@ html[data-theme='dark'] .navbar a, html[data-theme='dark'] .footer a {
   color: var(--w3storage-blue-dark);
 }
 
-/* ================================================================================
-   Fonts
-   ================================================================================ */
-
-@font-face {
-    font-family: "Space Grotesk";
-    font-weight: 400;
-    font-style: normal;
-    src: url("/fonts/space-grotesk/space-grotesk-regular.woff2") format("woff2");
-    src: url("/fonts/space-grotesk/space-grotesk-regular.woff") format("woff");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Space Grotesk";
-    font-weight: 500;
-    font-style: normal;
-    src: url("/fonts/space-grotesk/space-grotesk-medium.woff2") format("woff2");
-    src: url("/fonts/space-grotesk/space-grotesk-medium.woff") format("woff");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    font-weight: 400;
-    font-style: normal;
-    src: url("/fonts/open-sans/open-sans.woff2") format("woff2");
-    src: url("/fonts/open-sans/open-sans.woff") format("woff");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Open Sans";
-    font-weight: 600;
-    font-style: normal;
-    src: url("/fonts/open-sans/open-sans-semi-bold.woff2") format("woff2");
-    src: url("/fonts/open-sans/open-sans-semi-bold.woff") format("woff");
-    font-display: swap;
-}
-
-@font-face {
-  font-family: "Space Mono";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/fonts/space-mono/space-mono-regular.woff2") format("woff2");
-  src: url("/fonts/space-mono/space-mono-regular.woff") format("woff");
-  font-display: swap;
-}
-
-/* ================================================================================
-   Typography
-   ================================================================================ */
-
-.space-grotesk {
-  font-family: "Space Grotesk", sans-serif;
-  letter-spacing: normal;
-}
-
-.typography-hero-title {
+h1 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 3rem;
   letter-spacing: normal;
@@ -192,67 +137,29 @@ html[data-theme='dark'] .navbar a, html[data-theme='dark'] .footer a {
   line-height: 1.4em;
 }
 
-.typography-hero-subtitle {
-  letter-spacing: 0.02em;
-}
-
-.typography-section-title {
+h2 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.75rem;
   font-weight: 500;
   letter-spacing: normal;
   line-height: 1.395em;
-}
 
-.typography-body-title {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.625rem;
-  letter-spacing: normal;
-}
-
-.typography-body-subtitle {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.25rem;
-  letter-spacing: normal;
-}
-
-.typography-cta {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 0.9375rem; /* 15px */
-  letter-spacing: 0.02em;
-}
-
-@screen md {
-  .typography-hero-title {
-    font-size: 3.6rem;
-  }
-
-  .typography-section-title {
-    font-size: 2.375rem;
-  }
-}
-
-@screen lg {
-  .typography-hero-title {
-    font-size: 5rem;
-  }
-}
-
-h1 {
-  @apply typography-hero-title;
-}
-
-h2 {
-  @apply typography-section-title;
+  border: 0;
+  border-bottom: 1px;
+  border-color: var(--web3storage-purple);
+  border-style: solid;
 }
 
 h3 {
-  @apply typography-body-title;
-  @apply font-bold;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  font-weight: 500;
 }
 
 h4 {
-  @apply typography-body-subtitle;
-  @apply font-bold;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: normal;
+  font-weight: 700;
 }
