@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "npm run submodules && docusaurus start",
+    "start": "npm run submodules && docusaurus start --port 3030",
     "build": "npm run submodules && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
