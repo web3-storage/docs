@@ -75,6 +75,11 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
+
+    algolia: {
+      apiKey: 'FIXME',
+      indexName: 'FIXME',
+    }
   },
   presets: [
     [
