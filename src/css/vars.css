@@ -44,7 +44,31 @@
   --nav-link-color: var(--ifm-color-content);
   --nav-link-hover-color: var(--w3storage-yellow);
   --nav-link-active-color: var(--w3storage-yellow);
-  --heading-color: var(--ifm-color-content);
+  --heading-color: var(--ifm-color-content);  
+}
+
+/* algolia search */
+.DocSearch {
+  --docsearch-searchbox-background: var(--w3storage-white);
+  --docsearch-modal-background: var(--ifm-background-color);
+  --docsearch-muted-color: var(--w3storage-blue-desaturated-bright);
+}
+
+button.DocSearch-Button {
+  border-radius: 5px;
+  --docsearch-searchbox-background: var(--w3storage-purple);
+  --docsearch-searchbox-focus-background: var(--w3storage-purple);
+  --docsearch-text-color: white;
+}
+
+
+
+.DocSearch-Button-Placeholder {
+  display: none;
+}
+
+span.DocSearch-Button-Keys {
+  display: none;
 }
 
 
@@ -63,3 +87,9 @@ html[data-theme='dark'] {
   --heading-color: var(--w3storage-yellow);
   --nav-link-color: var(--w3storage-blue-dark);
 }
+
+/* algolia search */
+html[data-theme='dark'] .DocSearch {
+  --docsearch-muted-color: var(--w3storage-red-light);
+}
+
