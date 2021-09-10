@@ -119,16 +119,7 @@ module.exports = {
       },
     ],
     
-    ['redocusaurus', {
-      specs: [{
-        spec: 'static/schema.yml',
-        routePath: '/http-api/',
-      }],
-
-      theme: {
-        primaryColor: '#171691',
-      }
-    }],
+    'redocusaurus',
   ],
   plugins: [
     ['@docusaurus/plugin-client-redirects', {

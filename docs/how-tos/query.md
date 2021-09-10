@@ -131,7 +131,7 @@ If you haven't yet explored in depth how to store data using Web3.Storage, check
 
 To learn in greater detail how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line, see the [how-to guide on retrieval][howto-retrieve].
 
-[quickstart]: ../intro.mdx#quickstart
+[quickstart]: ../intro.md#quickstart
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 [howto-store]: ./store.md
 [howto-retrieve]: ./retrieve.md

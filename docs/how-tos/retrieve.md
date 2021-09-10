@@ -191,7 +191,7 @@ You can also use the client library to get more information about the status of 
 
 <!-- internal links -->
 [reference-js]: ../reference/client-library.md
-[quickstart-guide]: ../intro.mdx#quickstart
+[quickstart-guide]: ../intro.md#quickstart
 [concepts-content-addressing]: ../concepts/content-addressing.md
 [howto-store]: ./store.md
 [howto-query]: ./query.md

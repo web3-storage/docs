@@ -137,7 +137,7 @@ You can also get more information about the status of your data. See the [query 
 [reference-js-put]: ../reference/client-library.md#store-files
 [reference-js-put-car]: ../reference/client-library.md#store-car-files
 
-[quickstart-guide]: ../intro.mdx#quickstart
+[quickstart-guide]: ../intro.md#quickstart
 [howto-retrieve]: ./retrieve.md
 [howto-query]: ./query.md
 [howto-car-files]: ./work-with-car-files.md
