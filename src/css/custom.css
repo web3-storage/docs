@@ -84,6 +84,11 @@ body {
   text-decoration: none;
 }
 
+/* override hover higlight color for Web3.Storage logo text */
+a.navbar__brand:hover {
+  color: var(--nav-link-color);
+}
+
 .navbar__title {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.75rem;
