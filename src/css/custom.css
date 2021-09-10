@@ -23,7 +23,7 @@ body {
 
   /* background-color: var(--w3storage-background); */
   font-family: "Open Sans", sans-serif;
-  font-size: 1.125rem;
+  font-size: 16px;
   line-height: 1.875em;
   letter-spacing: 0.02em;
 }
@@ -32,9 +32,34 @@ body {
   color: var(--ifm-color-content);
 }
 
+.docs-wrapper a {
+  font-weight: 700;
+}
+
+.docs-wrapper blockquote {
+  color: var(--ifm-color-content);
+  font-size: 1.3em;
+  border-left: 0.2rem solid var(--ifm-color-primary);
+  margin: 1rem 0;
+}
+
 .menu {
   background-color: var(--sidebar-background-color);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1em;
+  line-height: 1.7;
+  letter-spacing: normal;
+  font-weight: 400;
 }
+
+/* Menu links without an href are category headings */
+/* We also style the welcome link (href='/') as a heading */
+.menu__link:not([href]), .menu__link[href='/'] {
+  font-size: 1.45em;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
 
 .menu__link, .menu__link:not([href]):hover  {
   color: var(--nav-link-color);
@@ -49,9 +74,9 @@ body {
 }
 
 .navbar a, .footer a {
-  font-family: "Space Grotesk", sans-serif;
   letter-spacing: normal;
   color: var(--nav-link-color);
+  font-weight: 600;
 }
 
 .navbar a:hover, .footer a:hover {

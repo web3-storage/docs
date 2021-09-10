@@ -44,7 +44,9 @@
   --nav-link-color: var(--ifm-color-content);
   --nav-link-hover-color: var(--w3storage-yellow);
   --nav-link-active-color: var(--w3storage-yellow);
-  --heading-color: var(--ifm-color-content);  
+  --heading-color: var(--ifm-color-content);
+
+  --ifm-link-color: var(--ifm-color-primary);
 }
 
 /* algolia search */
