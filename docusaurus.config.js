@@ -4,6 +4,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 const sitePlugin = require('./src/plugin')
 const rehypeLoader = require('./src/util/rehypePlugins')
 
+const DEBUG = process.env.NODE_ENV !== 'production'
+
 const COUNTLY_KEY = process.env.COUNTLY_KEY || 'TEST_KEY'
 const COUNTLY_URL = process.env.COUNTLY_URL || 'https://countly.protocol.ai'
 
@@ -22,7 +24,7 @@ module.exports = {
   organizationName: 'web3-storage',
   projectName: 'web3.storage',
   themeConfig: {
-    colorMode: {
+    colorMode: DEBUG ? {} : {
       respectPrefersColorScheme: true,
       disableSwitch: true,
     },
