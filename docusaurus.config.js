@@ -1,7 +1,14 @@
 const lightCodeTheme = require('prism-react-renderer/themes/palenight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
+const sitePlugin = require('./src/plugin')
 const rehypeLoader = require('./src/util/rehypePlugins')
+
+const COUNTLY_KEY = process.env.COUNTLY_KEY || 'TEST_KEY'
+const COUNTLY_URL = process.env.COUNTLY_URL || 'https://countly.protocol.ai'
+
+const ALGOLIA_KEY = process.env.ALGOLIA_KEY || 'TEST_KEY'
+const ALGOLIA_INDEX = process.env.ALGOLIA_INDEX || 'TEST_INDEX'
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -77,9 +84,14 @@ module.exports = {
     },
 
     algolia: {
-      apiKey: 'FIXME',
-      indexName: 'FIXME',
-    }
+      apiKey: ALGOLIA_KEY,
+      indexName: ALGOLIA_INDEX,
+    },
+
+    countly: {
+      appKey: COUNTLY_KEY,
+      countlyUrl: COUNTLY_URL,
+    },
   },
   presets: [
     [
@@ -124,6 +136,8 @@ module.exports = {
           to: '/http-api/',
         }
       ]
-    }]
+    }],
+    
+    sitePlugin,
   ]
 };
