@@ -33,10 +33,13 @@
   --ifm-color-primary-lightest: #febdb6;
   --ifm-code-font-size: 95%;
 
+  /* --ifm-color-secondary: var(--w3storage-green); */
+
   --ifm-background-color: var(--w3storage-background);
   --ifm-background-surface-color: var(--w3storage-red);
   
   --ifm-color-content: var(--w3storage-purple);
+  --ifm-link-color: var(--ifm-color-primary);
 
 
   --feedback-background-color: #ffffff;
@@ -46,7 +49,11 @@
   --nav-link-active-color: var(--w3storage-yellow);
   --heading-color: var(--ifm-color-content);
 
-  --ifm-link-color: var(--ifm-color-primary);
+  
+  --redoc-table-row-bg-color: #ffffff;
+  --redoc-table-row-alt-bg-color: #fafafa;
+  --redoc-response-panel-bg-color: var(--w3storage-blue-desaturated-bright);
+  --redoc-code-block-bg-color: #292d3e;
 }
 
 /* algolia search */
@@ -79,15 +86,20 @@ span.DocSearch-Button-Keys {
    ================================================================================ */
 
 html[data-theme='dark'] {
-  --ifm-background-color: #0b0a45;;
+  --ifm-background-color: var(--w3storage-blue-desaturated);
   --ifm-background-surface-color: var(--w3storage-red-dark);
 
   --ifm-color-content: var(--w3storage-white);
   --ifm-color-content-secondary: var(--w3storage-white);
 
-  --feedback-background-color: var(--w3storage-blue-desaturated);
+  --feedback-background-color: var(--w3storage-blue-desaturated-bright);
   --heading-color: var(--w3storage-yellow);
   --nav-link-color: var(--w3storage-blue-dark);
+
+  --redoc-table-row-bg-color: #ffffff;
+  --redoc-table-row-alt-bg-color: #fafafa;
+  --redoc-code-block-bg-color: #292d3e;
+
 }
 
 /* algolia search */

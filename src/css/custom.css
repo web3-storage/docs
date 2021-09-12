@@ -160,18 +160,3 @@ h4 {
   font-weight: 700;
 }
 
-
-/* Offset anchor links in http api page to account for fixed navbar height.
-   Otherwise, the heading is hidden behind the navbar when you click a link
-   to it.
-*/
-.api-content div[data-section-id] {
-  padding-top: 60px;
-  margin: 0px;
-}
-
-/* remove padding from the inner div to make up for what we added above */
-.api-content div[data-section-id] div:first-child {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}

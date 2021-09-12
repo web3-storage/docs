@@ -94,6 +94,41 @@ module.exports = {
       appKey: COUNTLY_KEY,
       countlyUrl: COUNTLY_URL,
     },
+
+    redoc: {
+      typography: {
+        fontFamily: 'Open Sans, sans-serif',
+        fontSize: '16px',
+        headings: {
+          fontFamily: 'Space Grotesk, sans-serif',
+          fontWeight: '600',
+        }
+      },
+
+      lightThemeColors: {
+        background: '#fff2ec',
+        headers: '#171691',
+        primary: '#fc6553',
+        secondary: '#37b667',
+        text: '#171691',
+        contrastText: '#fff',
+    
+        tableRowBackground: '#ffffff',
+        tableRowAltBackground: '#fafafa',
+    
+        responsePanelBackground: '#3f3f75',
+        codeBlockBackground: '#292d3e',
+      },
+      darkThemeColors: {
+        background: '#2d2d65',
+        headers: '#fde956',
+        text: '#fff',
+    
+        tableRowBackground: '#2d2d65',
+        tableRowAltBackground: '#3f3f75',
+        codeBlockBackground: '#1e1e1e',
+      }
+    },
   },
   presets: [
     [
