@@ -1,9 +1,12 @@
 ---
-title: Query
+title: How to query Web3.Storage
+sidebar_label: Query
 description: Learn how to query Web3.Storage in this quick how-to guide.
 ---
 
-# How to query Web3.Storage
+<!-- imports for code snippets -->
+import CodeSnippet from '../../src/components/CodeSnippet'
+import howtoSource from '!!raw-loader!../../code-snippets/how-to/index.js'
 
 In this how-to guide, you'll learn how to **query Web3.Storage for information about your files.**
 
@@ -23,7 +26,7 @@ npm install web3.storage
 
 To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
 
-<<<@/code-snippets/how-to/index.js#makeStorageClient
+<CodeSnippet lang="js" src={howtoSource} region="makeStorageClient" />
 
 :::tip
 Don't have an access token? Get your Web3.Storage API token in just a few minutes using the instructions in the [quickstart guide.][quickstart]
@@ -33,9 +36,9 @@ Don't have an access token? Get your Web3.Storage API token in just a few minute
 
 The client object's `status` method accepts a CID string and returns a JSON object with information about the upload. Here's how to include it in your project:
 
-<<<@/code-snippets/how-to/index.js#query-status
+<CodeSnippet lang="js" src={howtoSource} region="query-status" />
 
-::: warning IMPORTANT 
+:::warning IMPORTANT 
 **Remember to check the return value!** If you ask for the status of a CID that Web3.Storage doesn't know about, the `status` method will return `undefined` instead of a status object. Make sure to check that a return value exists before trying to use it, as we're doing above with the `if (status)` conditional statement.
 :::
 
@@ -128,7 +131,7 @@ If you haven't yet explored in depth how to store data using Web3.Storage, check
 
 To learn in greater detail how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line, see the [how-to guide on retrieval][howto-retrieve].
 
-[quickstart]: ../README.md#quickstart
+[quickstart]: ../intro.mdx#quickstart
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 [howto-store]: ./store.md
 [howto-retrieve]: ./retrieve.md

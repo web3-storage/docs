@@ -1,9 +1,12 @@
 ---
-title: Work with Content Archives
+title: Working with Content Archives
+sidebar_label: Work with Content Archives
 description: Learn how to work with Content Archives of IPLD data.
 ---
 
-# Working with Content Archives
+<!-- imports for code snippets -->
+import CodeSnippet from '../../src/components/CodeSnippet'
+import dagCborSource from '!!raw-loader!../../code-snippets/how-to/dag-cbor.js'
 
 When you upload files to Web3.Storage using the [client library][reference-client-library], your data is converted into a graph of data structures, which are then packed into a format called a Content Archive (CAR) before being sent to the Web3.Storage service. 
 
@@ -168,27 +171,30 @@ Below are some examples of working with `dag-cbor` data and sending it to Web3.S
 
 First, you'll need to import some things:
 
-<<<@/code-snippets/how-to/dag-cbor.js#imports
+<CodeSnippet lang="js" src={dagCborSource} region="imports" />
 
 Now we'll define a convenience function to encode an IPLD block of CBOR data and hash with SHA2-256:
 
-::: details encodeCborBlock(value)
-<<<@/code-snippets/how-to/dag-cbor.js#encodeCborBlock
-:::
+<details>
+  <summary>encodeCborBlock(value)</summary>
+  <CodeSnippet lang="js" src={dagCborSource} region="encodeCborBlock" />
+</details>
 
 And a function to make a CAR from a collection of blocks and a root CID:
 
-::: details makeCar(rootCID, ipldBlocks)
-<<<@/code-snippets/how-to/dag-cbor.js#makeCar
-:::
+<details>
+  <summary>makeCar(rootCID, ipldBlocks)</summary>
+  <CodeSnippet lang="js" src={dagCborSource} region="makeCar" />
+</details>
 
 #### Storing simple CBOR data
 
 Using the helpers above, you can make a CAR file with a single block of simple CBOR data and send it to Web3.Storage:
 
-::: details simpleCborExample()
-<<<@/code-snippets/how-to/dag-cbor.js#simpleCborExample
-:::
+<details>
+  <summary>simpleCborExample()</summary>
+  <CodeSnippet lang="js" src={dagCborSource} region="simpleCborExample" />
+</details>
 
 If you have the IPFS command line app installed, you can view the object you stored with the [`ipfs dag get` command][ipfs-docs-dag-get], for example:
 
@@ -208,9 +214,10 @@ Note that the example output has been indented with [jq](https://stedolan.github
 
 You can link from one CBOR object to another using CIDs:
 
-::: details cborLinkExample()
-<<<@/code-snippets/how-to/dag-cbor.js#cborLinkExample
-:::
+<details>
+  <summary>cborLinkExample()</summary>
+  <CodeSnippet lang="js" src={dagCborSource} region="cborLinkExample" />
+</details>
 
 As with simple objects, you can use `ipfs dag get` to show the outer object:
 
@@ -246,15 +253,16 @@ First, we'll encode a file into UnixFS format. Normally, this is done by the cli
 
 Here's a helper function to make a UnixFS file and encode it to an IPLD block:
 
-::: details makeUnixFsFile(source)
-<<<@/code-snippets/how-to/dag-cbor.js#makeUnixFsFile
-:::
+<details>
+  <summary>makeUnixFsFile(source)</summary>
+  <CodeSnippet lang="js" src={dagCborSource} region="makeUnixFsFile" />
+</details>
 
 The helper returns a `root` block, which we can link to by CID, as well as a `blocks` array containing the encoded file data. When we create the CAR to send to Web3.Storage, it's important to include all the file blocks as well as the CBOR block.
-
-::: details cborLinkToFileExample()
-<<<@/code-snippets/how-to/dag-cbor.js#cborLinkToFileExample
-:::
+<details>
+  <summary>cborLinkToFileExample()</summary>
+  <CodeSnippet lang="js" src={dagCborSource} region="cborLinkToFileExample" />
+</details>
 
 As before, we can view the root block with `ipfs dag get`:
 
@@ -301,7 +309,7 @@ However, the gateway *can* traverse the IPLD links inside our CBOR object, so yo
 
 [https://bafyreid7hvce4pzcy56s4hwu7xrt3dnnzzfvilzfwsadvf6q4eqild6ndy.ipfs.dweb.link/file](https://bafyreid7hvce4pzcy56s4hwu7xrt3dnnzzfvilzfwsadvf6q4eqild6ndy.ipfs.dweb.link/file).
 
-::: warning Gateway support
+:::warning Gateway support
 Although Web3.Storage supports storing CAR files with `dag-cbor` content by default and can accept other codecs with the `decoders` option, the IPFS HTTP gateway does not currently "speak" these formats and will not return such data over HTTP. Please follow [this issue](https://github.com/ipfs/go-ipfs/issues/8234) to track the development of this feature.
 :::
 

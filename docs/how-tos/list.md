@@ -1,9 +1,14 @@
 ---
-title: List
+title: How to list files uploaded to Web3.Storage
+sidebar_label: List
 description: Learn how to list the files you've uploaded to Web3.Storage in this quick how-to guide.
 ---
 
-# How to list files uploaded to Web3.Storage
+<!-- imports for code snippets -->
+import CodeSnippet from '../../src/components/CodeSnippet'
+import howtoSource from '!!raw-loader!../../code-snippets/how-to/index.js'
+import exampleUpload from '!!raw-loader!../../code-snippets/how-to/example-listing-upload.json.txt'
+
 In this how-to guide, you'll learn about the different ways that you can **list the files that you've uploaded to Web3.Storage.**
 Once you've [stored some files][howto-store] using Web3.Storage, you'll want to see a list of what you've uplodaded. There are two ways you can do this:
 
@@ -29,7 +34,7 @@ npm install web3.storage
 
 To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
 
-<<<@/code-snippets/how-to/index.js#makeStorageClient
+<CodeSnippet lang="js" src={howtoSource} region="makeStorageClient" />
 
 :::tip
 You can use any API token associated with your account, not just the one you originally used to upload your files! See the [Generate API token page][howto-gen-token] for more about token management.
@@ -41,11 +46,11 @@ The `Web3Storage` client object's [`list` method][reference-js-list] returns an 
 
 Here's an example that logs details about each upload to the console:
 
-<<<@/code-snippets/how-to/index.js#listUploads
+<CodeSnippet lang="js" src={howtoSource} region="listUploads" />
 
 Each `Upload` object will look something like this:
 
-<<<@/code-snippets/how-to/example-listing-upload.json
+<CodeSnippet lang="json" src={exampleUpload} />
 
 What do all those fields mean? Here's a summary:
 
@@ -56,7 +61,7 @@ What do all those fields mean? Here's a summary:
 - `pins` contains an array of objects describing the IPFS nodes that have [pinned][ipfs-docs-pinning] the data, making it available for fast retrieval using the IPFS network.
 - `deals` contains an array of objects describing the Filecoin storage providers that have made [storage deals][fil-docs-deals]. These storage providers have committed to storing the data for an agreed period of time.
 
-::: tip Want more details about storage?
+:::tip Want more details about storage?
 The `Upload` objects returned by the `list` method include some basic status information about how the data is stored on IPFS and Filecoin. For more details, including the identity of the storage providers hosting your data, you can [query an upload's status][howto-query] using the `cid`.
 :::
 
@@ -68,14 +73,14 @@ By default, the [`list` method][reference-js-list] returns information about all
 
 Here's an example of fetching the first 10 uploads made on the previous day:
 
-<<<@/code-snippets/how-to/index.js#listWithLimits
+<CodeSnippet lang="js" src={howtoSource} region="listWithLimits" />
 
 [howto-store]: ./store.md
 [howto-retrieve]: ./retrieve.md
 [howto-query]: ./query.md
 [howto-gen-token]: ./generate-api-token.md
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
-[reference-js-client]: ../../reference/client-library.md
+[reference-js-client]: ../reference/client-library.md
 [reference-js-constructor]: ../reference/client-library.md#constructor
 [reference-js-list]: ../reference/client-library.md#list-uploads
 [site-files]: https://web3.storage/files
