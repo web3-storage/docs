@@ -1,9 +1,8 @@
 ---
-title: List directory contents
+title: Listing the contents of an IPFS directory
+sidebar_label: List directory contents
 description: Learn how to list the contents of an IPFS directory without having to fetch the whole thing.
 ---
-
-# Listing the contents of an IPFS directory
 
 When [storing data][howto-store] using the default options, Web3.Storage will wrap your uploaded files in an IPFS directory listing. This preserves the original filenames and provides a nicer user experience when downloading files.
 
