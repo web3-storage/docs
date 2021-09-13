@@ -127,6 +127,7 @@ module.exports = {
       url: COUNTLY_URL
     },
      algolia: {
+       appId: '9ARXAK1OFV',
        apiKey: '358b95b4567a562349f2c806c152fada',
        indexName: 'web3storage-docs'
      },
