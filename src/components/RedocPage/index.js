@@ -22,8 +22,8 @@ const STATIC_SPEC = '/schema.yml'
 
 
 /**
- * The HttpApi component renders a page for the HTTP API reference using Redoc.
- * To fit the Redoc layout into the rest of the site, it forced Redoc to render
+ * The RedocPage component renders a page for the HTTP API reference using Redoc.
+ * To fit the Redoc layout into the rest of the site, it forces Redoc to render
  * the "mobile" layout with responses stacked inline, and it also hides the
  * default Redoc navigation pane. 
  * 
@@ -56,7 +56,7 @@ function RedocPage() {
   useEffect(() => {
     setTimeout(enableTocHighlights, 200)
 
-    // giant hack to override awkward styling of "content type" dropdown label
+    // giant hack to override awkward styling of "content type" label in response panel
     monkeyPatchStyledComponent(DropdownLabel, 'position: static;')
   })
 
