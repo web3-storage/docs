@@ -63,7 +63,7 @@ module.exports = {
           items: [
             {
               label: 'Status',
-              href: 'https://web3-storage.statuspage.io/',
+              href: 'https://status.web3.storage/',
             },
             {
               label: 'Terms of Service',
