@@ -139,10 +139,11 @@ module.exports = {
       key: COUNTLY_KEY,
       url: COUNTLY_URL
     },
-    // algolia: {
-    //   apiKey: '',
-    //   indexName: ''
-    // },
+     algolia: {
+       appId: '9ARXAK1OFV',
+       apiKey: '358b95b4567a562349f2c806c152fada',
+       indexName: 'web3storage-docs'
+     },
   },
   plugins: [
     [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
