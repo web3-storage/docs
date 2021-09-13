@@ -64,7 +64,7 @@ const start = () => {
     return acc;
   }, {});
 
-  const out = path.resolve(__dirname, '..', 'src', 'pages', 'http-api', 'sidebars.json')
+  const out = path.resolve(__dirname, '..', 'src', 'components', 'RedocPage', 'sidebars.json')
   fs.writeFileSync(out, JSON.stringify(docsSidebars));
 };
 

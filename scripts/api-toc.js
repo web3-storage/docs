@@ -43,7 +43,7 @@ function writeToc(toc, filename) {
 
 function main() {
   const specFilename = path.resolve(__dirname, '..', 'static', 'schema.yml')
-  const out = path.resolve(__dirname, '..', 'src', 'pages', 'http-api', 'toc.json')
+  const out = path.resolve(__dirname, '..', 'src', 'components', 'RedocPage', 'toc.json')
 
   console.log('generating table of contents for HTTP API from spec at ', specFilename)
   const toc = makeApiToc(specFilename)

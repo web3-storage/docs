@@ -1,14 +1,15 @@
 
 import React from 'react'
 
-import RedocPage from './redoc'
-import ApiDocLayout from './layout'
+import RedocPage from '../../components/RedocPage'
+import Layout from '@theme/Layout'
 
-function HttpApi() {
+
+function HttpApi(props) {
   return (
-    <ApiDocLayout>
-      <RedocPage />
-    </ApiDocLayout>
+    <Layout {...props} title="HTTP API | Web3.Storage" description="HTTP API Reference docs for Web3.Storage" >
+      <RedocPage  />
+    </Layout>
   )
 }
 
