@@ -1,0 +1,26 @@
+{
+  "unversionedId": "reference/http-api",
+  "id": "reference/http-api",
+  "isDocsHomePage": false,
+  "title": "http-api",
+  "description": "",
+  "source": "@site/docs/reference/http-api.md",
+  "sourceDirName": "reference",
+  "slug": "/reference/http-api",
+  "permalink": "/reference/http-api",
+  "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/reference/http-api.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1539502055,
+  "formattedLastUpdatedAt": "10/14/2018",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "JavaScript utility libraries",
+    "permalink": "/reference/js-utilities"
+  },
+  "next": {
+    "title": "Help & support",
+    "permalink": "/community/help-and-support"
+  }
+}

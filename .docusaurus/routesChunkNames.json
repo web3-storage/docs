@@ -1,0 +1,81 @@
+{
+  "/http-api/-0cd": {
+    "component": "7d1e22ff",
+    "config": "5e9f5e1a"
+  },
+  "/search-82a": {
+    "component": "0f055f58"
+  },
+  "/tags-d7a": {
+    "component": "3720c009",
+    "tags": "55960ee5"
+  },
+  "/-fa3": {
+    "component": "1be78505",
+    "versionMetadata": "935f2afb"
+  },
+  "/-bab": {
+    "component": "17896441",
+    "content": "0e384e19"
+  },
+  "/community/help-and-support-881": {
+    "component": "17896441",
+    "content": "e779c299"
+  },
+  "/concepts/content-addressing-3d5": {
+    "component": "17896441",
+    "content": "c1dae1db"
+  },
+  "/concepts/decentralized-storage-22f": {
+    "component": "17896441",
+    "content": "25f10ba4"
+  },
+  "/examples/getting-started-ac4": {
+    "component": "17896441",
+    "content": "aae6473c"
+  },
+  "/examples/image-gallery-dd9": {
+    "component": "17896441",
+    "content": "e7c70168"
+  },
+  "/how-tos/generate-api-token-f41": {
+    "component": "17896441",
+    "content": "f3840bdd"
+  },
+  "/how-tos/list-d79": {
+    "component": "17896441",
+    "content": "83b6496d"
+  },
+  "/how-tos/list-directory-contents-121": {
+    "component": "17896441",
+    "content": "20d36b43"
+  },
+  "/how-tos/query-78e": {
+    "component": "17896441",
+    "content": "f8a7d68a"
+  },
+  "/how-tos/retrieve-887": {
+    "component": "17896441",
+    "content": "992b14aa"
+  },
+  "/how-tos/store-bf5": {
+    "component": "17896441",
+    "content": "995c4428"
+  },
+  "/how-tos/troubleshooting-455": {
+    "component": "17896441",
+    "content": "75bdeed9"
+  },
+  "/how-tos/work-with-car-files-8ed": {
+    "component": "17896441",
+    "content": "b5195524"
+  },
+  "/reference/client-library-2d1": {
+    "component": "17896441",
+    "content": "453a04ad"
+  },
+  "/reference/js-utilities-26f": {
+    "component": "17896441",
+    "content": "a0f44ed8"
+  }
+}

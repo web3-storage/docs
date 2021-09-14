@@ -1,0 +1,30 @@
+{
+  "unversionedId": "how-tos/store",
+  "id": "how-tos/store",
+  "isDocsHomePage": false,
+  "title": "How to store data using Web3.Storage",
+  "description": "Learn how to store your data on the decentralized web with Web3.Storage.",
+  "source": "@site/docs/how-tos/store.md",
+  "sourceDirName": "how-tos",
+  "slug": "/how-tos/store",
+  "permalink": "/how-tos/store",
+  "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/store.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1631558474,
+  "formattedLastUpdatedAt": "9/13/2021",
+  "frontMatter": {
+    "title": "How to store data using Web3.Storage",
+    "sidebar_label": "Store",
+    "description": "Learn how to store your data on the decentralized web with Web3.Storage."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Welcome",
+    "permalink": "/"
+  },
+  "next": {
+    "title": "Retrieve",
+    "permalink": "/how-tos/retrieve"
+  }
+}

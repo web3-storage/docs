@@ -1,0 +1,634 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "versionLabel": "Next",
+          "versionPath": "/",
+          "tagsPath": "/tags",
+          "versionEditUrl": "https://github.com/web3-storage/docs/edit/main/docs",
+          "versionEditUrlLocalized": "https://github.com/web3-storage/docs/edit/main/i18n/en/docusaurus-plugin-content-docs/current",
+          "versionBanner": null,
+          "versionBadge": false,
+          "versionClassName": "docs-version-current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/yusef/work/projects/web3storage/web3-storage-docs/sidebars.js",
+          "contentPath": "/Users/yusef/work/projects/web3storage/web3-storage-docs/docs",
+          "contentPathLocalized": "/Users/yusef/work/projects/web3storage/web3-storage-docs/i18n/en/docusaurus-plugin-content-docs/current",
+          "mainDocId": "intro",
+          "sidebars": {
+            "docs": [
+              {
+                "type": "doc",
+                "id": "intro"
+              },
+              {
+                "type": "category",
+                "label": "How-tos",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "how-tos/store"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "how-tos/retrieve"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "how-tos/query"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "how-tos/list"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "how-tos/list-directory-contents"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "how-tos/work-with-car-files"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "how-tos/generate-api-token"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "how-tos/troubleshooting"
+                  }
+                ],
+                "collapsible": false,
+                "collapsed": false
+              },
+              {
+                "type": "category",
+                "label": "Concepts",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "concepts/content-addressing"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "concepts/decentralized-storage"
+                  }
+                ],
+                "collapsible": false,
+                "collapsed": false
+              },
+              {
+                "type": "category",
+                "label": "Examples",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "examples/getting-started"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "examples/image-gallery"
+                  }
+                ],
+                "collapsible": false,
+                "collapsed": false
+              },
+              {
+                "type": "category",
+                "label": "Reference",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "reference/client-library"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "reference/js-utilities"
+                  },
+                  {
+                    "type": "link",
+                    "label": "HTTP API",
+                    "href": "/http-api/"
+                  }
+                ],
+                "collapsible": false,
+                "collapsed": false
+              },
+              {
+                "type": "category",
+                "label": "Community",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "community/help-and-support"
+                  }
+                ],
+                "collapsible": false,
+                "collapsed": false
+              }
+            ]
+          },
+          "docs": [
+            {
+              "unversionedId": "community/help-and-support",
+              "id": "community/help-and-support",
+              "isDocsHomePage": false,
+              "title": "Help & support",
+              "description": "Get help using or building with the Web3.Storage service.",
+              "source": "@site/docs/community/help-and-support.md",
+              "sourceDirName": "community",
+              "slug": "/community/help-and-support",
+              "permalink": "/community/help-and-support",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/community/help-and-support.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Help & support",
+                "description": "Get help using or building with the Web3.Storage service."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "JavaScript utility libraries",
+                "permalink": "/reference/js-utilities"
+              }
+            },
+            {
+              "unversionedId": "concepts/content-addressing",
+              "id": "concepts/content-addressing",
+              "isDocsHomePage": false,
+              "title": "Content addressing",
+              "description": "A conceptual overview of content-based addressing for storing and locating files on a decentralized network with Web3.storage.",
+              "source": "@site/docs/concepts/content-addressing.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/content-addressing",
+              "permalink": "/concepts/content-addressing",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/concepts/content-addressing.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Content addressing",
+                "description": "A conceptual overview of content-based addressing for storing and locating files on a decentralized network with Web3.storage."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Troubleshooting",
+                "permalink": "/how-tos/troubleshooting"
+              },
+              "next": {
+                "title": "Decentralized storage",
+                "permalink": "/concepts/decentralized-storage"
+              }
+            },
+            {
+              "unversionedId": "concepts/decentralized-storage",
+              "id": "concepts/decentralized-storage",
+              "isDocsHomePage": false,
+              "title": "Decentralized storage",
+              "description": "Learn about decentralized storage works and how it's key to Web3.Storage.",
+              "source": "@site/docs/concepts/decentralized-storage.md",
+              "sourceDirName": "concepts",
+              "slug": "/concepts/decentralized-storage",
+              "permalink": "/concepts/decentralized-storage",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/concepts/decentralized-storage.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Decentralized storage",
+                "description": "Learn about decentralized storage works and how it's key to Web3.Storage."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Content addressing",
+                "permalink": "/concepts/content-addressing"
+              },
+              "next": {
+                "title": "Getting started",
+                "permalink": "/examples/getting-started"
+              }
+            },
+            {
+              "unversionedId": "examples/getting-started",
+              "id": "examples/getting-started",
+              "isDocsHomePage": false,
+              "title": "Getting started",
+              "description": "Learn Web3.Storage by example with sample applications and starter projects.",
+              "source": "@site/docs/examples/getting-started.md",
+              "sourceDirName": "examples",
+              "slug": "/examples/getting-started",
+              "permalink": "/examples/getting-started",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/examples/getting-started.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Getting started",
+                "description": "Learn Web3.Storage by example with sample applications and starter projects."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Decentralized storage",
+                "permalink": "/concepts/decentralized-storage"
+              },
+              "next": {
+                "title": "Image gallery",
+                "permalink": "/examples/image-gallery"
+              }
+            },
+            {
+              "unversionedId": "examples/image-gallery",
+              "id": "examples/image-gallery",
+              "isDocsHomePage": false,
+              "title": "Image gallery example",
+              "description": "Learn about Web3.Storage by walking through the code for a simple image gallery app that runs entirely in the browser.",
+              "source": "@site/docs/examples/image-gallery.md",
+              "sourceDirName": "examples",
+              "slug": "/examples/image-gallery",
+              "permalink": "/examples/image-gallery",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/examples/image-gallery.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Image gallery example",
+                "sidebar_label": "Image gallery",
+                "description": "Learn about Web3.Storage by walking through the code for a simple image gallery app that runs entirely in the browser."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Getting started",
+                "permalink": "/examples/getting-started"
+              },
+              "next": {
+                "title": "JavaScript client library",
+                "permalink": "/reference/client-library"
+              }
+            },
+            {
+              "unversionedId": "how-tos/generate-api-token",
+              "id": "how-tos/generate-api-token",
+              "isDocsHomePage": false,
+              "title": "How to generate an API token",
+              "description": "Learn how to get an API token for using Web3.Storage programmatically in this quick how-to guide.",
+              "source": "@site/docs/how-tos/generate-api-token.md",
+              "sourceDirName": "how-tos",
+              "slug": "/how-tos/generate-api-token",
+              "permalink": "/how-tos/generate-api-token",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/generate-api-token.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "How to generate an API token",
+                "sidebar_label": "Generate an API token",
+                "description": "Learn how to get an API token for using Web3.Storage programmatically in this quick how-to guide."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Work with Content Archives",
+                "permalink": "/how-tos/work-with-car-files"
+              },
+              "next": {
+                "title": "Troubleshooting",
+                "permalink": "/how-tos/troubleshooting"
+              }
+            },
+            {
+              "unversionedId": "how-tos/list",
+              "id": "how-tos/list",
+              "isDocsHomePage": false,
+              "title": "How to list files uploaded to Web3.Storage",
+              "description": "Learn how to list the files you've uploaded to Web3.Storage in this quick how-to guide.",
+              "source": "@site/docs/how-tos/list.md",
+              "sourceDirName": "how-tos",
+              "slug": "/how-tos/list",
+              "permalink": "/how-tos/list",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/list.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "How to list files uploaded to Web3.Storage",
+                "sidebar_label": "List",
+                "description": "Learn how to list the files you've uploaded to Web3.Storage in this quick how-to guide."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Query",
+                "permalink": "/how-tos/query"
+              },
+              "next": {
+                "title": "List directory contents",
+                "permalink": "/how-tos/list-directory-contents"
+              }
+            },
+            {
+              "unversionedId": "how-tos/list-directory-contents",
+              "id": "how-tos/list-directory-contents",
+              "isDocsHomePage": false,
+              "title": "Listing the contents of an IPFS directory",
+              "description": "Learn how to list the contents of an IPFS directory without having to fetch the whole thing.",
+              "source": "@site/docs/how-tos/list-directory-contents.md",
+              "sourceDirName": "how-tos",
+              "slug": "/how-tos/list-directory-contents",
+              "permalink": "/how-tos/list-directory-contents",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/list-directory-contents.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Listing the contents of an IPFS directory",
+                "sidebar_label": "List directory contents",
+                "description": "Learn how to list the contents of an IPFS directory without having to fetch the whole thing."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "List",
+                "permalink": "/how-tos/list"
+              },
+              "next": {
+                "title": "Work with Content Archives",
+                "permalink": "/how-tos/work-with-car-files"
+              }
+            },
+            {
+              "unversionedId": "how-tos/query",
+              "id": "how-tos/query",
+              "isDocsHomePage": false,
+              "title": "How to query Web3.Storage",
+              "description": "Learn how to query Web3.Storage in this quick how-to guide.",
+              "source": "@site/docs/how-tos/query.md",
+              "sourceDirName": "how-tos",
+              "slug": "/how-tos/query",
+              "permalink": "/how-tos/query",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/query.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "How to query Web3.Storage",
+                "sidebar_label": "Query",
+                "description": "Learn how to query Web3.Storage in this quick how-to guide."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Retrieve",
+                "permalink": "/how-tos/retrieve"
+              },
+              "next": {
+                "title": "List",
+                "permalink": "/how-tos/list"
+              }
+            },
+            {
+              "unversionedId": "how-tos/retrieve",
+              "id": "how-tos/retrieve",
+              "isDocsHomePage": false,
+              "title": "How to retrieve data from Web3.Storage",
+              "description": "Learn how to retrieve data stored using Web3.Storage in this quick how-to guide.",
+              "source": "@site/docs/how-tos/retrieve.md",
+              "sourceDirName": "how-tos",
+              "slug": "/how-tos/retrieve",
+              "permalink": "/how-tos/retrieve",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/retrieve.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "How to retrieve data from Web3.Storage",
+                "sidebar_label": "Retrieve",
+                "description": "Learn how to retrieve data stored using Web3.Storage in this quick how-to guide."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Store",
+                "permalink": "/how-tos/store"
+              },
+              "next": {
+                "title": "Query",
+                "permalink": "/how-tos/query"
+              }
+            },
+            {
+              "unversionedId": "how-tos/store",
+              "id": "how-tos/store",
+              "isDocsHomePage": false,
+              "title": "How to store data using Web3.Storage",
+              "description": "Learn how to store your data on the decentralized web with Web3.Storage.",
+              "source": "@site/docs/how-tos/store.md",
+              "sourceDirName": "how-tos",
+              "slug": "/how-tos/store",
+              "permalink": "/how-tos/store",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/store.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "How to store data using Web3.Storage",
+                "sidebar_label": "Store",
+                "description": "Learn how to store your data on the decentralized web with Web3.Storage."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Welcome",
+                "permalink": "/"
+              },
+              "next": {
+                "title": "Retrieve",
+                "permalink": "/how-tos/retrieve"
+              }
+            },
+            {
+              "unversionedId": "how-tos/troubleshooting",
+              "id": "how-tos/troubleshooting",
+              "isDocsHomePage": false,
+              "title": "Troubleshooting",
+              "description": "A collection of common issues for new developers, and solutions to those problems.",
+              "source": "@site/docs/how-tos/troubleshooting.md",
+              "sourceDirName": "how-tos",
+              "slug": "/how-tos/troubleshooting",
+              "permalink": "/how-tos/troubleshooting",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/troubleshooting.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Troubleshooting",
+                "description": "A collection of common issues for new developers, and solutions to those problems."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Generate an API token",
+                "permalink": "/how-tos/generate-api-token"
+              },
+              "next": {
+                "title": "Content addressing",
+                "permalink": "/concepts/content-addressing"
+              }
+            },
+            {
+              "unversionedId": "how-tos/work-with-car-files",
+              "id": "how-tos/work-with-car-files",
+              "isDocsHomePage": false,
+              "title": "Working with Content Archives",
+              "description": "Learn how to work with Content Archives of IPLD data.",
+              "source": "@site/docs/how-tos/work-with-car-files.md",
+              "sourceDirName": "how-tos",
+              "slug": "/how-tos/work-with-car-files",
+              "permalink": "/how-tos/work-with-car-files",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/work-with-car-files.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Working with Content Archives",
+                "sidebar_label": "Work with Content Archives",
+                "description": "Learn how to work with Content Archives of IPLD data."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "List directory contents",
+                "permalink": "/how-tos/list-directory-contents"
+              },
+              "next": {
+                "title": "Generate an API token",
+                "permalink": "/how-tos/generate-api-token"
+              }
+            },
+            {
+              "unversionedId": "intro",
+              "id": "intro",
+              "isDocsHomePage": false,
+              "title": "Welcome",
+              "description": "Learn how to use Web3.Storage to decentralize your data storage without all the complicated details.",
+              "source": "@site/docs/intro.md",
+              "sourceDirName": ".",
+              "slug": "/",
+              "permalink": "/",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/intro.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "Welcome",
+                "description": "Learn how to use Web3.Storage to decentralize your data storage without all the complicated details.",
+                "id": "intro",
+                "slug": "/"
+              },
+              "sidebar": "docs",
+              "next": {
+                "title": "Store",
+                "permalink": "/how-tos/store"
+              }
+            },
+            {
+              "unversionedId": "reference/client-library",
+              "id": "reference/client-library",
+              "isDocsHomePage": false,
+              "title": "JavaScript client library reference",
+              "description": "Integrate Web3.Storage into your code using the JavaScript client library.",
+              "source": "@site/docs/reference/client-library.md",
+              "sourceDirName": "reference",
+              "slug": "/reference/client-library",
+              "permalink": "/reference/client-library",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/reference/client-library.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "JavaScript client library reference",
+                "sidebar_label": "JavaScript client library",
+                "description": "Integrate Web3.Storage into your code using the JavaScript client library."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "Image gallery",
+                "permalink": "/examples/image-gallery"
+              },
+              "next": {
+                "title": "JavaScript utility libraries",
+                "permalink": "/reference/js-utilities"
+              }
+            },
+            {
+              "unversionedId": "reference/js-utilities",
+              "id": "reference/js-utilities",
+              "isDocsHomePage": false,
+              "title": "JavaScript utility libraries",
+              "description": "Learn about some helpful utility libraries that make working with Web3.Storage easier.",
+              "source": "@site/docs/reference/js-utilities.md",
+              "sourceDirName": "reference",
+              "slug": "/reference/js-utilities",
+              "permalink": "/reference/js-utilities",
+              "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/reference/js-utilities.md",
+              "tags": [],
+              "version": "current",
+              "lastUpdatedAt": 1539502055,
+              "formattedLastUpdatedAt": "10/14/2018",
+              "frontMatter": {
+                "title": "JavaScript utility libraries",
+                "description": "Learn about some helpful utility libraries that make working with Web3.Storage easier."
+              },
+              "sidebar": "docs",
+              "previous": {
+                "title": "JavaScript client library",
+                "permalink": "/reference/client-library"
+              },
+              "next": {
+                "title": "Help & support",
+                "permalink": "/community/help-and-support"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/http-api/",
+        "source": "@site/src/pages/http-api/index.js"
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {
+    "default": null
+  },
+  "docusaurus-theme-classic": {
+    "default": null
+  },
+  "docusaurus-theme-search-algolia": {
+    "default": null
+  },
+  "docusaurus-theme-redoc": {
+    "default": null
+  },
+  "docusaurus-plugin-client-redirects": {
+    "default": null
+  },
+  "docusaurus-plugin-web3storage-docs": {
+    "default": null
+  }
+}

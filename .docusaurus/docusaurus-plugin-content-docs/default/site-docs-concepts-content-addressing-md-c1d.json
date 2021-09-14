@@ -1,0 +1,29 @@
+{
+  "unversionedId": "concepts/content-addressing",
+  "id": "concepts/content-addressing",
+  "isDocsHomePage": false,
+  "title": "Content addressing",
+  "description": "A conceptual overview of content-based addressing for storing and locating files on a decentralized network with Web3.storage.",
+  "source": "@site/docs/concepts/content-addressing.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/content-addressing",
+  "permalink": "/concepts/content-addressing",
+  "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/concepts/content-addressing.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1627506173,
+  "formattedLastUpdatedAt": "7/28/2021",
+  "frontMatter": {
+    "title": "Content addressing",
+    "description": "A conceptual overview of content-based addressing for storing and locating files on a decentralized network with Web3.storage."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Troubleshooting",
+    "permalink": "/how-tos/troubleshooting"
+  },
+  "next": {
+    "title": "Decentralized storage",
+    "permalink": "/concepts/decentralized-storage"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "unversionedId": "community/help-and-support",
+  "id": "community/help-and-support",
+  "isDocsHomePage": false,
+  "title": "Help & support",
+  "description": "Get help using or building with the Web3.Storage service.",
+  "source": "@site/docs/community/help-and-support.md",
+  "sourceDirName": "community",
+  "slug": "/community/help-and-support",
+  "permalink": "/community/help-and-support",
+  "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/community/help-and-support.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1627913701,
+  "formattedLastUpdatedAt": "8/2/2021",
+  "frontMatter": {
+    "title": "Help & support",
+    "description": "Get help using or building with the Web3.Storage service."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "JavaScript utility libraries",
+    "permalink": "/reference/js-utilities"
+  }
+}

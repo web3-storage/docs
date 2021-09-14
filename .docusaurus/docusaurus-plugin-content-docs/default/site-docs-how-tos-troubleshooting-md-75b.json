@@ -1,0 +1,29 @@
+{
+  "unversionedId": "how-tos/troubleshooting",
+  "id": "how-tos/troubleshooting",
+  "isDocsHomePage": false,
+  "title": "Troubleshooting",
+  "description": "A collection of common issues for new developers, and solutions to those problems.",
+  "source": "@site/docs/how-tos/troubleshooting.md",
+  "sourceDirName": "how-tos",
+  "slug": "/how-tos/troubleshooting",
+  "permalink": "/how-tos/troubleshooting",
+  "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/troubleshooting.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1630604246,
+  "formattedLastUpdatedAt": "9/2/2021",
+  "frontMatter": {
+    "title": "Troubleshooting",
+    "description": "A collection of common issues for new developers, and solutions to those problems."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Generate an API token",
+    "permalink": "/how-tos/generate-api-token"
+  },
+  "next": {
+    "title": "Content addressing",
+    "permalink": "/concepts/content-addressing"
+  }
+}

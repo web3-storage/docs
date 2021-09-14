@@ -1,0 +1,30 @@
+{
+  "unversionedId": "reference/client-library",
+  "id": "reference/client-library",
+  "isDocsHomePage": false,
+  "title": "JavaScript client library reference",
+  "description": "Integrate Web3.Storage into your code using the JavaScript client library.",
+  "source": "@site/docs/reference/client-library.md",
+  "sourceDirName": "reference",
+  "slug": "/reference/client-library",
+  "permalink": "/reference/client-library",
+  "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/reference/client-library.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1631558474,
+  "formattedLastUpdatedAt": "9/13/2021",
+  "frontMatter": {
+    "title": "JavaScript client library reference",
+    "sidebar_label": "JavaScript client library",
+    "description": "Integrate Web3.Storage into your code using the JavaScript client library."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Image gallery",
+    "permalink": "/examples/image-gallery"
+  },
+  "next": {
+    "title": "JavaScript utility libraries",
+    "permalink": "/reference/js-utilities"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "unversionedId": "concepts/decentralized-storage",
+  "id": "concepts/decentralized-storage",
+  "isDocsHomePage": false,
+  "title": "Decentralized storage",
+  "description": "Learn about decentralized storage works and how it's key to Web3.Storage.",
+  "source": "@site/docs/concepts/decentralized-storage.md",
+  "sourceDirName": "concepts",
+  "slug": "/concepts/decentralized-storage",
+  "permalink": "/concepts/decentralized-storage",
+  "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/concepts/decentralized-storage.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1627506173,
+  "formattedLastUpdatedAt": "7/28/2021",
+  "frontMatter": {
+    "title": "Decentralized storage",
+    "description": "Learn about decentralized storage works and how it's key to Web3.Storage."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Content addressing",
+    "permalink": "/concepts/content-addressing"
+  },
+  "next": {
+    "title": "Getting started",
+    "permalink": "/examples/getting-started"
+  }
+}

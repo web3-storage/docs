@@ -1,0 +1,30 @@
+{
+  "unversionedId": "how-tos/retrieve",
+  "id": "how-tos/retrieve",
+  "isDocsHomePage": false,
+  "title": "How to retrieve data from Web3.Storage",
+  "description": "Learn how to retrieve data stored using Web3.Storage in this quick how-to guide.",
+  "source": "@site/docs/how-tos/retrieve.md",
+  "sourceDirName": "how-tos",
+  "slug": "/how-tos/retrieve",
+  "permalink": "/how-tos/retrieve",
+  "editUrl": "https://github.com/web3-storage/docs/edit/main/docs/how-tos/retrieve.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1631558474,
+  "formattedLastUpdatedAt": "9/13/2021",
+  "frontMatter": {
+    "title": "How to retrieve data from Web3.Storage",
+    "sidebar_label": "Retrieve",
+    "description": "Learn how to retrieve data stored using Web3.Storage in this quick how-to guide."
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Store",
+    "permalink": "/how-tos/store"
+  },
+  "next": {
+    "title": "Query",
+    "permalink": "/how-tos/query"
+  }
+}
