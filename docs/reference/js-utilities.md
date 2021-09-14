@@ -39,7 +39,7 @@ If you prefer to work with CARs directly, see the how-to guide on [working with 
 
 [concepts-content-addressing]: ../concepts/content-addressing.md
 [reference-http-api]: https://docs.web3.storage/http-api.html
-[howto-car]: ../how-to/work-with-car-files.md
+[howto-car]: ../how-tos/work-with-car-files.md
 
 [files-from-path]: https://github.com/web3-storage/files-from-path
 [ipfs-car]: https://github.com/web3-storage/ipfs-car
