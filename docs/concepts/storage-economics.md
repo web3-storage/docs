@@ -9,7 +9,7 @@ Web3.Storage offers a simple interface that allows users and developers to take 
 
 ![An animation showing the increased profits available to Filecoin storage providers who store useful data.](./images/web3-storage-fil-plus.gif)
 
-Filecoin storage providers commit their hard drive capacity to the Filecoin network, and earn significant block rewards for doing so. This translates into real world profits for storage providers, which incentivizes them to continue committing additional hard disk space to the Filecoin network.
+Filecoin storage providers commit their hard drive capacity to the Filecoin network, and earn significant block rewards for doing so. This translates into real-world profits for storage providers, which incentivizes them to continue committing additional hard disk space to the Filecoin network.
 
 However, when storage providers are storing data from Filecoin users, their likelihood of winning block rewards goes up by a big factor 一 **10x**! Because Web3.Storage participates in the [Filecoin Plus][fil-plus] program, all data uploaded through the service is eligible for this 10x reward multiplier. This is such a powerful incentive for Filecoin storage providers to store user data that they tend to be willing to offer free storage and retrieval services in order to get this block reward multiple.
 
