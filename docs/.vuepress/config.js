@@ -147,6 +147,7 @@ module.exports = {
   },
   plugins: [
     [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
+    [require('./plugins/web3-storage')],
     [
       'vuepress-plugin-clean-urls',
       {

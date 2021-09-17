@@ -44,6 +44,8 @@ import AlgoliaSearchBox from '@parent-theme/components/AlgoliaSearchBox'
 import SearchBox from '@SearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
+import { Magic } from 'magic-sdk';
+
 
 export default {
   name: 'Navbar',
@@ -79,6 +81,11 @@ export default {
     }
     handleLinksWrapWidth()
     window.addEventListener('resize', handleLinksWrapWidth, false)
+
+    const MAGIC_LINK_PUB_KEY = process.env.MAGIC_LINK_PUB_KEY || ''
+    const m = new Magic(MAGIC_LINK_PUB_KEY);
+
+    m.user.isLoggedIn().then(isLoggedIn => console.log('is user logged in?', isLoggedIn))
   },
   methods: {
     onHomeLinkClick ({ currentTarget }) {
