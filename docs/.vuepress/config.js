@@ -92,7 +92,8 @@ module.exports = {
             collapsable: false,
             children: [
                 '/concepts/content-addressing',
-                '/concepts/decentralized-storage'
+                '/concepts/decentralized-storage',
+                '/concepts/storage-economics',
             ]
           },
           {
