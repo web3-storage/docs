@@ -146,7 +146,7 @@ See the [API reference documentation](https://pkg.go.dev/github.com/ipld/go-car/
 
 ## Splitting CARs for upload to Web3.Storage
 
-The Web3.Storage [HTTP API][reference-http-api] accepts CAR uploads up to 100 MB in size, but the JavaScript client uses the HTTP API to upload files of any size. The client manages to do this by splitting CARs into chunks of less than 100 MB each and uploading each chunk separately.
+The Web3.Storage [HTTP API][reference-http-api] accepts CAR uploads up to 100 MB in size, but the JavaScript client uses the HTTP API to upload files of _any_ size. The client manages to do this by splitting CARs into chunks of less than 100 MB each and uploading each chunk separately.
 
 The main tool available for splitting and joining CARs is called `carbites`, which has implementations in JavaScript and Go. The JavaScript implementation includes a command-line version that allows you to split and join CARs from your terminal or favorite scripting language.
 
