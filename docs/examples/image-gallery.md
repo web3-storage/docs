@@ -1,9 +1,12 @@
 ---
-title: Image gallery
+title: Image gallery example
+sidebar_label: Image gallery
 description: Learn about Web3.Storage by walking through the code for a simple image gallery app that runs entirely in the browser.
 ---
 
-# Image gallery example
+<!-- imports for code snippets -->
+import CodeSnippet from '../../src/components/CodeSnippet'
+import storageJsSource from '!!raw-loader!../../code-snippets/external/example-image-gallery/src/js/storage.js'
 
 To demonstrate how to use the Web3.Storage JavaScript library to build an application, we've written a simple image gallery app for uploading your favorite memes and GIFs to the decentralized web.
 
@@ -37,11 +40,12 @@ When you first start the app, it will check your browser's local storage for a s
 
 Before saving the token, we call a `validateToken` function that tries to create a new Web3.Storage client and call the [`list` method][reference-js-list]. This will throw an authorization error if the token is invalid, causing `validateToken` to return `false`. If `validateToken` returns `true`, we save the token to local storage and prompt the user to upload an image.
 
-::: details validateToken(token)
-<<<@/code-snippets/external/example-image-gallery/src/js/storage.js#validateToken
-:::
+<details>
+  <summary>validateToken(token)</summary>
+  <CodeSnippet lang="js" src={storageJsSource} region="validateToken" />
+</details>
 
-::: warning Keep it safe, and keep it secret!
+:::warning Keep it safe, and keep it secret!
 Your API token gives access to your Web3.Storage account, so you shouldn't include a token directly into your front-end source code. This example has the user paste in their own token, which allows the app to run completely from the browser without hard-coding any tokens into the source code.. Alternatively, you could run a small backend service that manages the token and proxies calls from your users to Web3.Storage.
 :::
 
@@ -51,9 +55,10 @@ To upload images, we use the [`put` method][reference-js-put] to store a `File` 
 
 To identify our files for display in the image gallery, we use the `name` parameter to tag our uploads with the prefix `ImageGallery`. Later we'll filter out uploads that don't have the prefix when we're building the image gallery view.
 
-::: details storeImage(imageFile, caption)
-<<<@/code-snippets/external/example-image-gallery/src/js/storage.js#storeImage
-:::
+<details>
+  <summary>storeImage(imageFile, caption)</summary>
+  <CodeSnippet lang="js" src={storageJsSource} region="storeImage" />
+</details>
 
 Note that the `storeImage` function uses a few utility functions that aren't included in this walkthrough. To see the details of the `jsonFile`, `getSavedToken`, `showMessage`, `showLink`, and `makeGatewayURL` functions, see [src/js/helpers.js][github-helpers.js]
 
@@ -61,19 +66,21 @@ Note that the `storeImage` function uses a few utility functions that aren't inc
 
 To build the image gallery UI, we use the Web3.Storage client's [`list` method][reference-js-list] to get metadata about each upload, filtering out any that don't have our `ImageGallery` name prefix.
 
-::: details listImageMetadata()
-<<<@/code-snippets/external/example-image-gallery/src/js/storage.js#listImageMetadata
-:::
+<details>
+  <summary>listImageMetadata()</summary>
+  <CodeSnippet lang="js" src={storageJsSource} region="listImageMetadata" />
+</details>
 
 For each matching upload, we call `getImageMetadata` to fetch the `metadata.json` file that was stored along with each image. The contents of `metadata.json` are returned along with an IPFS gateway URL to the image file, which can be used to display the images in the UI.
 
 The `getImageMetadata` function simply requests the `metadata.json` file from an IPFS HTTP gateway and parses the JSON content.
 
-::: details getImageMetadata(cid)
-<<<@/code-snippets/external/example-image-gallery/src/js/storage.js#getImageMetadata
-:::
+<details>
+<summary>getImageMetadata(cid)</summary>
+<CodeSnippet lang="js" src={storageJsSource} region="getImageMetadata" />
+</details>
 
-::: warning State management at scale
+:::warning State management at scale
 Listing all the uploads and filtering out the ones we don't want works for a simple example like this, but this approach will degrade in performance once a lot of data has been uploaded. A real application should use a database or other state management solution instead.
 :::
 

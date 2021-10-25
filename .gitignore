@@ -13,3 +13,11 @@ yarn-error.log*
 
 # editor
 .vscode
+
+.docusaurus
+build
+
+# ignore generated files for http api component
+src/components/RedocPage/sidebars.json
+src/components/RedocPage/toc.json
+

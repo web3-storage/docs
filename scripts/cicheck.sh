@@ -77,16 +77,16 @@ fi
 echo "Run npm install"
 npm install
 echo "Run docs build"
-BUILDRESULT=$(npm run docs:build 2>&1)
+BUILDRESULT=$(npm run build 2>&1)
 
 if [[ $? -eq 0 ]]; then
-  echo "Vuepress build was successful!"
+  echo "Docusaurus build was successful!"
   COMMENT="$COMMENT
-- Vuepress build was successful!"
+- Docusaurus build was successful!"
 else
-  echo "Vuepress build failed. Creating PR comment with the details."
+  echo "Docusaurus build failed. Creating PR comment with the details."
   COMMENT="$COMMENT
-- Vuepress build failed...
+- Docusaurus build failed...
 
 \`\`\`
 $BUILDRESULT
