@@ -10,7 +10,7 @@ const COUNTLY_KEY = process.env.COUNTLY_KEY || 'TEST_KEY'
 const COUNTLY_URL = process.env.COUNTLY_URL || 'https://countly.protocol.ai'
 
 const ALGOLIA_KEY = process.env.ALGOLIA_KEY || '358b95b4567a562349f2c806c152fada'
-const ALGOLIA_INDEX = process.env.ALGOLIA_INDEX || 'web3storage-docs'
+const ALGOLIA_INDEX = process.env.ALGOLIA_INDEX || 'web3-storage-docusaurus'
 const ALGOLIA_APP_ID = process.env.ALGOLIA_APP_ID || '9ARXAK1OFV'
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
