@@ -38,6 +38,7 @@ module.exports = {
       items: [
         'reference/js-client-library',
         'reference/js-utilities',
+        'reference/go-client-library',
         {
           type: 'link',
           label: 'HTTP API',
