@@ -173,6 +173,57 @@ Tag code blocks with the syntax of the core they are presenting:
     ```
 ````
 
+
+##### Importing code snippets from files
+
+This project includes a `<CodeSnippet>` component that supports extracting named regions from a source file, so that you can optionally display just a small part of a larger file.
+
+To use it, you need to add a bit of javascript to your Markdown file to import the component and the contents of the file to display:
+
+```js
+import CodeSnippet from '@theme/CodeSnippet'
+import MyCodeSnippet from '!!raw-loader!./code-snippets/example.js'
+```
+
+The first line imports the `CodeSnippet` component. You'll only need to do this once, even if you're importing multiple files.
+
+The second line imports a file from `./code-snippets/example.js`, relative to the root directory of the repository. The `!!raw-loader!` prefix is important; it makes sure the source code is imported as text and not interpreted as JavaScript code. 
+
+Once you've imported the component and source file you want to show, use a `<CodeSnippet />` tag to display the snippet:
+
+```js
+<CodeSnippet src={MyCodeSnippet} lang='javascript' />
+```
+
+To only show a portion of the file, add [VSCode `#region` comments](https://marketplace.visualstudio.com/items?itemName=maptz.regionfolder) to your source file around the region you want to include, and use the `region` prop in your `<CodeSnippet />` tag:
+
+`code-snippets/example.js`:
+
+```js
+function example() {
+  // ... stuff we don't care about ...
+
+  // #region interestingBit
+  foo().then(bar)
+  // #endregion interestingBit
+
+  // ... more boring stuff ...
+}
+```
+
+With the above example, we can show just the stuff between the `interestingBit` markers like so:
+
+```jsx
+import Example from '!!raw-loader!./code-snippets/example.js'
+<CodeSnippet src={Example} lang='javascript' region='interestingBit' />
+```
+
+And your doc will render:
+
+```js
+  foo().then(bar)
+```
+
 ##### Command-line examples
 
 Write command-line inputs without any other characters. Precede outputs from the command line with a greater-than sign `>`. Include an empty line between the input and output of a command-line example:

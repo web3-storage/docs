@@ -1,9 +1,8 @@
 ---
-title: List directory contents
+title: Listing the contents of an IPFS directory
+sidebar_label: List directory contents
 description: Learn how to list the contents of an IPFS directory without having to fetch the whole thing.
 ---
-
-# Listing the contents of an IPFS directory
 
 When [storing data][howto-store] using the default options, Web3.Storage will wrap your uploaded files in an IPFS directory listing. This preserves the original filenames and provides a nicer user experience when downloading files.
 
@@ -37,7 +36,8 @@ async function getLinks(ipfsPath) {
 
 See the example output below for the structure of the response objects.
 
-::: details Show getLinks() usage example
+<details>
+<summary>Show getLinks() usage example</summary>
 
 ```js with-output
 getLinks('bafybeifpaez32hlrz5tmr7scndxtjgw3auuloyuyxblynqmjw5saapewmu')
@@ -69,7 +69,7 @@ getLinks('bafybeifpaez32hlrz5tmr7scndxtjgw3auuloyuyxblynqmjw5saapewmu')
 ]
 ```
 
-:::
+</details>
 
 ## Using HTTP requests
 
@@ -85,9 +85,9 @@ Replace `<gateway-host>` with the address of an IPFS HTTP gateway, and replace `
 
 For the examples, we'll use the URL `https://dweb.link/api/v0/ls?arg=bafybeifpaez32hlrz5tmr7scndxtjgw3auuloyuyxblynqmjw5saapewmu`.
 
-::::: tabs
+<!--tabs-->
 
-:::: tab "curl (macOS / Linux)"
+#### curl (macOS / Linux)
 
 The example below uses [`curl`](https://curl.se/), which is pre-installed on macOS and many Linux distributions.
 
@@ -101,7 +101,8 @@ curl -s "https://dweb.link/api/v0/ls?arg=bafybeifpaez32hlrz5tmr7scndxtjgw3auuloy
 
 To format the response for display, you can install the [jq tool](https://stedolan.github.io/jq/) and add `| jq` to the end of the command above.
 
-::: details Show formatted response
+<details>
+<summary>Show formatted response</summary>
 
 ```shell with-output
 curl -s "https://dweb.link/api/v0/ls?arg=bafybeifpaez32hlrz5tmr7scndxtjgw3auuloyuyxblynqmjw5saapewmu" | jq
@@ -140,11 +141,9 @@ curl -s "https://dweb.link/api/v0/ls?arg=bafybeifpaez32hlrz5tmr7scndxtjgw3auuloy
 }
 ```
 
-:::
+</details>
 
-::::
-
-:::: tab "PowerShell (Windows)"
+#### PowerShell (Windows)
 
 The example below uses the [`System.Net.WebClient` class](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0) to download a JSON object describing the links in the requested CID.
 
@@ -159,7 +158,8 @@ $wc.DownloadString("https://dweb.link/api/v0/ls?arg=bafybeifpaez32hlrz5tmr7scndx
 
 To format the response for display, you can add ` | ConvertFrom-Json | ConvertTo-Json -Depth 100` to the end of the final command.
 
-::: details Show formatted response
+<details>
+<summary>Show formatted response</summary>
 
 ```powershell with-output
 $wc = New-Object System.Net.WebClient
@@ -198,17 +198,15 @@ $wc.DownloadString("https://dweb.link/api/v0/ls?arg=bafybeifpaez32hlrz5tmr7scndx
                 ]
 }
 ```
-:::
+</details>
 
-::::
-
-:::::
+<!--/tabs-->
 
 ## Using the IPFS command line
 
 If you have the [IPFS command line interface][ipfs-docs-cli-quickstart] installed, you can use the [`ipfs ls` command][ipfs-docs-cli-ls] to list the contents of a directory.
 
-```shell with-output
+```shell 
 ipfs ls -v bafybeifpaez32hlrz5tmr7scndxtjgw3auuloyuyxblynqmjw5saapewmu
 ```
 

@@ -1,7 +1,7 @@
 # web3.storage docs repo
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg)](https://protocol.ai)
-[![](https://img.shields.io/badge/platform-VuePress-green.svg)](https://vuepress.vuejs.org/)
+[![](https://img.shields.io/badge/platform-Docusaurus-green.svg)](https://docuasurus.io/)
 [![](https://img.shields.io/badge/deployed%20on-Fleek-ff69b4.svg)](http://fleek.co/)
 
 
@@ -19,7 +19,7 @@ _You can find the code for the main web3.storage website and the underlying API 
 
 ### Build and run locally
 
-This site is built in [Vuepress](https://vuepress.vuejs.org/guide/), and uses Vue/JavaScript for functional code and Markdown for post content.
+This site is built in [Docusaurus](https://docusaurus.io), and uses React/JavaScript for functional code and Markdown for post content.
 
 To build a local copy, run the following:
 
@@ -42,7 +42,7 @@ To build a local copy, run the following:
    npm start
    ```
 
-1. Open [localhost:8080](http://localhost:8080) in your browser.
+1. Open [localhost:3030](http://localhost:3030) in your browser.
 1. Close the local server with `CTRL` + `c`.
 1. To restart the local server, run `npm start` from within the `docs` folder.
 
