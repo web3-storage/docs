@@ -21,6 +21,7 @@ module.exports = {
       items: [
         'concepts/content-addressing',
         'concepts/decentralized-storage',
+        'concepts/storage-economics'
       ]
     },
     {

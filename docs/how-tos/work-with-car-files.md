@@ -8,6 +8,9 @@ description: Learn how to work with Content Archives of IPLD data.
 import CodeSnippet from '../../src/components/CodeSnippet'
 import dagCborSource from '!!raw-loader!../../code-snippets/how-to/dag-cbor.js'
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 When you upload files to Web3.Storage using the [client library][reference-client-library], your data is converted into a graph of data structures, which are then packed into a format called a Content Archive (CAR) before being sent to the Web3.Storage service. 
 
 For most use cases, you never need to know about this process, as the conversion happens behind the scenes when using the client library.  However, if you're using the [HTTP API][reference-http-api], or if you want more control over the structure of the IPFS data graph, you may want to work with Content Archives directly.
@@ -146,6 +149,188 @@ The [`go-car` module](https://github.com/ipld/go-car) provides the main Golang i
 See the [API reference documentation](https://pkg.go.dev/github.com/ipld/go-car/v2) for more information.
 
 <!-- TODO: find / write simple go-car example -->
+
+## Splitting CARs for upload to Web3.Storage
+
+The Web3.Storage [HTTP API][reference-http-api] accepts CAR uploads up to 100 MB in size, but the JavaScript client uses the HTTP API to upload files of _any_ size. The client manages to do this by splitting CARs into chunks of less than 100 MB each and uploading each chunk separately.
+
+The main tool available for splitting and joining CARs is called `carbites`, which has implementations in JavaScript and Go. The JavaScript implementation includes a command-line version that allows you to split and join CARs from your terminal or favorite scripting language.
+
+This section will demonstrate a few ways to split CARs in a way that's acceptable to the Web3.Storage service, using the command line tool, as well as programmatically using the `carbites` libraries in JavaScript and Go.
+
+<Tabs>
+<TabItem default value="carbites-cli" label="Using the carbites-cli tool">
+
+  The JavaScript [carbites library][github-carbites-js] includes a package called `carbites-cli` that can split and join CARs from the command line. You'll need a recent version of [Node.js](https://nodejs.com) installed, preferably the latest stable version.
+
+  You can install the tool globally with `npm`:
+
+  ```shell with-output
+  npm install -g carbites-cli
+  ```
+
+  ```
+  added 71 packages, and audited 72 packages in 846ms
+  20 packages are looking for funding
+    run `npm fund` for details
+  found 0 vulnerabilities
+  ```
+
+  This will add a `carbites` command to your shell's environment:
+
+  ```shell with-output
+  carbites --help
+  ```
+
+  ```
+    CLI tool for splitting a single CAR into multiple CARs from the comfort of your terminal.
+    Usage
+      $ carbites <command>
+      Commands
+        split
+        join
+  ```
+
+:::tip Running with npx
+  You can run the `carbites` command without installing it globally using the `npx` command, which is included with Node.js:
+
+  ```shell
+  npx carbites-cli --help
+  ```
+
+  The first time around, it will ask to make sure you want to install the package:
+
+  ```text output
+  Need to install the following packages:
+    carbites-cli
+  Ok to proceed? (y)
+  ```
+
+  After that, you can use `npx carbites-cli` instead of `carbites` for any of the commands below!
+:::
+
+  #### Splitting CARs
+
+  The `carbites split` command takes a CAR file as input and splits it into multiple smaller CARs. 
+
+  The `--size` flag sets the maximum size of the output CAR files. For uploading to Web3.Storage, `--size` must be less than `100MB`.
+
+  The other important flag is `--strategy`, which determines how the CAR files are split. For Web3.Storage uploads, we need to use the `treewalk` strategy, so that all of our CARs share the same root CID. This will allow the Web3.Storage service to piece them all together again once they've all been uploaded.
+
+  Here's an example, using an input car file called `my-video.car` that weighs in at 455MB:
+
+  ```shell
+  carbites split --size 100MB --strategy treewalk my-video.car
+  ```
+
+  This will create five new files in the same directory as the input file, named `my-video-0.car` through `my-video-4.car`. If you list their sizes, you can see that all the chunked cars are less than or equal to 100 MB:
+
+  ```shell with-output
+  ls -lh my-video*
+  ```
+
+  ```
+  -rw-r--r--  1 user  staff   100M Sep 15 13:56 my-video-1.car
+  -rw-r--r--  1 user  staff   100M Sep 15 13:56 my-video-0.car
+  -rw-r--r--  1 user  staff   100M Sep 15 13:56 my-video-2.car
+  -rw-r--r--  1 user  staff   100M Sep 15 13:56 my-video-3.car
+  -rw-r--r--  1 user  staff    56M Sep 15 13:56 my-video-4.car
+  -rw-r--r--  1 user  staff   455M Sep 15 13:52 my-video.car
+  ```
+
+  #### Joining CARs
+
+  To combine CARs that have been previously split, you can use the `carbites join` command:
+
+  ```shell
+  carbites join my-video-*.car --output my-video-joined.car
+  ```
+
+</TabItem>
+<TabItem value="carbites-js-lib" label="Using JavaScript code">
+
+  The [carbites library][github-carbites-js] provides an interface for splitting CARs that can be invoked from your application code.
+
+:::tip You probably don't need this!
+  If you're using JavaScript, you can [use the Web3.Storage client][howto-store] to upload your data and let the client take care of CAR splitting for you. If you're sure you want to split CARs from JavaScript yourself, read on!
+:::
+
+  To split CARs from your JavaScript code, install the `carbites` package:
+
+  ```shell
+  npm install carbites
+  ```
+
+  And import the `TreewalkCarSplitter` class into your code:
+
+  ```javascript
+  import { TreewalkCarSplitter } from 'carbites/treewalk'
+  ```
+
+  You can create a `TreewalkCarSplitter` by passing in a `CarReader` and a `targetSize` in bytes for the output cars. See the section on [@ipld/car](#ipld-car) for more information on `CarReader`. For now, we'll assume that the `loadLargeCar` function returns a `CarReader`, and we'll use the `TreewalkCarSplitter` to create split CARs:
+
+  ```javascript
+  import { TreewalkCarSplitter } from 'carbites/treewalk'
+  async function splitCars() {
+    const largeCar = await loadLargeCar()
+    const targetSize = 100000000
+    const splitter = new TreewalkCarSplitter(largeCar, targetSize)
+    for await (const smallCar of splitter.cars()) {
+      // Each small car is an AsyncIterable<Uint8Array> of CAR data
+      for await (const chunk of smallCar) {
+        // Do something with the car data...
+        // For example, you could upload it to the Web3.storage HTTP API
+        // https://docs.web3.storage/http-api.html#operation/post-car
+      }
+      // You can also get the root CID of each small CAR with the getRoots method:
+      const roots = await smallCar.getRoots()
+      console.log('root cids', roots)
+      // Since we're using TreewalkCarSpliter, all the smaller CARs should have the
+      // same root CID as the large input CAR.
+    }
+  }
+  ```
+
+</TabItem>
+<TabItem value="go-carbites-lib" label="Using Go code">
+
+  The [go-carbites](https://github.com/alanshaw/go-carbites) module can be used to split large CARs from your Go applications.
+
+  Install the module with `go get`:
+
+  ```shell
+  go get github.com/alanshaw/go-carbites
+  ```
+
+  The [`carbites.SplitTreewalk` function](https://pkg.go.dev/github.com/alanshaw/go-carbites#SplitTreewalk) will make sure that the output CARs all have the same root CID, which is important when uploading to Web3.Storage.
+
+  ```go
+  package main
+  import (
+    "io"
+    "os"
+    "github.com/alanshaw/go-carbites"
+  )
+  func main() {
+    out := make(chan io.Reader)
+    go func() {
+      var i int
+      for r := range out {
+        b, _ := ioutil.ReadAll(r)
+        ioutil.WriteFile(fmt.Sprintf("chunk-%d.car", i), b, 0644)
+        i++
+      }
+    }()
+    bigCar, _ := os.Open("big.car")
+    targetSize := 100000000 // 100 MB chunks
+    err := carbites.SplitTreewalk(context.Background(), bigCar, targetSize, out)
+  }
+  ```
+
+  You can also use [`SplitTreewalkFromPath`](https://pkg.go.dev/github.com/alanshaw/go-carbites#SplitTreewalkFromPath), which takes a local file path instead of an `io.Reader`.
+
+</TabItem>
+</Tabs>
 
 ## Advanced IPLD formats
 
@@ -321,12 +506,14 @@ See the [`putCar` parameter reference][reference-client-putCar-params] for more 
 
 
 [concepts-content-addressing]: ../concepts/content-addressing.md
+[howto-store]: ./store.md
 [reference-client-library]: ../reference/client-library.md
 [reference-client-putCar]: ../reference/client-library.md#store-car-files
 [reference-client-putCar-params]: ../reference/client-library.md#parameters-5
 [reference-http-api]: https://docs.web3.storage/reference/http-api
 
 [github-ipfs-car]: https://github.com/web3-storage/ipfs-car
+[github-carbites-js]: https://github.com/nftstorage/carbites
 [ipfs-docs-dag-export]: https://docs.ipfs.io/reference/cli/#ipfs-dag-export
 [ipfs-docs-dag-import]: https://docs.ipfs.io/reference/cli/#ipfs-dag-import
 [ipfs-docs-dag-get]: https://docs.ipfs.io/reference/cli/#ipfs-dag-get
