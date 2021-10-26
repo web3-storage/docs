@@ -84,6 +84,19 @@ Once you have an array of `File`s, uploading is simple:
 Deleting files from the Web3.Storage site's [Files page][site-files] will remove them from the file listing for your account, but that doesn't prevent nodes on the [decentralized storage network][concepts-decentralized-storage] from retaining copies of the data indefinitely. Do not use Web3.Storage for data that may need to be permanently deleted in the future.
 :::
 
+
+### Directory wrapping
+
+By default, files uploaded to Web3.Storage will be wrapped in an IPFS directory listing. This preserves the original filename and makes links more human-friendly than CID strings, which look like random gibberish. 
+
+The CID you get back from the client when uploading is the CID of the directory, not the file itself! To link to the file itself using an IPFS URI, just add the filename to the CID, separated by a `/` like this: `ipfs://<cid>/<filename>`. 
+
+To make a gateway link, use `https://<cid>.ipfs.<gateway-host>/<filename>` or `https://<gateway-host>/ipfs/<cid>/<filename>`, where `<gateway-host>` is the address of an HTTP gateway like `dweb.link`.
+
+Once uploaded, you can [retrieve the directory][howto-retrieve] or [list the contents][howto-list-dir] without downloading it.
+
+To avoid having your files wrapped in a directory listing, set the [`wrapWithDirectory:` option][reference-js-put] to `false` when uploading.
+
 ### Showing progress to the user
 
 The `put` method has some options that can be passed in to get progress on the upload as it happens in the background. There are two callback parameters you can use: `onRootCidReady`, and `onStoredChunk`.
@@ -141,6 +154,7 @@ You can also get more information about the status of your data. See the [query 
 [howto-retrieve]: ./retrieve.md
 [howto-query]: ./query.md
 [howto-car-files]: ./work-with-car-files.md
+[howto-list-dir]: ./list-directory-contents.md
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 
 <!-- links to the web3.storage site -->
