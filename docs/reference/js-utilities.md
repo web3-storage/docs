@@ -37,8 +37,15 @@ The Web3.Storage API works with Content Archive (CAR) files, which package up [c
 
 If you prefer to work with CARs directly, see the how-to guide on [working with Content Archives][howto-car] for usage information for ipfs-car and information about other options.
 
+## carbites
+
+The [carbites](https://github.com/nftstorage/carbites) package includes a command line tool and JavaScript API for splitting Content Archive (CAR) files into chunks. This is used to upload files that are larger than the 100mb size limit on the [upload HTTP endpoint][reference-http-post-car].
+
+See the how-to guide on [working with Content Archives][howto-car] for more information on using the carbites tool.
+
 [concepts-content-addressing]: ../concepts/content-addressing.md
-[reference-http-api]: https://docs.web3.storage/http-api.html
+[reference-http-api]: ../http-api/
+[reference-http-post-car]: ../http-api/#operation/post-car
 [howto-car]: ../how-tos/work-with-car-files.md
 
 [files-from-path]: https://github.com/web3-storage/files-from-path
