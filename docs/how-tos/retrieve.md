@@ -40,7 +40,7 @@ When downloading files from an HTTP gateway, web browsers will set the default f
 
 In the link above, the CID `bafybeicfnbaeigdtklwkrj35r4wtfppix732zromsadvgiu33mowah74yq` points to an IPFS directory listing, which maps from the filename `treehouse.jpeg` to the CID for the image itself.
 
-Since the Web3.Storage client wraps your uploaded files in a directory by default, this is the most common kind of gateway link you're likely to need, and your users should get nice filenames when they download their content.
+Since the Web3.Storage client [wraps your uploaded files in a directory by default](./store.md#directory-wrapping), this is the most common kind of gateway link you're likely to need, and your users should get nice filenames when they download their content.
 
 However, the behavior is a bit different if you make a gateway link directly to the image CID:
 

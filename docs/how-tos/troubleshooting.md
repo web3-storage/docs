@@ -25,6 +25,14 @@ Content uploaded to Web3.Storage is persisted to Filecoin in batches, and newly 
 
 Depending on the type of URL used to request content from an IPFS HTTP gateway, some web browsers may save downloaded files with generic filenames like `download`, or they may use the CID of the content as the filename. See [Setting the filename for downloads via gateways][howto-retrieve-gateway-filenames] in the [Retrieval guide][howto-retrieve] to learn how to work around this issue.
 
+
+## The CID returned when uploading doesn't link directly to my file
+
+By default, the CID returned when uploading files to Web3.Storage will be wrapped in a directory listing in order to preserve the original filename. The CID returned by API points to the directory object, which in turn points to the file's content.
+
+See the [Directory Wrapping section](./store.md#directory-wrapping) of the [Storage guide][howto-store] for more information about working with directory CIDs and instructions on changing the default behavior.
+
+[howto-store]: ./store.md
 [howto-query]: ./query.md
 [howto-retrieve]: ./retrieve.md
 [howto-retrieve-gateway-filenames]: ./retrieve.md#setting-the-filename-for-downloads-via-gateways
