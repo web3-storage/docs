@@ -135,9 +135,9 @@ To learn in greater detail how to fetch your data using the Web3.Storage client,
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 [howto-store]: ./store.md
 [howto-retrieve]: ./retrieve.md
-[reference-js-client]: ../reference/client-library.md
-[reference-js-constructor]: ../reference/client-library.md#constructor
-[reference-js-status]: ../reference/client-library.md#check-status
+[reference-js-client]: ../reference/js-client-library.md
+[reference-js-constructor]: ../reference/js-client-library.md#constructor
+[reference-js-status]: ../reference/js-client-library.md#check-status
 
 [ipfs-docs-cid]: https://docs.ipfs.io/concepts/content-addressing/
 [ipfs-docs-merkle-dag]: https://docs.ipfs.io/concepts/merkle-dag/

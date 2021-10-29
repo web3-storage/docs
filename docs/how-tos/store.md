@@ -145,10 +145,10 @@ You can also get more information about the status of your data. See the [query 
 
 <!-- internal links -->
 
-[reference-js]: ../reference/client-library.md
-[reference-js-constructor]: ../reference/client-library.md#constructor
-[reference-js-put]: ../reference/client-library.md#store-files
-[reference-js-put-car]: ../reference/client-library.md#store-car-files
+[reference-js]: ../reference/js-client-library.md
+[reference-js-constructor]: ../reference/js-client-library.md#constructor
+[reference-js-put]: ../reference/js-client-library.md#store-files
+[reference-js-put-car]: ../reference/js-client-library.md#store-car-files
 
 [quickstart-guide]: ../intro.md#quickstart
 [howto-retrieve]: ./retrieve.md

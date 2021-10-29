@@ -507,9 +507,9 @@ See the [`putCar` parameter reference][reference-client-putCar-params] for more 
 
 [concepts-content-addressing]: ../concepts/content-addressing.md
 [howto-store]: ./store.md
-[reference-client-library]: ../reference/client-library.md
-[reference-client-putCar]: ../reference/client-library.md#store-car-files
-[reference-client-putCar-params]: ../reference/client-library.md#parameters-5
+[reference-client-library]: ../reference/js-client-library.md
+[reference-client-putCar]: ../reference/js-client-library.md#store-car-files
+[reference-client-putCar-params]: ../reference/js-client-library.md#parameters-5
 [reference-http-api]: ../reference/http-api/
 
 [github-ipfs-car]: https://github.com/web3-storage/ipfs-car

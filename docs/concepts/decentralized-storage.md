@@ -33,7 +33,7 @@ In addition to this proof system, the Filecoin network also relies on _game-theo
 
 ## Storing and monitoring with Web3.Storage
 
-How can you see these principles in action with your files uploaded to Web3.Storage? It's easy using the Web3.Storage [JavaScript client library](../reference/client-library.md).
+How can you see these principles in action with your files uploaded to Web3.Storage? It's easy using the Web3.Storage [JavaScript client library](../reference/js-client-library.md).
 
 When you [upload a file to Web3.Storage](../how-tos/store.md) using the `put()` method, you get the CID of that file in return. The file is then put into a queue for geographically distributed Filecoin network storage providers who have been chosen for performance and availability. These providers bid on the right to store the files in the queue — including your file — and agree to a storage deal.
 

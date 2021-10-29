@@ -89,8 +89,8 @@ Listing all the uploads and filtering out the ones we don't want works for a sim
 The Web3.Storage service and client library make getting your data onto [decentralized storage][concepts-decentralized-storage] easier than ever. In this guide we saw how to use Web3.Storage to build a simple image gallery using vanilla JavaScript. We hope that this example will help you build amazing things, and we can't wait to see what you make!
 
 [howto-token]: ../how-tos/generate-api-token.md
-[reference-js-put]: ../reference/client-library/#store-files
-[reference-js-list]: ../reference/client-library/#list-uploads
+[reference-js-put]: ../reference/js-client-library.md#store-files
+[reference-js-list]: ../reference/js-client-library.md#list-uploads
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
 
 [github-example-repo]: https://github.com/web3-storage/example-image-gallery

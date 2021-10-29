@@ -36,7 +36,7 @@ module.exports = {
       type: 'category',
       label: 'Reference',
       items: [
-        'reference/client-library',
+        'reference/js-client-library',
         'reference/js-utilities',
         {
           type: 'link',

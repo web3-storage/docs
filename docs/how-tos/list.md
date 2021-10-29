@@ -80,9 +80,9 @@ Here's an example of fetching the first 10 uploads made on the previous day:
 [howto-query]: ./query.md
 [howto-gen-token]: ./generate-api-token.md
 [concepts-decentralized-storage]: ../concepts/decentralized-storage.md
-[reference-js-client]: ../reference/client-library.md
-[reference-js-constructor]: ../reference/client-library.md#constructor
-[reference-js-list]: ../reference/client-library.md#list-uploads
+[reference-js-client]: ../reference/js-client-library.md
+[reference-js-constructor]: ../reference/js-client-library.md#constructor
+[reference-js-list]: ../reference/js-client-library.md#list-uploads
 [site-files]: https://web3.storage/files
 
 [ipfs-docs-gateway]: https://docs.ipfs.io/concepts/ipfs-gateway/

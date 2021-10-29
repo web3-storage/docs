@@ -4,7 +4,7 @@ sidebar_label: Generate an API token
 description: Learn how to get an API token for using Web3.Storage programmatically in this quick how-to guide.
 ---
 
-In this how-to guide, **you'll learn how to generate a Web3.Storage API token** so that you can interact with the service programmatically through the [JavaScript client library](../reference/client-library.md) or using the command line.
+In this how-to guide, **you'll learn how to generate a Web3.Storage API token** so that you can interact with the service programmatically through the [JavaScript client library](../reference/js-client-library.md) or using the command line.
 
 You'll need a free Web3.Storage account in order to generate an API token. If you already have an account, read on. If not, have a look at the [quickstart guide](../intro.md#quickstart) to get up and running in just a few minutes.
 
@@ -44,7 +44,7 @@ Remember that if you delete an API token, it's removed permanently and cannot be
 
 ## Next steps
 
-Now that you have an API token, you can store and retrieve data from your apps and services, as well as from the command line. If you haven't yet explored in depth how to store data using Web3.Storage, check out the [storage how-to guide](./store.md) for a deep dive on how to upload files using the [JavaScript client library](../reference/client-library.md).
+Now that you have an API token, you can store and retrieve data from your apps and services, as well as from the command line. If you haven't yet explored in depth how to store data using Web3.Storage, check out the [storage how-to guide](./store.md) for a deep dive on how to upload files using the [JavaScript client library](../reference/js-client-library.md).
 
 To learn in greater detail how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line, see the [how-to guide on retrieval](./retrieve.md).
 
