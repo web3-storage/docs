@@ -510,7 +510,7 @@ See the [`putCar` parameter reference][reference-client-putCar-params] for more 
 [reference-client-library]: ../reference/client-library.md
 [reference-client-putCar]: ../reference/client-library.md#store-car-files
 [reference-client-putCar-params]: ../reference/client-library.md#parameters-5
-[reference-http-api]: https://docs.web3.storage/reference/http-api
+[reference-http-api]: ../reference/http-api/
 
 [github-ipfs-car]: https://github.com/web3-storage/ipfs-car
 [github-carbites-js]: https://github.com/nftstorage/carbites
