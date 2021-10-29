@@ -159,7 +159,7 @@ function RedocPage() {
     <div className={styles.container} >
       <div className={styles.sidebarWrapper}>
         <DocSidebar
-          path='/http-api/'
+          path='/reference/http-api/'
           sidebar={sidebarDefinition.docs} 
         />
       </div>

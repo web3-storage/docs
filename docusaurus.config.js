@@ -163,7 +163,11 @@ module.exports = {
       redirects: [
         {
           from: '/http-api.html',
-          to: '/http-api/',
+          to: '/reference/http-api/',
+        },
+        {
+          from: '/http-api/',
+          to: '/reference/http-api/'
         }
       ]
     }],

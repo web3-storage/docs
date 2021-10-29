@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-import RedocPage from '../../components/RedocPage'
+import RedocPage from '../../../components/RedocPage'
 import Layout from '@theme/Layout'
 
 

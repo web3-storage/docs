@@ -41,7 +41,7 @@ module.exports = {
         {
           type: 'link',
           label: 'HTTP API',
-          href: '/http-api/'
+          href: '/reference/http-api/'
         },
       ]
     },
