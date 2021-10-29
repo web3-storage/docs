@@ -4,17 +4,25 @@ sidebar_label: Query
 description: Learn how to query Web3.Storage in this quick how-to guide.
 ---
 
-<!-- imports for code snippets -->
+<!-- imports for code snippets and tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import CodeSnippet from '../../src/components/CodeSnippet'
 import howtoSource from '!!raw-loader!../../code-snippets/how-to/index.js'
+import golangStatus from '!!raw-loader!../../code-snippets/how-to/golang/status/status.go'
 
 In this how-to guide, you'll learn how to **query Web3.Storage for information about your files.**
 
 When you [store a file][howto-store] with Web3.Storage, you receive a [content identifier (CID)][ipfs-docs-cid] that you can use to [retrieve the file][howto-retrieve]. However, this CID can also be used to query the service for more details about _how_ the data is stored on the [decentralized storage networks][concepts-decentralized-storage] that Web3.Storage uses under the hood. 
 
-This guide will show you how to use Web3.Storage's [JavaScript client library][reference-js-client] to get information about content stored on the network. To follow along, you'll need the API token from your Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart] to get up and running in just a few minutes for free.
+This guide will show you how to use Web3.Storage's [JavaScript client library][reference-js-client] or [Go client library][reference-go-client] to get information about content stored on the network. To follow along, you'll need the API token from your Web3.Storage account. If you already have an account and a token, read on. If not, have a look at the [quickstart guide][quickstart] to get up and running in just a few minutes for free.
 
 ## Installing the client
+
+
+<Tabs groupId="lang">
+<TabItem value="js" label="JavaScript">
+
 
 In your JavaScript project, add the `web3.storage` package to your dependencies:
 
@@ -22,7 +30,23 @@ In your JavaScript project, add the `web3.storage` package to your dependencies:
 npm install web3.storage
 ```
 
+</TabItem>
+<TabItem value="go" label="Go">
+
+
+  In your Go project, add the client package to your dependencies using `go get`:
+
+  ```bash
+  go get github.com/web3-storage/go-w3s-client
+  ```
+  
+</TabItem>
+</Tabs>
+
 ## Creating a client instance
+
+<Tabs groupId="lang">
+<TabItem value="js" label="JavaScript">
 
 To create a `Web3Storage` client object, we need to pass an access token into the [constructor][reference-js-constructor]:
 
@@ -32,7 +56,31 @@ To create a `Web3Storage` client object, we need to pass an access token into th
 Don't have an access token? Get your Web3.Storage API token in just a few minutes using the instructions in the [quickstart guide.][quickstart]
 :::
 
+</TabItem>
+<TabItem value="go" label="Go">
+
+First, make sure to import the client `w3s` package:
+
+```go
+import "github.com/web3-storage/go-w3s-client"
+```
+
+You can create a client instance with the [`NewClient` function][reference-go-newclient], passing in an API token using the [`WithToken` option][reference-go-withtoken]:
+
+
+```go
+token := "<AUTH_TOKEN_GOES_HERE>"
+client, err := w3s.NewClient(w3s.WithToken(token))
+```
+
+</TabItem>
+</Tabs>
+
 ## Querying for status information
+
+<Tabs groupId="lang">
+<TabItem value="js" label="JavaScript">
+
 
 The client object's `status` method accepts a CID string and returns a JSON object with information about the upload. Here's how to include it in your project:
 
@@ -125,9 +173,21 @@ For more details about the fields in this JSON response, including the format of
 If you're looking for info on files you've uploaded, you can also use the [Files page](https://web3.storage/files) on Web3.Storage to see the values for some of the more commonly-used attributes returned by `query()`, namely `created`, `cid`, `dagSize`, and the `status` and `deals` objects of `pins`.
 :::
 
+</TabItem>
+<TabItem value="go" label="Go">
+
+The Go client's [`Client` interface](https://pkg.go.dev/github.com/web3-storage/go-w3s-client#Client) defines a `Status` method that accepts a [`context.Context`](https://pkg.go.dev/context#Context) and a [`Cid`](https://pkg.go.dev/github.com/ipfs/go-cid#Cid) from the [`go-cid` library](https://pkg.go.dev/github.com/ipfs/go-cid).
+
+The example below accepts a CID string and converts it to a `Cid` using `cid.Parse`. If your codebase is already using the `Cid` type, you may not need this step.
+
+<CodeSnippet lang="go" src={golangStatus} region="getStatusForCidString" />
+
+</TabItem>
+</Tabs>
+
 ## Next steps
 
-If you haven't yet explored in depth how to store data using Web3.Storage, check out the [storage how-to guide][howto-store] for a deep dive on how to upload files using the [JavaScript client library][reference-js-client].
+If you haven't yet explored in depth how to store data using Web3.Storage, check out the [storage how-to guide][howto-store] for a deep dive on how to upload files using the client libraries.
 
 To learn in greater detail how to fetch your data using the Web3.Storage client, or directly from IPFS using a gateway or the IPFS command line, see the [how-to guide on retrieval][howto-retrieve].
 
@@ -138,6 +198,7 @@ To learn in greater detail how to fetch your data using the Web3.Storage client,
 [reference-js-client]: ../reference/js-client-library.md
 [reference-js-constructor]: ../reference/js-client-library.md#constructor
 [reference-js-status]: ../reference/js-client-library.md#check-status
+[reference-go-client]: ../reference/go-client-library.md
 
 [ipfs-docs-cid]: https://docs.ipfs.io/concepts/content-addressing/
 [ipfs-docs-merkle-dag]: https://docs.ipfs.io/concepts/merkle-dag/
