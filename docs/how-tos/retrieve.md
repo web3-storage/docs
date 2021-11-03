@@ -119,12 +119,20 @@ you can use it to `Get` files by cid. The method below takes a CID string and co
 <CodeSnippet lang="go" src={golangRetrieve} region="retrieveFiles" />
 
 
-The `Files` method returns an [`fs.File`](https://pkg.go.dev/io/fs#File) that may be either a single file or a directory, depending on the CID that you requested. To distinguish, you can check whether the returned `File` implements [`fs.ReadDirFile`](https://pkg.go.dev/io/fs#ReadDirFile). If so, you can use `ReadDirFile`'s `ReadDir` method to list the contents:
+The `Files` method returns an [`fs.File`](https://pkg.go.dev/io/fs#File) that may be either a single file or a directory, depending on the CID that you requested. To distinguish, you can call `Stat` on the file and check the `IsDir` method of the returned [`fs.FileInfo`](https://pkg.go.dev/io/fs#FileInfo). If it is a directory, you can type-cast to the [`fs.ReadDirFile`](https://pkg.go.dev/io/fs#ReadDirFile) interface and use `ReadDirFile`'s `ReadDir` method to list the contents:
+
 
 <CodeSnippet lang="go" src={golangRetrieve} region="listDirectory" />
 
 
-To support walking a nested directory structure, `Files` also returns an [`fs.FS`](https://pkg.go.dev/io/fs#FS) "file system" as its second return value. This can be used to traverse all files, even if they're deep in a nested hierarchy:
+Alternatively, you can use the second return value of the `Files` method, which is an [`fs.FS`](https://pkg.go.dev/io/fs#FS) "file system" that represents all files included in the download. The [`fs.ReadDir` function](https://pkg.go.dev/io/fs#ReadDir) takes an `fs.FS` and the name of a directory to read, which can be `"/"` to read the root:
+
+
+<CodeSnippet lang="go" src={golangRetrieve} region="listDirectoryUsingFilesystem" />
+
+
+The examples above only list the direct contents of a directory, without descending into nested subdirectories. You can pass the returned `fs.FS` to [`fs.WalkDir`](https://pkg.go.dev/io/fs#WalkDir) to walk the entire structure, including all nested folders:
+
 
 <CodeSnippet lang="go" src={golangRetrieve} region="walkDirectory" />
 

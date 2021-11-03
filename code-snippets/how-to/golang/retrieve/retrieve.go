@@ -39,8 +39,13 @@ func retrieveFiles(client w3s.Client, cidString string) (fs.File, fs.FS, error) 
 //#region listDirectory
 func listDirectory(f fs.File) error {
 	// make sure the File is actually a directory that supports listing contents
+	info, err := f.Stat()
+	if err != nil {
+		return err
+	}
+
 	d, ok := f.(fs.ReadDirFile)
-	if !ok {
+	if !ok || !info.IsDir() {
 		return fmt.Errorf("not a directory")
 	}
 
@@ -58,6 +63,20 @@ func listDirectory(f fs.File) error {
 }
 
 //#endregion listDirectory
+
+//#region listDirectoryUsingFilesystem
+func listDirectoryUsingFilesystem(fsys fs.FS) error {
+	entries, err := fs.ReadDir(fsys, "/")
+	if err != nil {
+		return err
+	}
+	for _, entry := range entries {
+		fmt.Println(entry.Name())
+	}
+	return nil
+}
+
+//#endregion listDirectoryUsingFilesystem
 
 //#region walkDirectory
 func walkDirectory(fsys fs.FS) {
