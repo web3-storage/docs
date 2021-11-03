@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"flag"
 	"fmt"
 	"os"
 	"path"
@@ -11,50 +10,38 @@ import (
 )
 
 func main() {
-	// Get an API token and file path from the cli args
-	tokenPtr := flag.String("token", "", "A Web3.Storage API token")
-	flag.Parse()
-
-	if tokenPtr == nil || *tokenPtr == "" {
-		usage()
+	token, ok := os.LookupEnv("WEB3_STORAGE_TOKEN")
+	if !ok {
+		fmt.Fprintln(os.Stderr, "No API token - set the WEB3_STORAGE_TOKEN environment var and try again.")
+		os.Exit(1)
 	}
 
-	if len(flag.Args()) < 1 {
-		usage()
+	if len(os.Args) != 2 {
+		fmt.Fprintf(os.Stderr, "usage: %s <filename>\n", os.Args[0])
+		os.Exit(1)
 	}
-	filepath := flag.Args()[0]
+	filename := os.Args[1]
 
 	// Create a new Web3.Storage client using the token
-	client, err := w3s.NewClient(w3s.WithToken(*tokenPtr))
+	client, err := w3s.NewClient(w3s.WithToken(token))
 	if err != nil {
-		handleError(err)
-		return
+		panic(err)
 	}
 
 	// Open the file for reading
-	file, err := os.Open(filepath)
+	file, err := os.Open(filename)
 	if err != nil {
-		handleError(err)
-		return
+		panic(err)
 	}
 
+	basename := path.Base(filename)
 	// Upload to Web3.Storage
+	fmt.Printf("Storing %s ...\n", basename)
 	cid, err := client.Put(context.Background(), file)
 	if err != nil {
-		handleError(err)
-		return
+		panic(err)
 	}
 
-	fmt.Printf("Stored %s with Web3.Storage! View it at:\n", path.Base(filepath))
-	fmt.Printf("https://%v.ipfs.dweb.link\n", cid)
-}
-
-func usage() {
-	fmt.Fprintf(os.Stderr, "usage: %s -token=<api-token> <file-path>\n", os.Args[0])
-	os.Exit(1)
-}
-
-func handleError(err error) {
-	// don't do this in production :)
-	panic(err)
+	gatewayURL := fmt.Sprintf("https://%s.ipfs.dweb.link/%s\n", cid.String(), basename)
+	fmt.Printf("Stored %s with Web3.Storage! View it at: %s\n", basename, gatewayURL)
 }
