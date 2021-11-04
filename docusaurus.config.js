@@ -168,6 +168,10 @@ module.exports = {
         {
           from: '/http-api/',
           to: '/reference/http-api/'
+        },
+        {
+          from: '/reference/client-library',
+          to: '/reference/js-client-library',
         }
       ]
     }],

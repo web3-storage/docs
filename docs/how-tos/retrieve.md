@@ -4,15 +4,19 @@ sidebar_label: Retrieve
 description: Learn how to retrieve data stored using Web3.Storage in this quick how-to guide.
 ---
 
-<!-- imports for code snippets -->
+<!-- imports for code snippets and tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import CodeSnippet from '../../src/components/CodeSnippet'
 import howtoSource from '!!raw-loader!../../code-snippets/how-to/index.js'
+import golangRetrieve from '!!raw-loader!../../code-snippets/how-to/golang/retrieve/retrieve.go'
+
 
 In this how-to guide, **you'll learn several methods for retrieving data from Web3.Storage.**
 
 All data stored using Web3.Storage is made available for retrieval via [IPFS](https://ipfs.io), the InterPlanetary File System. IPFS is a distributed, peer-to-peer network for storing and sharing [content-addressed data][concepts-content-addressing]. This guide shows you several ways to retrieve your data from IPFS:
 - In your browser using an [HTTP gateway](#using-an-ipfs-http-gateway).
-- Programmatically using the [Web3.Storage JavaScript client](#using-the-web3-storage-js-client).
+- Programmatically using the [Web3.Storage client libraries](#using-the-client-libraries).
 - In your terminal using the [IPFS command-line tools](#using-the-ipfs-command-line).
 - In your terminal using [curl or Powershell](#using-curl-or-powershell).
 
@@ -55,7 +59,11 @@ If you have such a link, you can override the default filename by adding a query
 
 [https://bafkreifvallbyfxnedeseuvkkswt5u3hbdb2fexcygbyjqy5a5rzmhrzei.ipfs.dweb.link/?filename=treehouse.jpeg](https://bafkreifvallbyfxnedeseuvkkswt5u3hbdb2fexcygbyjqy5a5rzmhrzei.ipfs.dweb.link/?filename=treehouse.jpeg)
 
-## Using the Web3.Storage JS client
+## Using the client libraries
+
+<Tabs groupId="lang">
+<TabItem value="js" label="JavaScript">
+
 
 The Web3.Storage JavaScript client provides a `get` method that allows you to retrieve any IPFS content using that content's [content identifier (CID)][ipfs-docs-cid].
 
@@ -75,7 +83,7 @@ Once you have a client, you can call `client.get`, passing in a CID string:
 
 <CodeSnippet lang="js" src={howtoSource} region="retrieve-basics" />
 
-### The `Web3Response` object
+#### The `Web3Response` object
 
 The `get` method returns a `Web3Response` object. This object extends the [`Response` object][mdn-response] from the Web [Fetch API][mdn-fetch] with two methods that provide access to the retrieved IPFS data: `files` and `unixFsIterator()`.
 
@@ -88,6 +96,49 @@ Here's the example from above, now with the code to unpack and inspect the files
 :::tip
 Another option is to use the array of `unixFs` objects provided by the `unixFsIterator()` method to iterate through your files. While in the vast majority of cases you'll want to use the `files()` method outlined above, existing IPFS users may prefer interacting with `unixFs` objects if they have existing code or tooling that supports it. For more details, see the [JavaScript client library reference][reference-js].
 :::
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+
+The Go client library's [`Client` interface](https://pkg.go.dev/github.com/web3-storage/go-w3s-client#Client) provides a `Get` method that accepts a [`context.Context`](https://pkg.go.dev/context#Context) and a [`Cid`](https://pkg.go.dev/github.com/ipfs/go-cid#Cid) from the [`go-cid` library](https://pkg.go.dev/github.com/ipfs/go-cid). 
+
+The `Get` method returns a [`w3http.Web3Response`](https://pkg.go.dev/github.com/web3-storage/go-w3s-client/http#Web3Response), which is a standard [`http.Response`](https://pkg.go.dev/net/http#Response) with an additional [`Files` method](https://pkg.go.dev/github.com/web3-storage/go-w3s-client/http#Web3Response.Files) that provides access to the downloaded files.
+
+
+First, import the client package and a few other things we'll be using:
+
+
+<CodeSnippet lang="go" src={golangRetrieve} region="imports" />
+
+
+Assuming you've already [created a Client](https://pkg.go.dev/github.com/web3-storage/go-w3s-client#NewClient),
+you can use it to `Get` files by cid. The method below takes a CID string and converts it to a [`Cid` type](https://pkg.go.dev/github.com/ipfs/go-cid#Cid), which is what the `Get` method expects. You may not need this step if you're already using the `Cid` type in your code base.
+
+
+<CodeSnippet lang="go" src={golangRetrieve} region="retrieveFiles" />
+
+
+The `Files` method returns an [`fs.File`](https://pkg.go.dev/io/fs#File) that may be either a single file or a directory, depending on the CID that you requested. To distinguish, you can call `Stat` on the file and check the `IsDir` method of the returned [`fs.FileInfo`](https://pkg.go.dev/io/fs#FileInfo). If it is a directory, you can type-cast to the [`fs.ReadDirFile`](https://pkg.go.dev/io/fs#ReadDirFile) interface and use `ReadDirFile`'s `ReadDir` method to list the contents:
+
+
+<CodeSnippet lang="go" src={golangRetrieve} region="listDirectory" />
+
+
+Alternatively, you can use the second return value of the `Files` method, which is an [`fs.FS`](https://pkg.go.dev/io/fs#FS) "file system" that represents all files included in the download. The [`fs.ReadDir` function](https://pkg.go.dev/io/fs#ReadDir) takes an `fs.FS` and the name of a directory to read, which can be `"/"` to read the root:
+
+
+<CodeSnippet lang="go" src={golangRetrieve} region="listDirectoryUsingFilesystem" />
+
+
+The examples above only list the direct contents of a directory, without descending into nested subdirectories. You can pass the returned `fs.FS` to [`fs.WalkDir`](https://pkg.go.dev/io/fs#WalkDir) to walk the entire structure, including all nested folders:
+
+
+<CodeSnippet lang="go" src={golangRetrieve} region="walkDirectory" />
+
+
+</TabItem>
+</Tabs>
 
 ## Using the IPFS command line
 
@@ -109,8 +160,10 @@ ipfs get bafybeidd2gyhagleh47qeg77xqndy2qy3yzn4vkxmk775bg2t5lpuy7pcu/youareanons
 
 Sometimes you may need to just download a specific file to your computer using the command line. Unix-based operating systems, like Linux and macOS, can use curl. Windows users can use Powershell.
 
-<!--tabs-->
-#### Linux
+
+<Tabs groupId="os">
+<TabItem value="linux" label="Linux">
+
 
 1. Open a terminal window.
 1. Use `curl` to download your file:
@@ -134,7 +187,9 @@ Sometimes you may need to just download a specific file to your computer using t
     ```
 
 
-#### macOS
+</TabItem>
+<TabItem value="mac" label="macOS">
+
 
 1. Open a terminal window.
 1. Use `curl` to download your file:
@@ -157,7 +212,8 @@ Sometimes you may need to just download a specific file to your computer using t
     curl https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt -o ~/output-file.txt
     ```
 
-#### Windows
+</TabItem>
+<TabItem value="windows" label="Windows">
 
 1. Open a Powershell window.
 1. Use `Invoke-WebRequest` to download your file:
@@ -181,7 +237,9 @@ Sometimes you may need to just download a specific file to your computer using t
     Invoke-WebRequest -Uri "https://bafybeie2bjap32zi2yqh5jmpve5njwulnkualcbiszvwfu36jzjyqskceq.ipfs.dweb.link/example.txt" -OutFile "C:\Users\Laika\Desktop\output-file.txt"
     ```
 
-<!--/tabs-->
+
+</TabItem>
+</Tabs>
 
 ## Next steps
 
@@ -190,14 +248,14 @@ If you haven't yet explored in depth how to store data using Web3.Storage, check
 You can also use the client library to get more information about the status of your data. See the [query how-to guide][howto-query] to learn how to get more details about your data, including the status of any Filecoin storage deals.
 
 <!-- internal links -->
-[reference-js]: ../reference/client-library.md
+[reference-js]: ../reference/js-client-library.md
 [quickstart-guide]: ../intro.md#quickstart
 [concepts-content-addressing]: ../concepts/content-addressing.md
 [howto-store]: ./store.md
 [howto-query]: ./query.md
 
-[reference-js-web3response]: ../reference/client-library.md#return-value-2
-[reference-js-constructor]: ../reference/client-library.md#constructor
+[reference-js-web3response]: ../reference/js-client-library.md#return-value-2
+[reference-js-constructor]: ../reference/js-client-library.md#constructor
 
 <!-- external links -->
 [ipfs-docs-cid]: https://docs.ipfs.io/concepts/content-addressing/
