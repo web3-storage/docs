@@ -1,5 +1,3 @@
-import countly from 'countly-sdk-web'
-
 const debug = process.env.NODE_ENV !== 'production'
 
 export const events = {
@@ -14,36 +12,12 @@ export const events = {
 }
 
 let ready = false
-let warnedAboutMissingCountly = false
 export function init () {
-  if (ready || typeof window === 'undefined') {
+  if (ready || typeof window === 'undefined' || typeof Countly == 'undefined') {
     return
   }
 
-  if (!window._countlyConfig) {
-    if (!warnedAboutMissingCountly) {
-      console.warn('no countly configuration found. analytics disabled')
-      warnedAboutMissingCountly = true
-    }
-    return
-  }
-
-  const { appKey, url } = window._countlyConfig
-
-  countly.init({
-    app_key: appKey,
-    app_version: "1.0",
-    url,
-    debug,
-  });
-  
-  countly.track_sessions();
-  countly.track_pageview();
-  countly.track_clicks();
-  countly.track_links();
-  countly.track_scrolls();
-
-  // Track other built-in docusaurus links
+  // Track built-in docusaurus links
   document.addEventListener('click', ({ target }) => {
     if (!target.tagName) {
       return
@@ -99,13 +73,12 @@ export function trackEvent (event, data = {}) {
     }
   }
 
-  debug && console.info('[countly]', 'trackEvent()', event, data)
-
-  if (typeof window === 'undefined') {
+  if (typeof window === 'undefined' || typeof Countly === 'undefined') {
     return
   }
-
-  countly.add_event({
+                
+  debug && console.info('[countly]', 'trackEvent()', event, data)
+  Countly.add_event({
     key: event,
     segmentation: data
   })
@@ -121,8 +94,12 @@ export function trackPageView (path) {
     }
   }
 
+  if (typeof window === 'undefined' || typeof Countly === 'undefined') {
+    return
+  }
+
   debug && console.info('[countly]', 'trackPageView()', path)
-  countly.track_pageview(path)
+  Countly.track_pageview(path)
 }
 
 export default {

@@ -43,6 +43,43 @@ module.exports = function (context) {
             innerHTML: `
             window._countlyConfig = ${countlyConfigStr};
             `
+          },
+          {
+            tagName: 'script',
+            attributes: {
+              src: 'https://cdn.jsdelivr.net/npm/countly-sdk-web@latest/lib/countly.min.js',
+            }
+          }
+        ],
+        postBodyTags: [
+          {
+            tagName: 'script',
+            innerHTML: `
+            document.addEventListener('readystatechange', event => {
+              if (event.target.readyState !== "complete") {
+                return
+              }
+              if (!window._countlyConfig) {
+                console.warn('no countly configuration found. analytics disabled')
+                return
+              }
+              const { appKey, countlyUrl } = window._countlyConfig
+              
+              console.log('initializing countly sdk with url: ', countlyUrl)
+              Countly.init({
+                app_key: appKey,
+                url: countlyUrl,
+                app_version: "1.0",
+                debug: ${(!isProd).toString()}
+              })
+
+              Countly.track_sessions()
+              Countly.track_clicks()
+              Countly.track_scrolls()
+
+              Countly.track_pageview(window.location.pathname)
+             });
+            `
           }
         ]
       }
