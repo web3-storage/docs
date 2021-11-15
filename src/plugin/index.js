@@ -3,24 +3,27 @@ const path = require('path')
 module.exports = function (context) {
   const {siteConfig} = context
   const {themeConfig} = siteConfig
-  const {countly} = themeConfig || {}
+  const {countly: countlyConfig} = themeConfig || {}
 
-  if (!countly) {
+  if (!countlyConfig) {
     throw new Error(
       `You need to specify "countly" object in "themeConfig" with "appKey" field in it to use this plugin.`,
     )
   }
 
-  const { appKey } = countly
+  const { appKey, countlyUrl } = countlyConfig
 
   if (!appKey) {
     throw new Error(
-      'You specified the "countly" object in "themeConfig" but the "appKey" field was missing. ' +
-        'Please ensure this is not a mistake.',
+      'You specified the "countly" object in "themeConfig" but the "appKey" field was missing.'
     )
   }
 
-  const countlyConfigStr = JSON.stringify(countly)
+  if (!countlyUrl) {
+    throw new Error(
+      'You specified the "countly" object in "themeConfig" but the "countlyUrl" field was missing.'
+    )
+  }
 
   const isProd = process.env.NODE_ENV === 'production'
   const enabled = isProd || process.env.DEBUG_ENABLE_COUNTLY
@@ -40,12 +43,6 @@ module.exports = function (context) {
         headTags: [
           {
             tagName: 'script',
-            innerHTML: `
-            window._countlyConfig = ${countlyConfigStr};
-            `
-          },
-          {
-            tagName: 'script',
             attributes: {
               src: 'https://cdn.jsdelivr.net/npm/countly-sdk-web@latest/lib/countly.min.js',
             }
@@ -59,16 +56,11 @@ module.exports = function (context) {
               if (event.target.readyState !== "complete") {
                 return
               }
-              if (!window._countlyConfig) {
-                console.warn('no countly configuration found. analytics disabled')
-                return
-              }
-              const { appKey, countlyUrl } = window._countlyConfig
               
-              console.log('initializing countly sdk with url: ', countlyUrl)
+              console.log('initializing countly sdk with url: ${countlyUrl}')
               Countly.init({
-                app_key: appKey,
-                url: countlyUrl,
+                app_key: '${appKey}',
+                url: '${countlyUrl}',
                 app_version: "1.0",
                 debug: ${(!isProd).toString()}
               })
