@@ -178,7 +178,7 @@ paths:
         - Web3.Storage HTTP API
       summary: List previous uploads
       description: |
-        Lists all previous uploads for the account ordered by creation date, newest first. These results can be paginated by specifying `before` and `limit` parameters in the query string, using the creation date associated with the oldest upload returned in each batch as the value of `before` in subsequent calls.
+        Lists all previous uploads for the account ordered by creation date, newest first. These results can be paginated by specifying `before` and `size` parameters in the query string, using the creation date associated with the oldest upload returned in each batch as the value of `before` in subsequent calls.
 
         Note this endpoint returns all uploads for the account not just the API key in use.
 
@@ -186,7 +186,7 @@ paths:
       operationId: get-user-uploads
       parameters:
         - $ref: '#/components/parameters/before'
-        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/size'
       responses:
         '200':
           description: OK
@@ -397,16 +397,16 @@ components:
         type: string
         format: date-time  # RFC 3339, section 5.6
       example: "2020-07-27T17:32:28Z"
-    limit:
+    size:
       description: Specifies the maximum number of uploads to return.
-      name: limit
+      name: size
       in: query
       required: false
       schema:
         type: integer
         format: int32
         minimum: 1
-        maximum: 100
+        maximum: 1000
         default: 10
 security:
   - bearerAuth: []
