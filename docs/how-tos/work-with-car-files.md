@@ -47,7 +47,7 @@ There are a few ways to create and interact with CAR files from the command line
 
 The [ipfs-car][github-ipfs-car] JavaScript package includes a command-line tool for easily creating, unpacking, and verifying CAR files.
 
-To install it, you'll need [Node.js](https://nodejs.com) - we recommend the latest stable version.
+To install it, you'll need [Node.js](https://nodejs.org) - we recommend the latest stable version.
 
 You can install the command globally:
 
@@ -161,7 +161,7 @@ This section will demonstrate a few ways to split CARs in a way that's acceptabl
 <Tabs>
 <TabItem default value="carbites-cli" label="Using the carbites-cli tool">
 
-  The JavaScript [carbites library][github-carbites-js] includes a package called `carbites-cli` that can split and join CARs from the command line. You'll need a recent version of [Node.js](https://nodejs.com) installed, preferably the latest stable version.
+  The JavaScript [carbites library][github-carbites-js] includes a package called `carbites-cli` that can split and join CARs from the command line. You'll need a recent version of [Node.js](https://nodejs.org) installed, preferably the latest stable version.
 
   You can install the tool globally with `npm`:
 
