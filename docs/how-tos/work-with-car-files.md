@@ -302,32 +302,40 @@ This section will demonstrate a few ways to split CARs in a way that's acceptabl
   go get github.com/alanshaw/go-carbites
   ```
 
-  The [`carbites.SplitTreewalk` function](https://pkg.go.dev/github.com/alanshaw/go-carbites#SplitTreewalk) will make sure that the output CARs all have the same root CID, which is important when uploading to Web3.Storage.
+  The [`carbites.Split` function](https://pkg.go.dev/github.com/alanshaw/go-carbites#Split) returns a [`carbites.Splitter`](https://pkg.go.dev/github.com/alanshaw/go-carbites#Splitter) that will make sure that the output CARs all have the same root CID, which is important when uploading to Web3.Storage.
 
   ```go
-  package main
-  import (
-    "io"
-    "os"
-    "github.com/alanshaw/go-carbites"
-  )
-  func main() {
-    out := make(chan io.Reader)
-    go func() {
-      var i int
-      for r := range out {
-        b, _ := ioutil.ReadAll(r)
-        ioutil.WriteFile(fmt.Sprintf("chunk-%d.car", i), b, 0644)
-        i++
-      }
-    }()
-    bigCar, _ := os.Open("big.car")
-    targetSize := 100000000 // 100 MB chunks
-    err := carbites.SplitTreewalk(context.Background(), bigCar, targetSize, out)
-  }
+package main
+
+import (
+	"io"
+	"os"
+	"github.com/alanshaw/go-carbites"
+)
+
+func main() {
+	bigCar, _ := os.Open("big.car")
+	targetSize := 1024 * 1024 // 1MiB chunks
+	strategy := carbites.Treewalk
+	spltr, _ := carbites.Split(bigCar, targetSize, strategy)
+
+	var i int
+	for {
+		car, err := spltr.Next()
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			panic(err)
+		}
+		b, _ := ioutil.ReadAll(car)
+		ioutil.WriteFile(fmt.Sprintf("chunk-%d.car", i), b, 0644)
+		i++
+	}
+}
   ```
 
-  You can also use [`SplitTreewalkFromPath`](https://pkg.go.dev/github.com/alanshaw/go-carbites#SplitTreewalkFromPath), which takes a local file path instead of an `io.Reader`.
+  You can also use [`NewTreewalkSplitterFromPath`](https://pkg.go.dev/github.com/alanshaw/go-carbites#NewTreewalkSplitterFromPath), which takes a local file path instead of an `io.Reader`.
 
 </TabItem>
 </Tabs>
