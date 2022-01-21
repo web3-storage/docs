@@ -32,8 +32,15 @@ By default, the CID returned when uploading files to Web3.Storage will be wrappe
 
 See the [Directory Wrapping section](./store.md#directory-wrapping) of the [Storage guide][howto-store] for more information about working with directory CIDs and instructions on changing the default behavior.
 
+## I get a 429 "Too many requests" error when using the [HTTP API][reference-http]
+
+The HTTP API imposes rate limits to ensure that a single user cannot overwhelm the service with a flood of requests.
+
+Rate limits are imposed when more than 30 requests from the same API token are received within a ten second window. To avoid being limited, try to throttle your requests to stay within this limit. Alternatively, you can respond to a 429 status by backing off for a few seconds and retrying the request.
+
 [howto-store]: ./store.md
 [howto-query]: ./query.md
 [howto-retrieve]: ./retrieve.md
 [howto-retrieve-gateway-filenames]: ./retrieve.md#setting-the-filename-for-downloads-via-gateways
+[reference-http]: ../reference/http-api/
 [contact-us]: ../community/help-and-support.md
