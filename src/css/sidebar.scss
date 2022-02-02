@@ -1,0 +1,7 @@
+// sidebar
+.menu__link--active:not(.menu__link--sublist) {
+    background: transparent;
+}
+.menu__list .menu__list {
+    margin-left: 0;
+}

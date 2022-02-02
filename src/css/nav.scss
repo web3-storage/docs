@@ -1,0 +1,54 @@
+
+// top navbar
+.navbar {
+    max-width: $containerWidth;
+    margin: 0 auto;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: $navigationHeight;
+    padding: 0;
+}
+.navbar__items .react-toggle {
+    display: none;
+}
+.navbar__link {
+    color: $ebony;
+    text-transform: uppercase;
+    transition: 200ms ease;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 1.5rem;
+    padding: 0 0.5rem;
+    transform: translateY(0rem);
+    transition: 200ms ease;
+    &:hover,
+    &--active {
+        transform: translateY(-0.75rem);
+        transition: 200ms ease;
+    }
+    &--active {
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -0.25rem;
+            left: 0.25rem;
+            width: calc(100% - 0.5rem);
+            height: 0.25rem;
+            border-radius: 2px;
+            border: solid 2px $ebony;
+            transition: 200ms ease;
+        }
+    }
+}
+.navbar__title {
+    display: inline;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2rem;
+}
+  
