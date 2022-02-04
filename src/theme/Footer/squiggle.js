@@ -1,5 +1,5 @@
+import React from 'react';
 import squiggle from '../../../static/img/shapes/squiggle.png'
-
 
  const Squiggle = (props) => (
     <div {...props}>

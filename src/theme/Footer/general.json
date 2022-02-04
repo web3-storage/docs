@@ -137,7 +137,7 @@
       "items": [
         {
           "text": "Create an Account",
-          "url": "/login"
+          "url": "https://docs.web3.storage/login"
         },
         {
           "text": "Javascript Client Library",
@@ -145,7 +145,7 @@
         },
         {
           "text": "Open an Issue",
-          "url": "/account"
+          "url": "https://docs.web3.storage/account"
         },
         {
           "text": "HTTP API",
@@ -153,11 +153,11 @@
         },
         {
           "text": "Web Apps",
-          "url": "/terms"
+          "url": "https://docs.web3.storage/terms"
         },
         {
           "text": "Login",
-          "url": "/login"
+          "url": "https://docs.web3.storage/login"
         }
       ]
     },
