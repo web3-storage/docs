@@ -2,6 +2,7 @@
 
 // --------------------------------------------------------------------- General
 $containerWidth: 61.25rem; // 980px
+$navigationHeight: 8.5rem;
 
 $borderRadius_Small: 0.3125rem;
 $borderRadius_Medium: 0.25rem;
@@ -60,6 +61,7 @@ $primary: #3C3CD0;
   --ifm-toc-border-color: transparent;
   --ifm-navbar-height: 19rem;
   --ifm-toc-link-color: #{$ebony};
+  --ifm-font-weight-bold: $fontWeight_Semibold;
 }
 
 

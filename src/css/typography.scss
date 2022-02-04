@@ -252,7 +252,8 @@ $letterSpacing_Large: 0.03em;
 }
 
 @mixin gradient_Text {
-  @include magentaCyan_Gradient;
+  // @include magentaCyan_Gradient;
+  background: linear-gradient(143.26deg, #E41FEB -7.13%, #3D47DD 93.14%);
   background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
