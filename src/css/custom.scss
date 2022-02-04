@@ -22,6 +22,7 @@ body {
   background-image: url(#{$imagePath}/shapes/corkscrewBlurred.png);
   background-repeat: repeat;
   background-size: cover;
+  background-attachment: fixed;
   ::-moz-selection {
     background: white;
     color: black;
@@ -60,7 +61,7 @@ svg[class^="iconExternalLink"] {
 }
 
 // main
-@media (min-width: 997px) {
+@include desktop {
   .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocPage-styles-module {
       background-color: rgba(241, 241, 241, 0.6);
       box-shadow: 0 3px 15px rgb(0 0 0 / 16%);
