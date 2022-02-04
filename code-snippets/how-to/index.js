@@ -40,8 +40,8 @@ async function storeWithProgress(files) {
 
   const onStoredChunk = size => {
     uploaded += size
-    const pct = totalSize / uploaded
-    console.log(`Uploading... ${pct.toFixed(2)}% complete`)
+    const pct = uploaded / totalSize
+    console.log(`Uploading... ${Math.min(pct * 100, 100).toFixed(2)}% complete`)
   }
 
   // makeStorageClient returns an authorized Web3.Storage client instance
