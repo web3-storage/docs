@@ -11,6 +11,7 @@ module.exports = {
         'how-tos/list',
         'how-tos/list-directory-contents',
         'how-tos/work-with-car-files',
+        'how-tos/pinning-services-api',
         'how-tos/generate-api-token',
         'how-tos/troubleshooting',
       ]
