@@ -12,7 +12,7 @@ For a full list and documentation of all the available pinning service endpoints
 
 ## Requesting access
 
-To request access to the pinning service for your Web3.Storage account, you will need to create a [new issue](https://github.com/web3-storage/web3.storage/issues/new/choose) with a type of **Pinning Service Access Request** on the Web3.Storage GitHub repo. Once approved, you will be able to access the pinning service API endpoints using your [API token](/how-tos/generate-api-token)
+To request access to the pinning service for your Web3.Storage account, you will need to create a [new issue](https://github.com/web3-storage/web3.storage/issues/new/choose) with a type of **Pinning Service Access Request** on the Web3.Storage GitHub repo. Once approved, you will be able to access the pinning service API endpoints using your [API token](/how-tos/generate-api-token).
 
 ## Using the HTTP API
 
@@ -26,8 +26,8 @@ curl -X POST 'https://api.web3.storage/pins' \
   --header 'Authorization: Bearer <YOUR_AUTH_KEY_JWT>' \
   --header 'Content-Type: application/json' \
   -d '{
-  "cid": "QmCIDToBePinned",
-  "name": "PreciousData.pdf",
+  "cid": "<CID_TO_BE_PINNED>",
+  "name": "PreciousData.pdf"
 }'
 ```
 
@@ -42,7 +42,7 @@ curl -X GET 'https://api.web3.storage/pins' \
 ### Delete a pin
 
 ```bash
-curl -X DELETE 'https://api-staging.web3.storage/pins/<requestId>' \
+curl -X DELETE 'https://api-staging.web3.storage/pins/<REQUEST_ID>' \
   --header 'Accept: */*' \
   --header 'Authorization: Bearer <YOUR_AUTH_KEY_JWT>'
 ```
@@ -58,7 +58,7 @@ ipfs pin remote service add web3.storage https://api.web3.storage/ <YOUR_AUTH_KE
 ### Add a pin
 
 ```bash
-ipfs pin remote add --service=web3.storage --name=<PIN-NAME> <CID>
+ipfs pin remote add --service=web3.storage --name=<PIN_NAME> <CID>
 ```
 
 ### List pins
