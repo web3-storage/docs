@@ -40,7 +40,7 @@ Rate limits are imposed when more than 30 requests from the same API token are r
 
 ## I am experiencing slowness in uploads to web3.storage
 
-Please make sure that you are using the latest version of web3.storage client: 3.5.6. There is an issue in the latest Node version ([nodejs/node#42117](https://github.com/nodejs/node/pull/42117)) and we reverted using native version of Blob in latest release until that fix is shipped.
+Please make sure that you are using the latest version of web3.storage client: v3.5.6 or greater. There is an issue in the latest Node version ([nodejs/node#42117](https://github.com/nodejs/node/pull/42117)) and we reverted using native version of Blob in latest release until that fix is shipped.
 
 [howto-store]: ./store.md
 [howto-query]: ./query.md
