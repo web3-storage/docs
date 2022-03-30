@@ -1,3 +1,6 @@
+
+# ⚠️ Documentation moved to [web3.storage/packages/docs](https://github.com/web3-storage/web3.storage/tree/main/packages/docs)
+
 # web3.storage docs repo
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg)](https://protocol.ai)
