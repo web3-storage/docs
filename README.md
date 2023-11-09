@@ -2,9 +2,8 @@
 
 Documenting how to use web3.storage.
 
-**Under the hood, web3.storage is backed by the provable storage of [IPFS](https://ipfs.io) and [Filecoin](https://filecoin.io).**
+<img width="1414" alt="docs site screenshot" src="https://github.com/web3-storage/docs/assets/58871/19b1fc0a-40e4-4cbd-888b-3852e666da53">
 
-When it comes down to building your next application, service, or website, web3.storage keeps it simple. You get all the benefits of decentralized storage technologies with the frictionless experience you expect in a modern dev workflow. **All you need to use web3.storage is an account and your data.** 
 
 ## Getting Started
 
